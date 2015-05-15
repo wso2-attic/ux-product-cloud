@@ -1,0 +1,22 @@
+body{font-family: "Open Sans",Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;
+    background-color: #fff;padding-top: 50px;}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{color: #fff;}
+.user-name{background-color: #1c1c1c;}
+.navbar-default {background-color: #0068d4;  border-color: #0065CD;}
+.user-image{width: 20px; margin: 0 0px 0px 10px;}
+
+.cloud-menu{background-color: #151515;  width: 58px;}
+.navbar-secondary{background-color: #0068d4;border-radius: 0;max-height: 50px;margin-bottom: 0px}
+.breadcrumb-secondary{color: #fff; font-size: 20px;margin: 12px 0 0 10px;}
+.action-bar{background-color: #303030;min-height: 45px; color: #fff}
+.btn-action-ico{margin-top: 6px;}
+.btn-action-txt {position: absolute;margin-top: 14px;margin-left: 8px;}
+.btn-action {margin-left: 8px;}
+.btn-action:hover{background-color: #000}
+
+@media (min-width: 768px){
+    .menu-right {
+        float: right;
+        margin: 0px -15px;
+    }
+}
