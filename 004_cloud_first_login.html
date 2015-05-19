@@ -53,7 +53,7 @@
                 </li>
                 <li class="cloud-menu hidden-xs">
                     <a href="#" id="cloud-menu-popover" data-toggle="popover" data-placement="bottom"
-                            class="cloud-menu-popover">
+                       class="cloud-menu-popover">
                         <i class="fw fw-tiles"></i>
                     </a>
                 </li>
@@ -64,31 +64,31 @@
                     Navigate to Cloud
                 </div>
                 <div id="popover-content" class="hide">
-                   <div class="cloud-apps">
-                       <a class="cloud-block">
-                           <i class="fa fa-3x fa-cubes"></i>
-                           <div class="cloud-name">Application Cloud</div>
-                       </a>
-                       <a class="cloud-block">
-                           <i class="fw fw-api fa-3x"></i>
-                           <div class="cloud-name">API Cloud</div>
-                       </a>
-                       <div class="clearfix"></div> <!-- to make seperate -->
-                   </div>
-                   <div class="cloud-actions">
-                       <a class="cloud-block-invert">
-                           <i class="fa fa-3x  fa-institution"></i>
-                           <div class="cloud-name">Organizations</div>
-                       </a>
-                       <a class="cloud-block-invert">
-                           <i class="fa fa-3x  fa-users"></i>
-                           <div class="cloud-name">Members</div>
-                       </a>
-                       <a class="cloud-block-invert">
-                           <i class="fa fa-3x  fa-envelope"></i>
-                           <div class="cloud-name">Support</div>
-                       </a>
-                   </div>
+                    <div class="cloud-apps">
+                        <a class="cloud-block">
+                            <i class="fa fa-3x fa-cubes"></i>
+                            <div class="cloud-name">Application Cloud</div>
+                        </a>
+                        <a class="cloud-block">
+                            <i class="fw fw-api fa-3x"></i>
+                            <div class="cloud-name">API Cloud</div>
+                        </a>
+                        <div class="clearfix"></div> <!-- to make seperate -->
+                    </div>
+                    <div class="cloud-actions">
+                        <a class="cloud-block-invert">
+                            <i class="fa fa-3x  fa-institution"></i>
+                            <div class="cloud-name">Organizations</div>
+                        </a>
+                        <a class="cloud-block-invert">
+                            <i class="fa fa-3x  fa-users"></i>
+                            <div class="cloud-name">Members</div>
+                        </a>
+                        <a class="cloud-block-invert">
+                            <i class="fa fa-3x  fa-envelope"></i>
+                            <div class="cloud-name">Support</div>
+                        </a>
+                    </div>
                 </div>
             </div>
             <!-- EOF cloud menu content -->
@@ -98,16 +98,12 @@
 <!-- EOF cloud menu -->
 
 <div class="inner-wrapper">
-
-    <div class="left-menu">
-        Left pane
-    </div>
     <!-- BOF App factory menu -->
     <div class="navbar navbar-secondary">
         <div class="container-fliud">
             <div class="row">
                 <div class="col-md-3 breadcrumb-secondary">
-                    <i class="fa fa-cubes visible-xs"></i> <span class="hidden-xs">Application Cloud</span>
+                    <i class="fa fa-cubes visible-xs visible-lg"></i> <span class="hidden-xs">Application Cloud</span>
                 </div>
             </div>
         </div>
@@ -115,23 +111,39 @@
 
     <!-- BOF App factory menu actionbar -->
     <div class="action-bar">
-        <a href="#" class="btn-action">
+        <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Go Back
+                    <i class="fw fw-add fw-stack-1x"></i>
+                </span> <span class="hidden-xs">Add New Application</span>
         </a>
         <a href="#" class="btn-action">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Go Back
+                    <i class="fw fw-up-arrow fw-stack-1x"></i>
+                </span> <span class="hidden-xs">upload exsisting</span>
+        </a>
+        <a href="#" class="btn-action">
+                <span class="fw-stack fw-lg btn-action-ico">
+                    <i class="fw fw-ring fw-stack-2x"></i>
+                    <i class="fw  fw-deploy fw-stack-1x"></i>
+                </span> <span class="hidden-xs">Deploy Sample Application</span>
         </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
     <div class="container-fluid">
-        <div class="row">
+        <div class="row row-centered">
+            <div class="col-centered col-md-4 ">
+                <div class="cloud-new-content">
+                    <h2>New to our Application Cloud ?</h2>
+                    <button type="button" class="btn btn-info btn-lg">Create your first application</button>
+                    <div class="help">
+                        <i class="fa fa-2x fa-book"></i> Need help ? Read App creation guide first..
+                    </div>
+                </div>
+
+            </div>
 
         </div>
     </div><!-- /.container -->
