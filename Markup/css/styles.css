@@ -208,7 +208,7 @@ a.btn-action{
     padding: 1em;
     text-align: center;
     color: #fff;
-
+    cursor: pointer;
 }
 .cloud-app-type i{margin: .4em}
 .listing{position: relative; font-size: 16px;}
@@ -217,7 +217,7 @@ a.btn-action{
     height: 13em;
     z-index: 99;
     background-color: #949494;
-    margin-top: .5em;
+    margin-top: .6em;
     padding: 2em;
 }
 

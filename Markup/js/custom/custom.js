@@ -25,7 +25,21 @@ $('.cloud-menu-popover').popover({
         var width = $( window ).width(),
             currentcount = $(this).attr('id'),
             dataCount = $('.listing').attr('data-count'),
-            appendHtml = '<div class="longme"><div class="clearfix"></div><div class="col-md-12 long">Description</div></div>';
+            appendHtml = '<div class="longme">' +
+                            '<div class="clearfix"></div>' +
+                            '<div class="col-md-12 long"> <div class="row"> <div class="col-md-6"> ' +
+                            '<h2>JAVA Appication</h2>'+
+                            '<div class="app-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. </div> '+
+                            '<div class="button-bar">' +
+                            '<a href="#" class="cu-btn cu-btn-md cu-btn-gr-dark">Documentation</a>'+
+                            '<a href="#" class="cu-btn cu-btn-md cu-btn-gr-dark">Video Guide</a>'+
+                            '</div></div>' +
+                            '<div class="col-md-6">' +
+                            '<a href="#" class="cu-btn cu-btn-md cu-btn-gr-dark">Create Application</a>'+
+                            '</div>'+
+                            '</div>'+
+                            '</div>' +
+                            '</div>';
 
         if(width >=1170){
             if(currentcount%6 == 0){
