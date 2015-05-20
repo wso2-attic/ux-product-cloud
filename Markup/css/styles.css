@@ -1,4 +1,4 @@
-body{font-family: "Open Sans",Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;
+body{font-family: 'Roboto', sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;
     background-color: #fff;padding-top: 50px; background-color: #282828;}
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{color: #fff;}
 .navbar-inverse{border-color: #222;}
@@ -9,7 +9,7 @@ body{font-family: "Open Sans",Helvetica,Arial,sans-serif;font-size: 14px;line-he
 .cloud-menu{background-color: #151515;  width: 58px;}
 .navbar-secondary{background-color: #0498d5;border-radius: 0;max-height: 50px;margin-bottom: 0px}
 .navbar-secondary .row {margin-right: 0px;}
-.breadcrumb-secondary{color: #fff; font-size: 20px;margin: 12px 0 0 10px;}
+.breadcrumb-secondary{color: #fff; font-size: 20px;margin: 12px 0 0 0px;}
 .breadcrumb-secondary i, .breadcrumb-secondary span{float: left}
 .breadcrumb-secondary span{margin-left: 0.5em}
 .action-bar{background-color: #303030;min-height: 45px; color: #fff}
@@ -31,7 +31,7 @@ body{font-family: "Open Sans",Helvetica,Arial,sans-serif;font-size: 14px;line-he
 a.btn-action{
     color: #fff;
     text-decoration: none;
-    font-weight: 100;
+    font-weight: 300;
     display: inline-block;
     text-transform: uppercase;
     height: 53px;
@@ -218,7 +218,8 @@ a.btn-action{
     z-index: 99;
     background-color: #949494;
     margin-top: .6em;
-    padding: 2em;
+    padding: 0em 2em;
+    color: #fff;
 }
 
 .cloud-app-selected {
@@ -315,6 +316,7 @@ a.btn-action{
 .cu-btn-blue { background-color:#0288c0 }
 .cu-btn-gr-dark { background-color:#1f1f1f }
 .cu-btn-gr-dark:hover { background-color:#111 }
+.cu-btn-gray{ background-color:#555555;}
 
 .wr-edit-button {
     border-radius: 0;
@@ -352,3 +354,8 @@ a.btn-action{
     border-left:1px solid #329ecc;
 }
 
+/* app listing page related styles */
+.longme h2{font-weight: 300;}
+.app-description{font-weight: 300;margin-bottom: 0.5em;}
+.button-bar a{margin-right: 1em;}
+.description-action{margin-top: 4em;font-weight: 400;}

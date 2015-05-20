@@ -31,11 +31,15 @@ $('.cloud-menu-popover').popover({
                             '<h2>JAVA Appication</h2>'+
                             '<div class="app-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. </div> '+
                             '<div class="button-bar">' +
-                            '<a href="#" class="cu-btn cu-btn-md cu-btn-gr-dark">Documentation</a>'+
-                            '<a href="#" class="cu-btn cu-btn-md cu-btn-gr-dark">Video Guide</a>'+
+                            '<a href="#" class="cu-btn cu-btn-md cu-btn-gray"><i class="fa fa-book"></i> Documentation</a>'+
+                            '<a href="#" class="cu-btn cu-btn-md cu-btn-gray"><i class="fa fa-video-camera"></i> Video Guide</a>'+
                             '</div></div>' +
-                            '<div class="col-md-6">' +
-                            '<a href="#" class="cu-btn cu-btn-md cu-btn-gr-dark">Create Application</a>'+
+                            '<div class="col-md-6 description-action">' +
+                            '<a href="#" class="cu-btn cu-btn-md cu-btn-blue">' +
+                            '<span class="fw-stack fw-lg btn-action-ico">' +
+                            '<i class="fw fw-ring fw-stack-2x"></i>' +
+                            '<i class="fw fw-add fw-stack-1x"></i>'+
+                            '</span> Create Application</a>'+
                             '</div>'+
                             '</div>'+
                             '</div>' +
