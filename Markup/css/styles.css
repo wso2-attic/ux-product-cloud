@@ -281,6 +281,11 @@ a.btn-action{
     color:#f5f5f5;  
 }
 
+.prod-url i {
+    margin-left:20px;
+    color:#9c9c9c;
+}
+
 .cu-btn {
     font-size:1em;    
     display:inline-block;
@@ -334,6 +339,7 @@ a.btn-action{
     border-radius: 0px; 
     -webkit-box-shadow: 0 0px 0px rgba(0,0,0,.175);
     box-shadow: 0 0px 0px rgba(0,0,0,.175);
+    border-top:1px solid #329ecc;
 }
 
 .ctrl-edit-button .dropdown-menu>li>a:hover, .ctrl-edit-button .dropdown-menu>li>a:focus {
