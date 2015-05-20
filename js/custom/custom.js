@@ -9,14 +9,14 @@ $('.cloud-menu-popover').popover({
 });
 
     /**
-     * this function 
+     * this function use to append description block on app type selection
      * */
-    $(document).on('click', '.clou-app-type', function(){
+    $(document).on('click', '.cloud-app-type', function(){
 
         $('.listing').find('.longme').detach();
 
-        if($('.clou-app-type').hasClass('cloud-app-selected')){
-            $('.clou-app-type').removeClass('cloud-app-selected');
+        if($('.cloud-app-type').hasClass('cloud-app-selected')){
+            $('.cloud-app-type').removeClass('cloud-app-selected');
             $(this).addClass('cloud-app-selected');
         }else{
             $(this).addClass('cloud-app-selected');
