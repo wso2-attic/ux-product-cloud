@@ -1,5 +1,5 @@
 body{font-family: "Open Sans",Helvetica,Arial,sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;
-    background-color: #fff;padding-top: 50px; background-color: #f8f8f8;}
+    background-color: #fff;padding-top: 50px; background-color: #282828;}
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{color: #fff;}
 .navbar-inverse{border-color: #222;}
 .user-name{background-color: #1c1c1c;}
@@ -183,14 +183,19 @@ a.btn-action{
     margin-top:2em;
 }
 #footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
-
     background-color: #333333;
+    z-index:9999;
 }
 #footer,#push { height: 36px;}
-
+.inner-wrapper{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -36px;
+}
 
 .footer-text{margin-top: 1em; color: #fff;  font-size: 11px;}
 
@@ -224,3 +229,6 @@ a.btn-action{
 .app-color-one{background-color: #676767;  border-color: #676767;}
 .app-color-two{background-color: #37678d; border-color: #37678d;}
 .app-color-three{background-color: #e5a02b; border-color: #e5a02b;}
+.app-color-four {background-color: #e5a02b; border-color: #e5a02b;}
+.app-color-five{background-color: #6a7fb4; border-color: #6a7fb4;}
+.app-color-six{background-color: #449ab6; border-color: #449ab6;}
