@@ -250,6 +250,7 @@ a.btn-action{
 .app-preview p {
     color:#cdcdcd;
     font-weight: 100;    
+    font-size:0.9em;
 }
 
 .app-preview .app-thumb {
@@ -346,4 +347,8 @@ a.btn-action{
 .ctrl-edit-button .dropdown-menu > li > a {
     color:#fff;
     padding:5px 23px;
+}
+
+.cu-dropdown-toggle {
+    border-left:1px solid #329ecc;
 }
