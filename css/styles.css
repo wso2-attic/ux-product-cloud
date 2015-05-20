@@ -268,7 +268,7 @@ a.btn-action{
 }
 
 .prod-url {
-    padding:10px 15px;
+    padding:10px 15px 10px 20px;
     font-size:1em;
     font-style: italic;
     background:#343434;      
@@ -286,9 +286,10 @@ a.btn-action{
     text-decoration: none;
     color:#fff;
     font-weight: 100;
+    border-radius: 0;
 }
 
-.cu-btn:hover {
+.cu-btn:hover, .cu-btn:visited , .cu-btn:focus {
     color:#fff;
     text-decoration: none;    
 }
@@ -303,4 +304,8 @@ a.btn-action{
 
 .cu-btn-blue { background:#0288c0 }
 .cu-btn-gr-dark { background:#1f1f1f }
-.cu-btn-gr-dark:hover { background:#222 }
+.cu-btn-gr-dark:hover { background:#111 }
+
+.wr-edit-button {
+    border-radius: 0;
+}
