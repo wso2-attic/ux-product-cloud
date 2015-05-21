@@ -25,42 +25,52 @@ $('.cloud-menu-popover').popover({
         var width = $( window ).width(),
             currentcount = $(this).attr('id'),
             dataCount = $('.listing').attr('data-count'),
-            appendHtml = '<div class="longme"><div class="clearfix"></div><div class="col-md-12 long">Description</div></div>';
+            appendHtml = $('.app-type-info-template').html();
 
         if(width >=1170){
-            if(currentcount%6 == 0){
+            if(currentcount%7 == 0){
                 $('#'+currentcount).parent().after(appendHtml);
+                $('.longme').fadeIn('slow')
             }else{
-                var ctest = parseInt(currentcount)+(6- currentcount%6);
+                var ctest = parseInt(currentcount)+(7- currentcount%7);
                 if(ctest > dataCount){
                     $('#'+ dataCount).parent().after(appendHtml);
+                    $('.longme').fadeIn('slow')
                 }else{
                     $('#'+ctest).parent().after(appendHtml);
+                    $('.longme').fadeIn('slow')
                 }
 
             }
         }else if(width >=970){
             if(currentcount%4 == 0){
                 $('#'+currentcount).parent().after(appendHtml);
+                $('.longme').fadeIn('slow')
             }else{
                 var ctest = parseInt(currentcount)+(4- currentcount%4);
                 if(ctest > dataCount){
                     $('#'+ dataCount).parent().after(appendHtml);
+                    $('.longme').fadeIn('slow')
                 }else{
                     $('#'+ctest).parent().after(appendHtml);
+                    $('.longme').fadeIn('slow')
+
                 }
 
             }
         }else if(width >=750 ){
             if(currentcount%2 == 0){
                 $('#'+currentcount).parent().after(appendHtml);
+                $('.longme').fadeIn('slow')
             }else{
                 var ctest = parseInt(currentcount)+1;
                 $('#'+ctest).parent().after(appendHtml);
+                $('.longme').fadeIn('slow')
             }
 
         }else if(width <750 ){
             $('#'+currentcount).parent().after(appendHtml);
+            $('.longme').fadeIn('slow')
 
         }
 
