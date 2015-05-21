@@ -126,6 +126,13 @@ a.btn-action{
 
 }
 
+@media (min-width: 1200px){
+    .listing .col-lg-2 {
+        width: 13.666667%;
+    }
+}
+
+
 /* use for landing blocks*/
 .cloud-app-select{background-color: white;
     padding: 1em;margin-top: 4em; min-height: 40em;  position: relative;}
@@ -233,7 +240,7 @@ a.btn-action{
 .app-color-four {background-color: #e5a02b; border-color: #e5a02b;}
 .app-color-five{background-color: #6a7fb4; border-color: #6a7fb4;}
 .app-color-six{background-color: #449ab6; border-color: #449ab6;}
-
+.app-color-seven{background-color: #40d47e; border-color: #40d47e;}
 
 /* application landing */
 .app-preview {
@@ -359,3 +366,4 @@ a.btn-action{
 .app-description{font-weight: 300;margin-bottom: 0.5em;}
 .button-bar a{margin-right: 1em;}
 .description-action{margin-top: 4em;font-weight: 400;}
+.description-action .cu-btn{font-weight: 400}
