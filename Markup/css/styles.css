@@ -1,4 +1,4 @@
-body{font-family: 'Roboto', sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;
+body{font-family: 'Roboto', sans-serif;font-size: 14px;line-height: 1.42857143;color: #fff;
     background-color: #fff;padding-top: 50px; background-color: #282828;}
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{color: #fff;}
 .navbar-inverse{border-color: #222;}
@@ -96,8 +96,9 @@ a.btn-action{
 
 .cloud-app-select .btn-footer button {margin-top: 3em;}
 .cloud-new-content {margin-top: 17em;}
-.cloud-new-content button {margin-top: 3em;}
+.cloud-new-content button {margin-top: 2em; font-size: 30px}
 .cloud-new-content .help{margin-top:2em;}
+.cloud-new-content h1{font-weight: 300;}
 
 /* cloud new app type selection page related styles */
 .cloud-app-type {background-color: #949494;margin-top: 3em;min-height: 13em;position: relative;z-index: 100;padding: 1em;
