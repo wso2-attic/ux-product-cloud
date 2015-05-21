@@ -12,22 +12,13 @@ body{font-family: 'Roboto', sans-serif;font-size: 14px;line-height: 1.42857143;c
 .breadcrumb-secondary{color: #fff; font-size: 20px;margin: 12px 0 0 0px;}
 .breadcrumb-secondary i, .breadcrumb-secondary span{float: left}
 .breadcrumb-secondary span{margin-left: 0.5em}
-.action-bar{background-color: #303030;min-height: 45px; color: #fff}
+.action-bar{background-color: #303030;min-height: 45px; color: #fff;-webkit-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);}
 .btn-action-txt {position: absolute;margin-top: 14px;margin-left: 8px;}
 .btn-action:hover{background-color: #000}
 /* centered columns styles */
-.row-centered {
-    text-align:center;
-}
-.col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:center;
-    /* inline-block space fix */
-    margin-right:-4px;
-}
-
+.row-centered {text-align:center;}
+.col-centered {display:inline-block;float:none;text-align:center;margin-right:-4px;}
 a.btn-action{
     color: #fff;
     text-decoration: none;
