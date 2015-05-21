@@ -10,7 +10,7 @@ body{font-family: 'Roboto', sans-serif;font-size: 14px;line-height: 1.42857143;c
 .navbar-secondary{background-color: #0498d5;border-radius: 0;max-height: 50px;margin-bottom: 0px}
 .navbar-secondary .row {margin-right: 0px;}
 .breadcrumb-secondary{color: #fff; font-size: 20px;margin: 12px 0 0 0px;}
-.breadcrumb-secondary i, .breadcrumb-secondary span{float: left}
+.breadcrumb-secondary i, .breadcrumb-secondary span{float: left; margin-left: 13px;}
 .breadcrumb-secondary span{margin-left: 0.5em}
 .action-bar{background-color: #303030;min-height: 45px; color: #fff;-webkit-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);}
@@ -121,7 +121,14 @@ a.btn-action{
 .app-description{font-weight: 300;margin-bottom: 0.5em;}
 .button-bar a{margin-right: 1em;}
 .description-action{margin-top: 4em;font-weight: 400;}
-.description-action .cu-btn{font-weight: 400}
+.description-action .cu-btn{font-size: 31px;font-weight: 300;}
+.description-action span{font-size: 23px;}
+.cloud-selected-app-type-name h1{font-weight: 200;margin-top: 1.5em;}
+
+/* cloud new app creation */
+.cloud-selected-app-type {margin: 1em 2em 1em 0px;padding: 1.5em;}
+.forms label{font-weight: 300;line-height: 5em;}
+.forms input, .forms textarea{border-radius: 0px}
 
 /* application landing */
 .app-preview {
