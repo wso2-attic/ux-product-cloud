@@ -149,14 +149,37 @@
         <div class="row">
             <div class="col-md-5 forms">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Application Name: </label>
-                    <input type="appname" class="form-control" id="exampleInputEmail1" placeholder="Enter Application name">
+                    <label for="application-name">Application Name: </label>
+                    <input type="appname" class="form-control" id="application-name" placeholder="Enter Application name">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Description: </label>
+                    <label for="application-description">Description: </label>
                     <textarea class="form-control" rows="3"></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="application-icon">Icon: </label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" readonly>
+                    <span class="input-group-btn">
+                        <span class="btn btn-primary btn-file">
+                            Upload&hellip; <input type="file" multiple>
+                        </span>
+                    </span>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                        <span class="fw-stack fw-lg btn-action-ico">
+                            <i class="fw fw-ring fw-stack-2x"></i>
+                            <i class="fw fw-add fw-stack-1x"></i>
+                        </span>
+                        Create
+                    </button>
+                </div>
+
             </div>
 
         </div>
