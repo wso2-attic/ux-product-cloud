@@ -23,36 +23,37 @@ $('.cloud-menu-popover').popover({
         }
 
         var width = $( window ).width(),
-            currentcount = $(this).attr('id'),
-            dataCount = $('.listing').attr('data-count'),
+            currentcount = parseInt($(this).attr('id')),
+            dataCount = parseInt($('.listing').attr('data-count')),
             appendHtml = $('.app-type-info-template').html();
 
         if(width >=1170){
             if(currentcount%7 == 0){
-                $('#'+currentcount).parent().after(appendHtml);
+                $('#'+currentcount+'\\.0').parent().after(appendHtml);
                 $('.longme').fadeIn('slow')
             }else{
-                var ctest = parseInt(currentcount)+(7- currentcount%7);
+                var ctest = currentcount+(7- currentcount%7);
+                console.log(ctest)
                 if(ctest > dataCount){
-                    $('#'+ dataCount).parent().after(appendHtml);
+                    $('#'+ dataCount+'\\.0').parent().after(appendHtml);
                     $('.longme').fadeIn('slow')
                 }else{
-                    $('#'+ctest).parent().after(appendHtml);
+                    $('#'+ctest+'\\.0').parent().after(appendHtml);
                     $('.longme').fadeIn('slow')
                 }
 
             }
         }else if(width >=970){
             if(currentcount%4 == 0){
-                $('#'+currentcount).parent().after(appendHtml);
+                $('#'+currentcount+'\\.0').parent().after(appendHtml);
                 $('.longme').fadeIn('slow')
             }else{
                 var ctest = parseInt(currentcount)+(4- currentcount%4);
                 if(ctest > dataCount){
-                    $('#'+ dataCount).parent().after(appendHtml);
+                    $('#'+ dataCount+'\\.0').parent().after(appendHtml);
                     $('.longme').fadeIn('slow')
                 }else{
-                    $('#'+ctest).parent().after(appendHtml);
+                    $('#'+ctest+'\\.0').parent().after(appendHtml);
                     $('.longme').fadeIn('slow')
 
                 }
@@ -60,16 +61,16 @@ $('.cloud-menu-popover').popover({
             }
         }else if(width >=750 ){
             if(currentcount%2 == 0){
-                $('#'+currentcount).parent().after(appendHtml);
+                $('#'+currentcount+'\\.0').parent().after(appendHtml);
                 $('.longme').fadeIn('slow')
             }else{
                 var ctest = parseInt(currentcount)+1;
-                $('#'+ctest).parent().after(appendHtml);
+                $('#'+ctest+'\\.0').parent().after(appendHtml);
                 $('.longme').fadeIn('slow')
             }
 
         }else if(width <750 ){
-            $('#'+currentcount).parent().after(appendHtml);
+            $('#'+currentcount+'\\.0').parent().after(appendHtml);
             $('.longme').fadeIn('slow')
 
         }
