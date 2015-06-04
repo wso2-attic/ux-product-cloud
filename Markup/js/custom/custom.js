@@ -24,8 +24,15 @@ $('.cloud-menu-popover').popover({
 
         var width = $( window ).width(),
             currentcount = parseInt($(this).attr('id')),
-            dataCount = parseInt($('.listing').attr('data-count')),
-            appendHtml = $('.app-type-info-template').html();
+            appDescription = $(this).attr('data-description'),
+            appName = $(this).attr('data-appname'),
+            dataCount = parseInt($('.listing').attr('data-count'));
+
+        //content replace with data attributes
+        $('.app-type-info-template').find('.app-name').html(appName);
+        $('.app-type-info-template').find('.app-description').html(appDescription);
+        var appendHtml =$('.app-type-info-template').html();
+
 
         if(width >=1170){
             if(currentcount%7 == 0){
