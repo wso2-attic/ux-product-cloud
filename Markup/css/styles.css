@@ -18,7 +18,7 @@ body{font-family: 'Roboto', sans-serif;font-size: 14px;line-height: 1.42857143;c
     -moz-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);position: fixed;
     top: 100px;width: 100%;z-index: 100;
 }
-.app-listing{position: relative;top: 73px;z-index: 99;}
+.app-type-listing{position: relative;top: 73px;z-index: 99;}
 .btn-action-txt {position: absolute;margin-top: 14px;margin-left: 8px;}
 .btn-action:hover{background-color: #000}
 
@@ -176,3 +176,27 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 .prod-url {padding:10px 15px 11px 20px;font-size:1.1em;background:#343434;color:#f5f5f5;font-weight: 500;}
 .prod-url a {color:#cecece;}
 .prod-url i {margin-left:20px;color:#9c9c9c;}
+
+/*product listing page */
+.cloud-app {background-color: #949494;margin-top: 3em;min-height: 13em;position: relative;z-index: 100;padding: 1em;
+    text-align: center;color: #fff;cursor: pointer;
+}
+.app-sort-bar {
+    top: 9em;
+    position: relative;
+}
+
+.app-listing {
+    position: relative;
+    top: 11em;
+}
+
+#seach-apps{border-radius: 0px;height: 40px;  font-size: 18px;  font-weight: 300;}
+.app-sort-bar .search i {color: #303030;position: absolute;top: 6px;right: 22px;cursor: pointer;}
+.app-sort-bar .sort i{color: #fff;}
+.cloud-app-listing{  width: 100%;position: relative;margin-bottom: 2em; cursor: pointer;}
+.cloud-app-listing i {position: absolute;z-index: 98;right: 16px;padding: 6px;background-color: #383d44;top: 0;}
+.app-icon{z-index: 99;z-index: 99;}
+.app-icon img{width: 100%;}
+.app-name {position: absolute;background-color: red;bottom: 0;padding: 9px 5px 2px;width: 100%;min-height: 3em;
+    font-size: 17px;background-color: #383d44;font-weight: 300;}
