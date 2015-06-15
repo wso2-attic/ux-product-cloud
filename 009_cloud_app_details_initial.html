@@ -99,16 +99,22 @@
 <!-- EOF cloud menu -->
 
 <div class="inner-wrapper">
-
-    <div class="left-menu" style="display:none">
+    <!-- left pane wrapper -->
+    <div class="left-pane" style="display:none">
         Left pane
     </div>
+
+    <!-- left pane wrapper -->
+    <div class="right-pane">
     <!-- BOF App factory menu -->
     <div class="navbar navbar-secondary">
         <div class="container-fliud">
             <div class="row">
+                <div class="side-pane-trigger col-xs-1">
+                    <i class="fa fa-cubes"></i>
+                </div>
                 <div class="col-md-3 breadcrumb-secondary">
-                    <i class="fa fa-cubes visible-xs"></i> <span class="hidden-xs">Application Cloud</span>
+                    <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud</span>
                 </div>
             </div>
         </div>
@@ -166,6 +172,9 @@
 
         </div>
     </div><!-- /.container -->
+
+
+    </div>
     <div id="push"></div>
 </div>
 <div id="footer">
@@ -179,5 +188,13 @@
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
+
+<script>
+    $('.btn-action').click(function(){
+        $('.left-pane').toggle();
+        $('.right-pane').toggleClass('right-pane-push');
+        var getContentHeight = $('.right-pane').height();
+    });
+</script>
 </body>
 </html>
