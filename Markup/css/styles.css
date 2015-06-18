@@ -11,12 +11,12 @@ body{font-family: 'Roboto', sans-serif;font-size: 14px;line-height: 1.42857143;c
     width: 100%;top: 53px;z-index: 100;
 }
 .navbar-secondary .row {margin-right: 0px;}
-.breadcrumb-secondary{color: #fff; font-size: 20px;margin: 12px 0 0 0px;}
+.breadcrumb-secondary{color: #fff; font-size: 20px;margin: 12px 0 0 0px; float: left;}
 .breadcrumb-secondary i, .breadcrumb-secondary span{float: left; margin-left: 13px;}
 .breadcrumb-secondary span{margin-left: 0.5em}
 .action-bar {background-color: #303030;min-height: 45px;color: #fff;-webkit-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);position: fixed;
-    top: 100px;width: 100%;z-index: 100;
+    top: 103px;width: 100%;z-index: 100;
 }
 .app-type-listing{position: relative;top: 73px;z-index: 99;}
 .btn-action-txt {position: absolute;margin-top: 14px;margin-left: 8px;}
@@ -57,8 +57,6 @@ body{font-family: 'Roboto', sans-serif;font-size: 14px;line-height: 1.42857143;c
 .col-centered {display:inline-block;float:none;text-align:center;margin-right:-4px;}
 a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-block;text-transform: uppercase;
     height: 53px;padding: 9px 10px;}
-.left-pane {position: absolute;width: 10%;z-index: 1000;background-color: red;left: 0px;}
-.right-pane-push{position: absolute; width: 90%; left: 10%;}
 
 /* cloud popover menu related styles */
 .cloud-menu .popover {border-radius: 0px;width: 31em;left: -27em !important;max-width: 31em;background-color: #006690}
@@ -86,7 +84,8 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 /*footer section related styles*/
 #footer {position: fixed;bottom: 0;width: 100%;background-color: #333333;z-index:9999;}
 #footer,#push { height: 36px;}
-.inner-wrapper{min-height: 100%;height: auto !important;height: 100%;margin: 0 auto -36px;}
+.inner-wrapper{min-height: 100%;height: auto !important;height: 100%;margin: 0 auto -36px;
+    width: 100%; position: absolute;}
 .footer-text{margin-top: 1em; color: #fff;  font-size: 11px;}
 
 @media (min-width: 768px){
@@ -196,7 +195,35 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 .app-sort-bar .sort i{color: #fff;}
 .cloud-app-listing{  width: 100%;position: relative;margin-bottom: 2em; cursor: pointer;}
 .cloud-app-listing i {position: absolute;z-index: 98;right: 16px;padding: 6px;background-color: #383d44;top: 0;}
+.app-thumb span{padding: 7px;background-color: #626262;border-radius: 19px;width: 33px;z-index: 99;position: absolute;
+    left: 130px;top: 135px;}
+.app-thumb span i {padding-left: 4px;}
 .app-icon{z-index: 99;z-index: 99;}
 .app-icon img{width: 100%;}
 .app-name {position: absolute;background-color: red;bottom: 0;padding: 9px 5px 2px;width: 100%;min-height: 3em;
     font-size: 17px;background-color: #383d44;font-weight: 300;}
+
+/* cloud app details */
+.side-pane-trigger {float:left;margin-left: 14px;  margin-top: -1px;background-color: #006690}
+.side-pane-trigger i{padding:15px 15px 14px; cursor: pointer;font-size: 1.5em;}
+.side-pane-trigger:hover{background-color: #005578}
+.right-pane{position: absolute;width: 100%;}
+.left-pane {position: fixed;width: 18em;z-index: 98;background-color: #222222;left: -18em;top: 53px;min-height: 100%;}
+.app-content-section {margin-top: 7em;}
+.left-pane ul{margin-top: 70px;  list-style: none;   -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;-webkit-margin-end: 0px;-webkit-padding-start: 0px;}
+.left-pane ul li{padding: 16px 22px 18px; cursor: pointer;}
+.left-pane ul li i{padding-right: 10px; font-size: 1.5em;}
+.left-pane ul li:hover{background-color: #101010;}
+.block-general {margin-top: 1em;background-color: #34495e;padding: 18px;  min-height: 30em;}
+.block-general h3, .block-team h3, .block-database h3{font-weight: 300;margin-top: 8px;}
+.version-number, .version-url{float: left;padding: 10px;background-color: #8b8b8b;}
+.block-life-cycle, .block-repos, .block-issues,.block-team, .block-database{ margin-top: 1em;padding: 18px;}
+.block-team{background-color: #95a5a6;}
+.block-database{background-color: #0090d9;}
+.block-life-cycle{background-color: #0090d9;}
+.block-repos{background-color: #735f87;}
+.block-issues{background-color: #0aa699;}
+.block-action-button{width:100%;}
+.block-database, .block-team{width: 100%;}
+.block-number {font-size: 5em;font-weight: 300;margin-top: -14px;}
