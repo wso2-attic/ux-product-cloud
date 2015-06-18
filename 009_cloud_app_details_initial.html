@@ -97,28 +97,54 @@
     </div>
 </div>
 <!-- EOF cloud menu -->
-
+<!-- BOF App factory menu -->
+<div class="navbar navbar-secondary">
+    <div class="container-fliud">
+        <div class="row">
+            <div class="side-pane-trigger">
+                <i class="fa fa-reorder"></i>
+            </div>
+            <div class="breadcrumb-secondary">
+                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud</span>
+            </div>
+        </div>
+    </div>
+</div><!-- EOF App factory menu -->
 <div class="inner-wrapper">
     <!-- left pane wrapper -->
-    <div class="left-pane" style="display:none">
-        Left pane
+    <div class="left-pane">
+
+        <ul>
+            <li>
+                <i class="fa fa-laptop"></i> Overview
+            </li>
+            <li>
+                <i class="fa fa-users"></i> Team
+            </li>
+            <li>
+                <i class="fa fa-cogs"></i> Repos & Builds
+            </li>
+            <li>
+                <i class="fa fa-database"></i> Databases
+            </li>
+            <li>
+                <i class="fa fa-wrench"></i> Runtime Configs
+            </li>
+            <li>
+                <i class="fa fa-tags"></i> Issues
+            </li>
+            <li>
+                <i class="fw fw-lifecycle"></i> Lifecycle Management
+            </li>
+            <li>
+                <i class="fa fa-hdd-o"></i> Logs
+            </li>
+        </ul>
     </div>
 
     <!-- left pane wrapper -->
     <div class="right-pane">
-    <!-- BOF App factory menu -->
-    <div class="navbar navbar-secondary">
-        <div class="container-fliud">
-            <div class="row">
-                <div class="side-pane-trigger col-xs-1">
-                    <i class="fa fa-cubes"></i>
-                </div>
-                <div class="col-md-3 breadcrumb-secondary">
-                    <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud</span>
-                </div>
-            </div>
-        </div>
-    </div><!-- EOF App factory menu -->
+
 
     <!-- BOF App factory menu actionbar -->
     <div class="action-bar">
@@ -131,13 +157,14 @@
     </div><!-- EOF App factory menu actionbar-->
 
 
-    <div class="container-fluid">
+    <div class="container-fluid app-content-section">
         <div class="row">
 
 
-          <div class="col-xs-12 app-preview">
+          <div class="col-md-12 app-preview">
               <div class="app-thumb">
                   <img src="images\sample-app-image.png" />
+                  <span><i class="fa fa-pencil"></i></span>
               </div>
               <div class="app-desc">
                 <h2>My Java App</h2>
@@ -166,8 +193,107 @@
                 </div>
               </div>
           </div>
-          <div class="col-md-9">9</div>
-          <div class="col-md-3">3</div>
+          <div class="col-md-9">
+              <div class="block-general">
+                  <div class="row">
+                      <div class="col-md-9">
+
+                          <select class="version-number">
+                              <option>trunk</option>
+                              <option>1.0.0</option>
+                          </select>
+                          <div class="version-url"><span>URL: http://javatest.djcompany.wso2app.com</span> </div>
+
+                      </div>
+                      <div class="col-md-3">
+                          <span class="fw-stack fw-lg btn-action-ico">
+                            <i class="fw fw-ring fw-stack-2x"></i>
+                            <i class="fw fw-add fw-stack-1x"></i>
+                          </span> Create Version
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-4" >
+                          <div class="block-life-cycle">
+                              <h3>Lifecycle Mgt</h3>
+                              <div class="block-icon">
+                                  <i class="fw fw-lifecycle fw-5x"></i>
+                              </div>
+                              <div class="block-description">
+                                  Application <strong>My Java App</strong> is in
+                                  <br>
+                                  <strong>Development</strong> Stage
+                              </div>
+                              <div class="block-action-button">
+                                <span class="fw-stack fw-lg btn-action-ico">
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-lifecycle fw-stack-1x"></i>
+                                  </span> Manage Lifecycle
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="block-repos">
+                              <h3>Repos and Builds</h3>
+                              <div class="block-icon">
+                                  <i class="fw fw-clock fw-5x"></i>
+                              </div>
+                              <div class="block-description">
+                                  0
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="block-issues">
+                              <h3>Open Issues</h3>
+                              <div class="block-icon">
+                                  <span class="fa-stack fa-lg fa-3x">
+                                      <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                      <i class="fa fa-exclamation fa-stack-1x fa-inverse"></i>
+                                  </span>
+                              </div>
+                              <div class="block-description">
+                                  0
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="block-team pull-left">
+                  <h3>Team</h3>
+                  <div class="block-icon pull-left">
+                    <i class="fa fa-users fa-5x"></i>
+                  </div>
+                  <div class="block-number pull-right">
+                    12
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="block-action-button">
+                        <span class="fw-stack fw-lg btn-action-ico">
+                            <i class="fw fw-ring fw-stack-2x"></i>
+                            <i class="fw fw-add fw-stack-1x"></i>
+                          </span> Invite Member
+                  </div>
+              </div>
+              <div class="block-database pull-left">
+                  <h3>Databases</h3>
+                  <div class="block-icon pull-left">
+                    <i class="fa fa-database fa-5x"></i>
+                  </div>
+                  <div class="block-number pull-right">
+                    04
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="block-action-button">
+                        <span class="fw-stack fw-lg btn-action-ico">
+                            <i class="fw fw-ring fw-stack-2x"></i>
+                            <i class="fw fw-add fw-stack-1x"></i>
+                          </span> Add Database
+                  </div>
+              </div>
+          </div>
 
 
         </div>
@@ -175,6 +301,7 @@
 
 
     </div>
+    <div class="clearfix"></div>
     <div id="push"></div>
 </div>
 <div id="footer">
@@ -190,10 +317,18 @@
 <script src="js/custom/custom.js"></script>
 
 <script>
-    $('.btn-action').click(function(){
-        $('.left-pane').toggle();
-        $('.right-pane').toggleClass('right-pane-push');
-        var getContentHeight = $('.right-pane').height();
+    $('.side-pane-trigger').click(function(){
+        var rightPane = $('.right-pane');
+        var leftPane = $('.left-pane');
+        if (rightPane.hasClass('visible')){
+            rightPane.animate({"left":"0em"}, "slow").removeClass('visible');
+            leftPane.animate({"left":"-18em"}, "slow");
+            $(this).find('i').removeClass('fa-arrow-left').addClass('fa-reorder');
+        } else {
+            rightPane.animate({"left":"18em"}, "slow").addClass('visible');
+            leftPane.animate({"left":"0em"}, "slow");
+            $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
+        }
     });
 </script>
 </body>
