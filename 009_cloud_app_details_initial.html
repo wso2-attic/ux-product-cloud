@@ -183,7 +183,7 @@
                             <span class="caret"></span>
                             <span class="sr-only">Toggle Dropdown</span>
                           </button>
-                          <ul class="dropdown-menu cu-btn-blue" role="menu">
+                          <ul class="dropdown-menu cu-btn-blue btn-edit" role="menu">
                             <li><a href="#">Use Cloud Editor</a></li>
                             <li><a href="#">Use Local IDE</a></li>
                           </ul>
@@ -206,24 +206,27 @@
 
                       </div>
                       <div class="col-md-3">
-                          <span class="fw-stack fw-lg btn-action-ico">
-                            <i class="fw fw-ring fw-stack-2x"></i>
-                            <i class="fw fw-add fw-stack-1x"></i>
-                          </span> Create Version
+                          <div class="btn-create-version">
+                              <span class="fw-stack fw-lg btn-action-ico">
+                                <i class="fw fw-ring fw-stack-2x"></i>
+                                <i class="fw fw-add fw-stack-1x"></i>
+                              </span> Create Version
+                          </div>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-md-4" >
                           <div class="block-life-cycle">
                               <h3>Lifecycle Mgt</h3>
-                              <div class="block-icon">
+                              <div class="block-icon pull-left">
                                   <i class="fw fw-lifecycle fw-5x"></i>
                               </div>
-                              <div class="block-description">
+                              <div class="block-description pull-right">
                                   Application <strong>My Java App</strong> is in
                                   <br>
                                   <strong>Development</strong> Stage
                               </div>
+                              <div class="clearfix"></div>
                               <div class="block-action-button">
                                 <span class="fw-stack fw-lg btn-action-ico">
                                     <i class="fw fw-ring fw-stack-2x"></i>
@@ -235,25 +238,28 @@
                       <div class="col-md-4">
                           <div class="block-repos">
                               <h3>Repos and Builds</h3>
-                              <div class="block-icon">
+                              <div class="block-icon pull-left">
                                   <i class="fw fw-clock fw-5x"></i>
                               </div>
-                              <div class="block-description">
-                                  0
+                              <div class="block-description-multiline pull-left">
+                                  3 Successfull<br>
+                                  1 Failed
                               </div>
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="block-issues">
                               <h3>Open Issues</h3>
-                              <div class="block-icon">
+                              <div class="block-icon pull-left">
                                   <span class="fa-stack fa-lg fa-3x">
                                       <i class="fa fa-circle-thin fa-stack-2x"></i>
                                       <i class="fa fa-exclamation fa-stack-1x fa-inverse"></i>
                                   </span>
                               </div>
-                              <div class="block-description">
-                                  0
+                              <div class="block-description-multiline pull-left">
+                                  <i class="fa  fa-bug"></i> 3 Bugs<br>
+                                  2 Features<br>
+                                  1 Vulnerability
                               </div>
                           </div>
                       </div>
