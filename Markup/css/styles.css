@@ -95,7 +95,12 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
         margin: 0px -15px;
     }
 
+}
 
+@media (min-width: 992px){
+    .description-action .cu-btn {
+        font-size: 23px !important;
+    }
 }
 
 @media (min-width: 1200px){
@@ -133,10 +138,19 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 .cloud-app-type {background-color: #949494;margin-top: 3em;min-height: 13em;position: relative;z-index: 100;padding: 1em;
     text-align: center;color: #fff;cursor: pointer;
 }
+
 .cloud-app-type i{margin: .4em}
 .listing{position: relative; font-size: 16px;}
-.long {width: 100%;height: 13em;z-index: 99;background-color: #949494;margin-top: .6em;padding: 0em 2em;color: #fff;}
-.cloud-app-selected {height: 14em;margin-bottom: -0.6em;}
+.long {width: 100%;min-height: 13em;z-index: 99;background-color: #949494;margin-top: .6em;padding: 0em 2em 1em;
+    color: #fff;}
+.cloud-app-selected {height: 14em !important;margin-bottom: -0.6em;max-height: 14em;}
+.type-name {
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 11px;
+    text-align: center;
+    width: 85%;
+}
 
 .app-color-one{background-color: #676767;  border-color: #676767;}
 .app-color-two{background-color: #37678d; border-color: #37678d;}
