@@ -14,12 +14,12 @@ $('.cloud-menu-popover').popover({
     $(document).on('click', '.cloud-app-type', function(){
 
         $('.listing').find('.longme').detach();
-
         if($('.cloud-app-type').hasClass('cloud-app-selected')){
             $('.cloud-app-type').removeClass('cloud-app-selected');
             $(this).addClass('cloud-app-selected');
         }else{
             $(this).addClass('cloud-app-selected');
+
         }
 
         var width = $( window ).width(),
