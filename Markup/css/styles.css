@@ -5,7 +5,7 @@ body{font-family: 'Roboto', sans-serif;font-size: 14px;line-height: 1.42857143;c
 .user-name{background-color: #1c1c1c;}
 .navbar-default {background-color: #0068d4;  border-color: #0065CD;}
 .user-image{width: 20px; margin: 0 0px 0px 10px;}
-
+.cloud-container {position: relative;top: 105px;}
 .cloud-menu{background-color: #151515;  width: 58px;}
 .navbar-secondary {background-color: #0498d5;border-radius: 0;max-height: 50px;margin-bottom: 0px;position: fixed;
     width: 100%;top: 53px;z-index: 100;
