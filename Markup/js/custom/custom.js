@@ -72,8 +72,15 @@ $('.cloud-menu-popover').popover({
                 $('.longme').fadeIn('slow')
             }else{
                 var ctest = parseInt(currentcount)+1;
-                $('#'+ctest+'\\.0').parent().after(appendHtml);
-                $('.longme').fadeIn('slow')
+                if(ctest > dataCount){
+                    $('#'+ dataCount+'\\.0').parent().after(appendHtml);
+                    $('.longme').fadeIn('slow')
+                }else{
+                    $('#'+ctest+'\\.0').parent().after(appendHtml);
+                    $('.longme').fadeIn('slow')
+
+                }
+
             }
 
         }else if(width <750 ){
