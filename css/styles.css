@@ -169,11 +169,6 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 .cloud-selected-app-type-name h1{font-weight: 200;margin-top: 1.5em;}
 
 /* application landing */
-.app-preview {
-    background:#464646;
-    padding:50px;
-}
-
 .app-preview h2 {
     color:#fff;
     font-weight: 300;
@@ -279,3 +274,10 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 .block-description{font-size: 1.3em;font-weight: 300;}
 .btn-edit li{font-size: 1.42em;font-weight: 100;}
 .left-pane .selected{background-color: #101010;}
+/* issues page */
+.msg-issues{
+    background: #464646;
+    padding: 40px 20px 10px;
+    font-size: 1.2em;
+    font-weight: 300;
+}
