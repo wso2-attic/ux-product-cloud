@@ -13,6 +13,7 @@
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
     <link href="css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -155,12 +156,6 @@
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
                 </span> Back to Overview
         </a>
-        <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                <span class="fw-stack fw-lg btn-action-ico">
-                    <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-add fw-stack-1x"></i>
-                </span> <span class="hidden-xs">Add New Issue</span>
-        </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
@@ -179,23 +174,31 @@
                     <table id="issuelist" class="display" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Extn.</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Issue</th>
+                            <th>Summery</th>
+                            <th>Version</th>
+                            <th>Type</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Reporter</th>
+                            <th>Assignee</th>
+                            <th>Edit</th>
+                            <th>Comment</th>
                         </tr>
                         </thead>
 
                         <tfoot>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Extn.</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Issue</th>
+                            <th>Summery</th>
+                            <th>Version</th>
+                            <th>Type</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Reporter</th>
+                            <th>Assignee</th>
+                            <th>Edit</th>
+                            <th>Comment</th>
                         </tr>
                         </tfoot>
                     </table>
@@ -243,22 +246,32 @@
     });
 
     $('.datatable table').dataTable({
+            responsive: true,
             "ajax": "objects.txt",
             "columns": [
-                { "data": "name" },
-                { "data": "position" },
-                { "data": "office" },
-                { "data": "extn" },
-                { "data": "start_date" },
-                { "data": "salary" }
+                { "data": "issue" },
+                { "data": "summery" },
+                { "data": "version" },
+                { "data": "type" },
+                { "data": "priority" },
+                { "data": "status" },
+                { "data": "reporter" },
+                { "data": "assignee" },
+                { "data": "edit" },
+                { "data": "comment" }
             ]
         }).columnFilter({
 			aoColumns: [
-			    { type: "select", values: [ 'shton Cox', 'Michael Bruce'] },
-                { type: "text" },
+			    null,
+			    null,
+			    { type: "select", values: [ '4.0.0', '3.0.0', '2.0.0', '1.0.0'] },
+                { type: "select", values: [ 'Bug', 'Feature', 'Improvement', 'defect'] },
+                { type: "select", values: [ 'Highest', 'High', 'Low', 'Lowest'] },
+                { type: "select", values: [ 'Open', 'Resolved'] },
                 null,
-                { type: "number" },
-                { type: "select" }
+			    null,
+			    null,
+			    null
             ]
 		});
 
