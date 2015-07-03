@@ -281,10 +281,12 @@
             '<span><i class="fa fa-'+ state.element.value.toLowerCase() +'"></i>&nbsp;&nbsp;' + state.text + '</span>'
           );
         return $state;
+
     };
 
     $('.select2').select2({
-        templateResult: formatState
+        templateResult: formatState,
+        templateSelection :formatState
     });
 </script>
 </body>
