@@ -13,6 +13,7 @@
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
     <link href="css/select2-4.0.0/select2.min.css" rel="stylesheet">
+    <link href="css/select2-4.0.0/select2.override.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -155,12 +156,6 @@
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
                 </span> Back to Issues
         </a>
-        <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                <span class="fw-stack fw-lg btn-action-ico">
-                    <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-add fw-stack-1x"></i>
-                </span> <span class="hidden-xs">Save Issue</span>
-        </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
@@ -177,26 +172,26 @@
                 <div class="form-group">
                     <label for="application-type">Type: </label>
                     <select id="application-type" class="form-control select2">
-                        <option value="1">Bug</option>
-                        <option value="2">Task</option>
-                        <option value="3">New Feature</option>
-                        <option value="4">Improvement</option>
+                        <option value="bug">Bug</option>
+                        <option value="tasks">Task</option>
+                        <option value="plus">New Feature</option>
+                        <option value="arrow-up">Improvement</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="priority">Priority: </label>
                     <select id="priority" class="form-control select2">
-                        <option value="1">Highest</option>
-                        <option value="2">High</option>
-                        <option value="3">Low</option>
-                        <option value="4">Lowest</option>
+                        <option value="angle-double-up">Highest</option>
+                        <option value="angle-up">High</option>
+                        <option value="angle-down">Low</option>
+                        <option value="angle-double-down">Lowest</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="status">Reporter: </label>
                     <select id="status" class="form-control select2">
-                        <option value="1">User</option>
-                        <option value="2">User 2</option>
+                        <option value="1">dakshika@wso2.com</option>
+                        <option value="2">user@wso2.com</option>
                     </select>
                 </div>
             </div>
@@ -213,15 +208,16 @@
                 <div class="form-group">
                     <label for="status">Severity: </label>
                     <select id="status" class="form-control select2">
-                        <option value="1">Success</option>
-                        <option value="2">Fail</option>
+                        <option value="ban">Blocker</option>
+                        <option value="exclamation">Critical</option>
+                        <option value="circle-o">Non Critical</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="status">Assignee: </label>
                     <select id="status" class="form-control select2">
-                        <option value="1">User</option>
-                        <option value="2">User 2</option>
+                        <option value="1">thusitha@wso2.com</option>
+                        <option value="2">user@wso2.com</option>
                     </select>
                 </div>
             </div>
@@ -229,6 +225,15 @@
                 <div class="form-group">
                     <label for="description">Description: </label>
                     <textarea class="form-control" rows="3" id="description" placeholder="Write a small description"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                        <span class="fw-stack fw-lg btn-action-ico">
+                            <i class="fw fw-ring fw-stack-2x"></i>
+                            <i class="fw fw-add fw-stack-1x"></i>
+                        </span>
+                        Save Issue
+                    </button>
                 </div>
                 <div class="clearfix"></div>
                 <div id="push"></div>
@@ -270,7 +275,17 @@
         }
     });
 
-    $('.select2').select2();
+    function formatState (state) {
+        if (!state.id) { return state.text; }
+          var $state = $(
+            '<span><i class="fa fa-'+ state.element.value.toLowerCase() +'"></i>&nbsp;&nbsp;' + state.text + '</span>'
+          );
+        return $state;
+    };
+
+    $('.select2').select2({
+        templateResult: formatState
+    });
 </script>
 </body>
 </html>
