@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/fontwso2-1.0/css/fontwso2-extend.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="css/select2-4.0.0/select2.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -106,7 +106,7 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Issues /
+                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Issues / New Issue
             </div>
         </div>
     </div>
@@ -153,53 +153,82 @@
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Back to Overview
+                </span> Back to Issues
         </a>
         <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fw fw-add fw-stack-1x"></i>
-                </span> <span class="hidden-xs">Add New Issue</span>
+                </span> <span class="hidden-xs">Save Issue</span>
         </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
-    <div class="container-fluid app-content-section">
+    <div class="container-fluid cloud-container">
         <div class="row">
-          <div class="col-md-12 msg-issues">
-                  You get a birds eye view of all the issues that have been created in applications where you are a member.
-              Issue tracking for a application version provides you the ability to create new issues per application
-              version, edit existing issues and search for issues based on a search criteria.
-          </div>
-        </div>
-        <div class="row">
+            <div class="col-md-5 forms">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="summery">Summery: </label>
+                        <input type="text" class="form-control" id="summery" placeholder="Summery">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                <div class="form-group">
+                    <label for="application-type">Type: </label>
+                    <select id="application-type" class="form-control select2">
+                        <option value="1">Bug</option>
+                        <option value="2">Task</option>
+                        <option value="3">New Feature</option>
+                        <option value="4">Improvement</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority: </label>
+                    <select id="priority" class="form-control select2">
+                        <option value="1">Highest</option>
+                        <option value="2">High</option>
+                        <option value="3">Low</option>
+                        <option value="4">Lowest</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="status">Reporter: </label>
+                    <select id="status" class="form-control select2">
+                        <option value="1">User</option>
+                        <option value="2">User 2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="version">Version: </label>
+                    <select id="version" class="form-control select2">
+                        <option value="4">4.0.0</option>
+                        <option value="3">3.0.0</option>
+                        <option value="2">2.0.0</option>
+                        <option value="1">1.0.0</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="status">Severity: </label>
+                    <select id="status" class="form-control select2">
+                        <option value="1">Success</option>
+                        <option value="2">Fail</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="status">Assignee: </label>
+                    <select id="status" class="form-control select2">
+                        <option value="1">User</option>
+                        <option value="2">User 2</option>
+                    </select>
+                </div>
+            </div>
             <div class="col-md-12">
-                <div id="push"></div>
-                <div class="datatable">
-                    <table id="issuelist" class="display" cellspacing="0" width="100%">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Extn.</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                        </thead>
-
-                        <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Extn.</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                        </tfoot>
-                    </table>
-
+                <div class="form-group">
+                    <label for="description">Description: </label>
+                    <textarea class="form-control" rows="3" id="description" placeholder="Write a small description"></textarea>
                 </div>
                 <div class="clearfix"></div>
                 <div id="push"></div>
@@ -222,8 +251,7 @@
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
+<script src="js/select2-4.0.0/select2.min.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -242,26 +270,7 @@
         }
     });
 
-    $('.datatable table').dataTable({
-            "ajax": "objects.txt",
-            "columns": [
-                { "data": "name" },
-                { "data": "position" },
-                { "data": "office" },
-                { "data": "extn" },
-                { "data": "start_date" },
-                { "data": "salary" }
-            ]
-        }).columnFilter({
-			aoColumns: [
-			    { type: "select", values: [ 'shton Cox', 'Michael Bruce'] },
-                { type: "text" },
-                null,
-                { type: "number" },
-                { type: "select" }
-            ]
-		});
-
+    $('.select2').select2();
 </script>
 </body>
 </html>
