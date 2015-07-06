@@ -185,22 +185,19 @@
                             <th>Edit</th>
                             <th>Comment</th>
                         </tr>
-                        </thead>
-
-                        <tfoot>
                         <tr>
-                            <th>Issue</th>
-                            <th>Summery</th>
-                            <th>Version</th>
-                            <th>Type</th>
-                            <th>Priority</th>
-                            <th>Status</th>
-                            <th>Reporter</th>
-                            <th>Assignee</th>
-                            <th>Edit</th>
-                            <th>Comment</th>
+                            <td></td>
+                            <td></td>
+                            <td>Version</td>
+                            <td>Type</td>
+                            <td>Priority</td>
+                            <td>Status</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
-                        </tfoot>
+                        </thead>
                     </table>
 
                 </div>
@@ -247,6 +244,7 @@
 
     $('.datatable table').dataTable({
             responsive: true,
+            "orderCellsTop": true,
             "ajax": "objects.txt",
             "columns": [
                 { "data": "issue" },
@@ -261,6 +259,7 @@
                 { "data": "comment" }
             ]
         }).columnFilter({
+            sPlaceHolder: "head:after",
 			aoColumns: [
 			    null,
 			    null,
