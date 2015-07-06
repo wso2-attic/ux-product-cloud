@@ -9,11 +9,11 @@
     font-weight:300;
 }
 
-table.dataTable thead .sorting{background-image:url("../images/datatables-1.10.7/sort_both.png")}
-table.dataTable thead .sorting_asc{background-image:url("../images/datatables-1.10.7/sort_asc.png")}
-table.dataTable thead .sorting_desc{background-image:url("../images/datatables-1.10.7/sort_desc.png")}
-table.dataTable thead .sorting_asc_disabled{background-image:url("../images/datatables-1.10.7/sort_asc_disabled.png")}
-table.dataTable thead .sorting_desc_disabled{background-image:url("../images/datatables-1.10.7/sort_desc_disabled.png")}
+table.dataTable thead .sorting{background-image:url("../../images/datatables-1.10.7/sort_both.png")}
+table.dataTable thead .sorting_asc{background-image:url("../../images/datatables-1.10.7/sort_asc.png")}
+table.dataTable thead .sorting_desc{background-image:url("../../images/datatables-1.10.7/sort_desc.png")}
+table.dataTable thead .sorting_asc_disabled{background-image:url("../../images/datatables-1.10.7/sort_asc_disabled.png")}
+table.dataTable thead .sorting_desc_disabled{background-image:url("../../images/datatables-1.10.7/sort_desc_disabled.png")}
 
 table.dataTable tbody tr{
     background-color: #777;
@@ -133,4 +133,11 @@ table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.s
     background: -ms-linear-gradient(left, #727272 0%, #727272 100%);
     background: linear-gradient(to right, #727272 0%, #727272 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#727272', endColorstr='#727272', GradientType=1 );
+}
+
+.dataTable .fa{
+    color:#fff;
+}
+.dataTable .fa:hover{
+    color:#999;
 }

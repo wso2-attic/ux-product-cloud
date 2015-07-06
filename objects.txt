@@ -9,20 +9,20 @@
       "status": "Open",
       "reporter": "dakshika@wso2.com",
       "assignee": "thusitha@wso2.com",
-      "edit": "asd",
-      "comment": "asd"
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
     },
     {
       "issue": "10002",
       "summery": "Delete button is not visible",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "type": "Bug",
       "priority": "Highest",
       "status": "Open",
       "reporter": "dakshika@wso2.com",
       "assignee": "thusitha@wso2.com",
-      "edit": "asd",
-      "comment": "asd"
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
     },
     {
       "issue": "10003",
@@ -33,116 +33,128 @@
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
       "assignee": "thusitha@wso2.com",
-      "edit": "asdad",
-      "comment": "asd"
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
     },
     {
-      "issue": "10001",
+      "issue": "10004",
       "summery": "Proper error message is not shown",
       "version": "1.0.0",
-      "type": "Bug",
-      "priority": "Highest",
+      "type": "Feature",
+      "priority": "Low",
       "status": "Open",
       "reporter": "dakshika@wso2.com",
       "assignee": "thusitha@wso2.com",
-      "edit": "asd",
-      "comment": "ads"
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
     },
     {
-      "issue": "10002",
+      "issue": "10005",
       "summery": "Delete button is not visible",
-      "version": "1.0.0",
-      "type": "Bug",
+      "version": "3.0.0",
+      "type": "Improvement",
       "priority": "Highest",
-      "status": "Open",
+      "status": "Resolved",
       "reporter": "dakshika@wso2.com",
       "assignee": "thusitha@wso2.com",
-      "edit": "asd",
-      "comment": "asd"
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
     },
     {
-      "issue": "10003",
+      "issue": "10006",
       "summery": "paragraph text are not justified",
-      "version": "2.0.0",
+      "version": "4.0.0",
       "type": "Defect",
+      "priority": "Lowest",
+      "status": "Resolved",
+      "reporter": "dakshika@wso2.com",
+      "assignee": "thusitha@wso2.com",
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+    },
+    {
+      "issue": "10007",
+      "summery": "Proper error message is not shown",
+      "version": "1.0.0",
+      "type": "Feature",
       "priority": "Low",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
       "assignee": "thusitha@wso2.com",
-      "edit": "asd",
-      "comment": "a"
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
     },
     {
-          "issue": "10001",
-          "summery": "Proper error message is not shown",
-          "version": "1.0.0",
-          "type": "Bug",
-          "priority": "Highest",
-          "status": "Open",
-          "reporter": "dakshika@wso2.com",
-          "assignee": "thusitha@wso2.com",
-          "edit": "asd",
-          "comment": "asd"
-        },
-        {
-          "issue": "10002",
-          "summery": "Delete button is not visible",
-          "version": "1.0.0",
-          "type": "Bug",
-          "priority": "Highest",
-          "status": "Open",
-          "reporter": "dakshika@wso2.com",
-          "assignee": "thusitha@wso2.com",
-          "edit": "asd",
-          "comment": "asd"
-        },
-        {
-          "issue": "10003",
-          "summery": "paragraph text are not justified",
-          "version": "2.0.0",
-          "type": "Defect",
-          "priority": "Low",
-          "status": "Resolved",
-          "reporter": "dakshika@wso2.com",
-          "assignee": "thusitha@wso2.com",
-          "edit": "asdad",
-          "comment": "asd"
-        },
-        {
-          "issue": "10001",
-          "summery": "Proper error message is not shown",
-          "version": "1.0.0",
-          "type": "Bug",
-          "priority": "Highest",
-          "status": "Open",
-          "reporter": "dakshika@wso2.com",
-          "assignee": "thusitha@wso2.com",
-          "edit": "asd",
-          "comment": "ads"
-        },
-        {
-          "issue": "10002",
-          "summery": "Delete button is not visible",
-          "version": "1.0.0",
-          "type": "Bug",
-          "priority": "Highest",
-          "status": "Open",
-          "reporter": "dakshika@wso2.com",
-          "assignee": "thusitha@wso2.com",
-          "edit": "asd",
-          "comment": "asd"
-        },
-        {
-          "issue": "10003",
-          "summery": "paragraph text are not justified",
-          "version": "2.0.0",
-          "type": "Defect",
-          "priority": "Low",
-          "status": "Resolved",
-          "reporter": "dakshika@wso2.com",
-          "assignee": "thusitha@wso2.com",
-          "edit": "asd",
-          "comment": "a"
-        }
+      "issue": "10008",
+      "summery": "Delete button is not visible",
+      "version": "3.0.0",
+      "type": "Improvement",
+      "priority": "Highest",
+      "status": "Resolved",
+      "reporter": "dakshika@wso2.com",
+      "assignee": "thusitha@wso2.com",
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+    },
+    {
+      "issue": "10009",
+      "summery": "paragraph text are not justified",
+      "version": "1.0.0",
+      "type": "Bug",
+      "priority": "Lowest",
+      "status": "Resolved",
+      "reporter": "dakshika@wso2.com",
+      "assignee": "thusitha@wso2.com",
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+    },
+    {
+      "issue": "10010",
+      "summery": "Proper error message is not shown",
+      "version": "1.0.0",
+      "type": "Feature",
+      "priority": "Low",
+      "status": "Open",
+      "reporter": "dakshika@wso2.com",
+      "assignee": "thusitha@wso2.com",
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+    },
+    {
+      "issue": "10011",
+      "summery": "Delete button is not visible",
+      "version": "2.0.0",
+      "type": "Improvement",
+      "priority": "Highest",
+      "status": "Resolved",
+      "reporter": "dakshika@wso2.com",
+      "assignee": "thusitha@wso2.com",
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+    },
+    {
+      "issue": "10012",
+      "summery": "paragraph text are not justified",
+      "version": "2.0.0",
+      "type": "Defect",
+      "priority": "Lowest",
+      "status": "Resolved",
+      "reporter": "dakshika@wso2.com",
+      "assignee": "thusitha@wso2.com",
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+    },
+    {
+      "issue": "10013",
+      "summery": "Proper error message is not shown",
+      "version": "3.0.0",
+      "type": "Feature",
+      "priority": "Low",
+      "status": "Resolved",
+      "reporter": "dakshika@wso2.com",
+      "assignee": "thusitha@wso2.com",
+      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
+      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+    }
   ]
 }
