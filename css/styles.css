@@ -250,15 +250,16 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 .block-general {margin-top: 1em;background-color: #34495e;padding: 18px;  min-height: 26em;}
 .block-general h3, .block-team h3, .block-database h3{font-weight: 300;margin-top: 8px;}
 .block-general h3{margin-bottom: 30px;}
-.version-number, .version-url{float: left;padding: 10px;background-color: #8b8b8b;}
-.version-url{width: 81%;}
+.version-number, .version-url{float: left;padding: 10px;background-color: #8b8b8b;border-color:transparent;}
+.version-url{width: 50%;}
+.sec .ctrl-edit-button{margin-left: -3px;margin-top: -2px;}
 .block-life-cycle, .block-repos, .block-issues,.block-team, .block-database{ margin-top: 1em;padding: 18px 18px 4px;}
 
 .block-team{background-color: #95a5a6;}
 .block-database{background-color: #0090d9;}
-.block-life-cycle{background-color: #0090d9;min-height: 18.5em;}
-.block-repos{background-color: #735f87;min-height: 18.5em;}
-.block-issues{background-color: #0aa699;min-height: 18.5em;}
+.block-life-cycle{background-color: #0090d9;min-height: 23em;}
+.block-repos{background-color: #735f87;min-height: 23em;}
+.block-issues{background-color: #0aa699;min-height: 23em;}
 .block-action-button{width:40%;text-align: right;float: right;padding: 8px;cursor: pointer;}
 .block-database, .block-team{width: 100%; }
 .block-number {font-size: 5em;font-weight: 300;margin-top: -14px;}
