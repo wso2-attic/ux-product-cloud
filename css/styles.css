@@ -282,3 +282,35 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
     font-size: 1.2em;
     font-weight: 300;
 }
+
+.gray-hr{
+    border-top:1px solid #333;
+    margin-top:60px;
+}
+.comment-line{
+    margin-bottom:20px;
+}
+.comment-line:last-child{
+    margin-bottom:50px;
+}
+.comment-line p{
+    color:#999;
+    padding:20px;
+    background:#202020;
+    border:1px solid #353535;
+    margin-bottom:0px;
+}
+.comment-line>span{
+    padding:4px 8px;
+    color:#666;
+    font-size:11px;
+    background:#353535;
+
+}
+.triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 23px 23px 0;
+    border-color: transparent #353535 transparent transparent;
+}
