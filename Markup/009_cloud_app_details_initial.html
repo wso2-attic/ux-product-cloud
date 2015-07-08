@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/fontwso2-1.0/css/fontwso2-extend.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
+    <link href="css/nanoscroller-0.8.7/nanoscroller.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -312,6 +313,130 @@
 
 
     </div>
+
+    <div class="notification-pane nano">
+        <div class="notification-pane-trigger">
+            <i class="fw fw-bell fw-1-5x"></i>
+        </div>
+        <div class="notifications nano-content">
+
+            <div class="notification-msg noti-success">
+                <div class="msg ">
+                    <i class="fw fw-ok "></i><span> 0.1.0 promoting from Testing to Production.</span>
+                </div>
+                <div class="notification-time"> 1 day 5 hours ago</div>
+            </div>
+
+            <div class="notification-msg noti-success">
+                <div class="msg">
+                    <i class="fw fw-ok"></i> <span>Smoke Tests Passed by dakshika.wso2.com for Testing stage in version 0.1.0</span>
+                </div>
+                <div class="notification-time"> 1 hour ago</div>
+            </div>
+
+            <div class="notification-msg  noti-error">
+                <div class="msg">
+                    <i class="fw fw-error"></i>
+                    <span>Fail to verify custom URL.</span>
+                </div>
+                <div class="notification-time"> 23 minutes ago</div>
+            </div>
+
+            <div class="notification-msg noti-success">
+                <div class="msg ">
+                    <i class="fw fw-ok"></i>
+                    <span>New custom URL added.</span>
+                </div>
+                <div class="notification-time"> 22 minutes ago</div>
+            </div>
+
+            <div class="notification-msg noti-warning">
+                <div class="msg ">
+                    <i class="fw fw-warning"></i>
+                    <span>Warning notification sample. This is another sample that
+                    we can show long msg.</span>
+                </div>
+                <div class="notification-time"> 22 minutes ago</div>
+            </div>
+
+            <div class="notification-msg noti-success">
+                <div class="msg ">
+                    <i class="fw fw-ok "></i> <span>0.1.0 promoting from Testing to Production.</span>
+                </div>
+                <div class="notification-time"> 1 day 5 hours ago</div>
+            </div>
+
+            <div class="notification-msg  noti-success">
+                <div class="msg">
+                    <i class="fw fw-ok"></i> <span>Smoke Tests Passed by dakshika.wso2.com for Testing stage in
+                    version 0.1.0</span>
+                </div>
+                <div class="notification-time"> 1 hour ago</div>
+            </div>
+
+            <div class="notification-msg noti-success">
+                <div class="msg ">
+                    <i class="fw fw-ok "></i><span> 0.1.0 promoting from Testing to Production.</span>
+                </div>
+                <div class="notification-time"> 1 day 5 hours ago</div>
+            </div>
+
+            <div class="notification-msg noti-success">
+                <div class="msg ">
+                    <i class="fw fw-ok"></i> <span>Smoke Tests Passed by dakshika.wso2.com for Testing stage in
+                    version 0.1.0</span>
+                </div>
+                <div class="notification-time"> 1 hour ago</div>
+            </div>
+
+            <div class="notification-msg noti-success">
+                <div class="msg">
+                    <i class="fw fw-ok "></i> <span>0.1.0 promoting from Testing to Production.</span>
+                </div>
+                <div class="notification-time"> 1 day 5 hours ago</div>
+            </div>
+
+            <div class="notification-msg noti-success">
+                <div class="msg">
+                    <i class="fw fw-ok"></i> <span>Smoke Tests Passed by dakshika.wso2.com for Testing stage in version 0.1.0</span>
+                </div>
+                <div class="notification-time"> 1 hour ago</div>
+            </div>
+
+            <div class="notification-msg noti-warning">
+                <div class="msg ">
+                    <i class="fw fw-warning"></i>
+                    <span>Warning notification sample. This is another sample that
+                    we can show long msg.</span>
+                </div>
+                <div class="notification-time"> 22 minutes ago</div>
+            </div>
+
+            <div class="notification-msg noti-warning">
+                <div class="msg ">
+                    <i class="fw fw-warning"></i>
+                    <span>Warning notification sample. This is another sample that
+                    we can show long msg.</span>
+                </div>
+                <div class="notification-time"> 22 minutes ago</div>
+            </div>
+
+            <div class="notification-msg noti-success">
+                <div class="msg">
+                    <i class="fw fw-ok "></i> <span>0.1.0 promoting from Testing to Production.</span>
+                </div>
+                <div class="notification-time"> 1 day 5 hours ago</div>
+            </div>
+
+            <div class="notification-msg noti-success">
+                <div class="msg">
+                    <i class="fw fw-ok"></i><span> Smoke Tests Passed by dakshika.wso2.com for Testing stage in version 0.1.0</span>
+                </div>
+                <div class="notification-time"> 1 hour ago</div>
+            </div>
+
+        </div>
+    </div>
     <div class="clearfix"></div>
     <div id="push"></div>
 </div>
@@ -324,6 +449,9 @@
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
+
+<!-- add custom scroller feature -->
+<script src="js/nanoscroller-0.8.7/jquery.nanoscroller.min.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -340,6 +468,22 @@
             leftPane.animate({"left":"0em"}, "slow");
             $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
         }
+    });
+
+    $('.notification-pane-trigger').click(function(){
+        var notificationPane = $('.notification-pane');
+        if(notificationPane.hasClass('visible')){
+            notificationPane.animate({"right":"0em"}, "slow").removeClass('visible');
+        }else{
+            console.log('hit')
+            notificationPane.animate({"right":"-24em"}, "slow").addClass('visible');
+        }
+    });
+
+    $(document).ready(function(){
+        var scrollHeight = $('.notification-pane').height() - 150;
+        $('.notifications').css('height', scrollHeight)
+        $(".nano").nanoScroller();
     });
 </script>
 </body>
