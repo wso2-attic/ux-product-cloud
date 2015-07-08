@@ -314,3 +314,6 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
     border-width: 0 23px 23px 0;
     border-color: transparent #353535 transparent transparent;
 }
+
+.add-issue-content{margin-top: 6em;}
+.add-issue-content #add-issue-button{margin-top: 2em; font-size: 30px; padding:10px 30px;}
