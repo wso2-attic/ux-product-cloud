@@ -317,3 +317,4 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 
 .add-issue-content{margin-top: 6em;}
 .add-issue-content #add-issue-button{margin-top: 2em; font-size: 30px; padding:10px 30px;}
+.add-issue-content #add-issue-button span.fw-stack{font-size: 20px;}
