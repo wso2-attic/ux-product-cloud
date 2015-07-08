@@ -286,13 +286,14 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 }
 
 .notifications .notification-time {
+    color:#666;
     font-size: .7em;
     float: left;
     margin-left: 23px;
     margin-top: 6px;
 }
 
-.msg>span, .notifications .notification-time {
+.msg>span{
     color: rgb(182, 182, 182);
     display: block;
     float: left;
