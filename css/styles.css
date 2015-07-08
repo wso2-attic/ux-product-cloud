@@ -8,7 +8,7 @@ body{font-family: 'Roboto', sans-serif;font-size: 14px;line-height: 1.42857143;c
 .cloud-container {position: relative;top: 105px;}
 .cloud-menu{background-color: #151515;  width: 58px;}
 .navbar-secondary {background-color: #0498d5;border-radius: 0;max-height: 50px;margin-bottom: 0px;position: fixed;
-    width: 100%;top: 53px;z-index: 100;
+    width: 100%;top: 53px;z-index: 101;
 }
 .navbar-secondary .row {margin-right: 0px;}
 .breadcrumb-secondary{color: #fff; font-size: 20px;margin: 12px 0 0 0px; float: left;}
@@ -241,6 +241,70 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 .side-pane-trigger:hover{background-color: #005578}
 .right-pane{position: absolute;width: 100%;}
 .left-pane {position: fixed;width: 18em;z-index: 98;background-color: #222222;left: -18em;top: 53px;min-height: 100%;}
+.notification-pane {
+    position: fixed;
+    width: 24em;
+    z-index: 100;
+    background-color: #222222;
+    right: 0em;
+    top: 104px;
+    min-height: 100%;
+}
+.notification-pane-trigger {
+    position: absolute;
+    left: -54px;
+    padding: 17px;
+    height: 53px;
+    background-color: rgb(34, 34, 34);
+    cursor: pointer;
+}
+
+.notifications {
+    padding: 10px 6px 10px;
+    overflow-y: scroll;
+}
+.notification-msg {
+    padding: 5px 10px;
+    background-color: rgb(46, 46, 46);
+    margin-bottom: 7px;
+    float: left;
+    width: 100%;
+    border-left: 4px solid;
+}
+.noti-success{
+    color: #40d47e;
+    border-left-color: #40d47e;
+}
+.noti-warning{
+    color: #e67e22;
+    border-left-color:#e67e22;
+}
+
+.noti-error{
+    color: #e74c3c; border-left-color: #e74c3c;
+
+}
+
+.notifications .notification-time {
+    font-size: .7em;
+    float: left;
+    margin-left: 23px;
+    margin-top: 6px;
+}
+
+.msg>span, .notifications .notification-time {
+    color: rgb(182, 182, 182);
+    display: block;
+    float: left;
+    width: 90%;
+}
+
+.notification-msg i {
+    margin-right: 5px;
+    float: left;
+    width: 7%;  margin-top: 4px;
+
+}
 .app-content-section {margin-top: 7em;}
 .left-pane ul{margin-top: 70px;  list-style: none;   -webkit-margin-after: 0em;
     -webkit-margin-start: 0px;-webkit-margin-end: 0px;-webkit-padding-start: 0px;}
