@@ -164,8 +164,13 @@
                 <div class="col-md-5 forms">
                     <div class="col-md-12">
                         <div class="form-group has-error has-feedback">
-                            <label for="summary">Summary: </label>
-                            <input type="text" class="form-control" id="summary" placeholder="Write a summary of your issue" autocomplete="off"><span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            <label for="summary">Summary:
+                                <i class="fa  fa-question-circle" data-toggle="tooltip" data-placement="left"
+                                   title="Write a summary of your issue, this is long one. you can add anything
+                                   like this"></i> </label>
+                            <input type="text" class="form-control" id="summary"
+                                   placeholder="Write a summary of your issue" autocomplete="off">
+                            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 
                             <label id="cname-error" class="error" for="cname">This field is required.</label>
                         </div>
@@ -289,6 +294,10 @@
         $('.select2').select2({
             templateResult: formatState,
             templateSelection :formatState
+        });
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip({'placement': 'right'});
         });
     </script>
 </body>
