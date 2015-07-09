@@ -383,3 +383,17 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 .add-issue-content{margin-top: 6em;}
 .add-issue-content #add-issue-button{margin-top: 2em; font-size: 30px; padding:10px 30px;}
 .add-issue-content #add-issue-button span.fw-stack{font-size: 20px;}
+
+.form-group .error {
+    line-height: 1.5em;
+    color: rgb(255, 255, 255);
+    background-color: rgb(192, 57, 43);
+    width: 100%;
+    padding: 5px 10px;
+    border-left: 5px solid rgb(231, 76, 60);
+    font-weight: 500;
+}
+
+.form-group .form-control-feedback{
+    top: 75px;
+}
