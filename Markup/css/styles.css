@@ -513,9 +513,6 @@ a.btn-action {
 }
 .forms label {
     font-weight: 300;
-    /*line-height: 5em;*/
-
-    margin-bottom: 20px
 }
 .forms .form-group {
     margin-bottom: 3.5em;
@@ -964,9 +961,6 @@ a.btn-action {
     font-weight: 500;
 }
 
-.form-control-feedback{
-    top: 39px;
-}
 .loading-overlay {
     width: 98%;
     top: 14px;
