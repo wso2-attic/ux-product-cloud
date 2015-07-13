@@ -1047,6 +1047,10 @@ a.btn-action {
 #noty_top_layout_container{
     top: 133px !important;
 }
+#noty_top_layout_container li{
+    border-radius: 0px !important;
+}
+
 .alert-success{
     background-color: #40D47E;
     border-color: #40D47E;
