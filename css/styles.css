@@ -27,7 +27,7 @@ body {
 }
 .cloud-container {
     position: relative;
-    top: 105px;
+    top: 125px;
 }
 .cloud-menu {
     background-color: #151515;
@@ -962,6 +962,10 @@ a.btn-action {
     padding: 5px 10px;
     border-left: 5px solid rgb(231, 76, 60);
     font-weight: 500;
+}
+
+.form-control-feedback{
+    top: 39px;
 }
 .loading-overlay {
     width: 98%;
