@@ -185,7 +185,7 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
 
 /* cloud new app creation */
 .cloud-selected-app-type {margin: 1em 2em 1em 0px;padding: 1.5em;}
-.forms label{font-weight: 300;line-height: 5em;}
+.forms label{font-weight: 300;/*line-height: 5em;*/}
 .forms input, .forms textarea{border-radius: 0px}
 .btn-file {position: relative;overflow: hidden;border-radius:0px;}
 .btn-file input[type=file] {position: absolute;top: 0;right: 0;min-width: 100%;min-height: 100%;font-size: 100px;
@@ -392,10 +392,6 @@ a.btn-action{color: #fff;text-decoration: none;font-weight: 300;display: inline-
     padding: 5px 10px;
     border-left: 5px solid rgb(231, 76, 60);
     font-weight: 500;
-}
-
-.form-group .form-control-feedback{
-    top: 75px;
 }
 
 .loading-overlay{
