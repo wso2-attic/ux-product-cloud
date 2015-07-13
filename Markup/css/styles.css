@@ -954,10 +954,10 @@ a.btn-action {
 .form-group .error {
     line-height: 1.5em;
     color: rgb(255, 255, 255);
-    background-color: rgb(192, 57, 43);
+    background-color: #e74c3c;
     width: 100%;
     padding: 5px 10px;
-    border-left: 5px solid rgb(231, 76, 60);
+    border-left: 5px solid #942F25;
     font-weight: 500;
 }
 
@@ -1040,4 +1040,17 @@ a.btn-action {
         transform: rotate(360deg);
         box-shadow: 0 -0.83em 0 -0.4em #ffffff, 0 -0.83em 0 -0.42em #ffffff, 0 -0.83em 0 -0.44em #ffffff, 0 -0.83em 0 -0.46em #ffffff, 0 -0.83em 0 -0.477em #ffffff;
     }
+}
+
+/* notification customization */
+/* noti overides */
+#noty_top_layout_container{
+    top: 133px !important;
+}
+.alert-success{
+    background-color: #40D47E;
+    border-color: #40D47E;
+    border-radius:0px;
+    margin: 15px;
+    color:#fff;
 }

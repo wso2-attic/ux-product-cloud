@@ -239,12 +239,20 @@
                             <label id="cname-error" class="error" for="cname">This field is required.</label>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                            <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="btn-error">
                         <span class="fw-stack fw-lg btn-action-ico">
                             <i class="fw fw-ring fw-stack-2x"></i>
                             <i class="fw fw-add fw-stack-1x"></i>
                         </span>
-                                Save Issue
+                                Error
+                            </button>
+
+                            <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="btn-success">
+                        <span class="fw-stack fw-lg btn-action-ico">
+                            <i class="fw fw-ring fw-stack-2x"></i>
+                            <i class="fw fw-add fw-stack-1x"></i>
+                        </span>
+                                Success
                             </button>
                         </div>
                         <div class="clearfix"></div>
@@ -269,10 +277,46 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
     <script src="js/select2-4.0.0/select2.min.js"></script>
+    <script type="text/javascript" src="js/noty-2.3.5/jquery.noty.packaged.min.js"></script>
+    <script type="text/javascript" src="js/noty-2.3.5/themes/noty.theme.wso2.js"></script>
     <!-- include custom js functions -->
     <script src="js/custom/custom.js"></script>
 
     <script>
+        //top level notifications -- ERROR
+        $('#btn-error').click(function(){
+            var n = noty({
+                theme:'wso2',
+                layout: 'top',
+                type: 'error',
+                text: 'Please complete all error marked fileds before you proceed. this is long error notification',
+                animation: {
+                    open: {height: 'toggle'}, // jQuery animate function property object
+                    close: {height: 'toggle'}, // jQuery animate function property object
+                    easing: 'swing', // easing
+                    speed: 500 // opening & closing animation speed
+                }
+            });
+        });
+
+        //top level notifications -- SUCCESS
+        $('#btn-success').click(function(){
+            var n = noty({
+                theme:'wso2',
+                layout: 'top',
+                type: 'success',
+                timeout:'3500',
+                text: 'Please complete all error marked fileds before you proceed. this is long error notification',
+                animation: {
+                    open: {height: 'toggle'}, // jQuery animate function property object
+                    close: {height: 'toggle'}, // jQuery animate function property object
+                    easing: 'swing', // easing
+                    speed: 500 // opening & closing animation speed
+                }
+            });
+        });
+
+
         $('.side-pane-trigger').click(function(){
             var rightPane = $('.right-pane');
             var leftPane = $('.left-pane');
