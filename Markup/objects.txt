@@ -2,7 +2,7 @@
   "data": [
     {
       "issue": "10001",
-      "summery": "Proper error message is not shown",
+      "summery": "Proper error message is not shown. So need to verify long line",
       "version": "1.0.0",
       "type": "Bug",
       "priority": "Highest",
