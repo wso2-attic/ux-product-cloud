@@ -13,6 +13,7 @@
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
     <link href="css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="css/datatables-1.10.7/dataTables.responsive.css" rel="stylesheet">
     <link href="css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
@@ -181,7 +182,7 @@
                         <thead>
                         <tr>
                             <th>Issue</th>
-                            <th>Summery</th>
+                            <th>Summary</th>
                             <th>Version</th>
                             <th>Type</th>
                             <th>Priority</th>
@@ -229,6 +230,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 <script src="js/datatables-1.10.7/jquery.dataTables.min.js"></script>
+<script src="js/datatables-1.10.7/dataTables.responsive.min.js"></script>
 <script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
@@ -253,16 +255,16 @@
             "orderCellsTop": true,
             "ajax": "objects.txt",
             "columns": [
-                { "data": "issue" },
-                { "data": "summery" },
-                { "data": "version" },
-                { "data": "type" },
-                { "data": "priority" },
-                { "data": "status" },
-                { "data": "reporter" },
-                { "data": "assignee" },
-                { "data": "edit" },
-                { "data": "comment" }
+                { "data": "issue", "width": "5%"},
+                { "data": "summery" , "width": "30%"},
+                { "data": "version" , "width": "8%"},
+                { "data": "type", "width": "8%" },
+                { "data": "priority", "width": "8%" },
+                { "data": "status" , "width": "8%"},
+                { "data": "reporter" , "width": "13%", "sClass" : "dt-body-right"},
+                { "data": "assignee" , "width": "13%", "sClass" : "dt-body-right"},
+                { "data": "edit", "orderable": false, "width": "4%", "sClass" : "dt-body-center" },
+                { "data": "comment", "orderable": false, "width": "5%", "sClass" : "dt-body-center" }
             ]
         }).columnFilter({
             sPlaceHolder: "head:after",
@@ -273,8 +275,8 @@
                 { type: "select", values: [ 'Bug', 'Feature', 'Improvement', 'defect'] },
                 { type: "select", values: [ 'Highest', 'High', 'Low', 'Lowest'] },
                 { type: "select", values: [ 'Open', 'Resolved'] },
-                null,
-			    null,
+                { "bSortable": false },
+                { "bSortable": false },
 			    null,
 			    null
             ]
