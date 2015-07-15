@@ -789,6 +789,16 @@ a.btn-action {
 .left-pane ul li:hover {
     background-color: #101010;
 }
+
+.left-pane a{
+    color: #fff;
+}
+
+.left-pane a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
 .block-general {
     margin-top: 1em;
     background-color: #34495e;
