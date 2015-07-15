@@ -1099,3 +1099,12 @@ a.btn-action {
     font-size: 11px;
     margin-top: 4px;
 }
+
+
+.datatable td a{
+    color: #fff;
+    cursor: pointer;
+}
+.datatable td a:hover{
+    color: #fff;
+}
