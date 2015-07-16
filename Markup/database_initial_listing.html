@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="css/fontwso2-1.0/css/fontwso2-extend.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
-    <link href="css/select2-4.0.0/select2.min.css" rel="stylesheet">
-    <link href="css/select2-4.0.0/select2.override.css" rel="stylesheet">
+    <link href="css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="css/datatables-1.10.7/dataTables.responsive.css" rel="stylesheet">
+    <link href="css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -107,7 +108,7 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Databases
+                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Databases /
             </div>
         </div>
     </div>
@@ -167,28 +168,34 @@
 
     <div class="container-fluid app-content-section">
         <div class="row">
-            <div class="col-md-12 msg-issues">
-                Orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-            </div>
+          <div class="col-md-12 msg-issues">
+              Orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          </div>
         </div>
-        <div class="row row-centered">
-            <div class="col-centered col-xs-10 col-sm-7  col-md-7 col-lg-6">
-                <div class="add-issue-content">
-                    <a id="add-issue-button" class="cu-btn cu-btn-md cu-btn-blue">
-                        <span class="fw-stack fw-lg btn-action-ico">
-                            <i class="fw fw-ring fw-stack-2x"></i>
-                            <i class="fw fw-add fw-stack-1x"></i>
-                        </span>
-                        <span class="hidden-xs">Create your first Database</span>
-                    </a>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="push"></div>
+                <div class="datatable">
+                    <table id="issuelist" class="display" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Database URL</th>
+                            <th>Type</th>
+                            <th>Users & Privileges</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                    </table>
+
                 </div>
-
+                <div class="clearfix"></div>
+                <div id="push"></div>
+                <div id="push"></div>
             </div>
-
         </div>
     </div><!-- /.container -->
 
@@ -206,7 +213,9 @@
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
-<script src="js/select2-4.0.0/select2.min.js"></script>
+<script src="js/datatables-1.10.7/jquery.dataTables.min.js"></script>
+<script src="js/datatables-1.10.7/dataTables.responsive.min.js"></script>
+<script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -225,19 +234,20 @@
         }
     });
 
-    function formatState (state) {
-        if (!state.id) { return state.text; }
-          var $state = $(
-            '<span><i class="fa fa-'+ state.element.value.toLowerCase() +'"></i>&nbsp;&nbsp;' + state.text + '</span>'
-          );
-        return $state;
+    $('.datatable table').dataTable({
+            responsive: true,
+            "orderCellsTop": true,
+            "ajax": "objects_databases.txt",
+            "columns": [
+                { "data": "name", "width": "5%"},
+                { "data": "description" , "width": "30%"},
+                { "data": "database_url" , "width": "30%"},
+                { "data": "type", "width": "8%" },
+                { "data": "userpriviledges", "orderable": false, "width": "4%", "sClass" : "dt-body-center" },
+                { "data": "trash", "orderable": false, "width": "5%", "sClass" : "dt-body-center" }
+            ]
+        });
 
-    };
-
-    $('.select2').select2({
-        templateResult: formatState,
-        templateSelection :formatState
-    });
 </script>
 </body>
 </html>
