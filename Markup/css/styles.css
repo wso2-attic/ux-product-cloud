@@ -760,13 +760,18 @@ a.btn-action {
     display: block;
     float: left;
     width: 90%;
+    margin-left: 2%;
 }
 .notification-msg i {
     margin-right: 5px;
     float: left;
-    width: 7%;
     margin-top: 4px;
 }
+
+.spin-overide{
+    color: rgb(182, 182, 182) !important;
+}
+
 .app-content-section {
     margin-top: 7em;
 }
