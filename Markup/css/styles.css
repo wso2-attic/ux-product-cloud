@@ -1123,3 +1123,19 @@ a.btn-action {
 .datatable td a:hover{
     color: #fff;
 }
+
+.password-generator{
+    border-radius: 0px;
+    margin-top: 1.7em;
+}
+.hide-pass{
+    float: right;
+    margin-top: -27px;
+    margin-right: 7px;
+    cursor: pointer;
+    color: rgb(40, 40, 40);
+}
+
+.hide-pass>i{
+    font-size: 1.5em;
+}
