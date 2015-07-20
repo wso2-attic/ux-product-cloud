@@ -260,7 +260,16 @@
         $('#password-modal').modal('show');
     });
 
-
+    $(function () {
+        $("#password")
+                .popover({ title: 'Password Meter', content: "Password must meet the following requirements:" })
+                .blur(function () {
+                    $(this).popover('hide');
+                })
+                .data('bs.popover')
+                .tip()
+                .addClass('password-meter');
+    });
 </script>
     <!-- Modal -->
     <div class="modal fade" id="password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
