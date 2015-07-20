@@ -1139,3 +1139,10 @@ a.btn-action {
 .hide-pass>i{
     font-size: 1.5em;
 }
+
+.modal-title{color: #000;}
+.modal-content, .btn{border-radius: 0px;}
+
+#password-modal{
+    margin-top: 4em;
+}
