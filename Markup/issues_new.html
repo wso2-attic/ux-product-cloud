@@ -165,7 +165,8 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="summary">Summary: </label>
-                        <input type="text" class="form-control" id="summary" placeholder="Write a summary of your issue">
+                        <input type="text" class="form-control" id="summary" placeholder="Write a summary of your issue"
+                                disabled>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -308,6 +309,8 @@
         templateResult: formatState,
         templateSelection :formatState
     });
+
+    $("#application-type").prop("disabled", true);
 </script>
 </body>
 </html>
