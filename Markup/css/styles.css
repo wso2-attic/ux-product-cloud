@@ -60,6 +60,16 @@ body {
 .breadcrumb-secondary span {
     margin-left: 0.5em
 }
+
+.breadcrumb-secondary a{
+    cursor: pointer;
+    color:#fff;
+}
+.breadcrumb-secondary a:hover{
+    color: #dbdbdb;
+    text-decoration: none;
+}
+
 .action-bar {
     background-color: #303030;
     min-height: 45px;
