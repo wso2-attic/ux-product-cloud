@@ -66,7 +66,7 @@ body {
     color:#fff;
 }
 .breadcrumb-secondary a:hover{
-    color: #dbdbdb;
+    color: rgba(255,255,255,0.75);
     text-decoration: none;
 }
 
@@ -1262,4 +1262,9 @@ a.btn-action {
 .switch .toggle-button{
     position: absolute;
     margin-top: -8px;
+}
+
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #CACACA ;
 }
