@@ -70,6 +70,10 @@ body {
     text-decoration: none;
 }
 
+.alert{
+    border-radius: 0px;
+}
+
 .action-bar {
     background-color: #303030;
     min-height: 45px;
@@ -1277,4 +1281,9 @@ a.btn-action {
 
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     background-color: #CACACA ;
+}
+
+/* custom URL section */
+.form-section{
+    margin-top: 3em;
 }
