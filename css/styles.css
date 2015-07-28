@@ -798,6 +798,7 @@ a.btn-action {
 .left-pane ul {
     margin-top: 70px;
     list-style: none;
+    padding-left: 0;
     -webkit-margin-after: 0em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
