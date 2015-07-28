@@ -566,6 +566,7 @@ a.btn-action {
 .app-preview {
     background: #464646;
     padding: 40px;
+    min-height: 13em;
 }
 .app-preview h2 {
     color: #fff;
@@ -846,7 +847,7 @@ a.btn-action {
     border-color: transparent;
 }
 .version-url {
-    width: 50%;
+    width: 48%;
 }
 
 .version-url>a>span{
@@ -944,6 +945,19 @@ a.btn-action {
     font-size: 1.3em;
     font-weight: 300;
 }
+
+.permission-change-block {
+    background-color: #034A6F;
+    width: 100%;
+    height: 50px;
+    margin-top: 3em;
+}
+
+.permission-change-block .block-action-button{
+    width: 100%;
+    text-align: center;
+}
+
 .btn-edit li {
     font-size: 1.42em;
     font-weight: 100;
