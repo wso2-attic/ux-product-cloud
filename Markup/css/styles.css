@@ -101,6 +101,11 @@ body {
 }
 /* general buttons */
 
+button[disabled]{
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
 .cu-btn {
     font-size: 1.1em;
     display: inline-block;
