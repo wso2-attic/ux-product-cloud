@@ -698,6 +698,10 @@ a.btn-action {
     background-color: #383d44;
     font-weight: 300;
 }
+
+.app-name i{
+    position: relative;
+}
 /* cloud app details */
 
 .side-pane-trigger {
