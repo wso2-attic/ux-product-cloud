@@ -1,0 +1,326 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #fff;
+    background-color: #fff;
+    padding-top: 50px;
+    background-color: #282828;
+}
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-nav>li>.dropdown-menu{
+    border-radius: 0px;
+}
+.navbar-inverse {
+    border-color: #222;
+}
+.user-name {
+    background-color: #1c1c1c;
+}
+.navbar-default {
+    background-color: #0068d4;
+    border-color: #0065CD;
+}
+.user-image {
+    width: 17px;
+    margin: 4px 10px 0px 10px;
+}
+.cloud-container {
+    position: relative;
+    top: 125px;
+}
+.cloud-menu {
+    background-color: #151515;
+    width: 58px;
+}
+/* general buttons */
+
+button[disabled]{
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.cu-btn {
+    font-size: 1.1em;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    border-radius: 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.cu-btn:active,
+.cu-btn.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, .125);
+}
+.cu-btn:hover,
+.cu-btn:visited,
+.cu-btn:focus {
+    color: #fff;
+    text-decoration: none;
+}
+.cu-btn-md {
+    padding: 10px 22px;
+    line-height: 1.3em;
+}
+.cu-btn-lg {} .cu-btn-sm {
+                  padding: 3px 11px;
+              }
+.cu-btn-blue {
+    background-color: #0288c0
+}
+.cu-btn-orange {
+    background-color: #F0AD4E
+}
+.cu-btn-gr-dark {
+    background-color: #1f1f1f
+}
+.cu-btn-gr-dark:hover {
+    background-color: #111
+}
+.cu-btn-gray {
+    background-color: #555555;
+}
+.wr-edit-button {
+    border-radius: 0;
+}
+.btn-group .btn+.btn {
+    margin-left: 0;
+}
+
+/* centered columns styles */
+
+.row-centered {
+    text-align: center;
+}
+.col-centered {
+    display: inline-block;
+    float: none;
+    text-align: center;
+    margin-right: -4px;
+}
+a.btn-action {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    display: inline-block;
+    text-transform: uppercase;
+    height: 53px;
+    padding: 9px 10px;
+}
+/* cloud popover menu related styles */
+
+.cloud-menu .popover {
+    border-radius: 0px;
+    width: 31em;
+    left: -27em !important;
+    max-width: 31em;
+    background-color: #006690
+}
+.cloud-menu .popover-title {
+    background-color: #006690;
+    font-size: 16px;
+    border-bottom: none;
+}
+.cloud-menu .popover.bottom>.arrow:after {
+    border-bottom-color: #006690;
+}
+.cloud-block {
+    float: left;
+    width: 9em;
+    height: 9em;
+    background-color: #fff;
+    margin: 0.5em 0em 0.5em 0.5em;
+    padding: 2em;
+    text-align: center;
+}
+.cloud-name {
+    margin-top: .3em;
+    font-weight: 300;
+}
+.cloud-menu-popover {
+    position: relative;
+    float: right;
+    padding: 1px 8px;
+    margin-right: 15px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+#cloud-menu-popover-xs {
+    margin-top: 9px;
+    color: #fff;
+    padding: 6px;
+    border: 1px solid rgb(62, 62, 62);
+}
+.navbar-header .popover {
+    border-radius: 0px;
+    width: 31em;
+    max-width: 13em;
+}
+.cloud-menu .popover-content {
+    padding: 0px;
+}
+.cloud-actions {
+    background-color: #005578;
+    float: left;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+}
+.cloud-actions h3 {
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 14px;
+    margin-top: 10px;
+}
+.cloud-block-invert {
+    color: #fff;
+    float: left;
+    width: 9em;
+    height: 8em;
+    background-color: #1f1f1f;
+    margin: 0.5em 0em 0.5em 0.5em;
+    padding: 2em;
+    text-align: center;
+    cursor: pointer;
+}
+.cloud-actions a:hover {
+    color: #d7d5d5;
+    background-color: #3d3d3d;
+    text-decoration: none
+}
+.cloud-apps a {
+    text-decoration: none;
+    color: #006690;
+    cursor: pointer
+}
+.cloud-apps a:hover {
+    text-decoration: none;
+    color: #006690;
+    background-color: #c5c5c5;
+}
+.cloud-apps .cloud-actions a {
+    color: #fff
+}
+/*footer section related styles*/
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333333;
+    z-index: 9999;
+}
+#footer,
+#push {
+    height: 36px;
+}
+.inner-wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -36px;
+    width: 100%;
+    position: absolute;
+}
+.footer-text {
+    margin-top: 1em;
+    color: #fff;
+    font-size: 11px;
+}
+@media (min-width: 768px) {
+    .menu-right {
+        float: right;
+        margin: 0px -15px;
+    }
+}
+@media (min-width: 992px) {
+    .description-action .cu-btn {
+        font-size: 23px !important;
+    }
+}
+@media (min-width: 1200px) {
+    .listing .col-lg-2 {
+        width: 13.666667%;
+    }
+}
+/* use for landing page blocks*/
+
+.cloud-app-select {
+    background-color: white;
+    padding: 1em;
+    margin-top: 4em;
+    min-height: 40em;
+    position: relative;
+}
+.cloud-intro {
+    margin-top: 12em;
+    color: #fff;
+}
+.cloud-intro .description {
+    margin-top: 2em;
+}
+.cloud-intro h1 {
+    font-weight: 300;
+}
+.cloud-app-select .heading {
+    margin: -14px -15px 0px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(100, 100, 100);
+    color: #fff;
+    font-size: 22px;
+}
+.row-full-height {
+    height: 100%;
+}
+.col-full-height {
+    vertical-align: middle;
+}
+.row-same-height {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.cloud-app-select .content {
+    padding: .5em;
+    max-height: 22em;
+    overflow: hidden;
+    color: #646464;
+}
+.cloud-app-select .btn-footer {
+    position: absolute;
+    bottom: 2em;
+    left: 0em;
+    background-color: rgb(237, 237, 237);
+    width: 100%;
+    margin-bottom: -2em;
+    height: 8em;
+}
+.cloud-app-select .btn-footer button {
+    margin-top: 3em;
+}
+.cloud-new-content {
+    margin-top: 17em;
+}
+.cloud-new-content #app-create-button {
+    margin-top: 2em;
+    font-size: 30px
+}
+.cloud-new-content .help {
+    margin-top: 2em;
+}
+.cloud-new-content h1 {
+    font-weight: 300;
+}
