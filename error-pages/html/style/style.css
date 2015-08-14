@@ -208,9 +208,9 @@ h2 {
 .button-label {
     position: absolute;
     left: 40%;
-    top: 59%;
+    /* top: 59%; */
     z-index: 1000;
-}
+    margin-top: 2%;}
 
 .text-label {
     /* position: absolute; */
