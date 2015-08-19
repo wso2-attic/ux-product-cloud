@@ -1312,7 +1312,6 @@ a.btn-action {
     margin-top: -8px;
 }
 
-
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     background-color: #CACACA ;
 }
@@ -1320,4 +1319,36 @@ a.btn-action {
 /* custom URL section */
 .form-section{
     margin-top: 3em;
+}
+
+@media screen and (min-width: 768px) {
+	.modal-dialog  {
+	    /* margin-top:20%; */
+	    width:800px;
+	}
+}
+.modal-content{
+    background-color:#464646;
+}
+.model-body{
+    color:#666;
+}
+.modal-header,.modal-footer{
+    border-color:#404040;
+}
+.modal-title{
+    color:#fff;
+}
+.close{
+    color:#fff;
+    text-shadow:none;
+}
+.no-pad-right{
+    padding-right:0px;
+}
+.no-pad-left{
+    padding-left:0px;
+}
+.padding-bottom-lg{
+    padding-bottom:30px;
 }
