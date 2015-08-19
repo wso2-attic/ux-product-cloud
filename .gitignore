@@ -58,4 +58,5 @@ xst/
 _ngo/
 _xmsgs/
 .idea
+.DS_Store
 atlassian-ide-plugin.xml
