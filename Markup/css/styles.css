@@ -1352,3 +1352,6 @@ a.btn-action {
 .padding-bottom-lg{
     padding-bottom:30px;
 }
+.popover-content div,.popover-content .password-verdict{
+    color:#333;
+}
