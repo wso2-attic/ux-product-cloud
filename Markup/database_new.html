@@ -185,6 +185,7 @@
                             <label for="password">Default Password: </label>
                             <input type="password" class="form-control" id="password" placeholder="add your password"
                                    data-schemaformat="password" >
+                            <div class="strength-meter"></div>
                     </div>
                     <div class="col-md-6">
                         <button type="button" class="btn btn-default password-generator">Generate Password</button>
@@ -280,9 +281,13 @@
     var options = {};
     options.ui = {
         showStatus: true,
-        showPopover: true,
         showErrors: true,
         showProgressBar: true,
+        showVerdictsInsideProgressBar: true,
+        viewports:{
+          progress: ".strength-meter"
+        },
+        showPopover: true,
     };
     options.rules = {
         activated: {
@@ -290,8 +295,13 @@
             wordRepetitions: true
         }
     };
-    $(':password').pwstrength(options);
-    //$('.progress').
+    $('#password').pwstrength(options);
+    $('#password').on('show.bs.popover', function () {
+        console.log("popover init");
+        //$('#password').next().addClass(".right");
+        $.fn.popover.Constructor.DEFAULTS.placement = 'right';
+    });
+
 </script>
     <!-- Modal -->
     <div class="modal fade" id="password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
