@@ -1197,6 +1197,13 @@ a.btn-action {
 .hide-pass>i{
     font-size: 1.5em;
 }
+.progress{
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
 
 .modal-title{color: #000;}
 .modal-content, .btn{border-radius: 0px;}
@@ -1315,7 +1322,11 @@ a.btn-action {
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     background-color: #CACACA ;
 }
-
+.form-control,.has-error .form-control:focus{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
 /* custom URL section */
 .form-section{
     margin-top: 3em;
