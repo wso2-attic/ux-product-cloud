@@ -185,6 +185,7 @@
                             <label for="password">Default Password: </label>
                             <input type="password" class="form-control" id="password" placeholder="add your password"
                                    data-schemaformat="password" >
+                            <div class="strength-meter"></div>
                     </div>
                     <div class="col-md-6">
                         <button type="button" class="btn btn-default password-generator">Generate Password</button>
@@ -227,6 +228,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 <script src="js/select2-4.0.0/select2.min.js"></script>
+<script src="js/pwstrength-1.2.7/pwstrength-bootstrap-1.2.7.min.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -246,7 +248,7 @@
     });
 
     //add show /hide option on user passsword field
-    $('input[type=password]').after('<span class="hide-pass"><i class="fa fa-eye"></i> </span>');
+    $('input[type=password]').after('<span class="hide-pass" title="Show/Hide Password"><i class="fa fa-eye"></i> </span>');
     $('.hide-pass').click(function(){
         if($(this).find('i').hasClass("fa-eye-slash")){
             $(this).parent().find('input[data-schemaformat=password]').attr('type', 'password');
@@ -262,6 +264,7 @@
         $('#password-modal').modal('show');
     });
 
+    /*
     $(function () {
         $("#password")
                 .popover({ title: 'Password Meter', content: "Password must meet the following requirements:" })
@@ -272,6 +275,33 @@
                 .tip()
                 .addClass('password-meter');
     });
+    */
+
+    "use strict";
+    var options = {};
+    options.ui = {
+        showStatus: true,
+        showErrors: true,
+        showProgressBar: true,
+        showVerdictsInsideProgressBar: true,
+        viewports:{
+          progress: ".strength-meter"
+        },
+        showPopover: true,
+    };
+    options.rules = {
+        activated: {
+            wordTwoCharacterClasses: true,
+            wordRepetitions: true
+        }
+    };
+    $('#password').pwstrength(options);
+    $('#password').on('show.bs.popover', function () {
+        console.log("popover init");
+        //$('#password').next().addClass(".right");
+        $.fn.popover.Constructor.DEFAULTS.placement = 'right';
+    });
+
 </script>
     <!-- Modal -->
     <div class="modal fade" id="password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
