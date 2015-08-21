@@ -135,7 +135,7 @@ html, body {
 }
 
 section {
-    width: 980px;
+    /* width: 980px;*/
     height: 700px;
     margin: 0 auto;
     text-align: center;
@@ -206,9 +206,10 @@ h2 {
 }
 
 .button-label {
-    position: absolute;
+    /*position: absolute;
     left: 40%;
-    /* top: 59%; */
+     top: 59%; */
+     position: relative;
     z-index: 1000;
     margin-top: 2%;}
 
@@ -345,6 +346,7 @@ h2 {
 
 img {
     width: 60%;
+    max-width: 600px;
 }
 
 body {
