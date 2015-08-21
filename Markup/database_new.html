@@ -289,13 +289,12 @@
         },
         showPopover: true,
     };
-    options.rules = {
-        activated: {
-            wordTwoCharacterClasses: true,
-            wordRepetitions: true
-        }
-    };
-    $('#password').pwstrength(options);
+
+    //$('#password').pwstrength(options);
+    $("#password").pwstrength("addRule", "testRule", function (options, word, score) {
+        console.log(options);
+        return word.match(/[a-z].[0-9]/) && score;
+    }, 10, true);
     $('#password').on('show.bs.popover', function () {
         console.log("popover init");
         //$('#password').next().addClass(".right");
