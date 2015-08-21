@@ -157,7 +157,7 @@ section {
     z-index: 10;
     padding: 10px 15px;
     color: #FFF;
-    font-size: 16px;
+    font-size: 3vmin;
     background: #29abe2;
     margin-right: 10px;
     text-align: center;
@@ -179,7 +179,7 @@ section {
     z-index: 10;
     padding: 10px 15px;
     color: #FFF;
-    font-size: 16px;
+    font-size: 3vmin;
     background: #333;
     text-align: center;
     cursor: pointer;
@@ -187,13 +187,13 @@ section {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 5vmin;
     font-weight: 400;
     margin: 7% 0 0 0;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 4vmin;
     font-weight: 400;
     margin: 0;
 }
