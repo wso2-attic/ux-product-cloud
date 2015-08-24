@@ -233,6 +233,11 @@
 <script src="js/custom/custom.js"></script>
 
 <script>
+
+    jQuery.fn.extend({
+
+    });
+
     $('.side-pane-trigger').click(function(){
         var rightPane = $('.right-pane');
         var leftPane = $('.left-pane');
@@ -297,8 +302,6 @@
     };
     $('#password').pwstrength(options);
     $('#password').on('show.bs.popover', function () {
-        console.log("popover init");
-        //$('#password').next().addClass(".right");
         $.fn.popover.Constructor.DEFAULTS.placement = 'right';
     });
 
