@@ -1064,6 +1064,9 @@ a.btn-action {
     margin: 15px;
     color:#fff;
 }
+.alert-info .close{
+    color:#666;
+}
 
 /* ========================================================================
  * loading styles
@@ -1410,7 +1413,17 @@ a.btn-action {
 }
 
 @media (min-width: 480px) {
-.version-url{
-    width:100%;
+    .version-url{
+        width:100%;
+    }
 }
+.invitaiton_list{
+    list-style:none;
+    margin-left:0px;
+    margin-top:10px;
+    padding-left:15px;
+}
+.invitaiton_list li span{
+    display:inline-block;
+    min-width:200px;
 }
