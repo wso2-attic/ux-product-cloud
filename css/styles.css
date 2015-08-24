@@ -1373,3 +1373,38 @@ a.btn-action {
 .popover-content div,.popover-content .password-verdict{
     color:#333;
 }
+
+.log-container{
+    margin-top: 2em;
+}
+.log-container > pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #cecece;
+    word-break: break-all;
+    word-wrap: break-word;
+    border: 1px solid #444;    
+    background-color:#333;
+    border-radius:0;
+}
+.button-container .fa-spinner{
+    margin: 0px 10px;
+}
+.button-container button{
+    margin: 0px !important;
+}
+.note{
+    padding: 10px;
+}
+.note i{
+    margin: 5px;
+}
+.note p{
+    width: 94%;
+}
+#date{
+    height: 42px;
+}

@@ -12,10 +12,13 @@
     <link rel="stylesheet" href="css/fontwso2-1.0/css/fontwso2-extend.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/dataTables.responsive.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
+    <link href="css/select2-4.0.0/select2.min.css" rel="stylesheet">
+    <link href="css/select2-4.0.0/select2.override.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+
+    <link href="css/daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -108,8 +111,7 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Databases /
-                Privileges / MY first
+                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Logs
             </div>
         </div>
     </div>
@@ -118,7 +120,7 @@
     <!-- left pane wrapper -->
     <div class="left-pane">
         <ul>
-            <li >
+            <li>
                 <a href="htttp://google.com" target="_blank"><i class="fa fa-laptop"></i> Overview</a>
             </li>
             <li>
@@ -127,7 +129,7 @@
             <li>
                 <a><i class="fa fa-cogs"></i> Repos & Builds</a>
             </li>
-            <li class="selected">
+            <li>
                 <a><i class="fa fa-database"></i> Databases</a>
             </li>
             <li>
@@ -139,7 +141,7 @@
             <li>
                 <a><i class="fw fw-lifecycle"></i> Lifecycle Management</a>
             </li>
-            <li>
+            <li class="selected">
                 <a><i class="fa fa-hdd-o"></i> Logs</a>
             </li>
             <li>
@@ -158,45 +160,94 @@
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Back to Database
-        </a>
-        <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                <span class="fw-stack fw-lg btn-action-ico">
-                    <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-add fw-stack-1x"></i>
-                </span> <span class="hidden-xs">Add New User</span>
+                </span> Back
         </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
     <div class="container-fluid app-content-section">
         <div class="row">
-          <div class="col-md-12 msg-issues">
-              Orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-              Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-          </div>
+            <div class="col-md-12 msg-issues">
+                Using this page, you can download server logs.
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
+        <div class='row'>
+            <div class="col-md-6 forms">
                 <div id="push"></div>
-                <div class="datatable">
-                    <table id="issuelist" class="display" cellspacing="0" width="100%">
-                        <thead>
-                        <tr>
-                            <th>User Name</th>
-                            <th>Attach user to Database</th>
-                            <th>Priviledges</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                        </thead>
-                    </table>
-
+                <div class='row'>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="download_logs_stage">Stage: </label>
+                            <select id="download_logs_stage" class="form-control select2">
+                                <option selected="" value="Development">Development</option>
+                                <option value="Testing">Testing</option>
+                                <option value="Production">Production</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="version">Version: </label>
+                            <select id="version" class="form-control select2">
+                                <option value="TRUNK">TRUNK</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="clearfix"></div>
-                <div id="push"></div>
-                <div id="push"></div>
+
+                <div class='note'>
+                    <i class='fa fa-info-circle fa-2x pull-left'></i>
+                    <p class='pull-right'>Logs of deployed applications are archived daily. Specify a date to download archived logs.
+To view logs that are not archived yet, click the <strong>View</strong> button.</p>
+                </div>
+                
+                <div class='row button-container'>
+                    <div class="col-md-5">
+                        <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                            <span class="fw-stack fw-sm btn-action-ico">
+                                <i class="fw fw-ring fw-stack-2x"></i>
+                                <i class="fw fw-down-arrow-2 fw-stack-1x"></i>
+                            </span>
+                            View Recent Logs
+                        </button>
+                        <i class="fa fa-spinner  fa-2x fa-pulse fa-spin spin-overide"></i>
+                    </div>
+                    <div class="col-md-7">
+                        <div class='row'>
+                            <div class='col-md-5'>
+                                <input type="text" id='date' name="daterange" class="form-control"/>
+                            </div>
+                            <div class='col-md-7'>
+                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                                    <span class="fw-stack fw-sm btn-action-ico">
+                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                        <i class="fw fw-down-arrow-2 fw-stack-1x"></i>
+                                    </span>
+                                    Download Archived Logs
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div id="push"></div>
+            <div class='col-md-8 log-container'>
+                
+                <pre id="download_logs_content" style="overflow-y: auto;">
+[DEV_AS][2015-08-21 02:05:50,646][org.wso2.carbon.user.core.ldap.ReadWriteLDAPUserStoreManager]LDAP connection created successfully in read-write mode
+
+[DEV_AS][2015-08-21 02:05:51,500][org.wso2.carbon.registry.core.jdbc.EmbeddedRegistryService]Connected to mount at governance in 6ms
+
+[DEV_AS][2015-08-21 02:05:51,688][org.wso2.carbon.registry.core.jdbc.EmbeddedRegistryService]Connected to mount at config in 4ms
+
+[DEV_AS][2015-08-21 02:05:53,560][org.wso2.carbon.core.multitenancy.TenantAxisConfigurator]Creating tenant AxisConfiguration for tenant: imeshc[4230]
+
+[DEV_AS][2015-08-21 02:05:55,126][org.wso2.carbon.identity.user.store.configuration.deployer.UserStoreConfigurationDeployer]User Store Configuration Deployer initiated.
+
+[DEV_AS][2015-08-21 02:05:55,786][org.wso2.carbon.webapp.mgt.TomcatGenericWebappsDeployer]Deployed webapp: StandardEngine[Catalina].StandardHost[localhost].StandardContext[/t/imeshc/webapps/demoapplication-default-SNAPSHOT].File[/mnt/10.0.60.38/wso2as-5.2.1/repository/tenants/4230/webapps/demoapplication-default-SNAPSHOT.war]
+</pre>
             </div>
         </div>
     </div><!-- /.container -->
@@ -211,62 +262,13 @@
         <div class="footer-text">WSO2 Cloud V: 1.2 . &copy; 2015 <i class="fw fw-wso2 fw-2x"></i> All Rights Reserved.</div>
     </div>
 </div>
-
-<!-- Model for previledge assignment -->
-<div id="privilege_edit_chkbox0" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Select User Privilege</h4>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12 section-title">Data</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;CREATE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;ALTER</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;INDEX</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;DROP</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;SHOW VIEW</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;CREATE ROUTINE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;ALTER ROUTINE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;EXECUTE</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12 section-title">Structure</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;CREATE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;ALTER</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;INDEX</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;DROP</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;SHOW VIEW</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;CREATE ROUTINE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;ALTER ROUTINE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' > &nbsp;EXECUTE</div>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="modal-footer">
-                <button id="privilege_edit_cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Save</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.min.js"></script>
-<script src="js/datatables-1.10.7/dataTables.responsive.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
+<script src="js/select2-4.0.0/select2.min.js"></script>
+<script src="js/daterangepicker/moment.js"></script>
+<script src="js/daterangepicker/daterangepicker.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -285,35 +287,39 @@
         }
     });
 
-    $('.datatable table').dataTable({
-            responsive: true,
-            "orderCellsTop": true,
-            "ajax": "objects_users.txt",
-            "columns": [
-                { "data": "username", "width": "10%"},
-                { "data": "attachuser" , "width": "5%","sClass" : "dt-body-center"},
-                { "data": "priviledges" , "width": "40%"},
-                { "data": "editpriviledges", "width": "3%","sClass" : "dt-body-center"  },
-                { "data": "trash", "orderable": false, "width": "3%", "sClass" : "dt-body-center" }
-            ],
-            "fnDrawCallback": function( oSettings ) {
-                $('.switch input[type=checkbox]').on("click",function(){
-                    var isChecked = $(".switch input[type=checkbox]").is(":checked");
-                     if(isChecked){
-                        var currentId = $(this).attr("id");
-                        $('#privilege_edit_'+ currentId).modal({
-                            show: true,
-                            keyboard: false,
-                            backdrop: 'static'
-                        });
-                        $('#privilege_edit_cancel').on('click', function (e) {
-                            $("#"+ currentId).removeAttr("checked");
-                        });
+    function formatState (state) {
+        if (!state.id) { return state.text; }
+        var $state;
+        if(state.element.attributes['data-icon']){
+            var $state = $(
+                    '<span><i class="fa '+ state.element.attributes['data-icon'].value.toLowerCase() +'"></i>&nbsp;&nbsp;'
+                    + state.text + '</span>'
+            );
+        }else{
+            var $state = $(
+                    '<span><i class="fa '+state.id.toLowerCase() +'"></i>&nbsp;&nbsp;'
+                    + state.text + '</span>'
+            );
+        }
 
-                     }
-                });
-            }
-        });
+        return $state;
+
+    };
+
+    $('.select2').select2({
+        templateResult: formatState,
+        templateSelection :formatState
+    });
+
+    $('#date').daterangepicker({
+        "singleDatePicker": true,
+        "startDate": "08/19/2015",
+        "endDate": "08/21/2015"
+    }, function(start, end, label) {
+      console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+    });
+
+    $("#application-type").prop("disabled", true);
 </script>
 </body>
 </html>
