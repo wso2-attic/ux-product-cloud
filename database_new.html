@@ -264,18 +264,6 @@
         $('#password-modal').modal('show');
     });
 
-    /*
-    $(function () {
-        $("#password")
-                .popover({ title: 'Password Meter', content: "Password must meet the following requirements:" })
-                .blur(function () {
-                    $(this).popover('hide');
-                })
-                .data('bs.popover')
-                .tip()
-                .addClass('password-meter');
-    });
-    */
 
     "use strict";
     var options = {};
@@ -290,14 +278,8 @@
         showPopover: true,
     };
 
-    //$('#password').pwstrength(options);
-    $("#password").pwstrength("addRule", "testRule", function (options, word, score) {
-        console.log(options);
-        return word.match(/[a-z].[0-9]/) && score;
-    }, 10, true);
+    $('#password').pwstrength(options);
     $('#password').on('show.bs.popover', function () {
-        console.log("popover init");
-        //$('#password').next().addClass(".right");
         $.fn.popover.Constructor.DEFAULTS.placement = 'right';
     });
 
