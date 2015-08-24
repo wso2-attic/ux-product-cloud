@@ -21,3 +21,12 @@
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background-color: #0498D5;
 }
+.select2-container .select2-selection--multiple{
+    border-radius: 0px;
+    height: 75px
+}
+.select2-container .select2-selection--multiple .select2-selection__choice{
+    background-color: #E4F3FD;
+    border: 1px solid #0498D5;
+    color: #333;
+}

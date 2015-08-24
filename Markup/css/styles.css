@@ -1408,3 +1408,17 @@ a.btn-action {
 #date{
     height: 42px;
 }
+
+.members-result-container h4, .members-result-container p {
+    padding: 0px;
+    margin: 0px;
+}
+.members-result-container h4{
+    margin-bottom: 5px;
+}
+.members-result-container{
+    padding-left: 10px;
+}
+.member-detail{
+    max-width: 90%;
+}
