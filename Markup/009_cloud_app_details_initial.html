@@ -8,8 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-3.2.0/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/fontwso2-1.0/css/fontwso2.css">
-    <link rel="stylesheet" href="css/fontwso2-1.0/css/fontwso2-extend.css">
+    <link rel="stylesheet" href="css/fontwso2-1.2/css/font-wso2.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
     <link href="css/nanoscroller-0.8.7/nanoscroller.css" rel="stylesheet">
@@ -200,12 +199,13 @@
                           <div class="sec">
                               <button class="cu-btn cu-btn-md cu-btn-gr-dark col-xs-6">Launch App</button>
                               <!-- edit code button -->
-                              <div class="btn-group ctrl-edit-button col-xs-6">
-                                  <button type="button" class="btn cu-btn cu-btn-md cu-btn-blue">Edit Code</button>
-                                  <button type="button" class="btn cu-btn cu-btn-md cu-btn-blue cu-dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                              <div class="btn-group ctrl-edit-button">
+                                  <a type="button" class="btn cu-btn cu-btn-md cu-btn-blue" href="#yourlink">Edit Code</a>
+                                  <a type="button" class="btn cu-btn cu-btn-md cu-btn-blue cu-dropdown-toggle"
+                                     data-toggle="dropdown" aria-expanded="false">
                                       <span class="caret"></span>
                                       <span class="sr-only">Toggle Dropdown</span>
-                                  </button>
+                                  </a>
                                   <ul class="dropdown-menu cu-btn-blue btn-edit" role="menu">
                                       <li><a href="#">Use Cloud Editor</a></li>
                                       <li><a href="#">Use Local IDE</a></li>
@@ -349,7 +349,7 @@
 
     <div class="notification-pane nano">
         <div class="notification-pane-trigger">
-            <i class="fw fw-bell fw-1-5x"></i>
+            <i class="fw fw-right-arrow fw-1-5x"></i>
         </div>
         <div class="notifications nano-content">
 
@@ -505,9 +505,12 @@
 
     $('.notification-pane-trigger').click(function(){
         var notificationPane = $('.notification-pane');
+        var notiTrigger = $('.notification-pane-trigger');
         if(notificationPane.hasClass('visible')){
+            notiTrigger.find('i').removeClass('fw-notification').addClass('fw-right-arrow');
             notificationPane.animate({"right":"0em"}, "slow").removeClass('visible');
         }else{
+            notiTrigger.find('i').removeClass('fw-right-arrow').addClass('fw-notification');
             notificationPane.animate({"right":"-24em"}, "slow").addClass('visible');
         }
     });

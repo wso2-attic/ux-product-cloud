@@ -8,16 +8,13 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-3.2.0/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/fontwso2-1.2/css/font-wso2.css">
+    <link rel="stylesheet" href="css/fontwso2-1.0/css/fontwso2.css">
+    <link rel="stylesheet" href="css/fontwso2-1.0/css/fontwso2-extend.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
     <link href="css/select2-4.0.0/select2.min.css" rel="stylesheet">
     <link href="css/select2-4.0.0/select2.override.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-
-    <link href="css/daterangepicker/daterangepicker.css" rel="stylesheet">
-
-    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -110,7 +107,8 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Logs
+                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Databases /
+                Add New User
             </div>
         </div>
     </div>
@@ -119,7 +117,7 @@
     <!-- left pane wrapper -->
     <div class="left-pane">
         <ul>
-            <li>
+            <li >
                 <a href="htttp://google.com" target="_blank"><i class="fa fa-laptop"></i> Overview</a>
             </li>
             <li>
@@ -128,7 +126,7 @@
             <li>
                 <a><i class="fa fa-cogs"></i> Repos & Builds</a>
             </li>
-            <li>
+            <li class="selected">
                 <a><i class="fa fa-database"></i> Databases</a>
             </li>
             <li>
@@ -140,7 +138,7 @@
             <li>
                 <a><i class="fw fw-lifecycle"></i> Lifecycle Management</a>
             </li>
-            <li class="selected">
+            <li>
                 <a><i class="fa fa-hdd-o"></i> Logs</a>
             </li>
             <li>
@@ -159,95 +157,51 @@
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Back
+                </span> Back to Databases
         </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
-    <div class="container-fluid app-content-section">
+    <div class="container-fluid cloud-container">
         <div class="row">
-            <div class="col-md-12 msg-issues">
-                Using this page, you can download server logs.
-            </div>
-        </div>
-        <div class='row'>
-            <div class="col-md-6 forms">
-                <div id="push"></div>
-                <div class='row'>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="download_logs_stage">Stage: </label>
-                            <select id="download_logs_stage" class="form-control select2">
-                                <option selected="" value="Development">Development</option>
-                                <option value="Testing">Testing</option>
-                                <option value="Production">Production</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="version">Version: </label>
-                            <select id="version" class="form-control select2">
-                                <option value="TRUNK">TRUNK</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-5 col-lg-5 forms">
 
-                <div class='note'>
-                    <i class='fa fa-info-circle fa-2x pull-left'></i>
-                    <p class='pull-right'>Logs of deployed applications are archived daily. Specify a date to download archived logs.
-To view logs that are not archived yet, click the <strong>View</strong> button.</p>
-                </div>
-                
-                <div class='row button-container'>
-                    <div class="col-md-5">
+                    <div class="form-group col-md-6">
+                        <label for="user-name">User Name: </label>
+                        <input type="text" class="form-control" id="user-name" placeholder="Enter user name">
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="form-group col-md-6">
+                            <label for="password">Password: </label>
+                            <input type="password" class="form-control" id="password" placeholder="add your password"
+                                   data-schemaformat="password" >
+                            <div class="strength-meter"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-default password-generator">Generate Password</button>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-6">
+                            <label for="password-confirm">Confirm Password: </label>
+                            <input type="password" class="form-control" id="password-confirm"
+                                   placeholder="confirm your password" data-schemaformat="password">
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="form-group">
                         <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
-                            <span class="fw-stack fw-sm btn-action-ico">
+                            <span class="fw-stack fw-lg btn-action-ico">
                                 <i class="fw fw-ring fw-stack-2x"></i>
-                                <i class="fw fw-down-arrow-2 fw-stack-1x"></i>
+                                <i class="fw fw-add fw-stack-1x"></i>
                             </span>
-                            View Recent Logs
+                            Add New User
                         </button>
-                        <i class="fa fa-spinner  fa-2x fa-pulse fa-spin spin-overide"></i>
                     </div>
-                    <div class="col-md-7">
-                        <div class='row'>
-                            <div class='col-md-5'>
-                                <input type="text" id='date' name="daterange" class="form-control"/>
-                            </div>
-                            <div class='col-md-7'>
-                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
-                                    <span class="fw-stack fw-sm btn-action-ico">
-                                        <i class="fw fw-ring fw-stack-2x"></i>
-                                        <i class="fw fw-down-arrow-2 fw-stack-1x"></i>
-                                    </span>
-                                    Download Archived Logs
-                                </button>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-            </div>
-            <div id="push"></div>
-            <div class='col-md-8 log-container'>
-                
-                <pre id="download_logs_content" style="overflow-y: auto;">
-[DEV_AS][2015-08-21 02:05:50,646][org.wso2.carbon.user.core.ldap.ReadWriteLDAPUserStoreManager]LDAP connection created successfully in read-write mode
 
-[DEV_AS][2015-08-21 02:05:51,500][org.wso2.carbon.registry.core.jdbc.EmbeddedRegistryService]Connected to mount at governance in 6ms
 
-[DEV_AS][2015-08-21 02:05:51,688][org.wso2.carbon.registry.core.jdbc.EmbeddedRegistryService]Connected to mount at config in 4ms
-
-[DEV_AS][2015-08-21 02:05:53,560][org.wso2.carbon.core.multitenancy.TenantAxisConfigurator]Creating tenant AxisConfiguration for tenant: imeshc[4230]
-
-[DEV_AS][2015-08-21 02:05:55,126][org.wso2.carbon.identity.user.store.configuration.deployer.UserStoreConfigurationDeployer]User Store Configuration Deployer initiated.
-
-[DEV_AS][2015-08-21 02:05:55,786][org.wso2.carbon.webapp.mgt.TomcatGenericWebappsDeployer]Deployed webapp: StandardEngine[Catalina].StandardHost[localhost].StandardContext[/t/imeshc/webapps/demoapplication-default-SNAPSHOT].File[/mnt/10.0.60.38/wso2as-5.2.1/repository/tenants/4230/webapps/demoapplication-default-SNAPSHOT.war]
-</pre>
-            </div>
         </div>
     </div><!-- /.container -->
 
@@ -266,8 +220,7 @@ To view logs that are not archived yet, click the <strong>View</strong> button.<
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 <script src="js/select2-4.0.0/select2.min.js"></script>
-<script src="js/daterangepicker/moment.js"></script>
-<script src="js/daterangepicker/daterangepicker.js"></script>
+<script src="js/pwstrength-1.2.7/pwstrength-bootstrap-1.2.7.min.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -286,39 +239,61 @@ To view logs that are not archived yet, click the <strong>View</strong> button.<
         }
     });
 
-    function formatState (state) {
-        if (!state.id) { return state.text; }
-        var $state;
-        if(state.element.attributes['data-icon']){
-            var $state = $(
-                    '<span><i class="fa '+ state.element.attributes['data-icon'].value.toLowerCase() +'"></i>&nbsp;&nbsp;'
-                    + state.text + '</span>'
-            );
+    //add show /hide option on user passsword field
+    $('input[type=password]').after('<span class="hide-pass" title="Show/Hide Password"><i class="fa fa-eye"></i> </span>');
+    $('.hide-pass').click(function(){
+        if($(this).find('i').hasClass("fa-eye-slash")){
+            $(this).parent().find('input[data-schemaformat=password]').attr('type', 'password');
+            $(this).find('i').removeClass( "fa-eye-slash" );
         }else{
-            var $state = $(
-                    '<span><i class="fa '+state.id.toLowerCase() +'"></i>&nbsp;&nbsp;'
-                    + state.text + '</span>'
-            );
+            $(this).find('i').addClass( "fa-eye-slash" );
+            $(this).parent().find('input[data-schemaformat=password]').attr('type', 'text');
         }
 
-        return $state;
+    });
 
+    $('.password-generator').click(function(){
+        $('#password-modal').modal('show');
+    });
+
+
+    "use strict";
+    var options = {};
+    options.ui = {
+        showStatus: true,
+        showErrors: true,
+        showProgressBar: true,
+        showVerdictsInsideProgressBar: true,
+        viewports:{
+          progress: ".strength-meter"
+        },
+        showPopover: true,
     };
 
-    $('.select2').select2({
-        templateResult: formatState,
-        templateSelection :formatState
+    $('#password').pwstrength(options);
+    $('#password').on('show.bs.popover', function () {
+        $.fn.popover.Constructor.DEFAULTS.placement = 'right';
     });
 
-    $('#date').daterangepicker({
-        "singleDatePicker": true,
-        "startDate": "08/19/2015",
-        "endDate": "08/21/2015"
-    }, function(start, end, label) {
-      console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-    });
-
-    $("#application-type").prop("disabled", true);
 </script>
+    <!-- Modal -->
+    <div class="modal fade" id="password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+         >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Password Generator</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Use this Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
