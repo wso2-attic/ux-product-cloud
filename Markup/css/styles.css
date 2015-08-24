@@ -1413,7 +1413,6 @@ a.btn-action {
     height: 42px;
 }
 
-
 .members-result-container h4, .members-result-container p {
     padding: 0px;
     margin: 0px;
@@ -1426,6 +1425,10 @@ a.btn-action {
 }
 .member-detail{
     max-width: 90%;
+}
+
+.fw-1-5x{
+    font-size: 1.5em;
 }
 
 @media (min-width: 480px) {
