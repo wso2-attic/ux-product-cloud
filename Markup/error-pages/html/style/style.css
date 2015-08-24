@@ -1,9 +1,12 @@
-/* Regular */
+
 @font-face {
-    font-family: 'Mf Kazincbarcika';
-    url('../fonts/Mf Kazincbarcika.ttf') format('truetype'),
+    font-family: 'mf_kazincbarcikaregular';
+    src: url('../fontsmf_kazincbarcikaMf Kazincbarcika.eot');
+    src: url('../fontsmf_kazincbarcikaMf Kazincbarcika.eot?#iefix') format('embedded-opentype'),
+    url('../fontsmf_kazincbarcikaMf Kazincbarcika.woff2') format('woff2'),
+    url('../fontsmf_kazincbarcikaMf Kazincbarcika.woff') format('woff'),
+    url('../fontsmf_kazincbarcikaMf Kazincbarcika.ttf') format('truetype');
     font-weight: normal;
-    font-weight: 400;
     font-style: normal;
 
 }
@@ -72,7 +75,7 @@ h1 {
     font-size: 6vmin;
     font-weight: 400;
     margin: 9% 0 0.3% 0;
-    font-family: 'Mf Kazincbarcika';
+    font-family: 'mf_kazincbarcikaregular';
 
 }
 
@@ -80,7 +83,7 @@ h2 {
     font-size: 3.5vmin;
     font-weight: 100;
     margin: 0;
-    font-family: 'Mf Kazincbarcika';
+    font-family: 'mf_kazincbarcikaregular';
 }
 
 .label-report:hover {
