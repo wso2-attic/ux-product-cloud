@@ -72,6 +72,7 @@ body {
 
 .alert{
     border-radius: 0px;
+    margin: 15px;
 }
 
 .action-bar {
@@ -1056,7 +1057,6 @@ a.btn-action {
 #noty_top_layout_container li{
     border-radius: 0px !important;
 }
-
 .alert-success{
     background-color: #40D47E;
     border-color: #40D47E;
@@ -1407,4 +1407,10 @@ a.btn-action {
 }
 #date{
     height: 42px;
+}
+
+@media (min-width: 480px) {
+.version-url{
+    width:100%;
+}
 }
