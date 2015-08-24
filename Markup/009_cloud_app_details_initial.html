@@ -191,15 +191,22 @@
                   <div class="row">
                       <div class="col-xs-12 col-md-9">
 
-                          <select class="version-number">
-                              <option>trunk</option>
-                              <option>1.0.0</option>
-                          </select>
-                          <div class="version-url"><a><span>URL: http://javatest.djcompany.wso2app.com</span></a> </div>
+
+                          <div class="btn-group pull-left version-number">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  trunk <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">trunk</a></li>
+                                  <li><a href="#">1.0.0</a></li>
+                                  <li><a href="#">2.0.0</a></li>
+                              </ul>
+                          </div>
+                          <div class="version-url"><a href="#"><span>URL: http://javatest.djcompany.wso2app.com</span></a> </div>
                           <div class="sec">
-                              <button class="cu-btn cu-btn-md cu-btn-gr-dark col-xs-6">Launch App</button>
+                              <button class="cu-btn cu-btn-md cu-btn-gr-dark btn-launch-app">Launch App</button>
                               <!-- edit code button -->
-                              <div class="btn-group ctrl-edit-button">
+                              <div class="btn-group ctrl-edit-button btn-edit-code">
                                   <a type="button" class="btn cu-btn cu-btn-md cu-btn-blue" href="#yourlink">Edit Code</a>
                                   <a type="button" class="btn cu-btn cu-btn-md cu-btn-blue cu-dropdown-toggle"
                                      data-toggle="dropdown" aria-expanded="false">
