@@ -1434,7 +1434,26 @@ a.btn-action {
 .fw-1-5x{
     font-size: 1.5em;
 }
-
+@media (max-width: 1200px) {
+    .version-url{
+        width:44.4%;
+    }
+    .btn-edit-code > a{
+        margin-top:-3px;
+    }
+    .block-description-multiline{
+        margin-left:0em;
+    }
+    .block-action-button,.block-life-cycle .block-action-button{
+        width:100%;
+    }
+    .block-description-multiline{
+        font-size:1em;
+    }
+    .block-description{
+        margin-top:1em;
+    }
+}
 @media (max-width: 768px) {
     .version-url{
         width:45.8%;
@@ -1442,6 +1461,14 @@ a.btn-action {
     .btn-edit-code > a{
         margin-top:-3px;
     }
+    .block-description-multiline{
+        margin-left:5em;
+        font-size:1.3em;
+    }
+    .block-description{
+        margin-top:0em;
+    }
+
 }
 @media (max-width: 480px) {
     .version-url{
@@ -1454,10 +1481,7 @@ a.btn-action {
         width:100%;
     }
     .btn-launch-app{
-        width:50%;
-    }
-    .btn-launch-app{
-       width:49%;
+       width:60%;
     }
     .btn-edit-code > a{
             margin-top:0px;
@@ -1483,4 +1507,10 @@ a.btn-action {
 .invitaiton_list li span{
     display:inline-block;
     min-width:200px;
+}
+.margin-top-xs{
+    margin-top:1em;
+}
+.no-gutter-right{
+    padding-right:0px;
 }
