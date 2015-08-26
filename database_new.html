@@ -282,11 +282,6 @@
     });
 
 
-   // $('.password-generator').click(function(){
-     //   $('#password-modal').modal('show');
-    //});
-
-
     //password strength meter logic
     $("#password").on("focus keyup", function () {
         var score = 0;
@@ -354,7 +349,7 @@
         }
     });
 
-    $("#password").popover({ title: 'Password strength meter', html:true, content: $("#password_strength_wrap").html(), placement: 'top', trigger:'click focus keypress' });
+    $("#password").popover({ title: 'Password strength meter', html:true, content: $("#password_strength_wrap").html(), placement: 'top', trigger:'focus keypress' });
     $("#password").blur(function () {
         $(".password_strength_meter .popover").popover("hide");
     });
@@ -374,6 +369,10 @@
             $(".password-generator").attr('data-original-title', generatedPassword)
               .tooltip('show',{ placement: 'right'});
             $( "#password" ).trigger('focus');
+            if(!$('.hide-pass').find('i').hasClass("fa-eye-slash")){
+                $('.hide-pass').click();
+            }
+
         }
     });
 
