@@ -1600,7 +1600,7 @@ a.btn-action {
     margin-right:5px;
 }
 #pswd_info ul li.valid {
-        color: #33cc00;
+        color: #27ae60;
 }
 #passwordStrength {
     display: block;
@@ -1626,6 +1626,6 @@ a.btn-action {
 }
 
 .strength4 {
-    background: none repeat scroll 0 0 #33cc00;/* best */
+    background: none repeat scroll 0 0 #27ae60;/* best */
     width: 100%;
 }
