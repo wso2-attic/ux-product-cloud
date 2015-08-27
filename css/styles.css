@@ -1635,8 +1635,7 @@ a.btn-action {
 .org_type{
     font-size: 11px;
     background:#464646;
-    padding:4px;
-    padding-right:8px;
+    padding:4px 8px;
 }
 .role_type_tag{
     display:inline-block;
@@ -1673,4 +1672,8 @@ a.btn-action {
 }
 .org_apim .role_type_tag{
     border-color:#D64541;
+}
+
+.data-select-all,.structure-select-all{
+    margin-left:3px;
 }
