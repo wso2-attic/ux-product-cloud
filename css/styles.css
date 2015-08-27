@@ -1376,7 +1376,7 @@ a.btn-action {
     font-size: 17px;
     margin: 20px 0px 14px 0px;
     background-color: #3C3C3C;
-    padding: 3px;
+    padding: 3px 10px;
 }
 
 .log-container{
@@ -1625,4 +1625,52 @@ a.btn-action {
 .strength4 {
     background: none repeat scroll 0 0 #27ae60;/* best */
     width: 100%;
+}
+
+.role_type{
+    font-size: 11px;
+    display:inline-block;
+    margin-left:10px;
+}
+.org_type{
+    font-size: 11px;
+    background:#464646;
+    padding:4px;
+    padding-right:8px;
+}
+.role_type_tag{
+    display:inline-block;
+    border:1px solid #464646;
+    padding:2px 8px;
+    background:#555;
+}
+.role_type .triangle{
+    float:left;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 14px 21px 0;
+    border-color: transparent #464646 transparent transparent;
+    line-height: 2;
+}
+
+/*App factory*/
+.org_af .triangle{
+    border-color: transparent #22A7F0 transparent transparent;
+}
+.org_af .org_type{
+    background:#22A7F0;
+}
+.org_af .role_type_tag{
+    border-color:#22A7F0;
+}
+/*Api manager*/
+.org_apim .triangle{
+    border-color: transparent #D64541 transparent transparent;
+}
+.org_apim .org_type{
+    background:#D64541;
+}
+.org_apim .role_type_tag{
+    border-color:#D64541;
 }
