@@ -251,7 +251,7 @@
         }
     });
 
-    $('.datatable table').dataTable({
+    var table = $('#issuelist').dataTable({
             responsive: true,
             "orderCellsTop": true,
             "ajax": "objects.txt",
@@ -264,9 +264,13 @@
                 { "data": "status" , "width": "8%"},
                 { "data": "reporter" , "width": "13%", "sClass" : "dt-body-right"},
                 { "data": "assignee" , "width": "13%", "sClass" : "dt-body-right"},
-                { "data": "edit", "orderable": false, "width": "4%", "sClass" : "dt-body-center" },
-                { "data": "comment", "orderable": false, "width": "5%", "sClass" : "dt-body-center" }
-            ]
+                { "data": null, "orderable": false, "width": "4%", "sClass" : "dt-body-center" },
+                { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" }
+            ],
+        "columnDefs": [
+            { "targets": -2,"data": null,"defaultContent": "<a class='edit'><i class='fa fa-edit'></i></a>" },
+            { "targets": -1,"data": null,"defaultContent": "<a class='comment' href='#'><i class='fa  fa-trash'></i></a>" }
+        ]
         }).columnFilter({
             sPlaceHolder: "head:after",
 			aoColumns: [
@@ -282,6 +286,15 @@
 			    null
             ]
 		});
+
+		$('#issuelist tbody').on( 'click', '.edit', function () {
+        var data = table.api().row( $(this).parents('tr') ).data();
+        console.log( data.issue +"'s reporter is: "+ data.reporter );
+        });
+        $('#issuelist tbody').on( 'click', '.comment', function () {
+            var data = table.api().row( $(this).parents('tr') ).data();
+            console.log( data.issue +"'s assignee is: "+ data.assignee );
+        });
 
 </script>
 </body>

@@ -8,9 +8,7 @@
       "priority": "Highest",
       "status": "Open",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10002",
@@ -20,9 +18,7 @@
       "priority": "Highest",
       "status": "Open",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10003",
@@ -32,9 +28,7 @@
       "priority": "Low",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10004",
@@ -44,9 +38,7 @@
       "priority": "Low",
       "status": "Open",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10005",
@@ -56,9 +48,7 @@
       "priority": "Highest",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10006",
@@ -68,9 +58,7 @@
       "priority": "Lowest",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10007",
@@ -80,9 +68,7 @@
       "priority": "Low",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10008",
@@ -92,9 +78,7 @@
       "priority": "Highest",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10009",
@@ -104,9 +88,7 @@
       "priority": "Lowest",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10010",
@@ -116,9 +98,7 @@
       "priority": "Low",
       "status": "Open",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10011",
@@ -128,9 +108,7 @@
       "priority": "Highest",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10012",
@@ -140,9 +118,7 @@
       "priority": "Lowest",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     },
     {
       "issue": "10013",
@@ -152,9 +128,7 @@
       "priority": "Low",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
-      "assignee": "thusitha@wso2.com",
-      "edit": "<a href='#'><i class='fa fa-edit'></i></a>",
-      "comment": "<a href=''><i class='fa fa-comment'></i></a>"
+      "assignee": "thusitha@wso2.com"
     }
   ]
 }
