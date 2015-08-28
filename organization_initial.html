@@ -107,7 +107,7 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Team /
+                <i class="fa fa-cubes"></i> <span class="hidden-xs">Cloud </span> / Manage Members /
             </div>
         </div>
     </div>
@@ -170,20 +170,8 @@
     <div class="container-fluid app-content-section">
         <div class="row">
           <div class="col-md-12 msg-issues">
-              Orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-              Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+              You can invite new members to organization by giving their email addresses.
           </div>
-        </div>
-        <div class="row">
-            <div class="alert alert-info" role="alert">
-                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <i class="fa fa-check-circle-o"></i> <strong> <span>2</span> invitations are pending...</strong> <a class="click_to_expand" href="#">Click here to view</a>
-                <ul class="invitaiton_list" style="display:none;">
-                    <li><span>dimuthu@wso2.com</span> <a href="#">Resend Invitation</a></li>
-                    <li><span>amila@wso2.com</span> <a href="#">Resend Invitation</a></li>
-                </ul>
-            </div>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -244,15 +232,10 @@
         }
     });
 
-    $('.click_to_expand').click(function(e){
-        e.preventDefault();
-        $('.invitaiton_list').slideToggle("fast");
-    });
-
     $('.datatable table').dataTable({
             responsive: true,
             "orderCellsTop": true,
-            "ajax": "objects_team_users.txt",
+            "ajax": "objects_organization_users.txt",
             "columns": [
                 { "data": "email", "width": "10%"},
                 { "data": "name" , "width": "30%"},
