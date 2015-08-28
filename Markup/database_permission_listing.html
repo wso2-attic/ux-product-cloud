@@ -180,7 +180,7 @@
             <div class="col-md-12">
                 <div id="push"></div>
                 <div class="datatable">
-                    <table id="issuelist" class="display" cellspacing="0" width="100%">
+                    <table id="permissionlist" class="display" cellspacing="0" width="100%">
                         <thead>
                         <tr>
                             <th>User Name</th>
@@ -288,7 +288,7 @@
         }
     });
 
-    $('.datatable table').dataTable({
+    var table = $('#permissionlist').DataTable({
             responsive: true,
             "orderCellsTop": true,
             "ajax": "objects_users.txt",
@@ -296,8 +296,12 @@
                 { "data": "username", "width": "10%"},
                 { "data": "attachuser" , "width": "5%","sClass" : "dt-body-center"},
                 { "data": "priviledges" , "width": "40%"},
-                { "data": "editpriviledges", "width": "3%","sClass" : "dt-body-center"  },
-                { "data": "trash", "orderable": false, "width": "3%", "sClass" : "dt-body-center" }
+                { "data": null, "orderable": false, "width": "3%", "sClass" : "dt-body-center"  },
+                { "data": null, "orderable": false, "width": "3%", "sClass" : "dt-body-center" }
+            ],
+            "columnDefs": [
+                { "targets": -2,"data": null,"defaultContent": "<a class='editroles'><i class='fa fa-edit'></i></a>" },
+                { "targets": -1,"data": null,"defaultContent": "<a class='delete' href='#'><i class='fa  fa-trash'></i></a>" }
             ],
             "fnDrawCallback": function( oSettings ) {
                 $('.switch input[type=checkbox]').on("click",function(){
@@ -316,6 +320,15 @@
                      }
                 });
             }
+        });
+
+        $('#permissionlist tbody').on( 'click', '.editroles', function () {
+            var data = table.row( $(this).parents('tr') ).data();
+            console.log( data.username +"'s roles are: "+ data.priviledges );
+        });
+        $('#permissionlist tbody').on( 'click', '.delete', function () {
+            var data = table.row( $(this).parents('tr') ).data();
+            console.log( data.username +"'s roles are: "+ data.attachuser );
         });
 
         $('.data-select-all input[type="checkbox"]').on("click",function(){

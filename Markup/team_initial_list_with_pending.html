@@ -189,7 +189,7 @@
             <div class="col-md-12">
                 <div id="push"></div>
                 <div class="datatable">
-                    <table id="issuelist" class="display" cellspacing="0" width="100%">
+                    <table id="teamlist" class="display" cellspacing="0" width="100%">
                         <thead>
                         <tr>
                             <th>Email</th>
@@ -249,18 +249,31 @@
         $('.invitaiton_list').slideToggle("fast");
     });
 
-    $('.datatable table').dataTable({
-            responsive: true,
-            "orderCellsTop": true,
-            "ajax": "objects_team_users.txt",
-            "columns": [
-                { "data": "email", "width": "10%"},
-                { "data": "name" , "width": "30%"},
-                { "data": "roles" , "width": "20%"},
-                { "data": "editroles", "orderable": false, "width": "5%", "sClass" : "dt-body-center" },
-                { "data": "delete", "orderable": false, "width": "5%", "sClass" : "dt-body-center" }
-            ]
-        });
+    var table = $('#teamlist').DataTable({
+        responsive: true,
+        "orderCellsTop": true,
+        "ajax": "objects_team_users.txt",
+        "columns": [
+            { "data": "email", "width": "10%"},
+            { "data": "name" , "width": "30%"},
+            { "data": "roles" , "width": "20%"},
+            { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" },
+            { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" }
+        ],
+        "columnDefs": [
+            { "targets": -2,"data": null,"defaultContent": "<a class='editroles'><i class='fa fa-edit'></i></a>" },
+            { "targets": -1,"data": null,"defaultContent": "<a class='delete' href='#'><i class='fa  fa-trash'></i></a>" }
+        ]
+    });
+
+    $('#teamlist tbody').on( 'click', '.editroles', function () {
+        var data = table.row( $(this).parents('tr') ).data();
+        console.log( data.name +"'s roles are: "+ data.roles );
+    });
+    $('#teamlist tbody').on( 'click', '.delete', function () {
+        var data = table.row( $(this).parents('tr') ).data();
+        console.log( data.email +"'s roles are: "+ data.roles );
+    });
 
 </script>
 </body>
