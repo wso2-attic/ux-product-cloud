@@ -172,10 +172,9 @@
                 <div class='row '>
                     <div id="push"></div>
                     <div class="col-md-4 forms">
-                        <div class="form-group">
-                            <label for="version">Member(s) Email: </label>
-                            <select id="version" class="form-control members" multiple="multiple">
-                            </select>
+                        <div class="form-group members-container">
+                            <label for="members">Member(s) Email: </label>
+                            <select id="members" type='hidden' class="form-control members" multiple='multiple'></select>
                         </div>
                         <div class="form-group">
                             <label for="description">Welcome Text : </label>
@@ -252,6 +251,9 @@
             //Roles are an array with roles representing a string
             var sampleData = [{id:'neranga@wso2.xom',text:'NerangaG@wso2.com',role:['Admin','Lead','Committer','Moderator']},{id:'dulip@wso2.xom',text:'Dulip@wso2.com',role:['Lead','Moderator','Developer','QA','DevOps','CXO']},{id:'dhanuka@wso2.com',text:'Dhanuka@wso2.com',role:[]}];
 
+            //Sample roles to be added to the new tags selector
+            var sampleRoles = [{id:'moderator',text:'Moderator'},{id:'admin',text:'Admin'}];
+
             //Custom function for select 2 templating
             function memberResult(result){
 
@@ -268,15 +270,133 @@
             }
 
             $(".members").select2({
-              tags: true,
-              data: sampleData,
-              templateResult: memberResult,
-              escapeMarkup: function(m){ return m; }
+                tags: true,
+                data: sampleData,
+                templateResult: memberResult,
+                hideSelectionInSingle:true,
+                createTag: function (tag) {
+                    return {
+                        id: tag.term,
+                        text: tag.term,
+                        isNew : true
+                    };
+                },
+                escapeMarkup:function(m){
+                    return m;
+                },
+            }).on('select2:open',function(){
+                $('.members-container .error').remove();
+                if($('.new-tag').length > 0){
+                    var select2NewUser = $('.new-tag').data();
+
+                    $(".members [value='"+ select2NewUser.id +"']").remove();
+                    $('.members').trigger('change');
+
+                    $('.new-tag').remove();
+                }
+            }).on("select2:select",function(e){
+                if(e.params.data.isNew && validateEmail(e.params.data.text)){
+                    $('.new-tag').remove();
+                    $('<div>',{
+                        'class':'new-tag',
+                        'style':'position:absolute;top:'+ $('.select2-container').offset().top + $(this).height() +''
+                    })
+
+                    $('body').append(
+                        $('<div>').data(e.params.data).addClass('new-tag').css({
+                            'position':'absolute',
+                            'top': $('.select2-container').offset().top + $(this).height(),
+                            'left':$('.select2-container').offset().left,
+                            'width': $('.select2-container').width(),
+                            'height':'auto',
+                            'background-color':'white',
+                            'border':'1px solid #333',
+                        }).append(
+                            $('<div>').addClass('new-tag-desc').css({
+                                'border-bottom':'1px solid #ccc'
+                            }).append(
+                                $('<p>').css({
+                                'padding':'10px',
+                                'color':'#333',
+                            }).html('<strong>' + e.params.data.text + '</strong> is not invited to the organization. You can add app related roles here.'))
+                        ).append(
+                            $('<div>').css({
+                                'color':'#333',
+                                'padding':'10px'
+                            }).addClass('form-group').append(
+                                $('<label>').attr('for','new-tag-roles').text('Select Roles:')
+                            ).append(
+                                $('<select>').attr({
+                                    'id':'new-tag-roles',
+                                    'type':'hidden',
+                                    'multiple':'multiple',
+                                    'class':'form-control new-tag-roles'
+                                })
+                            ).append(
+                                $('<div>').addClass('checkbox').append(
+                                    $('<label>').text('All').prepend(
+                                        $('<input>').attr('type','checkbox').addClass('add-all-tags')
+                                    )
+                                )
+                            ).append(
+                                $('<button>').css({
+                                    'margin-top':'20px'
+                                }).addClass('cu-btn cu-btn-sm cu-btn-blue add-tag').text('Add')
+                            )
+                        )
+                    )
+
+                    $('.new-tag-roles').select2({
+                        tags: true,
+                        data: sampleRoles,
+                        placeholder:'Please select roles'
+                    })
+
+                    $('.add-all-tags').click(function(){
+                        if($(this).is(':checked')){
+                            $('.new-tag-roles option').attr('selected',true).trigger('change')
+                        }else{
+                            $('.new-tag-roles option').attr('selected',false).trigger('change')
+                        }
+                        
+                    })
+
+                    $('.add-tag').click(function(){
+
+                        if($('.new-tag-roles').select2('data').length < 1){
+                            $('<p>').text('Please select roles to add.').addClass('notification-msg noti-error ').css({
+                                'margin-top' : '10px'
+                            }).insertBefore('.add-tag');
+                            return false;
+                        }
+
+                        var select2NewUser = $('.new-tag').data();
+                        var select2Data = $('.members').select2('data');
+
+                        var targetEl = $.grep(select2Data, function(e){ return e.id == select2NewUser.id; })
+
+                        if(targetEl.length > 0 ){
+                            targetEl[0]['roles'] = $('.new-tag-roles').select2('data');
+                        }
+
+                        $('.new-tag').remove();
+                    })
+
+                }else if(e.params.data.isNew != undefined){
+                    $('.members-container').append('<label id="cname-error" class="error" for="cname">An email is required.</label>');
+
+                    $(".members [value='"+ e.params.data.id +"']").remove();
+                    $('.members').trigger('change');
+                }
             })
 
-            $(".members").on('select2:select',function(e){
-                console.log(e);
-            })
+            //Validate email
+            function validateEmail(email) {
+                var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+                return re.test(email);
+            }
+
+            
             
             $("#application-type").prop("disabled", true);
         </script>
