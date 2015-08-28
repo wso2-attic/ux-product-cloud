@@ -483,12 +483,24 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 
+
+<script src="js/jquery-cookie-1.5.1/jquery.cookie.js"></script>
+
 <!-- add custom scroller feature -->
 <script src="js/nanoscroller-0.8.7/jquery.nanoscroller.min.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
 <script>
+    if($.cookie('closed') == 'false'){
+        $('.notification-pane-trigger').find('i').removeClass('fw-notification').addClass('fw-right-arrow');
+        $('.notification-pane').animate({"right":"0em"}, "slow").removeClass('visible');
+    }else{
+        $('.notification-pane-trigger').find('i').removeClass('fw-right-arrow').addClass('fw-notification');
+        //$('.notification-pane').animate({"right":"-24em"}, "slow").addClass('visible');
+        $('.notification-pane').css('right','-24em').addClass('visible');
+    }
+
     $('.side-pane-trigger').click(function(){
         var rightPane = $('.right-pane');
         var leftPane = $('.left-pane');
@@ -507,9 +519,11 @@
         var notificationPane = $('.notification-pane');
         var notiTrigger = $('.notification-pane-trigger');
         if(notificationPane.hasClass('visible')){
+            $.cookie('closed', false, { expires: 7 });
             notiTrigger.find('i').removeClass('fw-notification').addClass('fw-right-arrow');
             notificationPane.animate({"right":"0em"}, "slow").removeClass('visible');
         }else{
+            $.cookie('closed', true, { expires: 7 });
             notiTrigger.find('i').removeClass('fw-right-arrow').addClass('fw-notification');
             notificationPane.animate({"right":"-24em"}, "slow").addClass('visible');
         }
