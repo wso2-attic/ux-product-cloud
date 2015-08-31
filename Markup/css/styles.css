@@ -1720,6 +1720,11 @@ a.btn-action {
     opacity: 0.3;
 }
 
+.cloud-tab .tab-content{
+    background: #464646;
+    padding: 20px;
+}
+
 .cloud-tab .nav-tabs{
     font-size:1.2em;
     border-color:#222;
@@ -1734,14 +1739,14 @@ a.btn-action {
 
 }
 .cloud-tab .nav>li>a:hover, .nav>li>a:focus{
-    color:#0498d5;
+    color:#c5c5c5;
     border:none;
     border-top:2px solid transparent;
     background:none;
 }
 .cloud-tab .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
     border:none;
-    border-top:2px solid #0498d5;
-    color:#0498d5;
-    background:none;
+    border-top:2px solid #c5c5c5;
+    color:#c5c5c5;
+    background:#464646;
 }
