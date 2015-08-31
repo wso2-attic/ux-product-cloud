@@ -259,6 +259,24 @@
             { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" }
         ],
         "columnDefs": [
+            {
+                "targets": 2,
+                "render": function ( data, type, row ) {
+                    var org_class = "";
+                    var string = "";
+                    $.each(row.roles, function(i,e){
+                        if("AF" == e.orgType){
+                            org_class = "org_af";
+                        }else if("APIM" == e.orgType){
+                            org_class = "org_apim";
+                        }else{
+                            org_class = "org_other";
+                        }
+                        string += "<div class='role_type "+ org_class +"'><span class='org_type '>"+ e.orgType +"</span><span class='role_type_tag'>"+ e.roleType +"</span></div>";
+                    });
+                    return string;
+                }
+            },
             { "targets": -2,"data": null,"defaultContent": "<a class='editroles'><i class='fa fa-edit'></i></a>" },
             { "targets": -1,"data": null,"defaultContent": "<a class='delete' href='#'><i class='fa  fa-trash'></i></a>" }
         ]
@@ -266,11 +284,11 @@
 
     $('#memberslist tbody').on( 'click', '.editroles', function () {
         var data = table.row( $(this).parents('tr') ).data();
-        console.log( data.name +"'s roles are: "+ data.roles );
+        alert( data.name +"'s roles are: "+ data.roles );
     });
     $('#memberslist tbody').on( 'click', '.delete', function () {
         var data = table.row( $(this).parents('tr') ).data();
-        console.log( data.email +"'s roles are: "+ data.roles );
+        alert( data.email +"'s roles are: "+ data.roles );
     });
 
 </script>

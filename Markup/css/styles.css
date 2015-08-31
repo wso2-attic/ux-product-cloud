@@ -1698,6 +1698,17 @@ a.btn-action {
 .org_apim .role_type_tag{
     border-color:#D64541;
 }
+/*other*/
+.org_other .triangle{
+    border-color: transparent #fb8c00 transparent transparent;
+}
+.org_other .org_type{
+    background:#fb8c00;
+}
+.org_other .role_type_tag{
+    border-color:#fb8c00;
+}
+
 
 .data-select-all,.structure-select-all{
     margin-left:3px;
