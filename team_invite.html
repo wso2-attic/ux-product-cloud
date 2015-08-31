@@ -155,7 +155,7 @@
                 <span class="fw-stack fw-lg btn-action-ico">
                 <i class="fw fw-ring fw-stack-2x"></i>
                 <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Cancel
+                </span> Back to team
                 </a>
             </div>
             <!-- EOF App factory menu actionbar-->
@@ -274,6 +274,7 @@
                 data: sampleData,
                 templateResult: memberResult,
                 hideSelectionInSingle:true,
+                placeholder :'Type member emails',
                 createTag: function (tag) {
                     return {
                         id: tag.term,
@@ -318,7 +319,7 @@
                                 $('<p>').css({
                                 'padding':'10px',
                                 'color':'#333',
-                            }).html('<strong>' + e.params.data.text + '</strong> is not invited to the organization. You can add app related roles here.'))
+                            }).html('<strong>' + e.params.data.text + '</strong> is not invited to the organization. You can add application related roles here.'))
                         ).append(
                             $('<div>').css({
                                 'color':'#333',
@@ -334,7 +335,7 @@
                                 })
                             ).append(
                                 $('<div>').addClass('checkbox').append(
-                                    $('<label>').text('All').prepend(
+                                    $('<label>').text('Assign all roles').prepend(
                                         $('<input>').attr('type','checkbox').addClass('add-all-tags')
                                     )
                                 )
@@ -347,9 +348,9 @@
                     )
 
                     $('.new-tag-roles').select2({
-                        tags: true,
                         data: sampleRoles,
-                        placeholder:'Please select roles'
+                        placeholder:'Please select roles',
+                        createSearchChoice: function(){ return null; }
                     })
 
                     $('.add-all-tags').click(function(){
@@ -383,7 +384,7 @@
                     })
 
                 }else if(e.params.data.isNew != undefined){
-                    $('.members-container').append('<label id="cname-error" class="error" for="cname">An email is required.</label>');
+                    $('.members-container').append('<label id="cname-error" class="error" for="cname">A valid email is required.</label>');
 
                     $(".members [value='"+ e.params.data.id +"']").remove();
                     $('.members').trigger('change');
