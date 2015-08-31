@@ -635,7 +635,7 @@ a.btn-action {
     position: relative;
     top: 11em;
 }
-#seach-apps {
+#search-apps {
     border-radius: 0px;
     height: 40px;
     font-size: 18px;
@@ -1055,7 +1055,7 @@ a.btn-action {
 .add-issue-content #add-issue-button span.fw-stack {
     font-size: 20px;
 }
-.form-group .error {
+.form-group>label.error {
     line-height: 1.5em;
     color: rgb(255, 255, 255);
     background-color: #e74c3c;
@@ -1125,22 +1125,22 @@ a.btn-action {
     -webkit-transform: translate(-50%, -50%);
 }
 
-.loading .loading-animation .logo {
+.loading .loading-animation .loading-logo {
     position: relative;
 }
 
-.loading .loading-animation .logo .pulse-line,
-.loading .loading-animation .logo .circle {
+.loading .loading-animation .loading-logo .pulse-line,
+.loading .loading-animation .loading-logo .circle {
     fill: none;
     stroke: #fff;
 }
 
-.loading .loading-animation .logo .circle {
+.loading .loading-animation .loading-logo .circle {
     stroke-dasharray: 100;
     opacity: 0.5;
 }
 
-.loading .loading-animation .logo .pulse-line {
+.loading .loading-animation .loading-logo .pulse-line {
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
     animation: dash 4s linear  infinite;
@@ -1167,7 +1167,7 @@ a.btn-action {
     }
 }
 
-.loading .loading-animation .logo .signal {
+.loading .loading-animation .loading-logo .signal {
     border: 5px solid #fff;
     border-radius: 50px;
     height: 50px;
@@ -1530,19 +1530,6 @@ a.btn-action {
     display:inline-block;
     min-width:200px;
 }
-
-/**
- *
- * Css fix classes added
- *
- **/
-
-.tmp-logo-responsive-fix{
-    padding: 0px 15px;
-    width: 175px;
-    float: left;
-}
-
 .margin-top-xs{
     margin-top:1em;
 }
@@ -1714,4 +1701,10 @@ a.btn-action {
 
 .data-select-all,.structure-select-all{
     margin-left:3px;
+}
+
+.not-active{
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.3;
 }
