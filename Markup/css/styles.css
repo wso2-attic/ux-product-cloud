@@ -1719,3 +1719,29 @@ a.btn-action {
     cursor: default;
     opacity: 0.3;
 }
+
+.cloud-tab .nav-tabs{
+    font-size:1.2em;
+    border-color:#222;
+}
+.cloud-tab .nav-tabs>li>a{
+    color:#666;
+    border:none;
+    border-top:2px solid transparent;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+
+}
+.cloud-tab .nav>li>a:hover, .nav>li>a:focus{
+    color:#0498d5;
+    border:none;
+    border-top:2px solid transparent;
+    background:none;
+}
+.cloud-tab .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+    border:none;
+    border-top:2px solid #0498d5;
+    color:#0498d5;
+    background:none;
+}
