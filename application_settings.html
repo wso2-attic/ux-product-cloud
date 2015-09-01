@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="css/fontwso2-1.2/css/font-wso2.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/dataTables.responsive.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
+    <link href="css/select2-4.0.0/select2.min.css" rel="stylesheet">
+    <link href="css/select2-4.0.0/select2.override.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -107,7 +106,7 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <i class="fa fa-cubes"></i> <span class="hidden-xs">Cloud </span> / Manage Members /
+                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Settings
             </div>
         </div>
     </div>
@@ -116,7 +115,7 @@
     <!-- left pane wrapper -->
     <div class="left-pane">
         <ul>
-            <li >
+            <li>
                 <a href="htttp://google.com" target="_blank"><i class="fa fa-laptop"></i> Overview</a>
             </li>
             <li>
@@ -125,13 +124,13 @@
             <li>
                 <a><i class="fa fa-cogs"></i> Repos & Builds</a>
             </li>
-            <li class="selected">
+            <li>
                 <a><i class="fa fa-database"></i> Databases</a>
             </li>
             <li>
                 <a><i class="fa fa-wrench"></i> Runtime Configs</a>
             </li>
-            <li>
+            <li class="selected">
                 <a><i class="fa fa-tags"></i> Issues</a>
             </li>
             <li>
@@ -156,56 +155,82 @@
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Cancel
-        </a>
-        <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                <span class="fw-stack fw-lg btn-action-ico">
-                    <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-add fw-stack-1x"></i>
-                </span> <span class="hidden-xs">Invite Members</span>
+                </span> Back to Overview
         </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
-    <div class="container-fluid app-content-section">
+    <div class="container-fluid cloud-container">
         <div class="row">
-          <div class="col-md-12 msg-issues">
-              You can invite new members to organization by giving their email addresses.
-          </div>
-        </div>
-        <div class="row">
-            <div class="alert alert-info" role="alert">
-                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <i class="fa fa-check-circle-o"></i> <strong> <span>2</span> invitations are pending...</strong> <a class="click_to_expand" href="#">Click here to view</a>
-                <ul class="invitaiton_list" style="display:none;">
-                    <li><span>dimuthu@wso2.com</span> <a href="#">Resend Invitation</a></li>
-                    <li><span>amila@wso2.com</span> <a href="#">Resend Invitation</a></li>
-                </ul>
+            <div class="col-md-12 msg-issues">
+                You get a birds eye view of all the issues that have been created in applications where you are a member.
+                Issue tracking for a application version provides you the ability to create new issues per application
+                version, edit existing issues and search for issues based on a search criteria.
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div id="push"></div>
-                <div class="datatable">
-                    <table id="memberslist" class="display" cellspacing="0" width="100%">
-                        <thead>
-                        <tr>
-                            <th>Email</th>
-                            <th>Name</th>
-                            <th>Roles</th>
-                            <th>Edit Roles</th>
-                            <th>Delete</th>
-                        </tr>
-                        </thead>
-                    </table>
+            <div id="push"></div>
+            <div class="col-md-5 forms cloud-tab">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a></li>
+                        <li role="presentation"><a href="#builddeploy" aria-controls="builddeploy" role="tab" data-toggle="tab">Build & Deploy</a></li>
+                        <li role="presentation"><a href="#deleteapp" aria-controls="deleteapp" role="tab" data-toggle="tab">Delete Application</a></li>
+                    </ul>
 
-                </div>
-                <div class="clearfix"></div>
-                <div id="push"></div>
-                <div id="push"></div>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="general">
+                            <div id="push"></div>
+                            <div class="form-group">
+                                <label for="application-icon">Application Icon: </label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" readonly>
+                                    <span class="input-group-btn">
+                                    <span class="btn btn-primary btn-file">
+                                        Browse&hellip; <input type="file" multiple>
+                                    </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="application-description">Application Description: </label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                                <span class="fw-stack fw-lg btn-action-ico">
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-add fw-stack-1x"></i>
+                                </span>
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="builddeploy">
+                            <div id="push"></div>
+                            <div>content...</div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="deleteapp">
+                            <div id="push"></div>
+                            <div class="msg-issues">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at rutrum nisl. Donec id dolor consequat, feugiat risus at, imperdiet elit.
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                                <span class="fw-stack fw-lg btn-action-ico">
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-delete fw-stack-1x"></i>
+                                </span>
+                                    Delete this Application
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
             </div>
         </div>
-    </div><!-- /.container -->
+        <!-- /.container -->
 
 
     </div>
@@ -221,9 +246,7 @@
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.min.js"></script>
-<script src="js/datatables-1.10.7/dataTables.responsive.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
+<script src="js/select2-4.0.0/select2.min.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -242,54 +265,27 @@
         }
     });
 
-    $('.click_to_expand').click(function(e){
-        e.preventDefault();
-        $('.invitaiton_list').slideToggle("fast");
-    });
+    function formatState (state) {
+        if (!state.id) { return state.text; }
+        var $state;
+        if(state.element.attributes['data-icon']){
+            var $state = $(
+                    '<span><i class="fa '+ state.element.attributes['data-icon'].value.toLowerCase() +'"></i>&nbsp;&nbsp;'
+                    + state.text + '</span>'
+            );
+        }else{
+            var $state = $(
+                    '<span><i class="fa '+state.id.toLowerCase() +'"></i>&nbsp;&nbsp;'
+                    + state.text + '</span>'
+            );
+        }
 
-    var table = $('#memberslist').DataTable({
-        responsive: true,
-        "orderCellsTop": true,
-        "ajax": "objects_organization_users.txt",
-        "columns": [
-            { "data": "email", "width": "15%"},
-            { "data": "name" , "width": "25%"},
-            { "data": "roles" , "width": "50%"},
-            { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" },
-            { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" }
-        ],
-        "columnDefs": [
-            {
-                "targets": 2,
-                "render": function ( data, type, row ) {
-                    var org_class = "";
-                    var string = "";
-                    $.each(row.roles, function(i,e){
-                        if("AF" == e.orgType){
-                            org_class = "org_af";
-                        }else if("APIM" == e.orgType){
-                            org_class = "org_apim";
-                        }else{
-                            org_class = "org_other";
-                        }
-                        string += "<div class='role_type "+ org_class +"'><span class='org_type '>"+ e.orgType +"</span><span class='role_type_tag'>"+ e.roleType +"</span></div>";
-                    });
-                    return string;
-                }
-            },
-            { "targets": -2,"data": null,"defaultContent": "<a class='editroles'><i class='fa fa-edit'></i></a>" },
-            { "targets": -1,"data": null,"defaultContent": "<a class='delete' href='#'><i class='fa  fa-trash'></i></a>" }
-        ]
-    });
+        return $state;
 
-    $('#memberslist tbody').on( 'click', '.editroles', function () {
-        var data = table.row( $(this).parents('tr') ).data();
-        alert( data.name +"'s roles are: "+ data.roles );
-    });
-    $('#memberslist tbody').on( 'click', '.delete', function () {
-        var data = table.row( $(this).parents('tr') ).data();
-        alert( data.email +"'s roles are: "+ data.roles );
-    });
+    };
+
+    $("#application-type").prop("disabled", true);
+
 
 </script>
 </body>
