@@ -288,12 +288,12 @@
 		});
 
 		$('#issuelist tbody').on( 'click', '.edit', function () {
-        var data = table.api().row( $(this).parents('tr') ).data();
-        console.log( data.issue +"'s reporter is: "+ data.reporter );
+            var data = table.api().row( $(this).parents('tr') ).data();
+            alert( data.issue +"'s reporter is: "+ data.reporter );
         });
         $('#issuelist tbody').on( 'click', '.comment', function () {
             var data = table.api().row( $(this).parents('tr') ).data();
-            console.log( data.issue +"'s assignee is: "+ data.assignee );
+            alert( data.issue +"'s assignee is: "+ data.assignee );
         });
 
 </script>

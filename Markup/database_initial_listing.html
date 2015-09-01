@@ -242,9 +242,9 @@
         "columns": [
             { "data": "name", "width": "5%"},
             { "data": "description" , "width": "30%"},
-            { "data": "database_url" , "width": "30%"},
-            { "data": "type", "width": "8%" },
-            { "data": null, "orderable": false, "width": "4%", "sClass" : "dt-body-center" },
+            { "data": "database_url" , "width": "25%"},
+            { "data": "type", "width": "10%" },
+            { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" },
             { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" }
         ],
         "columnDefs": [
@@ -255,11 +255,11 @@
 
     $('#databaselist tbody').on( 'click', '.editroles', function () {
         var data = table.row( $(this).parents('tr') ).data();
-        console.log( data.name +"'s db url is: "+ data.database_url );
+        alert( data.name +"'s db url is: "+ data.database_url );
     });
     $('#databaselist tbody').on( 'click', '.delete', function () {
         var data = table.row( $(this).parents('tr') ).data();
-        console.log( data.type +"'s db url is: "+ data.database_url );
+        alert( data.type +"'s db url is: "+ data.database_url );
     });
 
 </script>
