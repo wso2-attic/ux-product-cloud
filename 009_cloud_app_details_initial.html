@@ -527,7 +527,7 @@
         var newNotificationIcon = $('.new-notifications');
         if(notificationPane.hasClass('visible')){
             $.cookie('closed', false, { expires: 7 });
-            notiTrigger.find('i').removeClass('fw-notification').addClass('fw-right-arrow');
+            notiTrigger.find('i').removeClass('fw-notification notification-glow').addClass('fw-right-arrow');
             notificationPane.animate({"right":"0em"}, "slow").removeClass('visible');
             newNotificationIcon.hide();
 
@@ -549,9 +549,7 @@
             'display':'block',
             'box-shadow':'0px 0px 10px red'
           });
-          $('.notification-pane-trigger').css({
-            'text-shadow':'0px 0px 14px red'
-          });
+          $('.notification-pane-trigger').addClass('notification-glow');
         }
       });    
     });

@@ -1757,3 +1757,12 @@ a.btn-action {
     color:#c5c5c5;
     background:#464646;
 }
+.notification-glow {
+    -webkit-animation: glow .5s infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    to {
+        text-shadow: 0 0 10px red;
+    }
+}
