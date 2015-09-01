@@ -527,7 +527,7 @@
         var newNotificationIcon = $('.new-notifications');
         if(notificationPane.hasClass('visible')){
             $.cookie('closed', false, { expires: 7 });
-            notiTrigger.find('i').removeClass('fw-notification notification-glow').addClass('fw-right-arrow');
+            notiTrigger.removeClass('notification-glow').find('i').removeClass('fw-notification').addClass('fw-right-arrow');
             notificationPane.animate({"right":"0em"}, "slow").removeClass('visible');
             newNotificationIcon.hide();
 
