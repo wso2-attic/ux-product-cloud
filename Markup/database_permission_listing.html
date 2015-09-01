@@ -324,11 +324,11 @@
 
         $('#permissionlist tbody').on( 'click', '.editroles', function () {
             var data = table.row( $(this).parents('tr') ).data();
-            console.log( data.username +"'s roles are: "+ data.priviledges );
+            alert( data.username +"'s roles are: "+ data.priviledges );
         });
         $('#permissionlist tbody').on( 'click', '.delete', function () {
             var data = table.row( $(this).parents('tr') ).data();
-            console.log( data.username +"'s roles are: "+ data.attachuser );
+            alert( data.username +"'s roles are: "+ data.attachuser );
         });
 
         $('.data-select-all input[type="checkbox"]').on("click",function(){

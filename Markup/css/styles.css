@@ -1686,33 +1686,33 @@ a.btn-action {
 }
 
 /*App factory*/
-.org_af .triangle{
+.AF .triangle{
     border-color: transparent #22A7F0 transparent transparent;
 }
-.org_af .org_type{
+.AF .org_type{
     background:#22A7F0;
 }
-.org_af .role_type_tag{
+.AF .role_type_tag{
     border-color:#22A7F0;
 }
 /*Api manager*/
-.org_apim .triangle{
+.APIM .triangle{
     border-color: transparent #D64541 transparent transparent;
 }
-.org_apim .org_type{
+.APIM .org_type{
     background:#D64541;
 }
-.org_apim .role_type_tag{
+.APIM .role_type_tag{
     border-color:#D64541;
 }
 /*other*/
-.org_other .triangle{
+.OTHER .triangle{
     border-color: transparent #fb8c00 transparent transparent;
 }
-.org_other .org_type{
+.OTHER .org_type{
     background:#fb8c00;
 }
-.org_other .role_type_tag{
+.OTHER .role_type_tag{
     border-color:#fb8c00;
 }
 

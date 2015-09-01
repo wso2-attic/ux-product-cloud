@@ -8,6 +8,14 @@
         ]
     },
     {
+        "email": "<a>sharond@wso2.com</a>",
+        "name": "Sharon David",
+        "roles": [
+            { "orgType" : "AF","roleType" : "Admin" },
+            { "orgType" : "AF","roleType" : "User" }
+        ]
+    },
+    {
         "email": "<a>dhanukad@wso2.com</a>",
         "name": "Dhanuka De Silva",
         "roles": [

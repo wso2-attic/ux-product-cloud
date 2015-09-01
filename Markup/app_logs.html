@@ -315,7 +315,7 @@ To view logs that are not archived yet, click the <strong>View</strong> button.<
         "startDate": "08/19/2015",
         "endDate": "08/21/2015"
     }, function(start, end, label) {
-      console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+      alert("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
     });
 
     $("#application-type").prop("disabled", true);
