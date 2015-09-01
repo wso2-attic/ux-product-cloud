@@ -816,7 +816,14 @@ a.btn-action {
     float: left;
     margin-top: 4px;
 }
-
+.new-notifications{
+    background-color: red;
+    height: 8px;
+    width: 8px;
+    margin: -5px 20px;
+    border-radius: 50px;
+    display: none;
+}
 .spin-overide{
     color: rgb(182, 182, 182) !important;
 }

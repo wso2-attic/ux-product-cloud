@@ -354,6 +354,7 @@
 
     <div class="notification-pane nano">
         <div class="notification-pane-trigger">
+            <span class='new-notifications'></span>
             <i class="fw fw-right-arrow fw-1-5x"></i>
         </div>
         <div class="notifications nano-content">
@@ -523,16 +524,43 @@
     $('.notification-pane-trigger').click(function(){
         var notificationPane = $('.notification-pane');
         var notiTrigger = $('.notification-pane-trigger');
+        var newNotificationIcon = $('.new-notifications');
         if(notificationPane.hasClass('visible')){
             $.cookie('closed', false, { expires: 7 });
             notiTrigger.find('i').removeClass('fw-notification').addClass('fw-right-arrow');
             notificationPane.animate({"right":"0em"}, "slow").removeClass('visible');
+            newNotificationIcon.hide();
+
         }else{
             $.cookie('closed', true, { expires: 7 });
             notiTrigger.find('i').removeClass('fw-right-arrow').addClass('fw-notification');
             notificationPane.animate({"right":"-24em"}, "slow").addClass('visible');
         }
     });
+
+    //DOM Object selection
+    var mutationObjec = document.querySelector('.notifications');
+
+    //Mutation Observer logic
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if(mutation.type == 'childList' && mutation.addedNodes.length > 0){
+          $('.new-notifications').css({
+            'display':'block',
+            'box-shadow':'0px 0px 10px red'
+          });
+          $('.notification-pane-trigger').css({
+            'text-shadow':'0px 0px 14px red'
+          });
+        }
+      });    
+    });
+
+    // configuration of the observer:
+    var config = { attributes: true, childList: true, characterData: true };
+
+    // pass in the target node, as well as the observer options
+    observer.observe(mutationObjec, config);
 
     $(document).ready(function(){
         var scrollHeight = $('.notification-pane').height() - 150;
