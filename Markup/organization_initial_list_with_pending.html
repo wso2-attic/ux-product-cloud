@@ -103,50 +103,14 @@
 <div class="navbar navbar-secondary">
     <div class="container-fliud">
         <div class="row">
-            <div class="side-pane-trigger">
-                <i class="fa fa-reorder"></i>
-            </div>
-            <div class="breadcrumb-secondary">
+            <div class="col-md-12 breadcrumb-secondary">
                 <i class="fa fa-cubes"></i> <span class="hidden-xs">Cloud </span> / Manage Members /
             </div>
         </div>
     </div>
 </div><!-- EOF App factory menu -->
 <div class="inner-wrapper">
-    <!-- left pane wrapper -->
-    <div class="left-pane">
-        <ul>
-            <li >
-                <a href="htttp://google.com" target="_blank"><i class="fa fa-laptop"></i> Overview</a>
-            </li>
-            <li>
-                <a><i class="fa fa-users"></i> Team</a>
-            </li>
-            <li>
-                <a><i class="fa fa-cogs"></i> Repos & Builds</a>
-            </li>
-            <li class="selected">
-                <a><i class="fa fa-database"></i> Databases</a>
-            </li>
-            <li>
-                <a><i class="fa fa-wrench"></i> Runtime Configs</a>
-            </li>
-            <li>
-                <a><i class="fa fa-tags"></i> Issues</a>
-            </li>
-            <li>
-                <a><i class="fw fw-lifecycle"></i> Lifecycle Management</a>
-            </li>
-            <li>
-                <a><i class="fa fa-hdd-o"></i> Logs</a>
-            </li>
-            <li>
-                <a><i class="fa fa-link"></i> Custom URL</a>
-            </li>
-        </ul>
-    </div>
 
-    <!-- left pane wrapper -->
     <div class="right-pane">
 
 
@@ -230,19 +194,6 @@
 <script src="js/custom/custom.js"></script>
 
 <script>
-    $('.side-pane-trigger').click(function(){
-        var rightPane = $('.right-pane');
-        var leftPane = $('.left-pane');
-        if (rightPane.hasClass('visible')){
-            rightPane.animate({"left":"0em"}, "slow").removeClass('visible');
-            leftPane.animate({"left":"-18em"}, "slow");
-            $(this).find('i').removeClass('fa-arrow-left').addClass('fa-reorder');
-        } else {
-            rightPane.animate({"left":"18em"}, "slow").addClass('visible');
-            leftPane.animate({"left":"0em"}, "slow");
-            $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
-        }
-    });
 
     $('.click_to_expand').click(function(e){
         e.preventDefault();
