@@ -539,8 +539,9 @@
 
         }else{
             $.cookie('closed', true, { expires: 7 });
-            notiTrigger.find('i').removeClass('fw-right-arrow').addClass('fw-notification');
+            notiTrigger.removeClass('notification-glow').find('i').removeClass('fw-right-arrow').addClass('fw-notification');
             notificationPane.animate({"right":"-24em"}, "slow").addClass('visible');
+            newNotificationIcon.hide();
         }
     });
 
