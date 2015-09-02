@@ -559,10 +559,10 @@ a.btn-action {
     cursor: inherit;
     display: block;
 }
-#add-application {
+.cu-btn-position{
     margin-top: 2em;
 }
-#add-application span {
+.cu-btn-position span {
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -1214,6 +1214,58 @@ a.btn-action {
     font-size: 11px;
     margin-top: 4px;
 }
+
+
+/* button loading */
+.loading-logo {
+    position: relative;
+    display: inline-block;
+    width: 3em;
+    height: 3.35em;
+    line-height: 3em;
+    vertical-align: middle;
+}
+
+.loading-logo .pulse-line,
+.loading-logo .circle {
+    fill: none;
+    stroke: #fff;
+}
+
+.loading-logo .circle {
+    stroke-dasharray: 100;
+    opacity: 0.5;
+}
+
+.loading-logo .pulse-line {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: dash 4s linear  infinite;
+    opacity: 0;
+}
+
+.loading-logo  svg{
+    margin-top: 3px;
+}
+
+.loading-logo .signal {
+    border: 5px solid #fff;
+    border-radius: 50px;
+    height: 3em;
+    width: 3em;
+    opacity: 0;
+    position:absolute;
+    top: 3px;
+    animation: pulsate 4s ease-out infinite;
+    animation-delay: 1.5s;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 
 
 .datatable td a{
