@@ -1768,3 +1768,25 @@ a.btn-action {
         text-shadow: 0 0 10px red;
     }
 }
+
+
+.new-tag{
+    position:absolute;
+    height:auto;
+    background-color:#fff;
+    border:1px solid #333;
+}
+.new-tag-desc{
+    border-bottom:1px solid #ccc;
+}
+.new-tag-desc p{
+    padding:10px;
+    color:#333;
+}
+.add-tag{
+    margin-top:20px;
+}
+.new-tag-container{
+    padding:10px;
+    color: #333;
+}
