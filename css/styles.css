@@ -554,9 +554,9 @@ a.btn-action {
     cursor: inherit;
     display: block;
 }
-.cu-btn-position{
+/*.cu-btn-position{
     margin-top: 2em;
-}
+}*/
 .cu-btn-position span {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -1445,10 +1445,10 @@ a.btn-action {
 }
 
 @media screen and (min-width: 768px) {
-	.modal-dialog  {
-	    /* margin-top:20%; */
-	    width:800px;
-	}
+    .modal-dialog  {
+        /* margin-top:20%; */
+        width:800px;
+    }
 }
 .modal-content{
     background-color:#464646;
@@ -1484,6 +1484,7 @@ a.btn-action {
 
 .log-container{
     margin-top: 2em;
+    display: none;
 }
 .log-container > pre {
     display: block;
@@ -1497,12 +1498,6 @@ a.btn-action {
     border: 1px solid #444;    
     background-color:#333;
     border-radius:0;
-}
-.button-container .fa-spinner{
-    margin: 0px 10px;
-}
-.button-container button{
-    margin: 0px !important;
 }
 .note{
     padding: 10px;
@@ -1905,4 +1900,14 @@ a.btn-action {
 .noty_buttons {
     background-color: #404040 !important;
     border-top: 1px solid #474747 !important;
+}
+
+.datepicker-container{
+    position: relative;
+}
+.datepicker-container i{
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    color: #282828;
 }
