@@ -274,7 +274,7 @@
                 "render": function ( data, type, row ) {
                     var roleTag = "";
                     $.each(row.roles, function(i,e){
-                        roleTag += "<div class='role_type'><span class='role_type_tag'>"+ e.roleType +"</span></div>";
+                        roleTag += "<div class='role_type'><span class='role_type_tag'>"+ e.roleDisplayName +"</span></div>";
                     });
                     return roleTag;
                 }
