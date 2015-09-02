@@ -52,7 +52,7 @@
                 </li>
                 <li class="cloud-menu hidden-xs">
                     <a href="#" id="cloud-menu-popover" data-toggle="popover" data-placement="bottom"
-                            class="cloud-menu-popover">
+                       class="cloud-menu-popover">
                         <i class="fw fw-tiles"></i>
                     </a>
                 </li>
@@ -60,35 +60,35 @@
             <!-- BOF cloud menu content -->
             <div class="cloud-menu-content hide">
                 <div id="popover-head" class="hide">
-                    Navigate to Cloud
+                    Navigate to
                 </div>
                 <div id="popover-content" class="hide">
-                   <div class="cloud-apps">
-                       <a class="cloud-block">
-                           <i class="fa fa-3x fa-cubes"></i>
-                           <div class="cloud-name">Application Cloud</div>
-                       </a>
-                       <a class="cloud-block">
-                           <i class="fw fw-api fa-3x"></i>
-                           <div class="cloud-name">API Cloud</div>
-                       </a>
-                       <div class="clearfix"></div> <!-- to make seperate -->
-                   </div>
-                   <div class="cloud-actions">
-                       <h3>Manage your cloud</h3>
-                       <a class="cloud-block-invert">
-                           <i class="fa fa-3x  fa-institution"></i>
-                           <div class="cloud-name">Organizations</div>
-                       </a>
-                       <a class="cloud-block-invert">
-                           <i class="fa fa-3x  fa-users"></i>
-                           <div class="cloud-name">Members</div>
-                       </a>
-                       <a class="cloud-block-invert">
-                           <i class="fa fa-3x  fa-envelope"></i>
-                           <div class="cloud-name">Support</div>
-                       </a>
-                   </div>
+                    <div class="cloud-apps">
+                        <a class="cloud-block">
+                            <i class="fa fa-3x fa-cubes"></i>
+                            <div class="cloud-name">Application Cloud</div>
+                        </a>
+                        <a class="cloud-block">
+                            <i class="fw fw-api fa-3x"></i>
+                            <div class="cloud-name">API Cloud</div>
+                        </a>
+                        <div class="clearfix"></div> <!-- to make seperate -->
+                    </div>
+                    <div class="cloud-actions">
+                        <h3>Manage your cloud</h3>
+                        <a class="cloud-block-invert">
+                            <i class="fa fa-3x  fa-institution"></i>
+                            <div class="cloud-name">Organizations</div>
+                        </a>
+                        <a class="cloud-block-invert">
+                            <i class="fa fa-3x  fa-users"></i>
+                            <div class="cloud-name">Members</div>
+                        </a>
+                        <a class="cloud-block-invert">
+                            <i class="fa fa-3x  fa-envelope"></i>
+                            <div class="cloud-name">Support</div>
+                        </a>
+                    </div>
                 </div>
             </div>
             <!-- EOF cloud menu content -->
@@ -98,16 +98,12 @@
 <!-- EOF cloud menu -->
 
 <div class="inner-wrapper">
-
-    <div class="left-menu" style="display:none">
-        Left pane
-    </div>
     <!-- BOF App factory menu -->
     <div class="navbar navbar-secondary">
         <div class="container-fliud">
             <div class="row">
-                <div class="col-md-3 breadcrumb-secondary">
-                    <i class="fa fa-cubes visible-xs"></i> <span class="hidden-xs">Application Cloud</span>
+                <div class="col-md-12 breadcrumb-secondary">
+                    <i class="fa fa-cubes visible-xs visible-lg"></i> <span class="hidden-xs">Application Cloud</span>
                 </div>
             </div>
         </div>
@@ -115,53 +111,39 @@
 
     <!-- BOF App factory menu actionbar -->
     <div class="action-bar">
+        <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                <span class="fw-stack fw-lg btn-action-ico">
+                    <i class="fw fw-ring fw-stack-2x"></i>
+                    <i class="fw fw-add fw-stack-1x"></i>
+                </span> <span class="hidden-xs">Add New Application</span>
+        </a>
         <a href="#" class="btn-action">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Go Back
+                    <i class="fw fw-up-arrow fw-stack-1x"></i>
+                </span> <span class="hidden-xs">upload exsisting</span>
+        </a>
+        <a href="#" class="btn-action">
+                <span class="fw-stack fw-lg btn-action-ico">
+                    <i class="fw fw-ring fw-stack-2x"></i>
+                    <i class="fw  fw-deploy fw-stack-1x"></i>
+                </span> <span class="hidden-xs">Deploy Sample Application</span>
         </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
     <div class="container-fluid">
-        <div class="row">
-
-
-          <div class="col-xs-12 app-preview">
-              <div class="app-thumb">
-                  <img src="images\sample-app-image.png" />
-              </div>
-              <div class="app-desc">
-                <h2>My Java App</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                <div class="app-preview-action-bar">
-                    <div class="sec prod-url"><a href="#">http://javatest.djcompany.wso2app.com</a>
-                    <a href="#"><i class="fw fw-settings"></i></a>
-                    </div>
-                    <div class="sec"><button class="cu-btn cu-btn-md cu-btn-gr-dark">Launch App</button></div>
-                    <div class="sec">
-                       
-                        <!-- edit code button -->
-                        <div class="btn-group ctrl-edit-button">
-                          <button type="button" class="btn cu-btn cu-btn-md cu-btn-blue">Edit Code</button>
-                          <button type="button" class="btn cu-btn cu-btn-md cu-btn-blue cu-dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            <span class="caret"></span>
-                            <span class="sr-only">Toggle Dropdown</span>
-                          </button>
-                          <ul class="dropdown-menu cu-btn-blue" role="menu">
-                            <li><a href="#">Use Cloud Editor</a></li>
-                            <li><a href="#">Use Local IDE</a></li>
-                          </ul>
-                        </div>
-
+        <div class="row row-centered">
+            <div class="col-centered col-xs-10 col-sm-7  col-md-7 col-lg-6">
+                <div class="cloud-new-content">
+                    <h1>New to our Application Cloud ?</h1>
+                    <a id="app-create-button" class="cu-btn cu-btn-md cu-btn-blue">Create your first application</a>
+                    <div class="help">
+                        <i class="fa fa-2x fa-book"></i> Need help ? Read App creation guide first..
                     </div>
                 </div>
-              </div>
-          </div>
-          <div class="col-md-9">9</div>
-          <div class="col-md-3">3</div>
 
+            </div>
 
         </div>
     </div><!-- /.container -->
