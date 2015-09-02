@@ -1415,6 +1415,7 @@ a.btn-action {
 
 .log-container{
     margin-top: 2em;
+    display: none;
 }
 .log-container > pre {
     display: block;
@@ -1428,6 +1429,13 @@ a.btn-action {
     border: 1px solid #444;    
     background-color:#333;
     border-radius:0;
+}
+#view-log,#download-log{
+    margin-top: 2em;
+}
+#view-log span, #download-log span {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .button-container .fa-spinner{
     margin: 0px 10px;
