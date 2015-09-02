@@ -1504,6 +1504,9 @@ a.btn-action {
         font-size:1em;
         margin-top:1em;
     }
+    .fw-5x{
+        font-size:4em;
+    }
 
 }
 @media (max-width: 992px) {
@@ -1528,6 +1531,9 @@ a.btn-action {
         font-size:1.3em;
         margin-top:1em;
     }
+    .fw-5x{
+        font-size:3em;
+    }
 }
 @media (max-width: 768px) {
     .version-url{
@@ -1540,8 +1546,12 @@ a.btn-action {
         margin-left:5em;
         font-size:1.3em;
     }
-
-
+    .fw-5x{
+        font-size:5em;
+    }
+    .block-description{
+        width:62%;
+    }
 }
 @media (max-width: 480px) {
     .version-url{
