@@ -70,11 +70,6 @@ body {
     text-decoration: none;
 }
 
-.alert{
-    border-radius: 0px;
-    margin: 15px;
-}
-
 .action-bar {
     background-color: #303030;
     min-height: 45px;
@@ -559,10 +554,10 @@ a.btn-action {
     cursor: inherit;
     display: block;
 }
-#add-application {
+.cu-btn-position{
     margin-top: 2em;
 }
-#add-application span {
+.cu-btn-position span {
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -831,7 +826,7 @@ a.btn-action {
 }
 
 .app-content-section {
-    margin-top: 7em;
+    margin-top: 105px;
 }
 .left-pane ul {
     margin-top: 70px;
@@ -867,8 +862,9 @@ a.btn-action {
 .block-general {
     margin-top: 1em;
     background-color: #34495e;
-    padding: 18px;
-    min-height: 26em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    min-height: 33em;
 }
 
 .block-general a, .block-team a, .block-database a{
@@ -880,15 +876,17 @@ a.btn-action {
     font-weight: 300;
     margin-top: 8px;
 }
+.block-team h3, .block-database h3{
+    margin-top:3px;
+}
 .block-general h3 {
     margin-bottom: 30px;
 }
 .version-number button{
     color:#fff;
-    background-color:#8b8b8b;
+    background-color:#757575;
     border:none;
     padding:10px 22px;
-    margin-right:1px;
 }
 .version-number .dropdown-menu{
     margin:0px;
@@ -918,7 +916,7 @@ a.btn-action {
 .block-team,
 .block-database {
     margin-top: 1em;
-    padding: 18px 18px 4px;
+    padding: 18px;
 }
 .block-team {
     background-color: #95a5a6;
@@ -928,18 +926,19 @@ a.btn-action {
 }
 .block-life-cycle {
     background-color: #0090d9;
-    min-height: 23em;
+    min-height: 24em;
 }
 .block-repos {
     background-color: #735f87;
-    min-height: 23em;
+    min-height: 24em;
 }
 .block-issues {
     background-color: #0aa699;
-    min-height: 23em;
+    min-height: 24em;
 }
 .block-action-button {
-    width: 40%;
+    width: 100%;
+    margin-top:10px;
     text-align: right;
     float: right;
     padding: 8px;
@@ -973,7 +972,7 @@ a.btn-action {
     background-color: rgb(29, 42, 56);
 }
 .block-life-cycle .block-action-button {
-    width: 45%;
+    width: 100%;
 }
 .block-life-cycle .block-action-button:hover {
     background-color: rgb(0, 95, 143);
@@ -992,6 +991,7 @@ a.btn-action {
     padding: 10px 20px;
 }
 .block-description {
+    width:67%;
     font-size: 1.3em;
     font-weight: 300;
 }
@@ -1006,6 +1006,7 @@ a.btn-action {
 .permission-change-block .block-action-button{
     width: 100%;
     text-align: center;
+    margin-top:0px;
 }
 
 .btn-edit li {
@@ -1096,6 +1097,12 @@ a.btn-action {
 #noty_top_layout_container li{
     border-radius: 0px !important;
 }
+.alert{
+    border-radius: 0px;
+    margin: 15px;
+    padding:0px;
+    min-height:50px;
+}
 .alert-success{
     background-color: #40D47E;
     border-color: #40D47E;
@@ -1105,6 +1112,17 @@ a.btn-action {
 }
 .alert-info .close{
     color:#666;
+}
+.alert .close{
+    background-color:#333;
+    color:#fff;
+    text-shadow:none;
+    opacity:1;
+    padding:5px 10px;
+}
+.alert .alert-content{
+    display:block;
+    padding:15px;
 }
 
 /* ========================================================================
@@ -1214,6 +1232,58 @@ a.btn-action {
     font-size: 11px;
     margin-top: 4px;
 }
+
+
+/* button loading */
+.loading-logo {
+    position: relative;
+    display: inline-block;
+    width: 3em;
+    height: 3.35em;
+    line-height: 3em;
+    vertical-align: middle;
+}
+
+.loading-logo .pulse-line,
+.loading-logo .circle {
+    fill: none;
+    stroke: #fff;
+}
+
+.loading-logo .circle {
+    stroke-dasharray: 100;
+    opacity: 0.5;
+}
+
+.loading-logo .pulse-line {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: dash 4s linear  infinite;
+    opacity: 0;
+}
+
+.loading-logo  svg{
+    margin-top: 3px;
+}
+
+.loading-logo .signal {
+    border: 5px solid #fff;
+    border-radius: 50px;
+    height: 3em;
+    width: 3em;
+    opacity: 0;
+    position:absolute;
+    top: 3px;
+    animation: pulsate 4s ease-out infinite;
+    animation-delay: 1.5s;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 
 
 .datatable td a{
@@ -1392,10 +1462,6 @@ a.btn-action {
 .modal-title{
     color:#fff;
 }
-.close{
-    color:#fff;
-    text-shadow:none;
-}
 .no-pad-right{
     padding-right:0px;
 }
@@ -1404,6 +1470,9 @@ a.btn-action {
 }
 .padding-bottom-lg{
     padding-bottom:30px;
+}
+.padding-bottom-xlg{
+    padding-bottom:4em;
 }
 
 .section-title {
@@ -1473,6 +1542,9 @@ a.btn-action {
 .fw-1-5x{
     font-size: 1.5em;
 }
+.app-desc h2{
+    margin-top:0px;
+}
 @media (max-width: 1200px) {
     .version-url{
         width:44.4%;
@@ -1480,22 +1552,52 @@ a.btn-action {
     .btn-edit-code > a{
         margin-top:-3px;
     }
-    .block-description-multiline{
-        margin-left:0em;
-    }
     .block-action-button,.block-life-cycle .block-action-button{
         width:100%;
     }
     .block-description-multiline{
         font-size:1em;
+        margin-left:1em;
+        padding:10px 16px;
     }
     .block-description{
+        font-size:1em;
         margin-top:1em;
+    }
+    .fw-5x{
+        font-size:4em;
+    }
+
+}
+@media (max-width: 992px) {
+ .version-url{
+        width:45.1%;
+    }
+    .block-general h3, .block-team h3, .block-database h3{
+        font-size:20px;
+    }
+    .block-action-button{
+        margin-top:10px;
+        text-align:center;
+    }
+    .permission-change-block{
+        margin-top:1em;
+    }
+    .permission-change-block .block-action-button{
+        margin-top:0px;
+    }
+    .block-description{
+        width:100%;
+        font-size:1.3em;
+        margin-top:1em;
+    }
+    .fw-5x{
+        font-size:3em;
     }
 }
 @media (max-width: 768px) {
     .version-url{
-        width:45.8%;
+        width:46.8%;
     }
     .btn-edit-code > a{
         margin-top:-3px;
@@ -1504,10 +1606,12 @@ a.btn-action {
         margin-left:5em;
         font-size:1.3em;
     }
-    .block-description{
-        margin-top:0em;
+    .fw-5x{
+        font-size:5em;
     }
-
+    .block-description{
+        width:62%;
+    }
 }
 @media (max-width: 480px) {
     .version-url{
@@ -1523,14 +1627,19 @@ a.btn-action {
        width:60%;
     }
     .btn-edit-code > a{
-            margin-top:0px;
-        }
+        margin-top:0px;
+    }
+    .app-desc h2{
+        margin-top:20px;
+    }
 }
 .btn-launch-app,.btn-edit-code{
     border:none;
 }
+
 .btn-edit-code{
     margin:0px;
+    margin-left:-4px;
 }
 .btn-edit-code > a{
     border:none;
@@ -1541,6 +1650,7 @@ a.btn-action {
     list-style:none;
     margin-left:0px;
     margin-top:10px;
+    margin-bottom:10px!important;
     padding-left:15px;
 }
 .invitaiton_list li span{

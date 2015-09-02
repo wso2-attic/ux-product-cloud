@@ -170,7 +170,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="add-application">
                         <span class="fw-stack fw-lg btn-action-ico">
                             <i class="fw fw-ring fw-stack-2x"></i>
                             <i class="fw fw-add fw-stack-1x"></i>
@@ -178,12 +178,20 @@
                         Create
                     </button>
 
-                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application" disabled>
+                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="add-application-disable" disabled>
                         <span class="fw-stack fw-lg btn-action-ico">
                             <i class="fw fw-ring fw-stack-2x"></i>
                             <i class="fw fw-add fw-stack-1x"></i>
                         </span>
                         Create
+                    </button>
+
+                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="add-application-loading" disabled >
+                        <span class="fw-stack fw-lg btn-action-ico">
+                            <i class="fw fw-ring fw-stack-2x"></i>
+                            <i class="fw fw-add fw-stack-1x"></i>
+                        </span>
+                        Creating
                     </button>
                 </div>
 
@@ -204,5 +212,11 @@
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
+<script>
+    // to show button loader
+    // to hide pass loadingButton('hide');
+    $('#add-application-loading').loadingButton('show');
+
+</script>
 </body>
 </html>
