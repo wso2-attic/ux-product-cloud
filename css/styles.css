@@ -1900,3 +1900,9 @@ a.btn-action {
     padding:10px;
     color: #333;
 }
+
+/* noty overide */
+.noty_buttons {
+    background-color: #404040 !important;
+    border-top: 1px solid #474747 !important;
+}

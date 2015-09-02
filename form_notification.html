@@ -246,21 +246,30 @@
                             <label id="cname-error" class="error" for="cname">This field is required.</label>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="btn-error">
-                        <span class="fw-stack fw-lg btn-action-ico">
-                            <i class="fw fw-ring fw-stack-2x"></i>
-                            <i class="fw fw-add fw-stack-1x"></i>
-                        </span>
+                            <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="btn-error">
+                                <span class="fw-stack fw-lg btn-action-ico">
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-add fw-stack-1x"></i>
+                                </span>
                                 Error
                             </button>
 
-                            <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="btn-success">
-                        <span class="fw-stack fw-lg btn-action-ico">
-                            <i class="fw fw-ring fw-stack-2x"></i>
-                            <i class="fw fw-add fw-stack-1x"></i>
-                        </span>
+                            <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="btn-success">
+                                <span class="fw-stack fw-lg btn-action-ico">
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-add fw-stack-1x"></i>
+                                </span>
                                 Success
                             </button>
+
+                            <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="btn-confirm">
+                                <span class="fw-stack fw-lg btn-action-ico">
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-add fw-stack-1x"></i>
+                                </span>
+                                Confirm
+                            </button>
+
                         </div>
                         <div class="clearfix"></div>
                         <div id="push"></div>
@@ -322,6 +331,40 @@
                 }
             });
         });
+
+        //top level notifications -- SUCCESS
+        $('#btn-confirm').click(function(){
+            var n = noty({
+                theme:'wso2',
+                layout: 'top',
+                type: 'confirm',
+                text: 'Please complete all error marked fileds before you proceed. this is long error notification',
+                buttons: [
+
+                    {addClass: 'btn btn-default', text: 'Cancel', onClick: function($noty) {
+                        $noty.close();
+                        noty({ theme:'wso2',text: 'You clicked "Cancel" button', type: 'error'});
+                    }
+                    },
+                    {addClass: 'btn btn-primary', text: 'Ok', onClick: function($noty) {
+
+                        // this = button element
+                        // $noty = $noty element
+
+                        $noty.close();
+                        noty({ theme:'wso2',text: 'You clicked "Ok" button', type: 'success'});
+                    }
+                    }
+                ],
+                animation: {
+                    open: {height: 'toggle'}, // jQuery animate function property object
+                    close: {height: 'toggle'}, // jQuery animate function property object
+                    easing: 'swing', // easing
+                    speed: 500 // opening & closing animation speed
+                }
+            });
+        });
+
 
 
         $('.side-pane-trigger').click(function(){
