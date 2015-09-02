@@ -664,6 +664,7 @@ a.btn-action {
     padding: 6px;
     background-color: #383d44;
     top: 0;
+    color:#fff;
 }
 .app-thumb span {
     padding: 7px;
@@ -685,6 +686,7 @@ a.btn-action {
     color: #fff;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 .app-icon:before {
     display: block;
@@ -714,7 +716,7 @@ a.btn-action {
 }
 .app-name {
     position: absolute;
-    background-color: red;
+    color:#fff;
     bottom: 0;
     padding: 9px 5px 2px;
     width: 100%;
