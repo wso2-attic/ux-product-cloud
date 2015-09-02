@@ -173,7 +173,7 @@
     <div class="container-fluid app-content-section">
         <div class="row">
             <div class="col-md-12 msg-issues">
-                Using this page, you can download server logs.
+                Using this page, you can download server logs. Logs of deployed applications are archived daily. Specify a date to download archived logs. To view logs that are not archived yet, click the <strong>View</strong> button.
             </div>
         </div>
         <div class='row'>
@@ -199,16 +199,10 @@
                         </div>
                     </div>
                 </div>
-
-                <div class='note'>
-                    <i class='fa fa-info-circle fa-2x pull-left'></i>
-                    <p class='pull-right'>Logs of deployed applications are archived daily. Specify a date to download archived logs.
-To view logs that are not archived yet, click the <strong>View</strong> button.</p>
-                </div>
                 
                 <div class='row button-container'>
                     <div class="col-md-5">
-                        <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                        <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="view-log">
                             <span class="fw-stack fw-sm btn-action-ico">
                                 <i class="fw fw-ring fw-stack-2x"></i>
                                 <i class="fw fw-down-arrow fw-stack-1x"></i>
@@ -223,7 +217,7 @@ To view logs that are not archived yet, click the <strong>View</strong> button.<
                                 <input type="text" id='date' name="daterange" class="form-control"/>
                             </div>
                             <div class='col-md-7'>
-                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="download-log">
                                     <span class="fw-stack fw-sm btn-action-ico">
                                         <i class="fw fw-ring fw-stack-2x"></i>
                                         <i class="fw fw-down-arrow fw-stack-1x"></i>
@@ -311,6 +305,10 @@ To view logs that are not archived yet, click the <strong>View</strong> button.<
 
     };
 
+    $('#view-log').click(function(){
+        $('.log-container').show();
+    })
+
     $('.select2').select2({
         templateResult: formatState,
         templateSelection :formatState
@@ -321,7 +319,7 @@ To view logs that are not archived yet, click the <strong>View</strong> button.<
         "startDate": "08/19/2015",
         "endDate": "08/21/2015"
     }, function(start, end, label) {
-      alert("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+
     });
 
     $("#application-type").prop("disabled", true);
