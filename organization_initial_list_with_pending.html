@@ -262,23 +262,15 @@
             {
                 "targets": 2,
                 "render": function ( data, type, row ) {
-                    var org_class = "";
-                    var string = "";
+                    var roleTag = "";
                     $.each(row.roles, function(i,e){
-                        if("AF" == e.orgType){
-                            org_class = "org_af";
-                        }else if("APIM" == e.orgType){
-                            org_class = "org_apim";
-                        }else{
-                            org_class = "org_other";
-                        }
-                        string += "<div class='role_type "+ org_class +"'><span class='org_type '>"+ e.orgType +"</span><span class='role_type_tag'>"+ e.roleType +"</span></div>";
+                        roleTag += "<div class='role_type "+ e.orgType +"'><span class='org_type'>"+ e.orgType +"</span><span class='role_type_tag'>"+ e.roleType +"</span></div>";
                     });
-                    return string;
+                    return roleTag;
                 }
             },
             { "targets": -2,"data": null,"defaultContent": "<a class='editroles'><i class='fa fa-edit'></i></a>" },
-            { "targets": -1,"data": null,"defaultContent": "<a class='delete' href='#'><i class='fa  fa-trash'></i></a>" }
+            { "targets": -1,"data": null,"defaultContent": "<a class='delete'><i class='fa  fa-trash'></i></a>" }
         ]
     });
 
