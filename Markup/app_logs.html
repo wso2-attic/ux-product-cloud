@@ -177,64 +177,51 @@
             </div>
         </div>
         <div class='row'>
-            <div class="col-md-6 forms">
-                <div id="push"></div>
-                <div class='row'>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="download_logs_stage">Stage: </label>
-                            <select id="download_logs_stage" class="form-control select2">
-                                <option selected="" value="Development">Development</option>
-                                <option value="Testing">Testing</option>
-                                <option value="Production">Production</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="version">Version: </label>
-                            <select id="version" class="form-control select2">
-                                <option value="TRUNK">TRUNK</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class='row button-container'>
-                    <div class="col-md-5">
-                        <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="view-log">
-                            <span class="fw-stack fw-sm btn-action-ico">
-                                <i class="fw fw-ring fw-stack-2x"></i>
-                                <i class="fw fw-down-arrow fw-stack-1x"></i>
-                            </span>
-                            View Recent Logs
-                        </button>
-                        <i class="fa fa-spinner  fa-2x fa-pulse fa-spin spin-overide"></i>
-                    </div>
-                    <div class="col-md-7">
+            <div id="push"></div>
+            <div class="col-md-6 forms cloud-tab">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#recent" aria-controls="general" role="tab" data-toggle="tab">Recent Logs</a></li>
+                    <li role="presentation"><a href="#archived" aria-controls="builddeploy" role="tab" data-toggle="tab">Archived Logs</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="recent">
                         <div class='row'>
-                            <div class='col-md-5'>
-                                <input type="text" id='date' name="daterange" class="form-control"/>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="download_logs_stage">Stage: </label>
+                                    <select id="download_logs_stage" class="form-control select2">
+                                        <option selected="" value="Development">Development</option>
+                                        <option value="Testing">Testing</option>
+                                        <option value="Production">Production</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class='col-md-7'>
-                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="download-log">
-                                    <span class="fw-stack fw-sm btn-action-ico">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="version">Version: </label>
+                                    <select id="version" class="form-control select2">
+                                        <option value="TRUNK">TRUNK</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row button-container'>
+                            <div class="col-md-5">
+                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="view-log">
+                                    <span class="fw-stack fw-lg btn-action-ico">
                                         <i class="fw fw-ring fw-stack-2x"></i>
                                         <i class="fw fw-down-arrow fw-stack-1x"></i>
                                     </span>
-                                    Download Archived Logs
+                                    View Recent Logs
                                 </button>
                             </div>
                         </div>
-                        
-                    </div>
-                </div>
-                
-            </div>
-            <div id="push"></div>
-            <div class='col-md-8 log-container'>
-                
-                <pre id="download_logs_content" style="overflow-y: auto;">
+                        <div id="push"></div>
+                        <div class='row'>
+                            <div class='col-md-12 log-container'>
+                            <pre id="download_logs_content">
 [DEV_AS][2015-08-21 02:05:50,646][org.wso2.carbon.user.core.ldap.ReadWriteLDAPUserStoreManager]LDAP connection created successfully in read-write mode
 
 [DEV_AS][2015-08-21 02:05:51,500][org.wso2.carbon.registry.core.jdbc.EmbeddedRegistryService]Connected to mount at governance in 6ms
@@ -247,6 +234,34 @@
 
 [DEV_AS][2015-08-21 02:05:55,786][org.wso2.carbon.webapp.mgt.TomcatGenericWebappsDeployer]Deployed webapp: StandardEngine[Catalina].StandardHost[localhost].StandardContext[/t/imeshc/webapps/demoapplication-default-SNAPSHOT].File[/mnt/10.0.60.38/wso2as-5.2.1/repository/tenants/4230/webapps/demoapplication-default-SNAPSHOT.war]
 </pre>
+                        </div>
+                        </div>
+                        
+                        <div class='clearfix'></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="archived">
+                        <div class='row'>
+                            <div class='col-md-6'>
+                                <div class='form-group'>
+                                    <div class='datepicker-container'>
+                                        <input type="text" id='date' name="daterange" class="form-control"/><i class="fw fw-calendar fw-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row button-container'>
+                            <div class="col-md-5">
+                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="download-log">
+                                    <span class="fw-stack fw-lg btn-action-ico">
+                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                        <i class="fw fw-down-arrow fw-stack-1x"></i>
+                                    </span>
+                                    Download Archived Logs
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
             </div>
         </div>
     </div><!-- /.container -->
@@ -306,7 +321,10 @@
     };
 
     $('#view-log').click(function(){
-        $('.log-container').show();
+        $('#view-log').loadingButton('show');
+        $('.log-container').delay(5000).show(0,function(){
+            $('#view-log').loadingButton('hide');
+        });
     })
 
     $('.select2').select2({
