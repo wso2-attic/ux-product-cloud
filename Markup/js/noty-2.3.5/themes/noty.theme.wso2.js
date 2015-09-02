@@ -136,7 +136,7 @@ $.noty.themes.wso2 = {
                 this.$buttons.css({borderTop: '1px solid #50C24E'});
                 break;
             default:
-                this.$bar.css({backgroundColor: '#FFF', borderColor: '#CCC', color: '#444'});
+                this.$bar.css({backgroundColor: '#464646', borderColor: '#464646', color: '#fff'});
                 break;
         }
     },
