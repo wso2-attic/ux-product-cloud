@@ -179,10 +179,12 @@ $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
 
         return $(this).each(function(){
             if (action === 'show') {
+                $(this).prop( "disabled", true );
                 $(this).find('span').css('display','none');
                 $(this).prepend(html).addClass('loading');
             }
             if (action === 'hide') {
+                $(this).prop( "disabled", false );
                 $(this).find('.button-loader').remove();
                 $(this).find('span').css('display','inline-block');
             }
