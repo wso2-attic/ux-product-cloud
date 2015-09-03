@@ -1915,3 +1915,6 @@ a.btn-action {
     width:110px;
     height:110px;
 }
+th.hide-column-data, td.hide-column-data {
+    display: none;
+}
