@@ -1905,3 +1905,10 @@ a.btn-action {
     right: 10px;
     color: #282828;
 }
+
+.roles-container .org_type{
+    padding: 4px 10px 4px 19px;
+}
+.roles-container .role_type {
+    color:#fff;
+}
