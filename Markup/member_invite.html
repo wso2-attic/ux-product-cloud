@@ -104,56 +104,15 @@
         <div class="navbar navbar-secondary">
             <div class="container-fliud">
                 <div class="row">
-                    <div class="side-pane-trigger">
-                        <i class="fa fa-reorder"></i>
-                    </div>
-                    <div class="breadcrumb-secondary">
-                        <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Team / Invite Members
+                    <div class="col-md-12 breadcrumb-secondary">
+                        <i class="fa fa-cubes"></i> <span class="hidden-xs">Cloud </span> / Manage Members
                     </div>
                 </div>
             </div>
         </div>
         <!-- EOF App factory menu -->
         <div class="inner-wrapper">
-        <!-- left pane wrapper -->
-        <div class="left-pane">
-            <ul>
-                <li>
-                    <a href="009_cloud_app_details_initial.html" target="_blank"><i class="fa fa-laptop"></i> Overview</a>
-                </li>
-                <li class="selected">
-                    <a href="team_initial.html"><i class="fa fa-users"></i> Team</a>
-                </li>
-                <li>
-                    <a><i class="fa fa-cogs"></i> Repository</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fw fw-deploy"></i> Build & Deploy</a>
-                </li>
-                <li>
-                    <a href="database_initial.html"><i class="fa fa-database"></i> Databases</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-wrench"></i> Runtime Configs</a>
-                </li>
-                <li>
-                    <a href="issues_initial.html"><i class="fa fa-tags"></i> Issues</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fw fw-lifecycle"></i> Lifecycle Management</a>
-                </li>
-                <li>
-                    <a href="app_logs.html"><i class="fa fa-hdd-o"></i>Runtime Logs</a>
-                </li>
-                <li>
-                    <a href="custom_url_initial.html"><i class="fa fa-link"></i> Custom URL</a>
-                </li>
-                <li>
-                    <a href="application_settings.html"><i class="fw fw-settings"></i> Settings</a>
-                </li>
-            </ul>
-        </div>
-        <!-- left pane wrapper -->
+
         <div class="right-pane">
             <!-- BOF App factory menu actionbar -->
             <div class="action-bar">
@@ -161,18 +120,14 @@
                 <span class="fw-stack fw-lg btn-action-ico">
                 <i class="fw fw-ring fw-stack-2x"></i>
                 <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Back to team
+                </span> Back to Members
                 </a>
             </div>
             <!-- EOF App factory menu actionbar-->
             <div class="container-fluid app-content-section">
                 <div class="row">
                     <div class="col-md-12 msg-issues">
-                        Orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                        Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                        imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+                        You can invite new members to organization by giving their email addresses. Add comma seperated email addresses.
                     </div>
                 </div>
                 <div class='row '>
@@ -181,6 +136,10 @@
                         <div class="form-group members-container">
                             <label for="members">Member(s) Email: </label>
                             <select id="members" type='hidden' class="form-control members" multiple='multiple'></select>
+                        </div>
+                        <div class="form-group roles-container">
+                            <label for="roles">Select Permission Role: </label>
+                            <select id="roles" type='hidden' class="form-control roles" multiple='multiple'></select>
                         </div>
                         <div class="form-group">
                             <label for="description">Welcome Text : </label>
@@ -253,38 +212,6 @@
                 templateSelection :formatState
             });
 
-            //The following is a sample data consisting roles and email addresses
-            //Roles are an array with roles representing a string
-            var sampleData = [
-                {
-                    id:'neranga@wso2.xom',
-                    text:'NerangaG@wso2.com',
-                    role:['Admin','Lead','Committer','Moderator']
-                },
-                {
-                    id:'dulip@wso2.xom',
-                    text:'Dulip@wso2.com',
-                    role:['Lead','Moderator','Developer','QA','DevOps','CXO']
-                },
-                {
-                    id:'dhanuka@wso2.com',
-                    text:'Dhanuka@wso2.com',
-                    role:['Lead','Moderator','Developer','DevOps','CXO']
-                }
-            ]
-
-            //Sample roles to be added to the new tags selector
-            var sampleRoles = [
-                {
-                    id:'moderator',
-                    text:'Moderator'
-                },
-                {
-                    id:'admin',
-                    text:'Admin'
-                }
-            ];
-
             //Custom function for select 2 templating
             function memberResult(result){
 
@@ -292,123 +219,116 @@
                     return result.text;
                 }
 
-                var role = '';
-                if(result.role != undefined){
-                    role = result.role.toString().replace(/,/g,', ');
-                }
-
-                return '<div class="members-result-container"><div class="pull-left member-detail"><h4>' + result.text + '</h4><p>' + role + '</p></div><div class="pull-right"><span class="fw-stack fw-lg btn-action-ico"><i class="fw fw-ring fw-stack-2x"></i><i class="fw fw-add fw-stack-1x"></i></span></div><div class="clearfix"></div></div>'
+                return '<div class="members-result-container"><div class="pull-left member-detail"><h4>' + result.text + '</h4></div><div class="pull-right"><span class="fw-stack fw-lg btn-action-ico"><i class="fw fw-ring fw-stack-2x"></i><i class="fw fw-add fw-stack-1x"></i></span></div><div class="clearfix"></div></div>'
             }
 
             $(".members").select2({
                 tags: true,
-                data: sampleData,
-                multiple:true,
                 templateResult: memberResult,
                 placeholder :'Type member emails',
-                createTag: function (tag) {
-                    return {
-                        id: tag.term,
-                        text: tag.term,
-                        isNew : true
-                    };
-                },
                 escapeMarkup:function(m){
                     return m;
                 },
             }).on('select2:open',function(){
                 $('.members-container .error').remove();
-                if($('.new-tag').length > 0){
-                    var select2NewUser = $('.new-tag').data();
-
-                    $(".members [value='"+ select2NewUser.id +"']").remove();
-                    $('.members').trigger('change');
-
-                    $('.new-tag').remove();
-                }
             }).on("select2:select",function(e){
-                var memberContainer = $('.select2-container');
-
-                if(e.params.data.isNew && validateEmail(e.params.data.text)){
-                    $('.new-tag').remove();
-
-                    var htmlContent = '';
-
-                    htmlContent += '<div class="new-tag" style="';
-
-                    htmlContent += 'top:' + (memberContainer.offset().top + $(this).height()) + 'px;';
-                    htmlContent += 'left:' + memberContainer.offset().left + 'px;';
-                    htmlContent += 'width:' + memberContainer.width() + 'px;"';
-                    htmlContent += '>';
-
-                    htmlContent += '<div class="new-tag-desc">';
-                    htmlContent += '<p>';
-                    htmlContent += '<strong>' + e.params.data.text + '</strong>'
-                    htmlContent += ' is not invited to the organization. You can add application related roles here.';
-                    htmlContent += '</p>'
-                    htmlContent += '</div>'
-
-                    htmlContent += '<div class="form-group new-tag-container">';
-                    htmlContent += '<label for="new-tag-roles">';
-                    htmlContent += 'Select Roles';
-                    htmlContent += '</label>';
-                    htmlContent += '<select id="new-tag-roles" type="hidden" multiple="multiple" class="form-control new-tag-roles">';
-                    htmlContent += '</select>';
-                    htmlContent += '<div class="checkbox">';
-                    htmlContent += '<label>';
-                    htmlContent += '<input type="checkbox" class="add-all-tags">';
-                    htmlContent += 'Assign all roles';
-                    htmlContent += '</label>'
-                    htmlContent += '</div>';
-                    htmlContent += '<button class="cu-btn cu-btn-sm cu-btn-blue add-tag">Add</button'
-                    htmlContent += '</div>';
-
-                    htmlContent += '</div>';
-
-                    $('body').append(htmlContent);
-                    $('.new-tag').data(e.params.data);
-
-                    $('.new-tag-roles').select2({
-                        data: sampleRoles,
-                        placeholder:'Please select roles',
-                        createSearchChoice: function(){ return null; }
-                    })
-
-                    $('.add-all-tags').click(function(){
-                        if($(this).prop('checked')){
-                            $('.new-tag-roles option').prop('selected',true).trigger('change')
-                        }else{
-                            $('.new-tag-roles option').prop('selected',false).trigger('change')
-                        }
-                    })
-
-                    $('.add-tag').click(function(){
-                        var selectedRoles = $('.new-tag-roles').select2('data');
-                        if(selectedRoles.length < 1){
-                            $('<p>').text('Please select roles to add.').addClass('notification-msg noti-error ').css({
-                                'margin-top' : '10px'
-                            }).insertBefore('.add-tag');
-                            return false;
-                        }
-
-                        var newUser = $('.new-tag').data();
-                        var addedUsers = $('.members').select2('data');
-
-                        var targetEl = $.grep(addedUsers, function(e){ return e.id == newUser.id; })
-
-                        if(targetEl.length > 0 ){
-                            targetEl[0]['roles'] = $('.new-tag-roles').select2('data');
-                        }
-
-                        $('.new-tag').remove();
-                    })
-
-                }else if(e.params.data.isNew != undefined){
+                if(!validateEmail(e.params.data.text)){
                     $('.members-container').append('<label id="cname-error" class="error" for="cname">A valid email is required.</label>');
 
                     $(".members [value='"+ e.params.data.id +"']").remove();
                     $('.members').trigger('change');
                 }
+            })
+
+            //Roles object for select2 to populate data
+            //Each child element should contain a unique ID since select2 identifies from
+            //the child id.
+            var rolseObj = [
+                {
+                    id : 'AF-Admin',
+                    text : 'AF',
+                    children : [
+                        {
+                            id : 'AF-Admin',
+                            roleDisplayName : 'Admin',
+                            orgType : 'AF',
+                            text : 'Admin'
+                        },
+                        {
+                            id : 'AF-User',
+                            roleDisplayName : 'User',
+                            orgType : 'AF',
+                            text : 'User'
+                        },
+                        {
+                            id : 'AF-App-Owner',
+                            roleDisplayName : 'App Owner',
+                            orgType : 'AF',
+                            text : 'App Owner'
+                        }
+                    ]
+                },
+                {
+                    id : 'APIM',
+                    text : 'APIM',
+                    children : [
+                        {
+                            id : 'APIM-QA',
+                            roleDisplayName : 'QA',
+                            orgType : 'APIM',
+                            text : 'QA'
+                        },
+                        {
+                            id : 'APIM-DevOps',
+                            roleDisplayName : 'DevOps',
+                            orgType : 'APIM',
+                            text : 'DevOps'
+                        },
+                        {
+                            id : 'APIM-CXO',
+                            roleDisplayName : 'CXO',
+                            orgType : 'APIM',
+                            text : 'CXO'
+                        },
+                        {
+                            id : 'APIM-App-Owner',
+                            roleDisplayName : 'App Owner',
+                            orgType : 'APIM',
+                            text : 'App Owner'
+                        }
+                    ]
+                },
+                {
+                    id : 'Other',
+                    text : 'Other',
+                    children : [
+                        {
+                            id : 'Other-DevOps',
+                            roleDisplayName : 'DevOps',
+                            orgType : 'APIM',
+                            text : 'DevOps'
+                        },
+                    ]
+                }
+            ]
+
+
+            //Roles template generator
+            function roleResult (result) {
+                if(result.loading != undefined && result.loading){
+                    return result.text;
+                }
+                return "<div class='role_type " + result.orgType + "'><span class='org_type'>" + result.orgType + "</span><span class='role_type_tag'>" + result.roleDisplayName + "</span></div>"
+            }
+
+            //Roles select2 component initialization
+            $('.roles').select2({
+                data : rolseObj,
+                placeholder:'Select Role',
+                templateSelection : roleResult,
+                escapeMarkup:function(m){
+                    return m;
+                },
             })
 
             //Validate email
