@@ -1852,13 +1852,13 @@ a.btn-action {
     border-radius: 0px;
 
 }
-.cloud-tab .nav>li>a:hover, .nav>li>a:focus{
+.cloud-tab .nav>li>a:hover,.cloud-tab .nav>li>a:focus{
     color:#c5c5c5;
     border:none;
     border-top:2px solid transparent;
     background:none;
 }
-.cloud-tab .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+.cloud-tab .nav-tabs>li.active>a,.cloud-tab .nav-tabs>li.active>a:hover,.cloud-tab .nav-tabs>li.active>a:focus{
     border:none;
     border-top:2px solid #c5c5c5;
     color:#c5c5c5;
@@ -1910,4 +1910,8 @@ a.btn-action {
     top: 6px;
     right: 10px;
     color: #282828;
+}
+.img-container{
+    width:110px;
+    height:110px;
 }

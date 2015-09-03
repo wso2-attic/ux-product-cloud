@@ -13,6 +13,7 @@
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
     <link href="css/select2-4.0.0/select2.min.css" rel="stylesheet">
     <link href="css/select2-4.0.0/select2.override.css" rel="stylesheet">
+    <link href="css/cropper-0.11.1/cropper.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -194,9 +195,16 @@
                                     <input type="text" class="form-control" readonly>
                                     <span class="input-group-btn">
                                     <span class="btn btn-primary btn-file">
-                                        Browse&hellip; <input type="file" multiple>
+                                        Browse&hellip; <input type="file" id="inputImage" multiple>
+
                                     </span>
                                     </span>
+                                </div>
+                                <label class="margin-top-xs" for="preview-icon">Preview</label>
+                                <div class="input-group">
+                                    <div class="img-container">
+                                        <img src="images/sample-app-image.png">
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -253,6 +261,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 <script src="js/select2-4.0.0/select2.min.js"></script>
+<script src="js/cropper-0.11.1/cropper.min.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -291,6 +300,50 @@
     };
 
     $("#application-type").prop("disabled", true);
+
+    var $image = $('.img-container > img');
+    $image.cropper({
+      aspectRatio: 1 / 1,
+      minCanvasWidth:100,
+      minCanvasHeight:100,
+      minContainerWidth: 110,
+      minContainerHeight: 110,
+      crop: function(e) {
+        // Output the result data for cropping image.
+      }
+    });
+
+    // Import image
+    var $inputImage = $('#inputImage');
+    var URL = window.URL || window.webkitURL;
+    var blobURL;
+
+    if (URL) {
+      $inputImage.change(function () {
+        var files = this.files;
+        var file;
+
+        if (!$image.data('cropper')) {
+          return;
+        }
+
+        if (files && files.length) {
+          file = files[0];
+
+          if (/^image\/\w+$/.test(file.type)) {
+            blobURL = URL.createObjectURL(file);
+            $image.one('built.cropper', function () {
+              URL.revokeObjectURL(blobURL); // Revoke when load complete
+            }).cropper('reset').cropper('replace', blobURL);
+            $inputImage.val('');
+          } else {
+            $body.tooltip('Please choose an image file.', 'warning');
+          }
+        }
+      });
+    } else {
+      $inputImage.parent().remove();
+    }
 
 
 </script>
