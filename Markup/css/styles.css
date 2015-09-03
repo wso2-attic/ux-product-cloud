@@ -1911,3 +1911,7 @@ a.btn-action {
     right: 10px;
     color: #282828;
 }
+
+th.hide-column-data, td.hide-column-data {
+    display: none;
+}
