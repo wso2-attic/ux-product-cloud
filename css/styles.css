@@ -1911,6 +1911,7 @@ a.btn-action {
     right: 10px;
     color: #282828;
 }
+
 .img-container{
     width:110px;
     height:110px;
@@ -1918,6 +1919,7 @@ a.btn-action {
 th.hide-column-data, td.hide-column-data {
     display: none;
 }
+<<<<<<< HEAD
 .doc-icon{
     display: inline-block;
     padding: 6px 12px;
@@ -1960,4 +1962,10 @@ th.hide-column-data, td.hide-column-data {
     color: #333;
     background-color: #d9d9d9;
     border-color: #d9d9d9;
+}
+.roles-container .org_type{
+    padding: 4px 10px 4px 19px;
+}
+.roles-container .role_type {
+    color:#fff;
 }
