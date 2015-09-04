@@ -183,9 +183,9 @@
                     <div class="form-group">
                         <label for="master-repo">Master Repository: </label>
                         <div class="input-group input-wrap">
-                            <input type="text" class="form-control" placeholder="" value="https://github.com/wso2-dev-ux/product-cloud.git">
+                            <input id="masterRepo" type="text" class="form-control" placeholder="" value="https://github.com/wso2-dev-ux/product-cloud.git">
                             <div class="input-group-btn btn-input-right">
-                                <button class="btn btn-default" type="button" title="Copy to clipboard">
+                                <button id="copytoClipboard" class="btn btn-default" type="button" title="Copy to clipboard">
                                     <i class="fw fw-copy" aria-hidden="true"></i>
                                 </button>
                             </div>
@@ -241,6 +241,10 @@
             leftPane.animate({"left":"0em"}, "slow");
             $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
         }
+    });
+
+    $("#copytoClipboard").on("click",function(){
+        $(this).copyToClipboard("#masterRepo");
     });
 
 </script>
