@@ -1978,3 +1978,7 @@ th.hide-column-data, td.hide-column-data {
 .roles-container .role_type {
     color:#fff;
 }
+
+.tooltip-inner {
+    max-width:600px;
+}
