@@ -199,38 +199,6 @@
                 return '<div class="members-result-container"><div class="pull-left member-detail"><h4>' + result.text + '</h4></div><div class="pull-right"><span class="fw-stack fw-lg btn-action-ico"><i class="fw fw-ring fw-stack-2x"></i><i class="fw fw-add fw-stack-1x"></i></span></div><div class="clearfix"></div></div>'
             }
 
-            $.fn.select2.amd.require(['select2/selection/search'], function (Search) {
-                var oldRemoveChoice = Search.prototype.searchRemoveChoice;
-
-                Search.prototype.searchRemoveChoice = function () {
-                    oldRemoveChoice.apply(this, arguments);
-                    this.$search.val('');
-                };
-
-                $(".members").select2({
-                    tags: true,
-                    templateResult: memberResult,
-                    placeholder: 'Type member emails',
-                    escapeMarkup: function (m) {
-                        return m;
-                    },
-                }).on('select2:open', function () {
-                    $('.members-container .error').remove();
-                }).on("select2:select", function (e) {
-                    if (!validateEmail(e.params.data.text)) {
-                        $('.members-container').append('<label id="cname-error" class="error" for="cname">A valid email is required.</label>');
-
-                        $(".members [value='" + e.params.data.id + "']").remove();
-                        $('.members').trigger('change');
-                    }
-                });
-
-            });
-
-
-
-
-
             //Roles object for select2 to populate data
             //Each child element should contain a unique ID since select2 identifies from
             //the child id.
@@ -312,16 +280,45 @@
                 return "<div class='role_type " + result.orgType + "'><span class='org_type'>" + result.orgType + "</span><span class='role_type_tag'>" + result.roleDisplayName + "</span></div>"
             }
 
-            //Roles select2 component initialization
-            $('.roles').select2({
-                data : rolseObj,
-                placeholder:'Select Role',
-                templateSelection : roleResult,
-                escapeMarkup:function(m){
-                    return m;
-                },
-            })
+            $.fn.select2.amd.require(['select2/selection/search'], function (Search) {
+                var oldRemoveChoice = Search.prototype.searchRemoveChoice;
 
+                Search.prototype.searchRemoveChoice = function () {
+                    oldRemoveChoice.apply(this, arguments);
+                    this.$search.val('');
+                };
+
+                //members email section
+                $(".members").select2({
+                    tags: true,
+                    templateResult: memberResult,
+                    placeholder: 'Type member emails',
+                    escapeMarkup: function (m) {
+                        return m;
+                    },
+                }).on('select2:open', function () {
+                    $('.members-container .error').remove();
+                }).on("select2:select", function (e) {
+                    if (!validateEmail(e.params.data.text)) {
+                        $('.members-container').append('<label id="cname-error" class="error" for="cname">A valid email is required.</label>');
+
+                        $(".members [value='" + e.params.data.id + "']").remove();
+                        $('.members').trigger('change');
+                    }
+                });
+
+                //Roles select2 component initialization
+                $('.roles').select2({
+                    data : rolseObj,
+                    placeholder:'Select Role',
+                    templateSelection : roleResult,
+                    escapeMarkup:function(m){
+                        return m;
+                    },
+                });
+
+            });
+            
             //Validate email
             function validateEmail(email) {
                 var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
