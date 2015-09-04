@@ -638,6 +638,10 @@ a.btn-action {
     position: relative;
     top: 11em;
 }
+
+.app-listing-loader{
+    margin-top: 10%;
+}
 #search-apps {
     border-radius: 0px;
     height: 40px;
