@@ -108,7 +108,8 @@
                         <i class="fa fa-reorder"></i>
                     </div>
                     <div class="breadcrumb-secondary">
-                        <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Team / Invite Members
+                        <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App /
+                        Team / Invite Members
                     </div>
                 </div>
             </div>
@@ -157,7 +158,8 @@
         <div class="right-pane">
             <!-- BOF App factory menu actionbar -->
             <div class="action-bar">
-                <a href="team_initial.html" class="btn-action" data-toggle="tooltip" data-placement="top" title="Back to team">
+                <a href="team_initial.html" class="btn-action" data-toggle="tooltip" data-placement="top"
+                   title="Back to team">
                 <span class="fw-stack fw-lg btn-action-ico">
                 <i class="fw fw-ring fw-stack-2x"></i>
                 <i class="fw fw-left-arrow fw-stack-1x"></i>
@@ -184,7 +186,8 @@
                         </div>
                         <div class="form-group">
                             <label for="description">Welcome Text : </label>
-                            <textarea class="form-control" rows="3" id="description" placeholder="Type your invitation message here"></textarea>
+                            <textarea class="form-control" rows="3" id="description"
+                                      placeholder="Type your invitation message here"></textarea>
                         </div>
                         <div class="form-group">
                             <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
@@ -204,7 +207,8 @@
         </div>
         <div id="footer">
             <div class="container-fluid">
-                <div class="footer-text">WSO2 Cloud V: 1.2 . &copy; 2015 <i class="fw fw-wso2 fw-2x"></i> All Rights Reserved.</div>
+                <div class="footer-text">WSO2 Cloud V: 1.2 . &copy; 2015 <i class="fw fw-wso2 fw-2x"></i>
+                    All Rights Reserved.</div>
             </div>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -234,7 +238,8 @@
                 var $state;
                 if(state.element.attributes['data-icon']){
                     var $state = $(
-                            '<span><i class="fa '+ state.element.attributes['data-icon'].value.toLowerCase() +'"></i>&nbsp;&nbsp;'
+                            '<span><i class="fa '+ state.element.attributes['data-icon'].value.toLowerCase()
+                            +'"></i>&nbsp;&nbsp;'
                             + state.text + '</span>'
                     );
                 }else{
@@ -297,7 +302,10 @@
                     role = result.role.toString().replace(/,/g,', ');
                 }
 
-                return '<div class="members-result-container"><div class="pull-left member-detail"><h4>' + result.text + '</h4><p>' + role + '</p></div><div class="pull-right"><span class="fw-stack fw-lg btn-action-ico"><i class="fw fw-ring fw-stack-2x"></i><i class="fw fw-add fw-stack-1x"></i></span></div><div class="clearfix"></div></div>'
+                return '<div class="members-result-container"><div class="pull-left member-detail"><h4>' + result.text +
+                        '</h4><p>' + role + '</p></div><div class="pull-right">' +
+                        '<span class="fw-stack fw-lg btn-action-ico"><i class="fw fw-ring fw-stack-2x"></i>' +
+                        '<i class="fw fw-add fw-stack-1x"></i></span></div><div class="clearfix"></div></div>'
             }
 
             $(".members").select2({
@@ -360,7 +368,7 @@
                     htmlContent += 'Assign all roles';
                     htmlContent += '</label>'
                     htmlContent += '</div>';
-                    htmlContent += '<button class="cu-btn cu-btn-sm cu-btn-blue add-tag">Add</button>'
+                    htmlContent += '<button class="cu-btn cu-btn-sm cu-btn-blue add-tag">Add</button>';
                     htmlContent += '</div>';
 
                     htmlContent += '</div>';
@@ -385,7 +393,7 @@
                     $('.add-tag').click(function(){
                         var selectedRoles = $('.new-tag-roles').select2('data');
                         if(selectedRoles.length < 1){
-                            $('<p>').text('Please select roles to add.').addClass('notification-msg noti-error ').css({
+                            $('<label>').text('Please select roles to add.').addClass('error').css({
                                 'margin-top' : '10px'
                             }).insertBefore('.add-tag');
                             return false;
@@ -404,7 +412,8 @@
                     })
 
                 }else if(e.params.data.isNew != undefined){
-                    $('.members-container').append('<label id="cname-error" class="error" for="cname">A valid email is required.</label>');
+                    $('.members-container').append('<label id="cname-error" class="error" for="cname">' +
+                            'A valid email is required.</label>');
 
                     $(".members [value='"+ e.params.data.id +"']").remove();
                     $('.members').trigger('change');
