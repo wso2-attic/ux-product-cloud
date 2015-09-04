@@ -305,6 +305,7 @@
                 theme:'wso2',
                 layout: 'top',
                 type: 'error',
+                closeWith: ['button','click'],
                 text: 'Please complete all error marked fileds before you proceed. this is long error notification',
                 animation: {
                     open: {height: 'toggle'}, // jQuery animate function property object
@@ -321,6 +322,7 @@
                 theme:'wso2',
                 layout: 'top',
                 type: 'success',
+                closeWith: ['button','click'],
                 timeout:'3500',
                 text: 'Please complete all error marked fileds before you proceed. this is long error notification',
                 animation: {
@@ -338,12 +340,26 @@
                 theme:'wso2',
                 layout: 'top',
                 type: 'confirm',
+                closeWith: ['button','click'],
+                modal: true,
                 text: 'Please complete all error marked fileds before you proceed. this is long error notification',
                 buttons: [
 
                     {addClass: 'btn btn-default', text: 'Cancel', onClick: function($noty) {
                         $noty.close();
-                        noty({ theme:'wso2',text: 'You clicked "Cancel" button', type: 'error'});
+                        noty({
+                            theme:'wso2',
+                            layout: 'top',
+                            text: 'You clicked "Cancel" button',
+                            type: 'error',
+                            animation: {
+                                open: {height: 'toggle'}, // jQuery animate function property object
+                                close: {height: 'toggle'}, // jQuery animate function property object
+                                easing: 'swing', // easing
+                                speed: 500 // opening & closing animation speed
+                            },
+                            closeWith: ['button','click']
+                        });
                     }
                     },
                     {addClass: 'btn btn-primary', text: 'Ok', onClick: function($noty) {
@@ -352,7 +368,19 @@
                         // $noty = $noty element
 
                         $noty.close();
-                        noty({ theme:'wso2',text: 'You clicked "Ok" button', type: 'success'});
+                        noty({
+                            theme:'wso2',
+                            layout: 'top',
+                            text: 'You clicked "Ok" button',
+                            type: 'success',
+                            animation: {
+                                open: {height: 'toggle'}, // jQuery animate function property object
+                                close: {height: 'toggle'}, // jQuery animate function property object
+                                easing: 'swing', // easing
+                                speed: 500 // opening & closing animation speed
+                            },
+                            closeWith: ['button','click']
+                        });
                     }
                     }
                 ],
