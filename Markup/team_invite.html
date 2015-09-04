@@ -233,31 +233,6 @@
                 }
             });
             
-            function formatState (state) {
-                if (!state.id) { return state.text; }
-                var $state;
-                if(state.element.attributes['data-icon']){
-                    var $state = $(
-                            '<span><i class="fa '+ state.element.attributes['data-icon'].value.toLowerCase()
-                            +'"></i>&nbsp;&nbsp;'
-                            + state.text + '</span>'
-                    );
-                }else{
-                    var $state = $(
-                            '<span><i class="fa '+state.id.toLowerCase() +'"></i>&nbsp;&nbsp;'
-                            + state.text + '</span>'
-                    );
-                }
-            
-                return $state;
-            
-            };
-            
-            $('.select2').select2({
-                templateResult: formatState,
-                templateSelection :formatState
-            });
-
             //The following is a sample data consisting roles and email addresses
             //Roles are an array with roles representing a string
             var sampleData = [
@@ -308,7 +283,16 @@
                         '<i class="fw fw-add fw-stack-1x"></i></span></div><div class="clearfix"></div></div>'
             }
 
-            $(".members").select2({
+            $.fn.select2.amd.require(['select2/selection/search'], function (Search) {
+                var oldRemoveChoice = Search.prototype.searchRemoveChoice;
+
+                Search.prototype.searchRemoveChoice = function () {
+                    oldRemoveChoice.apply(this, arguments);
+                    this.$search.val('');
+                };
+
+
+                $(".members").select2({
                 tags: true,
                 data: sampleData,
                 multiple:true,
@@ -419,6 +403,9 @@
                     $('.members').trigger('change');
                 }
             })
+
+            });
+
 
             //Validate email
             function validateEmail(email) {
