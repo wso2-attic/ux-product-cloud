@@ -167,11 +167,9 @@
 
     <div class="container-fluid app-content-section">
         <div class="row">
-
-
-          <div class="col-md-12 app-preview">
+          <div class="col-xs-12 col-md-12 col-lg-12 app-preview">
               <div class="app-thumb">
-                  <img src="images\sample-app-image.png" />
+                  <img src="images/sample-app-image.png" />
                   <span><i class="fa fa-pencil"></i></span>
               </div>
               <div class="app-desc">
@@ -185,28 +183,34 @@
                 </div>
               </div>
           </div>
-          <div class="col-md-9">
-              <div class="block-general">
-                  <!-- BOF add loading overlay -->
-                  <div class="loading-overlay">
-                      <div class="loader">
+        </div>
+        <div class="row padding-bottom-xlg">
+          <div class="col-xs-12 col-md-9 col-lg-9">
+              <!-- BOF add loading overlay -->
+              <div class="loading-overlay">
+                  <div class="loader">
 
-                      </div>
                   </div>
-                  <!-- EOF add loading overlay -->
-                  <div class="row">
-                      <div class="col-md-9">
-
-                          <select class="version-number">
-                              <option>trunk</option>
-                              <option>1.0.0</option>
-                          </select>
-                          <div class="version-url"><span>URL: http://javatest.djcompany.wso2app.com</span> </div>
+              </div>
+              <!-- EOF add loading overlay -->
+              <div class="block-general">
+                      <div class="col-xs-12 col-md-12 col-lg-9">
+                          <div class="btn-group pull-left version-number">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  trunk <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">trunk</a></li>
+                                  <li><a href="#">1.0.0</a></li>
+                                  <li><a href="#">2.0.0</a></li>
+                              </ul>
+                          </div>
+                          <div class="version-url"><a href="#"><span>URL: http://javatest.djcompany.wso2app.com</span></a> </div>
                           <div class="sec">
-                              <button class="cu-btn cu-btn-md cu-btn-gr-dark">Launch App</button>
+                              <button class="cu-btn cu-btn-md cu-btn-gr-dark btn-launch-app">Launch App</button>
                               <!-- edit code button -->
-                              <div class="btn-group ctrl-edit-button">
-                                  <a type="button" class="btn cu-btn cu-btn-md cu-btn-blue">Edit Code</a>
+                              <div class="btn-group ctrl-edit-button btn-edit-code">
+                                  <a type="button" class="btn cu-btn cu-btn-md cu-btn-blue" href="#yourlink">Edit Code</a>
                                   <a type="button" class="btn cu-btn cu-btn-md cu-btn-blue cu-dropdown-toggle"
                                      data-toggle="dropdown" aria-expanded="false">
                                       <span class="caret"></span>
@@ -219,17 +223,17 @@
                               </div>
                           </div>
                       </div>
-                      <div class="col-md-3">
-                          <div class="btn-create-version">
-                              <span class="fw-stack fw-lg btn-action-ico">
-                                <i class="fw fw-ring fw-stack-2x"></i>
-                                <i class="fw fw-add fw-stack-1x"></i>
-                              </span> Create Version
-                          </div>
+                      <div class="col-xs-12 col-md-12 col-lg-3">
+                          <a>
+                              <div class="btn-create-version">
+                                  <span class="fw-stack fw-lg btn-action-ico">
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-add fw-stack-1x"></i>
+                                  </span> Create Version
+                              </div>
+                          </a>
                       </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-md-4" >
+                      <div class="col-xs-12 col-md-4 col-lg-4">
                           <div class="block-life-cycle">
                               <h3>Lifecycle Mgt</h3>
                               <div class="block-icon pull-left">
@@ -237,57 +241,70 @@
                               </div>
                               <div class="block-description pull-right">
                                   Application <strong>My Java App</strong> is in
-                                  <br>
                                   <strong>Development</strong> Stage
                               </div>
                               <div class="clearfix"></div>
-                              <div class="block-action-button">
-                                <span class="fw-stack fw-lg btn-action-ico">
-                                    <i class="fw fw-ring fw-stack-2x"></i>
-                                    <i class="fw fw-lifecycle fw-stack-1x"></i>
-                                  </span> Manage Lifecycle
+                                <a>
+                                    <div class="block-action-button">
+                                        <span class="fw-stack fw-lg btn-action-ico">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-lifecycle fw-stack-1x"></i>
+                                        </span> Manage Lifecycle
+                                    </div>
+                                </a>
+                              <!-- BOF permission based icon section -->
+                              <div class="clearfix"></div>
+                              <div class="permission-change-block">
+                                  <a>
+                                      <div class="block-action-button">
+                                        <span class="fw-stack fw-lg btn-action-ico">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-check fw-stack-1x"></i>
+                                        </span> Accept & deploy
+                                      </div>
+                                  </a>
                               </div>
+                              <!-- EOF permission based icon section -->
                           </div>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-xs-12 col-md-4 col-lg-4">
                           <div class="block-repos">
                               <h3>Repos and Builds</h3>
                               <div class="block-icon pull-left">
                                   <i class="fw fw-clock fw-5x"></i>
                               </div>
                               <div class="block-description-multiline pull-left">
-                                  3 Successfull<br>
-                                  1 Failed
+                                  <i class="fa fa-smile-o"></i> 3 Successfull<br>
+                                  <i class="fa fa-frown-o"></i> 1 Failed
                               </div>
                           </div>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-xs-12 col-md-4 col-lg-4">
                           <div class="block-issues">
                               <h3>Issues</h3>
                               <div class="block-icon pull-left">
-                                  <span class="fa-stack fa-lg fa-3x">
-                                      <i class="fa fa-circle-thin fa-stack-2x"></i>
-                                      <i class="fa fa-exclamation fa-stack-1x fa-inverse"></i>
-                                  </span>
+                                  <i class="fw fw-warning fw-5x"></i>
                               </div>
                               <div class="block-description-multiline pull-left">
-                                  <i class="fa  fa-bug"></i> 3 Bugs<br>
-                                  2 Features<br>
-                                  1 Vulnerability
+                                  <i class="fa fa-bug"></i> 3 Bugs<br>
+                                  <i class="fa fa-leaf"></i> 2 Features<br>
+                                  <i class="fa fa-paw"></i> 1 Vulnerability
                               </div>
                               <div class="clearfix"></div>
-                              <div class="block-action-button">
-                                <span class="fw-stack fw-lg btn-action-ico">
-                                    <i class="fw fw-ring fw-stack-2x"></i>
-                                    <i class="fw fw-add fw-stack-1x"></i>
-                                  </span> Create
-                              </div>
+                              <a href="issues_new.html">
+                                  <div class="block-action-button">
+                                    <span class="fw-stack fw-lg btn-action-ico">
+                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                        <i class="fw fw-add fw-stack-1x"></i>
+                                      </span> Create
+                                  </div>
+                              </a>
                           </div>
                       </div>
-                  </div>
+                <div class="clearfix"></div>
               </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-xs-12 col-md-3 col-lg-3">
               <!-- BOF add loading overlay -->
               <div class="loading-overlay">
                   <div class="loader">
@@ -304,12 +321,14 @@
                     12
                   </div>
                   <div class="clearfix"></div>
-                  <div class="block-action-button">
-                        <span class="fw-stack fw-lg btn-action-ico">
-                            <i class="fw fw-ring fw-stack-2x"></i>
-                            <i class="fw fw-add fw-stack-1x"></i>
-                          </span> Invite Member
-                  </div>
+                  <a href="team_invite.html">
+                      <div class="block-action-button">
+                            <span class="fw-stack fw-lg btn-action-ico">
+                                <i class="fw fw-ring fw-stack-2x"></i>
+                                <i class="fw fw-add fw-stack-1x"></i>
+                              </span> Invite Member
+                      </div>
+                  </a>
               </div>
               <div class="block-database pull-left">
                   <h3>Databases</h3>
@@ -320,16 +339,17 @@
                     04
                   </div>
                   <div class="clearfix"></div>
-                  <div class="block-action-button">
+                  <a href="database_new.html">
+                      <div class="block-action-button">
                         <span class="fw-stack fw-lg btn-action-ico">
                             <i class="fw fw-ring fw-stack-2x"></i>
                             <i class="fw fw-add fw-stack-1x"></i>
                           </span> Add Database
-                  </div>
+                      </div>
+                  </a>
+
               </div>
           </div>
-
-
         </div>
     </div><!-- /.container -->
 
@@ -338,13 +358,14 @@
 
     <div class="notification-pane nano">
         <div class="notification-pane-trigger">
+            <span class='new-notifications'></span>
             <i class="fw fw-right-arrow fw-1-5x"></i>
         </div>
         <div class="notifications nano-content">
 
-            <div class="notification-msg noti-success">
+            <div class="notification-msg noti-loading">
                 <div class="msg ">
-                    <i class="fw fw-ok "></i><span> 0.1.0 promoting from Testing to Production.</span>
+                    <i class="fa fa-spinner fa-pulse fa-spin spin-overide"></i><span> 0.1.0 promoting from Testing to Production.</span>
                 </div>
                 <div class="notification-time"> 1 day 5 hours ago</div>
             </div>
