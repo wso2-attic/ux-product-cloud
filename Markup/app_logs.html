@@ -348,10 +348,18 @@
         });
     })
 
-    $('.select2').select2({
+    $('#recent .select2').select2({
         templateResult: formatState,
-        templateSelection :formatState
+        templateSelection :formatState,
+        width: '100%'
     });
+
+    $('#archived .select2').select2({
+        templateResult: formatState,
+        templateSelection :formatState,
+        width: '100%'
+    });
+
 
     $('#date').daterangepicker({
         "singleDatePicker": true,
