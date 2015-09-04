@@ -855,7 +855,12 @@ a.btn-action {
 .left-pane ul li:hover {
     background-color: #101010;
 }
-
+.left-pane ul li ul{
+    margin-top:0px;
+}
+.left-pane ul li ul li a{
+    margin-left:30px;
+}
 .left-pane a{
     color: #fff;
     display: block;
@@ -1982,4 +1987,8 @@ th.hide-column-data, td.hide-column-data {
 
 .tooltip-inner {
     max-width:600px;
+}
+.table-borderless>thead>tr>th, .table-borderless>tbody>tr>th, .table-borderless>tfoot>tr>th, .table-borderless>thead>tr>td,
+.table-borderless>tbody>tr>td, .table-borderless>tfoot>tr>td{
+    border: none;
 }
