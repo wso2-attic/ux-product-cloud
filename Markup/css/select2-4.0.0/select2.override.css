@@ -49,3 +49,7 @@
     color: #fff;
 }
 /* Org invite member role selection select2 custom styling --- End */
+
+.select2-dropdown{
+    border-radius: 0px;
+}

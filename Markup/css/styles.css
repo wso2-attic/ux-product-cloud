@@ -1974,6 +1974,7 @@ th.hide-column-data, td.hide-column-data {
 }
 .roles-container .org_type{
     padding: 4px 10px 4px 19px;
+    margin-right: -1px;
 }
 .roles-container .role_type {
     color:#fff;
