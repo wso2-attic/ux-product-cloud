@@ -638,6 +638,10 @@ a.btn-action {
     position: relative;
     top: 11em;
 }
+
+.app-listing-loader{
+    margin-top: 10%;
+}
 #search-apps {
     border-radius: 0px;
     height: 40px;
@@ -1110,6 +1114,25 @@ a.btn-action {
 #noty_top_layout_container li{
     border-radius: 0px !important;
 }
+
+.noty_close{
+    background:none !important;
+    top: 0px !important;
+    right: 0px !important;
+}
+
+.noty_close:before{
+    content: 'x';
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 5px 10px !important;
+    background-color: #333 !important;
+    text-shadow: none;
+    opacity: 1;
+    float: right;
+}
+
 .alert{
     border-radius: 0px;
     margin: 15px;
@@ -1137,6 +1160,8 @@ a.btn-action {
     display:block;
     padding:15px;
 }
+
+
 
 /* ========================================================================
  * loading styles
