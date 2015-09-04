@@ -208,7 +208,7 @@
                             </div>
                         </div>
                         <div class='row button-container'>
-                            <div class="col-md-5">
+                            <div class="col-md-12">
                                 <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="view-log">
                                     <span class="fw-stack fw-lg btn-action-ico">
                                         <i class="fw fw-ring fw-stack-2x"></i>
@@ -241,8 +241,29 @@
                     </div>
                     <div role="tabpanel" class="tab-pane" id="archived">
                         <div class='row'>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="download_logs_stage_download">Stage: </label>
+                                    <select id="download_logs_stage_download" class="form-control select2">
+                                        <option selected="" value="Development">Development</option>
+                                        <option value="Testing">Testing</option>
+                                        <option value="Production">Production</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="version_download">Version: </label>
+                                    <select id="version_download" class="form-control select2">
+                                        <option value="TRUNK">TRUNK</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row'>
                             <div class='col-md-6'>
                                 <div class='form-group'>
+                                    <label for="">Select Date: </label>
                                     <div class='datepicker-container'>
                                         <input type="text" id='date' name="daterange" class="form-control"/><i class="fw fw-calendar fw-2x"></i>
                                     </div>
@@ -250,7 +271,7 @@
                             </div>
                         </div>
                         <div class='row button-container'>
-                            <div class="col-md-5">
+                            <div class="col-md-12">
                                 <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="download-log">
                                     <span class="fw-stack fw-lg btn-action-ico">
                                         <i class="fw fw-ring fw-stack-2x"></i>
@@ -327,10 +348,18 @@
         });
     })
 
-    $('.select2').select2({
+    $('#recent .select2').select2({
         templateResult: formatState,
-        templateSelection :formatState
+        templateSelection :formatState,
+        width: '100%'
     });
+
+    $('#archived .select2').select2({
+        templateResult: formatState,
+        templateSelection :formatState,
+        width: '100%'
+    });
+
 
     $('#date').daterangepicker({
         "singleDatePicker": true,
@@ -340,7 +369,6 @@
 
     });
 
-    $("#application-type").prop("disabled", true);
 </script>
 </body>
 </html>
