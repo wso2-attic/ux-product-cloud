@@ -1507,6 +1507,10 @@ a.btn-action {
 .no-pad-left{
     padding-left:0px;
 }
+.no-pad-both{
+    padding-left:0px;
+    padding-right:0px;
+}
 .padding-bottom-lg{
     padding-bottom:30px;
 }
@@ -2040,27 +2044,26 @@ th.hide-column-data, td.hide-column-data {
 .table-noti-default{
     background-color:#00aeef;
 }
-
+.nav-tabs-wizard{
+    padding-bottom:1px;
+    border-bottom:1px solid #0196d8;
+}
 .nav-tabs-wizard>li>a{
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
     padding:0px;
 }
+.nav-tabs-wizard>li>a, .nav-tabs-wizard>li>a:hover, .nav-tabs-wizard>li>a:focus{
+    background-color:#6a6a6a;
+    border:none;
+    color:#bbbbbb;
+}
+
 .nav-tabs-wizard>li.active>a, .nav-tabs-wizard>li.active>a:hover, .nav-tabs-wizard>li.active>a:focus{
-    background-color:#6a6a6a;
+    background-color:#0196d8;
     border:none;
-    color:#bbbbbb;
-}
-.nav-tabs-wizard>li>a{
-    background-color:#6a6a6a;
-    border:none;
-    color:#bbbbbb;
-}
-.nav-tabs-wizard .active>li>a{
-    background-color:#6a6a6a;
-    border:none;
-    color:#bbbbbb;
+    color:#fff;
 }
 
 .nav-tabs-wizard .step-number{
@@ -2070,6 +2073,9 @@ th.hide-column-data, td.hide-column-data {
     margin-left:5px;
     padding:10px 20px;
     text-align:center;
+}
+.nav-tabs-wizard .active .step-number{
+    background-color:#1f7da3;
 }
 .nav-tabs-wizard .step-desc{
     float:left;
