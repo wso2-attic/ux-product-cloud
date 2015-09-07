@@ -246,23 +246,46 @@
                                     </div>
                             </div>
                             <div class="row">
-                                <div class="form-group ">
-                                    <label for="inputName" class="col-md-1 control-label">Checklist</label>
+                                <div class="col-md-12">
+                                    <div class="form-group ">
+                                        <label for="inputName" class="col-md-1 control-label">Checklist</label>
 
-                                    <div class="col-md-5">
+                                        <div class="col-md-5">
 
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="packersOff" class="strikethrough"
-                                                          value="1"><span>Code Completed</span></label>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" name="packersOff" class="strikethrough"
+                                                              value="1"><span>Code Completed</span></label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" name="packersOff" class="strikethrough"
+                                                              value="1"><span>Design Review Done</span></label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" name="packersOff" class="strikethrough"
+                                                              value="1"><span>Code Review Done</span></label>
+                                            </div>
                                         </div>
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="packersOff" class="strikethrough"
-                                                          value="1"><span>Design Review Done</span></label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" name="packersOff" class="strikethrough"
-                                                          value="1"><span>Code Review Done</span></label>
-                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="push"></div>
+                                    <div class="form-group">
+                                        <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                                            <span class="fw-stack fw-lg btn-action-ico">
+                                                <i class="fw fw-ring fw-stack-2x"></i>
+                                                <i class="fw fw-down-arrow fw-stack-1x"></i>
+                                            </span>
+                                            Demote to development
+                                        </button>
+                                        <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application" disabled>
+                                            <span class="fw-stack fw-lg btn-action-ico">
+                                                <i class="fw fw-ring fw-stack-2x"></i>
+                                                <i class="fw fw-up-arrow fw-stack-1x"></i>
+                                            </span>
+                                            Promote to production
+                                        </button>
                                     </div>
                                 </div>
                             </div>
