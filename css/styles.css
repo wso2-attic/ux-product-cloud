@@ -2040,3 +2040,53 @@ th.hide-column-data, td.hide-column-data {
 .table-noti-default{
     background-color:#00aeef;
 }
+
+.nav-tabs-wizard>li>a{
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    padding:0px;
+}
+.nav-tabs-wizard>li.active>a, .nav-tabs-wizard>li.active>a:hover, .nav-tabs-wizard>li.active>a:focus{
+    background-color:#6a6a6a;
+    border:none;
+    color:#bbbbbb;
+}
+.nav-tabs-wizard>li>a{
+    background-color:#6a6a6a;
+    border:none;
+    color:#bbbbbb;
+}
+.nav-tabs-wizard .active>li>a{
+    background-color:#6a6a6a;
+    border:none;
+    color:#bbbbbb;
+}
+
+.nav-tabs-wizard .step-number{
+    float:left;
+    width:19%;
+    background-color:#626262;
+    margin-left:5px;
+    padding:10px 20px;
+    text-align:center;
+}
+.nav-tabs-wizard .step-desc{
+    float:left;
+    width:80%;
+}
+.nav-tabs-wizard .step-number span{
+    font-weight:300;
+    font-size:42px;
+}
+.nav-tabs-wizard .step-desc h2{
+    text-transform:uppercase;
+    font-weight:300;
+    font-size:24px;
+    margin-bottom:0px;
+    padding-left:10px;
+}
+.nav-tabs-wizard .step-desc p{
+    font-size:14px;
+    padding-left:10px;
+}
