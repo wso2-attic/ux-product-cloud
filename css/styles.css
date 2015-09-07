@@ -1690,6 +1690,12 @@ a.btn-action {
 .margin-top-xs{
     margin-top:1em;
 }
+.margin-bottom-xs{
+    margin-bottom:1em;
+}
+.margin-bottom-md{
+    margin-bottom:3em;
+}
 .no-gutter-right{
     padding-right:0px;
 }
