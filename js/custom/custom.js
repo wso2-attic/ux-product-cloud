@@ -127,7 +127,7 @@ $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
         $(element).attr('data-original-title', copiedText).tooltip('show',{ placement: 'top',trigger:'manual'});
         setTimeout(function(){
             $(element).tooltip('destroy');
-        }, 1000);
+        }, 3000);
         $temp.remove();
 
         return this;
