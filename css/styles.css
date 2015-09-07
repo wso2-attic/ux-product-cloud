@@ -2046,7 +2046,7 @@ th.hide-column-data, td.hide-column-data {
 }
 .nav-tabs-wizard{
     padding-bottom:1px;
-    border-bottom:1px solid #0196d8;
+    border-bottom:2px solid #0196d8;
 }
 .strikethrough:checked + span{
     text-decoration:line-through
@@ -2098,4 +2098,9 @@ th.hide-column-data, td.hide-column-data {
 .nav-tabs-wizard .step-desc p{
     font-size:14px;
     padding-left:10px;
+}
+.nav-tabs-wizard + .tab-content>.tab-pane{
+    padding: 20px;
+    background-color:#222;
+    border-bottom:2px solid #0196d8;
 }
