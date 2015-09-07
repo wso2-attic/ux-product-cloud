@@ -2041,6 +2041,10 @@ th.hide-column-data, td.hide-column-data {
     background-color:#00aeef;
 }
 
+.strikethrough:checked + span{
+    text-decoration:line-through
+}
+
 .nav-tabs-wizard>li>a{
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
