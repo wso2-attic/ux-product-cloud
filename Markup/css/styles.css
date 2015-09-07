@@ -2048,6 +2048,9 @@ th.hide-column-data, td.hide-column-data {
     padding-bottom:1px;
     border-bottom:1px solid #0196d8;
 }
+.strikethrough:checked + span{
+    text-decoration:line-through
+}
 .nav-tabs-wizard>li>a{
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
