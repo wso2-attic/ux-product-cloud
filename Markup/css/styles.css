@@ -2104,3 +2104,7 @@ th.hide-column-data, td.hide-column-data {
     background-color:#222;
     border-bottom:2px solid #0196d8;
 }
+
+.lifecycle-event-history h4{
+    margin-top: 3em;
+}
