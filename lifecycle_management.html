@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="css/fontwso2-1.2/css/font-wso2.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/dataTables.responsive.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
+    <link href="css/daterangepicker/daterangepicker.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -226,7 +224,35 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">
-
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="summary">Estimated completion date: </label>
+                                        <div class='datepicker-container'>
+                                            <input type="text" id='date' name="daterange" class="form-control "/>
+                                            <i class="fw fw-calendar fw-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group ">
+                                    <div class="col-md-5">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="packersOff" class="strikethrough"
+                                                          value="1"><span>Code Completed</span></label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="packersOff" class="strikethrough"
+                                                          value="1"><span>Design Review Done</span></label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="packersOff" class="strikethrough" 
+                                                          value="1"><span>Code Review Done</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="profile">...</div>
                         <div role="tabpanel" class="tab-pane" id="messages">...</div>
@@ -250,9 +276,8 @@
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.min.js"></script>
-<script src="js/datatables-1.10.7/dataTables.responsive.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
+<script src="js/daterangepicker/moment.js"></script>
+<script src="js/daterangepicker/daterangepicker.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -270,6 +295,18 @@
             $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
         }
     });
+
+    $('#date').daterangepicker({
+        "singleDatePicker": true,
+        "startDate": "08/19/2015",
+        "endDate": "08/21/2015"
+    }, function(start, end, label) {
+
+    });
+
+    $('.datepicker-container .fw-calendar').click(function(){
+        $('#date').data('daterangepicker').toggle();
+    })
 
 
 </script>
