@@ -224,19 +224,33 @@
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="summary">Estimated completion date: </label>
+                                        <label for="ecdate">Estimated completion date: </label>
                                         <div class='datepicker-container'>
-                                            <input type="text" id='date' name="daterange" class="form-control "/>
+                                            <input type="text" id='ecdate' name="daterange" class="form-control "/>
                                             <i class="fw fw-calendar fw-2x"></i>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-7"></div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="progress">Start Progress : </label>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                                <span class="sr-only">60% Complete</span>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
                             </div>
                             <div class="row">
                                 <div class="form-group ">
+                                    <label for="inputName" class="col-md-1 control-label">Checklist</label>
+
                                     <div class="col-md-5">
+
                                         <div class="checkbox">
                                             <label><input type="checkbox" name="packersOff" class="strikethrough"
                                                           value="1"><span>Code Completed</span></label>
@@ -246,7 +260,7 @@
                                                           value="1"><span>Design Review Done</span></label>
                                         </div>
                                         <div class="checkbox">
-                                            <label><input type="checkbox" name="packersOff" class="strikethrough" 
+                                            <label><input type="checkbox" name="packersOff" class="strikethrough"
                                                           value="1"><span>Code Review Done</span></label>
                                         </div>
                                     </div>
@@ -315,7 +329,7 @@
         }
     });
 
-    $('#date').daterangepicker({
+    $('#ecdate').daterangepicker({
         "singleDatePicker": true,
         "startDate": "08/19/2015",
         "endDate": "08/21/2015"
