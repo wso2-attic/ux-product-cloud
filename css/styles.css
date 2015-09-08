@@ -2114,3 +2114,29 @@ th.hide-column-data, td.hide-column-data {
 .lifecycle-event-history h4{
     margin-top: 3em;
 }
+
+.custom-checkbox{
+    -webkit-appearance: none;
+    background-color: #222222;
+    border: 2px solid #0196D8;
+    padding: 7px !important;
+    border-radius: 2px !important;
+    display: inline-block;
+    position: relative !important;
+    margin-right: 7px !important;
+}
+
+.custom-checkbox:checked:after {
+    content: '\2714';
+    font-size: 16px;
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    color: #0196D8;
+}
+
+.custom-checkbox:checked {
+    background-color: #222222;
+    border: 2px solid #0196D8;
+    color: #0196D8;
+}
