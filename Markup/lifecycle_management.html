@@ -354,22 +354,27 @@
         }
     });
 
-    //Set number of check lists on page load
-    $('.progress-bar-indicator').text($('.strikethrough:checked').length + '/' + $('.strikethrough').length);
+    $('.tab-pane').each(function(){
 
-    $('.strikethrough').click(function(){
-        var percentage = 0;
-        var checkEl = $('.strikethrough');
-        var checkedEl = $('.strikethrough:checked');
+        var $this = $(this);
 
-        var perElPercentage = 100 / checkEl.length;
+        $this.find('.progress-bar-indicator').text($('.strikethrough:checked').length + '/' + $(this).find('.strikethrough').length);
 
-        checkedEl.each(function(){
-            percentage += perElPercentage;
+        $this.find('.strikethrough').click(function(){
+            var percentage = 0;
+            var checkEl = $this.find('.strikethrough');
+            var checkedEl = $this.find('.strikethrough:checked');
+
+            var perElPercentage = 100 / checkEl.length;
+
+            checkedEl.each(function(){
+                percentage += perElPercentage;
+            })
+
+            $this.find('.progress-bar').css('width', percentage+'%').attr('aria-valuenow', percentage);
+            $this.find('.progress-bar-indicator').text(checkedEl.length + '/' + checkEl.length);
+
         })
-
-        $('.progress-bar').css('width', percentage+'%').attr('aria-valuenow', percentage);
-        $('.progress-bar-indicator').text(checkedEl.length + '/' + checkEl.length);
     })
 
     $('#ecdate').daterangepicker({

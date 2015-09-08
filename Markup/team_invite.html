@@ -410,7 +410,10 @@
                             'You cannot add new users.</label>');
 
                     var addedUsers = $('.members').select2('data');
-                    $.grep(addedUsers, function(e){ return e.id != newUser.id; })
+                    var userData = e.params.data;
+                    $.grep(addedUsers, function(e){
+                        return e.id != userData.id;
+                    })
 
                     $(".members [value='"+ e.params.data.id +"']").remove();
                     $('.members').trigger('change');
