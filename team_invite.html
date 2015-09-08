@@ -409,6 +409,9 @@
                     $('.members-container').append('<label id="cname-error" class="error" for="cname">' +
                             'You cannot add new users.</label>');
 
+                    var addedUsers = $('.members').select2('data');
+                    $.grep(addedUsers, function(e){ return e.id != newUser.id; })
+
                     $(".members [value='"+ e.params.data.id +"']").remove();
                     $('.members').trigger('change');
                 }
