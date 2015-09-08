@@ -1354,7 +1354,12 @@ a.btn-action {
     -moz-box-shadow: none;
     box-shadow: none;
 }
-
+.progress-bar-label{
+    padding: 3px 0px;
+}
+.stage-progress-container .progress{
+    height: 25px;
+}
 
 .modal-title{color: #000;}
 .modal-content, .btn{border-radius: 0px;}
