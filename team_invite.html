@@ -265,6 +265,10 @@
                 }
             ];
 
+            //An external param stating the current logged in 
+            //user is an admin or not
+            var isAdmin = false;
+
             //Custom function for select 2 templating
             function memberResult(result){
 
@@ -321,7 +325,7 @@
             }).on("select2:select",function(e){
                 var memberContainer = $('.select2-container');
 
-                if(e.params.data.isNew && validateEmail(e.params.data.text)){
+                if(e.params.data.isNew && validateEmail(e.params.data.text) && isAdmin){
                     $('.new-tag').remove();
 
                     var htmlContent = '';
@@ -395,9 +399,15 @@
                         $('.new-tag').remove();
                     })
 
-                }else if(e.params.data.isNew != undefined){
+                }else if(e.params.data.isNew != undefined && isAdmin){
                     $('.members-container').append('<label id="cname-error" class="error" for="cname">' +
                             'A valid email is required.</label>');
+
+                    $(".members [value='"+ e.params.data.id +"']").remove();
+                    $('.members').trigger('change');
+                }else if(!isAdmin){
+                    $('.members-container').append('<label id="cname-error" class="error" for="cname">' +
+                            'You cannot add new users.</label>');
 
                     $(".members [value='"+ e.params.data.id +"']").remove();
                     $('.members').trigger('change');
