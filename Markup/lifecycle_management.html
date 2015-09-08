@@ -251,7 +251,7 @@
                                     <div class="col-md-5">
 
                                         <div class="checkbox">
-                                            <label><input type="checkbox" name="packersOff" class="strikethrough "
+                                            <label><input type="checkbox" name="packersOff" class="strikethrough"
                                                           value="1"><span>Code Completed</span></label>
                                         </div>
                                         <div class="checkbox">
@@ -348,6 +348,17 @@
             $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
         }
     });
+
+    $('.strikethrough').click(function(){
+        var percentage = 0;
+        var perElPercentage = 100 / $('.strikethrough').length;
+
+        $('.strikethrough:checked').each(function(){
+            percentage += perElPercentage;
+        })
+
+        $('.progress-bar').css('width', percentage+'%').attr('aria-valuenow', percentage);
+    })
 
     $('#ecdate').daterangepicker({
         "singleDatePicker": true,
