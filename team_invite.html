@@ -325,99 +325,98 @@
             }).on("select2:select",function(e){
                 var memberContainer = $('.select2-container');
 
-                if(e.params.data.isNew && validateEmail(e.params.data.text) && isAdmin){
-                    $('.new-tag').remove();
+                if(e.params.data.isNew){
+                    if(isAdmin){
+                        if(validateEmail(e.params.data.text)){
+                            $('.new-tag').remove();
 
-                    var htmlContent = '';
+                            var htmlContent = '';
 
-                    htmlContent += '<div class="new-tag" style="';
+                            htmlContent += '<div class="new-tag" style="';
 
-                    htmlContent += 'top:' + (memberContainer.offset().top + $(this).height()) + 'px;';
-                    htmlContent += 'left:' + memberContainer.offset().left + 'px;';
-                    htmlContent += 'width:' + memberContainer.width() + 'px;"';
-                    htmlContent += '>';
+                            htmlContent += 'top:' + (memberContainer.offset().top + $(this).height()) + 'px;';
+                            htmlContent += 'left:' + memberContainer.offset().left + 'px;';
+                            htmlContent += 'width:' + memberContainer.width() + 'px;"';
+                            htmlContent += '>';
 
-                    htmlContent += '<div class="new-tag-desc">';
-                    htmlContent += '<p>';
-                    htmlContent += '<strong>' + e.params.data.text + '</strong>'
-                    htmlContent += ' is not invited to the organization. You can add application related roles here.';
-                    htmlContent += '</p>'
-                    htmlContent += '</div>'
+                            htmlContent += '<div class="new-tag-desc">';
+                            htmlContent += '<p>';
+                            htmlContent += '<strong>' + e.params.data.text + '</strong>'
+                            htmlContent += ' is not invited to the organization. You can add application related roles here.';
+                            htmlContent += '</p>'
+                            htmlContent += '</div>'
 
-                    htmlContent += '<div class="form-group new-tag-container">';
-                    htmlContent += '<label for="new-tag-roles">';
-                    htmlContent += 'Select Roles';
-                    htmlContent += '</label>';
-                    htmlContent += '<select id="new-tag-roles" type="hidden" multiple="multiple" class="form-control new-tag-roles">';
-                    htmlContent += '</select>';
-                    htmlContent += '<div class="checkbox">';
-                    htmlContent += '<label>';
-                    htmlContent += '<input type="checkbox" class="add-all-tags">';
-                    htmlContent += 'Assign all roles';
-                    htmlContent += '</label>'
-                    htmlContent += '</div>';
-                    htmlContent += '<button class="cu-btn cu-btn-sm cu-btn-blue add-tag">Add</button>';
-                    htmlContent += '</div>';
+                            htmlContent += '<div class="form-group new-tag-container">';
+                            htmlContent += '<label for="new-tag-roles">';
+                            htmlContent += 'Select Roles';
+                            htmlContent += '</label>';
+                            htmlContent += '<select id="new-tag-roles" type="hidden" multiple="multiple" class="form-control new-tag-roles">';
+                            htmlContent += '</select>';
+                            htmlContent += '<div class="checkbox">';
+                            htmlContent += '<label>';
+                            htmlContent += '<input type="checkbox" class="add-all-tags">';
+                            htmlContent += 'Assign all roles';
+                            htmlContent += '</label>'
+                            htmlContent += '</div>';
+                            htmlContent += '<button class="cu-btn cu-btn-sm cu-btn-blue add-tag">Add</button>';
+                            htmlContent += '</div>';
 
-                    htmlContent += '</div>';
+                            htmlContent += '</div>';
 
-                    $('body').append(htmlContent);
-                    $('.new-tag').data(e.params.data);
+                            $('body').append(htmlContent);
+                            $('.new-tag').data(e.params.data);
 
-                    $('.new-tag-roles').select2({
-                        data: sampleRoles,
-                        placeholder:'Please select roles',
-                        createSearchChoice: function(){ return null; }
-                    })
+                            $('.new-tag-roles').select2({
+                                data: sampleRoles,
+                                placeholder:'Please select roles',
+                                createSearchChoice: function(){ return null; }
+                            })
 
-                    $('.add-all-tags').click(function(){
-                        if($(this).prop('checked')){
-                            $('.new-tag-roles option').prop('selected',true).trigger('change')
+                            $('.add-all-tags').click(function(){
+                                if($(this).prop('checked')){
+                                    $('.new-tag-roles option').prop('selected',true).trigger('change')
+                                }else{
+                                    $('.new-tag-roles option').prop('selected',false).trigger('change')
+                                }
+                            })
+
+                            $('.add-tag').click(function(){
+                                var selectedRoles = $('.new-tag-roles').select2('data');
+                                if(selectedRoles.length < 1){
+                                    $('<label>').text('Please select roles to add.').addClass('error').css({
+                                        'margin-top' : '10px'
+                                    }).insertBefore('.add-tag');
+                                    return false;
+                                }
+
+                                var newUser = $('.new-tag').data();
+                                var addedUsers = $('.members').select2('data');
+
+                                var targetEl = $.grep(addedUsers, function(e){ return e.id == newUser.id; })
+
+                                if(targetEl.length > 0 ){
+                                    targetEl[0]['roles'] = $('.new-tag-roles').select2('data');
+                                }
+
+                                $('.new-tag').remove();
+                            })
                         }else{
-                            $('.new-tag-roles option').prop('selected',false).trigger('change')
-                        }
-                    })
-
-                    $('.add-tag').click(function(){
-                        var selectedRoles = $('.new-tag-roles').select2('data');
-                        if(selectedRoles.length < 1){
-                            $('<label>').text('Please select roles to add.').addClass('error').css({
-                                'margin-top' : '10px'
-                            }).insertBefore('.add-tag');
-                            return false;
-                        }
-
-                        var newUser = $('.new-tag').data();
-                        var addedUsers = $('.members').select2('data');
-
-                        var targetEl = $.grep(addedUsers, function(e){ return e.id == newUser.id; })
-
-                        if(targetEl.length > 0 ){
-                            targetEl[0]['roles'] = $('.new-tag-roles').select2('data');
-                        }
-
-                        $('.new-tag').remove();
-                    })
-
-                }else if(e.params.data.isNew != undefined && isAdmin){
-                    $('.members-container').append('<label id="cname-error" class="error" for="cname">' +
+                            $('.members-container').append('<label id="cname-error" class="error" for="cname">' +
                             'A valid email is required.</label>');
 
-                    $(".members [value='"+ e.params.data.id +"']").remove();
-                    $('.members').trigger('change');
-                }else if(!isAdmin){
-                    $('.members-container').append('<label id="cname-error" class="error" for="cname">' +
+                            $(".members [value='"+ e.params.data.id +"']").remove();
+                            $('.members').trigger('change');
+                        }
+                    }else{
+                        $('.members-container').append('<label id="cname-error" class="error" for="cname">' +
                             'You cannot add new users.</label>');
 
-                    var addedUsers = $('.members').select2('data');
-                    var userData = e.params.data;
-                    $.grep(addedUsers, function(e){
-                        return e.id != userData.id;
-                    })
-
-                    $(".members [value='"+ e.params.data.id +"']").remove();
-                    $('.members').trigger('change');
+                        $(".members [value='"+ e.params.data.id +"']").remove();
+                        $('.members').trigger('change');
+                    }
                 }
+
+                
             })
 
             });
