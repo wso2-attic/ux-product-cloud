@@ -192,7 +192,7 @@
                                     <span class="hidden-xs">Check your code @GitBit</span>
                                     <span class="visible-xs"><i class="fw fw-globe"></i> </span>
                                 </button>
-                                <button class="btn btn-lightgray" type="button" title="Fork your code">
+                                <button class="btn btn-lightgray btn-fork-code" type="button" title="Fork your code">
                                     <i class="fa fa-code-fork" aria-hidden="true"></i>
                                     <span class="hidden-xs">Fork</span>
                                 </button>
@@ -242,6 +242,15 @@
     $("#copytoClipboard").on("click",function(){
         $(this).copyToClipboard("#masterRepo");
     });
+
+    $('.btn-fork-code').on('click',function(){
+        //$(this).hide();
+        $('.btn-fork-code').loadingButton({
+            action: "show",
+            width: "30px"
+        });
+    });
+
 
 </script>
 </body>
