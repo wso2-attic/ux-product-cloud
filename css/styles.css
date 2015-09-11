@@ -917,9 +917,9 @@ a.btn-action {
     padding: 10px;
     background-color: #8b8b8b;
     border-color: transparent;
+    max-width: 70%;
 }
 .version-url>a>span{
-    width: 300px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1140,7 +1140,7 @@ a.btn-action {
     min-height:50px;
 }
 .alert-success{
-    background-color: #40D47E;
+    background-color: #27ae60;
     border-color: #40D47E;
     border-radius:0px;
     margin: 15px;
@@ -1159,6 +1159,15 @@ a.btn-action {
 .alert .alert-content{
     display:block;
     padding:15px;
+    font-size: 16px;
+}
+.alert-extra-content{
+    background-color: #50E28E;
+    padding: 10px 15px;
+    color: #333;
+}
+.alert-extra-content ul{
+    list-style: decimal;
 }
 
 
