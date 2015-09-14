@@ -888,6 +888,12 @@ a.btn-action {
     text-decoration: none;
 }
 
+.block-anch:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: #e3e3e3;
+}
+
 .block-general {
     margin-top: 1em;
     background-color: #34495e;
