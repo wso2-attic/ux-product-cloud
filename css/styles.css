@@ -541,6 +541,12 @@ a.btn-action {
 .forms label {
     font-weight: 300;
 }
+
+.form-group label>span {
+    color: #E74C3C;
+    font-weight: 400;
+}
+
 .forms .form-group {
     margin-bottom: 3.5em;
 }
@@ -880,6 +886,12 @@ a.btn-action {
 .left-pane a:hover{
     color: #fff;
     text-decoration: none;
+}
+
+.block-anch:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: #e3e3e3;
 }
 
 .block-general {
@@ -2261,3 +2273,11 @@ th.hide-column-data, td.hide-column-data {
     margin-bottom:5px;
 }
 
+
+.page-info-header{
+    background: #464646;
+    padding: 40px 20px 10px;
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-bottom: 2em;
+}
