@@ -541,6 +541,12 @@ a.btn-action {
 .forms label {
     font-weight: 300;
 }
+
+.form-group label>span {
+    color: #E74C3C;
+    font-weight: 400;
+}
+
 .forms .form-group {
     margin-bottom: 3.5em;
 }
