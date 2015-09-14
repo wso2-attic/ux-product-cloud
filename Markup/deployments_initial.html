@@ -107,8 +107,7 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Databases /
-                Privileges / MY first
+                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Deployments
             </div>
         </div>
     </div>
@@ -126,10 +125,10 @@
             <li>
                 <a><i class="fa fa-cogs"></i> Repository</a>
             </li>
-            <li>
-                <a href="#"><i class="fw fw-deploy"></i> Build & Deploy</a>
-            </li>
             <li class="selected">
+                <a href="#"><i class="fw fw-deploy"></i> Deployments</a>
+            </li>
+            <li>
                 <a href="database_initial.html"><i class="fa fa-database"></i> Databases</a>
             </li>
             <li>
@@ -159,41 +158,43 @@
 
     <!-- BOF App factory menu actionbar -->
     <div class="action-bar">
-        <a href="#" class="btn-action">
+        <a href="009_cloud_app_details_initial.html" class="btn-action">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Back to Database
+                </span> Back to Overview
         </a>
-        <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+        <a href="deployments_new.html" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fw fw-add fw-stack-1x"></i>
-                </span> <span class="hidden-xs">Add New User</span>
+                </span> <span class="hidden-xs">Upload New Deployment</span>
         </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
     <div class="container-fluid app-content-section">
         <div class="row">
-          <div class="col-md-12 msg-issues">
-              Orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-              Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-          </div>
+            <div class="col-md-12 msg-issues">
+                Orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+                imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div id="push"></div>
                 <div class="datatable">
-                    <table id="permissionlist" class="display" cellspacing="0" width="100%">
+                    <table id="databaselist" class="display" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th>User Name</th>
-                            <th>Attach user to Database</th>
-                            <th>Priviledges</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Version</th>
+                            <th>Description</th>
+                            <th>Stage</th>
+                            <th>Launch</th>
+                            <th>Deploy</th>
                         </tr>
                         </thead>
                     </table>
@@ -216,66 +217,13 @@
         <div class="footer-text">WSO2 Cloud V: 1.2 . &copy; 2015 <i class="fw fw-wso2 fw-2x"></i> All Rights Reserved.</div>
     </div>
 </div>
-
-<!-- Model for previledge assignment -->
-<div id="privilege_edit_chkbox0" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Select User Privilege for User: <i>dakshika</i></h4>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12 section-title">
-                            <label class="data-select-all"><input type='checkbox' class="custom-checkbox"> &nbsp;Data</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="datacbx custom-checkbox" > &nbsp;CREATE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="datacbx custom-checkbox" > &nbsp;ALTER</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="datacbx custom-checkbox" > &nbsp;INDEX</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="datacbx custom-checkbox" > &nbsp;DROP</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="datacbx custom-checkbox" > &nbsp;SHOW VIEW</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="datacbx custom-checkbox" > &nbsp;CREATE ROUTINE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="datacbx custom-checkbox" > &nbsp;ALTER ROUTINE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="datacbx custom-checkbox" > &nbsp;EXECUTE</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12 section-title">
-                            <label class="structure-select-all"><input type='checkbox' class="custom-checkbox"> &nbsp;Structure</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="structurecbx custom-checkbox" > &nbsp;CREATE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="structurecbx custom-checkbox" > &nbsp;ALTER</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="structurecbx custom-checkbox" > &nbsp;INDEX</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="structurecbx custom-checkbox" > &nbsp;DROP</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="structurecbx custom-checkbox" > &nbsp;SHOW VIEW</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="structurecbx custom-checkbox" > &nbsp;CREATE ROUTINE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="structurecbx custom-checkbox" > &nbsp;ALTER ROUTINE</div>
-                        <div class="col-xs-6 col-md-3 "> <input type='checkbox' class="structurecbx custom-checkbox" > &nbsp;EXECUTE</div>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="modal-footer">
-                <button id="privilege_edit_cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Save</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
+<script src="js/select2-4.0.0/select2.min.js"></script>
 <script src="js/datatables-1.10.7/jquery.dataTables.min.js"></script>
 <script src="js/datatables-1.10.7/dataTables.responsive.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -294,74 +242,27 @@
         }
     });
 
-    var table = $('#permissionlist').DataTable({
-            responsive: true,
-            "orderCellsTop": true,
-            "ajax": "objects_users.txt",
-            "columns": [
-                { "data": "username", "width": "10%"},
-                { "data": "attachuser" , "width": "5%","sClass" : "dt-body-center"},
-                { "data": "priviledges" , "width": "40%"},
-                { "data": null, "orderable": false, "width": "3%", "sClass" : "dt-body-center"  },
-                { "data": null, "orderable": false, "width": "3%", "sClass" : "dt-body-center" }
-            ],
-            "columnDefs": [
-                { "targets": -2,"data": null,"defaultContent": "<a class='editroles'><i class='fa fa-edit'></i></a>" },
-                { "targets": -1,"data": null,"defaultContent": "<a class='delete' href='#'><i class='fa  fa-trash'></i></a>" }
-            ],
-            "fnDrawCallback": function( oSettings ) {
-                $('.switch input[type=checkbox]').on("click",function(){
-                    var isChecked = $(".switch input[type=checkbox]").is(":checked");
-                     if(isChecked){
-                        var currentId = $(this).attr("id");
-                        $('#privilege_edit_'+ currentId).modal({
-                            show: true,
-                            keyboard: false,
-                            backdrop: 'static'
-                        });
-                        $('#privilege_edit_cancel').on('click', function (e) {
-                            $("#"+ currentId).removeAttr("checked");
-                        });
-
-                     }
-                });
-            }
-        });
-
-        $('#permissionlist tbody').on( 'click', '.editroles', function () {
-            var data = table.row( $(this).parents('tr') ).data();
-            alert( data.username +"'s roles are: "+ data.priviledges );
-        });
-        $('#permissionlist tbody').on( 'click', '.delete', function () {
-            var data = table.row( $(this).parents('tr') ).data();
-            alert( data.username +"'s roles are: "+ data.attachuser );
-        });
-
-        $('.data-select-all input[type="checkbox"]').on("click",function(){
-            $(".datacbx").prop('checked', $(this).prop('checked'));
-        });
-        $('.structure-select-all input[type="checkbox"]').on("click",function(){
-            $(".structurecbx").prop('checked', $(this).prop('checked'));
-        });
-
-        $('.datacbx').on("click",function(){
-            var classL = $('.datacbx').length;
-            var checkedL = $('.datacbx:checked').length;
-            if(classL == checkedL){
-                $('.data-select-all input[type="checkbox"]').prop('checked', true);
-            }else{
-                $('.data-select-all input[type="checkbox"]').prop('checked', false);
-            }
-        });
-        $('.structurecbx').on("click",function(){
-            var classL = $('.structurecbx').length;
-            var checkedL = $('.structurecbx:checked').length;
-            if(classL == checkedL){
-                $('.structure-select-all input[type="checkbox"]').prop('checked', true);
-            }else{
-                $('.structure-select-all input[type="checkbox"]').prop('checked', false);
-            }
-        });
+    var table = $('#databaselist').DataTable({
+        responsive: true,
+        "orderCellsTop": true,
+        "bAutoWidth": false,
+        "ajax": "objects_deployments.txt",
+        "columns": [
+            { "data": "version", "width": "5%"},
+            { "data": "description" , "width": "75%"},
+            { "data": "stage" , "width": "10%"},
+            {"width": "5%","sClass" : "dt-body-center", "render": function ( data, type, full, meta ) {
+                return '<a class="launch"><i class="fw fw-1-5x fw-view"></i></a>';
+            }},
+            {"data": "deployed","bAutoWidth": false,  "width": "5%","sClass" : "dt-body-center", "render": function ( data, type, full, meta ) {
+                if(data == true){
+                    return '<input type="radio" name="touchbutton" checked="checked">';
+                }else{
+                    return '<input type="radio" name="touchbutton" >';
+                }
+            }}
+        ]
+    });
 </script>
 </body>
 </html>
