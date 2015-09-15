@@ -179,7 +179,7 @@
         <div class="row">
             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-7 forms">
                 <div id="push"></div>
-                <div class="col-md-12">
+                <div class="col-md-12 master-container">
                     <div class="form-group">
                         <label for="master-repo">Master Repository: </label>
                         <div class="input-group input-wrap">
@@ -188,11 +188,11 @@
                                 <button id="copytoClipboard" class="btn btn-default" type="button" title="Copy to clipboard">
                                     <i class="fw fw-copy" aria-hidden="true"></i>
                                 </button>
-                                <button class="btn btn-default btn-gray" type="button" title="Check your code @GitBit">
+                                <button class="btn btn-lightgray" type="button" title="Check your code @GitBit">
                                     <span class="hidden-xs">Check your code @GitBit</span>
                                     <span class="visible-xs"><i class="fw fw-globe"></i> </span>
                                 </button>
-                                <button class="btn btn-lightgray btn-fork-code" type="button" title="Fork your code">
+                                <button class="btn btn-primary btn-fork-code" type="button" title="Fork your code">
                                     <i class="fa fa-code-fork" aria-hidden="true"></i>
                                     <span class="hidden-xs">Fork</span>
                                 </button>
@@ -244,10 +244,9 @@
     });
 
     $('.btn-fork-code').on('click',function(){
-        //$(this).hide();
         $('.btn-fork-code').loadingButton({
             action: "show",
-            width: "30px"
+            type: "small"
         });
     });
 
