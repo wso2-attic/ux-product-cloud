@@ -225,6 +225,21 @@
 <script src="js/custom/custom.js"></script>
 
 <script>
+    function getBrowserId () {
+        var aKeys = ["MSIE", "Firefox", "Safari", "Chrome", "Opera"],
+            sUsrAg = navigator.userAgent, nIdx = aKeys.length - 1;
+        for (nIdx; nIdx > -1 && sUsrAg.indexOf(aKeys[nIdx]) === -1; nIdx--);
+        return nIdx
+    }
+    if( 3 === getBrowserId()){
+        $("#copytoClipboard").on("click",function(){
+            $(this).copyToClipboard("#masterRepo");
+        });
+    }else{
+        $("#copytoClipboard").remove();
+        $("#masterRepo").focus(function(){ $(this).select(); }).mouseup(function (e) {e.preventDefault(); });
+    }
+
     $('.side-pane-trigger').click(function(){
         var rightPane = $('.right-pane');
         var leftPane = $('.left-pane');
@@ -238,11 +253,6 @@
             $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
         }
     });
-
-    $("#copytoClipboard").on("click",function(){
-        $(this).copyToClipboard("#masterRepo");
-    });
-
     $('.btn-fork-code').on('click',function(){
         $('.btn-fork-code').loadingButton({
             action: "show",
