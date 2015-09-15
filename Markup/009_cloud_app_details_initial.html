@@ -494,8 +494,9 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 
-
 <script src="js/jquery-cookie-1.5.1/jquery.cookie.js"></script>
+
+<script src="js/jquery-observe/jquery-observe.js"></script>
 
 <!-- add custom scroller feature -->
 <script src="js/nanoscroller-0.8.7/jquery.nanoscroller.min.js"></script>
@@ -553,28 +554,16 @@
     }else{
       $('.version-url a span').text(urlText);
     }
-
-    //DOM Object selection
-    var mutationObjec = document.querySelector('.notifications');
-
-    //Mutation Observer logic
-    var observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if(mutation.type == 'childList' && mutation.addedNodes.length > 0){
+   
+    $('.notifications').observe('childlist subtree', function(mutations) {
+      if(mutations.addedNodes.length > 0){
           $('.new-notifications').css({
             'display':'block',
             'box-shadow':'0px 0px 10px red'
           });
           $('.notification-pane-trigger').addClass('notification-glow');
-        }
-      });    
-    });
-
-    // configuration of the observer:
-    var config = { attributes: true, childList: true, characterData: true };
-
-    // pass in the target node, as well as the observer options
-    observer.observe(mutationObjec, config);
+      }
+    })
 
     $(document).ready(function(){
         var scrollHeight = $('.notification-pane').height() - 150;
