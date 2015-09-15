@@ -1629,6 +1629,7 @@ a.btn-action {
     border: 1px solid #444;    
     background-color:#333;
     border-radius:0;
+    max-height: 340px;
 }
 .note{
     padding: 10px;
