@@ -542,7 +542,7 @@ a.btn-action {
     font-weight: 300;
 }
 
-.form-group label>span {
+.form-group label>.required {
     color: #E74C3C;
     font-weight: 400;
 }
@@ -1169,11 +1169,13 @@ a.btn-action {
 
 /* notification customization */
 /* noti overides */
-#noty_top_layout_container{
+#noty_topCenter_layout_container{
     top: 133px !important;
+    width: 500px !important;
 }
-#noty_top_layout_container li{
+#noty_topCenter_layout_container li{
     border-radius: 0px !important;
+    width:500px !important;
 }
 
 .noty_close{
@@ -2111,11 +2113,11 @@ th.hide-column-data, td.hide-column-data {
     max-width:600px;
 }
 .table-buildlogs{
-    font-size:13px;
+    font-size:14px;
     color:#999;
 }
 .table-buildlogs td{
-    line-height:14px;
+    line-height:35px !important;
 }
 .table-borderless>thead>tr>th, .table-borderless>tbody>tr>th, .table-borderless>tfoot>tr>th, .table-borderless>thead>tr>td,
 .table-borderless>tbody>tr>td, .table-borderless>tfoot>tr>td{
@@ -2123,10 +2125,14 @@ th.hide-column-data, td.hide-column-data {
 }
 .table-notification-msg{
     display:inline-block;
-    width:4px;
-    height:16px;
-    margin-right:15px;
+    width:2px;
+    height:33px;
+    margin-right:7px;
     border:none;
+}
+.table-notification-i{
+    margin-top: -27px;
+    margin-right: 10px;
 }
 .table-noti-error{
     background-color:#e74c3c;
@@ -2139,10 +2145,14 @@ th.hide-column-data, td.hide-column-data {
 }
 .nav-tabs-wizard{
     padding-bottom:1px;
-    border-bottom:2px solid #0196d8;
+    border-bottom:1px solid #626262;
 }
 .strikethrough:checked + span{
     text-decoration:line-through
+}
+
+.disabled-tab{
+    pointer-events: none;
 }
 .nav-tabs-wizard>li>a{
     -webkit-border-radius: 0px;
