@@ -776,6 +776,7 @@ a.btn-action {
     left: -18em;
     top: 53px;
     min-height: 100%;
+    overflow-y: auto;
 }
 .notification-pane {
     position: fixed;
