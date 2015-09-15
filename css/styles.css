@@ -991,6 +991,10 @@ a.btn-action {
 .block-team .block-action-button:hover {
     background-color: rgb(111, 121, 122);
 }
+.block-team .block-repos:hover {
+    background-color: rgb(111, 121, 122);
+}
+
 .block-database .block-action-button:hover {
     background-color: rgb(0, 95, 143)
 }
