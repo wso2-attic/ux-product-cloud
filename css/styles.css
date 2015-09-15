@@ -1201,8 +1201,6 @@ a.btn-action {
 
 .alert{
     border-radius: 0px;
-    margin: 15px;
-    padding:0px;
     min-height:50px;
 }
 .alert-success{
@@ -1211,6 +1209,7 @@ a.btn-action {
     border-radius:0px;
     margin: 15px;
     color:#fff;
+    padding:0px;
 }
 .alert-info .close{
     color:#666;
