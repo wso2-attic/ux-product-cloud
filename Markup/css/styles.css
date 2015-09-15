@@ -1221,11 +1221,12 @@ a.btn-action {
     opacity:1;
     padding:5px 10px;
 }
-.alert .alert-content{
+.alert .alert-content-block{
     display:block;
     padding:15px;
     font-size: 16px;
 }
+
 .alert-extra-content{
     background-color: #50E28E;
     padding: 10px 15px;
