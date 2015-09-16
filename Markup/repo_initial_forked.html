@@ -179,7 +179,7 @@
         <div class="row">
             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-7 forms">
                 <div id="push"></div>
-                <div class="col-md-12">
+                <div class="col-md-12 master-container">
                     <div class="form-group">
                         <label for="master-repo">Master Repository: </label>
                         <div class="input-group input-wrap">
@@ -188,17 +188,18 @@
                                 <button id="copytoClipboardMaster" class="btn btn-default" type="button" title="Copy to clipboard">
                                     <i class="fw fw-copy" aria-hidden="true"></i>
                                 </button>
-                                <button class="btn btn-default btn-gray" type="button" title="Check your code @GitBit">
+                                <button class="btn btn-lightgray" type="button" title="Check your code @GitBit">
                                     <span class="hidden-xs">Check your code @GitBit</span>
                                     <span class="visible-xs"><i class="fw fw-globe"></i> </span>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <hr class="gray-hr"/>
                 </div>
-                <div class="col-md-12">
-                    <div id="push"></div>
+                <div class="col-md-12 fork-down">
+                    <i class="fa fa-angle-double-down fa-2x"></i>
+                </div>
+                <div class="col-md-12 fork-container">
                     <div class="form-group">
                         <label for="master-repo">Forked Repository: </label>
                         <div class="input-group input-wrap">
@@ -207,7 +208,7 @@
                                 <button id="copytoClipboardForked" class="btn btn-default " type="button" title="Copy to clipboard">
                                     <i class="fw fw-copy" aria-hidden="true"></i>
                                 </button>
-                                <button class="btn btn-default btn-gray" type="button" title="Check your code @GitBit">
+                                <button class="btn btn-lightgray" type="button" title="Check your code @GitBit">
                                     <span class="hidden-xs">Check your code @GitBit</span>
                                     <span class="visible-xs"><i class="fw fw-globe"></i> </span>
                                 </button>
@@ -241,6 +242,24 @@
 <script src="js/custom/custom.js"></script>
 
 <script>
+    function getBrowserId () {
+        var aKeys = ["MSIE", "Firefox", "Safari", "Chrome", "Opera"],
+            sUsrAg = navigator.userAgent, nIdx = aKeys.length - 1;
+        for (nIdx; nIdx > -1 && sUsrAg.indexOf(aKeys[nIdx]) === -1; nIdx--);
+        return nIdx
+    }
+    if( 3 === getBrowserId()){
+        $("#copytoClipboardMaster").on("click",function(){
+            $(this).copyToClipboard("#masterRepo");
+        });
+        $("#copytoClipboardForked").on("click",function(){
+            $(this).copyToClipboard("#forkedRepo");
+        });
+    }else{
+        $("#copytoClipboardMaster,#copytoClipboardForked").remove();
+        $("#masterRepo,#forkedRepo").focus(function(){ $(this).select(); }).mouseup(function (e) {e.preventDefault(); });
+    }
+
     $('.side-pane-trigger').click(function(){
         var rightPane = $('.right-pane');
         var leftPane = $('.left-pane');
@@ -255,12 +274,7 @@
         }
     });
 
-    $("#copytoClipboardMaster").on("click",function(){
-        $(this).copyToClipboard("#masterRepo");
-    });
-    $("#copytoClipboardForked").on("click",function(){
-        $(this).copyToClipboard("#forkedRepo");
-    });
+
 
 </script>
 </body>
