@@ -776,6 +776,7 @@ a.btn-action {
     left: -18em;
     top: 53px;
     min-height: 100%;
+    overflow-y: auto;
 }
 .notification-pane {
     position: fixed;
@@ -1628,6 +1629,7 @@ a.btn-action {
     border: 1px solid #444;    
     background-color:#333;
     border-radius:0;
+    max-height: 340px;
 }
 .note{
     padding: 10px;
@@ -2243,6 +2245,31 @@ th.hide-column-data, td.hide-column-data {
     border: 2px solid #0196D8;
     color: #0196D8;
 }
+
+.custom-checkbox-small{
+    -webkit-appearance: none;
+    border: 1px solid #0196D8;
+    padding: 6px !important;
+    border-radius: 0px !important;
+    display: inline-block;
+    position: relative !important;
+    margin-right: 7px !important;
+}
+
+.custom-checkbox-small:checked:after {
+    content: '\2714';
+    font-size: 15px;
+    position: absolute;
+    top: -3px;
+    left: 0px;
+    color: #0196D8;
+}
+
+.custom-checkbox-small:checked {
+    border: 1px solid #0196D8;
+    color: #0196D8;
+}
+
 .modal-body label.data-select-all,.modal-body label.structure-select-all{
     margin-bottom:0px;
 }
