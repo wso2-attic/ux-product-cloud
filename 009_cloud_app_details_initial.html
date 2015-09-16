@@ -112,7 +112,7 @@
 </div><!-- EOF App factory menu -->
 <div class="inner-wrapper">
     <!-- left pane wrapper -->
-    <div class="left-pane">
+    <div class="left-pane ">
         <ul>
             <li class="selected">
                 <a href="009_cloud_app_details_initial.html" target="_blank"><i class="fa fa-laptop"></i> Overview</a>
@@ -169,7 +169,7 @@
         <div class="row">
             <div class="alert alert-success" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <span class="alert-content">
+                <span class="alert-content-block">
                     <i class="fa fa-check-circle-o"></i> <strong> Congratulations..</strong> your application 'Demo Application' is now ready..! We have created a sample app and it is deploying.
                 </span>
                 <div class='alert-extra-content'>
@@ -567,7 +567,9 @@
 
     $(document).ready(function(){
         var scrollHeight = $('.notification-pane').height() - 150;
-        $('.notifications').css('height', scrollHeight)
+        $('.left-pane').css('max-height', $('.notification-pane').height());
+        $('.left-pane').css('min-height', $('.notification-pane').height());
+        $('.notifications').css('height', scrollHeight);
         $(".nano").nanoScroller();
     });
     

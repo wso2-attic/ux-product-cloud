@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="css/fontwso2-1.2/css/font-wso2.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/dataTables.responsive.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
+    <link href="css/daterangepicker/daterangepicker.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -107,7 +105,7 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Build and Deploy / My Fork
+                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Lifecycle Management
             </div>
         </div>
     </div>
@@ -125,13 +123,8 @@
             <li>
                 <a><i class="fa fa-cogs"></i> Repository</a>
             </li>
-            <li class="selected">
+            <li>
                 <a href="#"><i class="fw fw-deploy"></i> Build & Deploy</a>
-                <ul>
-                    <li>
-                        <a href="#"><i class="fa fa-code-fork"></i>My Fork</a>
-                    </li>
-                </ul>
             </li>
             <li>
                 <a href="database_initial.html"><i class="fa fa-database"></i> Databases</a>
@@ -142,7 +135,7 @@
             <li>
                 <a href="issues_initial.html"><i class="fa fa-tags"></i> Issues</a>
             </li>
-            <li>
+            <li class="selected">
                 <a href="#"><i class="fw fw-lifecycle"></i> Lifecycle Management</a>
             </li>
             <li>
@@ -170,20 +163,6 @@
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
                 </span> Back to Overview
         </a>
-        <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top"
-           title="Build">
-                <span class="fw-stack fw-lg btn-action-ico">
-                    <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-hour-glass fw-stack-1x"></i>
-                </span> Build
-        </a>
-        <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top"
-           title="Deploy">
-                <span class="fw-stack fw-lg btn-action-ico">
-                    <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-deploy fw-stack-1x"></i>
-                </span> Deploy
-        </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
@@ -196,58 +175,19 @@
           </div>
         </div>
         <div class="row padding-bottom-xlg">
-            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-7  forms">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 forms">
                 <div id="push"></div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="form-group">
-                        <label for=""><strong>Version: </strong></label>
-                        <div class="input-group">
-                            <label>2.0.0</label>
-                        </div>
+                <h4>Current Version: <span>trunk</span></h4>
+                <div id="push"></div>
+                <div class="form-group">
+                    <div class="alert alert-warning alert-no-margin" role="alert">
+                            <span class="alert-content">
+                               To promote application to the next stage of lifecycle, you need to first create a version of it . <a> Click here </a> to create version
+                            </span>
                     </div>
-                    <div class="form-group">
-                        <label for=""><strong>Status: </strong></label>
-                        <div class="input-group">
-                            <label>Build 2 deployed to development stage</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                    <h4>Build log history</h4>
-                    <table class="table table-condensed table-borderless table-buildlogs">
-                        <tr>
-                            <td><span class="table-notification-msg table-noti-success"></span>
-                                <i class="fw fw-ok table-notification-i noti-success"></i>
-                            </td>
-                            <td>
-                                Build 3
-                            </td>
-                            <td>Aug 25, 2015 10:08:40 PM</td>
-                            <td><a href="#build_logs">Build Logs</a></td>
-                        </tr>
-                        <tr>
-                            <td><span class="table-notification-msg table-noti-success"></span>
-                                <i class="fw fw-ok table-notification-i noti-success"></i>
-                            </td>
-                            <td>
-                                Build 3
-                            </td>
-                            <td>Aug 25, 2015 10:08:40 PM</td>
-                            <td><a href="#build_logs">Build Logs</a></td>
-                        </tr>
-                        <tr>
-                            <td><span class="table-notification-msg table-noti-error"></span>
-                                <i class="fw fw-error table-notification-i noti-error"></i>
-                            </td>
-                            <td>
-                                Build 3
-                            </td>
-                            <td>Aug 25, 2015 10:08:40 PM</td>
-                            <td><a href="#build_logs">Build Logs</a></td>
-                        </tr>
-                    </table>
                 </div>
             </div>
+
         </div>
     </div><!-- /.container -->
 
@@ -265,9 +205,8 @@
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.min.js"></script>
-<script src="js/datatables-1.10.7/dataTables.responsive.min.js"></script>
-<script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
+<script src="js/daterangepicker/moment.js"></script>
+<script src="js/daterangepicker/daterangepicker.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -285,6 +224,41 @@
             $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
         }
     });
+
+    $('.tab-pane').each(function(){
+
+        var $this = $(this);
+
+        $this.find('.progress-bar-indicator').text($('.strikethrough:checked').length + '/' + $(this).find('.strikethrough').length);
+
+        $this.find('.strikethrough').click(function(){
+            var percentage = 0;
+            var checkEl = $this.find('.strikethrough');
+            var checkedEl = $this.find('.strikethrough:checked');
+
+            var perElPercentage = 100 / checkEl.length;
+
+            checkedEl.each(function(){
+                percentage += perElPercentage;
+            })
+
+            $this.find('.progress-bar').css('width', percentage+'%').attr('aria-valuenow', percentage);
+            $this.find('.progress-bar-indicator').text(checkedEl.length + '/' + checkEl.length);
+
+        })
+    })
+
+    $('#ecdate').daterangepicker({
+        "singleDatePicker": true,
+        "startDate": "08/19/2015",
+        "endDate": "08/21/2015"
+    }, function(start, end, label) {
+
+    });
+
+    $('.datepicker-container .fw-calendar').click(function(){
+        $('#ecdate').data('daterangepicker').toggle();
+    })
 
 
 </script>

@@ -171,7 +171,7 @@
                 <div class="col-md-5 forms">
                     <div class="col-md-12">
                         <div class="form-group has-error has-feedback">
-                            <label for="summary">Summary: <span>*</span>
+                            <label for="summary">Summary: <span class="required">*</span>
                                 <i class="fa fa-question-circle help-tips" data-toggle="tooltip" data-placement="left"
                                    title="Write a summary of your issue, this is long one. you can add anything
                                    like this"></i> </label>
@@ -303,7 +303,7 @@
         $('#btn-error').click(function(){
             var n = noty({
                 theme:'wso2',
-                layout: 'top',
+                layout: 'topCenter',
                 type: 'error',
                 closeWith: ['button','click'],
                 text: 'Please complete all error marked fileds before you proceed. this is long error notification',
@@ -320,7 +320,7 @@
         $('#btn-success').click(function(){
             var n = noty({
                 theme:'wso2',
-                layout: 'top',
+                layout: 'topCenter',
                 type: 'success',
                 closeWith: ['button','click'],
                 timeout:'3500',
@@ -338,7 +338,7 @@
         $('#btn-confirm').click(function(){
             var n = noty({
                 theme:'wso2',
-                layout: 'top',
+                layout: 'topCenter',
                 type: 'confirm',
                 closeWith: ['button','click'],
                 modal: true,
@@ -349,7 +349,7 @@
                         $noty.close();
                         noty({
                             theme:'wso2',
-                            layout: 'top',
+                            layout: 'topCenter',
                             text: 'You clicked "Cancel" button',
                             type: 'error',
                             animation: {
@@ -370,7 +370,7 @@
                         $noty.close();
                         noty({
                             theme:'wso2',
-                            layout: 'top',
+                            layout: 'topCenter',
                             text: 'You clicked "Ok" button',
                             type: 'success',
                             animation: {
