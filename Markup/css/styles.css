@@ -2331,11 +2331,14 @@ th.hide-column-data, td.hide-column-data {
     font-weight: 300;
     margin-bottom: 2em;
 }
-.master-container{
+.master-container,.fork-container{
     padding-top:10px;
+    padding-bottom:10px;
+}
+.master-container .form-group,.fork-container .form-group{
+    margin-bottom:2em;
 }
 .fork-container{
-    padding-top:10px;
     background:#47505A;
 }
 .fork-down{
