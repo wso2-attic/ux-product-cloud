@@ -951,6 +951,7 @@ a.btn-action {
 .url-loading i:before,.url-loading i {
     -webkit-animation: fw-hide 2s cubic-bezier(0, -2.15, 0.2, 0.32) infinite;
     animation: fw-hide 2s cubic-bezier(0, -2.15, 0.2, 0.32) infinite;
+    -moz-animation: fw-hide 2s infinite;
 }
 .url-loading span:after{
     overflow: hidden;
@@ -962,7 +963,7 @@ a.btn-action {
     content: "\2026"; /* ascii code for the ellipsis character */
 }
 
-@-webkit-keyframes fw-hide {
+@keyframes fw-hide {
     0%, 30%  {
         opacity: 0;
     }
