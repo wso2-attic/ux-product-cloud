@@ -216,7 +216,7 @@
                                 Build 3
                             </td>
                             <td>Aug 25, 2015 10:08:40 PM</td>
-                            <td><a href="#build_logs">Build Logs</a></td>
+                            <td><a href="#build_logs" class="build-logs">Build Logs</a></td>
                         </tr>
                         <tr>
                             <td><span class="table-notification-msg table-noti-success"></span>
@@ -224,7 +224,7 @@
                                 Build 3
                             </td>
                             <td>Aug 25, 2015 10:08:40 PM</td>
-                            <td><a href="#build_logs">Build Logs</a></td>
+                            <td><a href="#build_logs" class="build-logs">Build Logs</a></td>
                         </tr>
                         <tr>
                             <td><span class="table-notification-msg table-noti-error"></span>
@@ -232,7 +232,7 @@
                                 Build 3
                             </td>
                             <td>Aug 25, 2015 10:08:40 PM</td>
-                            <td><a href="#build_logs">Build Logs</a></td>
+                            <td><a href="#build_logs" class="build-logs">Build Logs</a></td>
                         </tr>
                     </table>
                 </div>
@@ -250,6 +250,114 @@
         <div class="footer-text">WSO2 Cloud V: 1.2 . &copy; 2015 <i class="fw fw-wso2 fw-2x"></i> All Rights Reserved.</div>
     </div>
 </div>
+
+<!-- Model for previledge assignment -->
+<div class="modal build-logs-modal">
+    <div class="modal-dialog modal-dialog-margin-top-md modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Jenkins Build Log: <i>Build 1</i></h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="scroll-container">
+                            <textarea name="nowrap" cols="30" rows="3" wrap="soft">
+                                Started by user jenkins admin
+                                Building in workspace /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces
+                                Checkout:workspaces / /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces - hudson.remoting.LocalChannel@17c0eaaa
+                                Using strategy: Default
+                                Cloning the remote Git repository
+                                Cloning repository https://git.appfactory.private.wso2.com:8443/git/wso2.com/test.git
+                                git --version
+                                git version 1.7.9.5
+                                Fetching upstream changes from https://git.appfactory.private.wso2.com:8443/git/wso2.com/test.git
+                                Commencing build of Revision 0951f1d60b5fdbadf2b071292f5e750f390720a1 (origin/1.0.0)
+                                Checking out Revision 0951f1d60b5fdbadf2b071292f5e750f390720a1 (origin/1.0.0)
+                                No change to record in branch origin/1.0.0
+                                Parsing POMs
+                                Discovered a new module org.wso2.appfactory:test test
+                                Modules changed, recalculating dependency graph
+                                [workspaces] $ java -Xmx4048M -XX:MaxPermSize=4048M -cp /mnt/192.168.18.2/jenkins/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven3-agent-1.5.jar:/opt/apache-maven-3.0.5/boot/plexus-classworlds-2.4.jar org.jvnet.hudson.maven3.agent.Maven3Main /opt/apache-maven-3.0.5 /mnt/192.168.18.2/jenkins/jenkins_home/war/WEB-INF/lib/remoting-2.50.jar /mnt/192.168.18.2/jenkins/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-1.5.jar /mnt/192.168.18.2/jenkins/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.5.jar 56053
+                                &lt;===[JENKINS REMOTING CAPACITY]===&gt;channel started
+                                Executing Maven:  -B -f /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/pom.xml -Dmaven.repo.local=/mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/repository install
+                                [INFO] Scanning for projects...
+                                [INFO]
+                                [INFO] ------------------------------------------------------------------------
+                                [INFO] Building test 1.0.0
+                                [INFO] ------------------------------------------------------------------------
+                                [INFO]
+                                [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ test ---
+                                [debug] execute contextualize
+                                [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+                                [INFO] skip non existing resourceDirectory /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/src/main/resources
+                                [INFO]
+                                [INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ test ---
+                                [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+                                [INFO] Compiling 1 source file to /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/classes
+                                [INFO]
+                                [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ test ---
+                                [debug] execute contextualize
+                                [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+                                [INFO] skip non existing resourceDirectory /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/src/test/resources
+                                [INFO]
+                                [INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ test ---
+                                [INFO] No sources to compile
+                                [INFO]
+                                [INFO] --- maven-surefire-plugin:2.10:test (default-test) @ test ---
+                                [INFO] No tests to run.
+                                [INFO] Surefire report directory: /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/surefire-reports
+
+                                -------------------------------------------------------
+                                 T E S T S
+                                -------------------------------------------------------
+
+                                Results :
+
+                                Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+                                [JENKINS] Recording test results
+                                [INFO]
+                                [INFO] --- maven-war-plugin:2.1.1:war (default-war) @ test ---
+                                [INFO] Packaging webapp
+                                [INFO] Assembling webapp [test] in [/mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/src/main/webapp]
+                                [INFO] Processing war project
+                                [INFO] Webapp assembled in [14 msecs]
+                                [INFO] Building war: /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/test.war
+                                [INFO] WEB-INF/web.xml already added, skipping
+                                [INFO]
+                                [INFO] --- maven-install-plugin:2.3.1:install (default-install) @ test ---
+                                [INFO] Installing /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/test.war to /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/repository/org/wso2/appfactory/test/1.0.0/test-1.0.0.war
+                                [INFO] Installing /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/pom.xml to /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/repository/org/wso2/appfactory/test/1.0.0/test-1.0.0.pom
+                                [INFO] ------------------------------------------------------------------------
+                                [INFO] BUILD SUCCESS
+                                [INFO] ------------------------------------------------------------------------
+                                [INFO] Total time: 2.365s
+                                [INFO] Finished at: Wed Sep 16 05:04:54 GMT 2015
+                                [INFO] Final Memory: 18M/481M
+                                [INFO] ------------------------------------------------------------------------
+                                Waiting for Jenkins to finish collecting data
+                                [JENKINS] Archiving /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/pom.xml to org.wso2.appfactory/test/1.0.0/test-1.0.0.pom
+                                [JENKINS] Archiving /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/test.war to org.wso2.appfactory/test/1.0.0/test-1.0.0.war
+                                channel stopped
+                                The build started by  for test - 1.0.0 in original is notified as SUCCESSsending message to deploy to stage DevelopmentSuccessfully finished wso2.com » test-1.0.0-default #1Artifact is not stored permanently. persistArtifact = falseFinished: SUCCESS
+                            </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="privilege_edit_cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -274,7 +382,12 @@
             $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
         }
     });
-
+    $('.build-logs').on('click',function(e){
+        e.preventDefault();
+        $('.build-logs-modal').modal({
+            show: true
+        });
+    })
 
 </script>
 </body>
