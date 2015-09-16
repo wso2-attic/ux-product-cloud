@@ -112,7 +112,7 @@
 </div><!-- EOF App factory menu -->
 <div class="inner-wrapper">
     <!-- left pane wrapper -->
-    <div class="left-pane">
+    <div class="left-pane ">
         <ul>
             <li class="selected">
                 <a href="009_cloud_app_details_initial.html" target="_blank"><i class="fa fa-laptop"></i> Overview</a>
@@ -567,7 +567,9 @@
 
     $(document).ready(function(){
         var scrollHeight = $('.notification-pane').height() - 150;
-        $('.notifications').css('height', scrollHeight)
+        $('.left-pane').css('max-height', $('.notification-pane').height());
+        $('.left-pane').css('min-height', $('.notification-pane').height());
+        $('.notifications').css('height', scrollHeight);
         $(".nano").nanoScroller();
     });
     
