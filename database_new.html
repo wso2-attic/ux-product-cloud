@@ -183,10 +183,10 @@
                         <label for="user-name-select">Default User Name: </label>
                         <select id="user-name-select" class="form-control select2" placeholder="Enter username or select an existing">
                             <option></option>
-                            <option value="user1">admin</option>
-                            <option value="user2">root</option>
-                            <option value="user3">name1</option>
-                            <option value="user4">name2</option>
+                            <option value="admin">admin</option>
+                            <option value="root">root</option>
+                            <option value="name1">name1</option>
+                            <option value="name2">name2</option>
                         </select>
                     </div>
 
@@ -385,7 +385,7 @@
         }
     });
 
-    $('#user-name-select.select2').select2({
+    var $select = $('#user-name-select.select2').select2({
         placeholder:"Enter username or select an existing",
         multiple: false,
         tags : true,
@@ -400,6 +400,10 @@
                 };
             }
         }
+    });
+    $select.on("select2:select", function (e) {
+        //todo: get the selected value here
+        //console.log($select.val());
     });
 </script>
 </body>
