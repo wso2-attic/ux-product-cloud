@@ -25,7 +25,7 @@
       "summery": "paragraph text are not justified",
       "version": "2.0.0",
       "type": "Defect",
-      "priority": "Low",
+      "priority": "Low PR",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
       "assignee": "thusitha@wso2.com"
@@ -35,7 +35,7 @@
       "summery": "Proper error message is not shown",
       "version": "1.0.0",
       "type": "Feature",
-      "priority": "Low",
+      "priority": "Low PR",
       "status": "Open",
       "reporter": "dakshika@wso2.com",
       "assignee": "thusitha@wso2.com"
@@ -95,7 +95,7 @@
       "summery": "Proper error message is not shown",
       "version": "1.0.0",
       "type": "Feature",
-      "priority": "Low",
+      "priority": "Low PR",
       "status": "Open",
       "reporter": "dakshika@wso2.com",
       "assignee": "thusitha@wso2.com"
@@ -105,7 +105,7 @@
       "summery": "Delete button is not visible",
       "version": "2.0.0",
       "type": "Improvement",
-      "priority": "Highest",
+      "priority": "High",
       "status": "Resolved",
       "reporter": "dakshika@wso2.com",
       "assignee": "thusitha@wso2.com"
