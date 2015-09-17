@@ -1244,7 +1244,7 @@ a.btn-action {
     list-style: decimal;
 }
 .alert-no-margin{
-    margin:0px;
+    margin:0px !important;
 }
 
 
