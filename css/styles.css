@@ -610,6 +610,8 @@ a.btn-action {
     width: 140px;
     padding-top: 5px;
     float: left;
+    max-height: 100px;
+    overflow: hidden;
 }
 .app-preview .app-desc {
     float: left;
