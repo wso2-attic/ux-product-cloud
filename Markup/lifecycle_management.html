@@ -274,7 +274,7 @@
                                 <div class="col-md-12">
                                     <div id="push"></div>
                                     <div class="form-group">
-                                        <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                                        <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="demote-application">
                                             <span class="fw-stack fw-lg btn-action-ico">
                                                 <i class="fw fw-ring fw-stack-2x"></i>
                                                 <i class="fw fw-down-arrow fw-stack-1x"></i>
@@ -339,6 +339,35 @@
         <div class="footer-text">WSO2 Cloud V: 1.2 . &copy; 2015 <i class="fw fw-wso2 fw-2x"></i> All Rights Reserved.</div>
     </div>
 </div>
+
+<!-- Model for demote confirmation -->
+<div id="demote-confirm-modal" class="modal fade">
+    <div class="modal-dialog modal-dialog-margin-top-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Demoting Application</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="form">
+                            <div class="form-group">
+                                <label for="demote-reason-text" class="control-label">Please state a reason for this action:</label>
+                                <textarea class="form-control" id="demote-reason-text"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="demote-confirm" type="button" class="btn btn-primary">Confirm</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -396,7 +425,19 @@
 
     $('.datepicker-container .fw-calendar').click(function(){
         $('#ecdate').data('daterangepicker').toggle();
-    })
+    });
+
+    $('#demote-application').on('click',function(e){
+         $('#demote-confirm-modal').modal({
+            show: true
+        });
+    });
+
+    $('#demote-confirm').on('click',function(e){
+        var demoteReasonTxt = $('textarea#demote-reason-text').val();
+        //TODO please use demoteReasonTxt to get the text area value
+        //alert(demoteReasonTxt);
+    });
 
 
 </script>
