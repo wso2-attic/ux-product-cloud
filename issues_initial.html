@@ -284,7 +284,14 @@
 			    null,
 			    { type: "select", values: [ '4.0.0', '3.0.0', '2.0.0', '1.0.0'] },
                 { type: "select", values: [ 'Bug', 'Feature', 'Improvement', 'defect'] },
-                { type: "select", values: [ 'Highest', 'High', 'Low', 'Lowest'] },
+                { type: "select", bRegex:true, values: [
+                    { value: '^Low PR$', label: 'Low PR'},
+                    { value: '^Low$', label: 'Low'},
+                    { value: '^Lowest$', label: 'Lowest'},
+                    { value: '^Highest$', label: 'Highest'},
+                    { value: '^High$', label: 'High'},
+                    ]
+                },
                 { type: "select", values: [ 'Open', 'Resolved'] },
                 { "bSortable": false },
                 { "bSortable": false },
