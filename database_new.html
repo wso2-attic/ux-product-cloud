@@ -395,23 +395,30 @@
                     text: term
                 };
             }
+        },
+        createTag: function (tag) {
+            console.log(tag);
+            return {
+                id: tag.term,
+                text: tag.term,
+                isNew : true
+            };
         }
     });
     $select.on("select2:select", function (e) {
-        //todo: get the selected value here
-        var l = $select.select2('data');
-        if(l.length > 1){
-            var c =$('#user-name-select.select2').next().find('.select2-selection__choice').next().prop("class");
-            $select.select2('data', l[0]);
-            console.log('larger than 1: ' + l[0]);
-
+        if(e.params.data.isNew != undefined && e.params.data.isNew){
+            var l = $select.select2('data');
+            if(l.length > 1){
+                $("#user-name-select.select2 [value='"+ e.params.data.id +"']").remove();
+                $('#user-name-select.select2').trigger('change');
+            }
         }else{
-            console.log('smaller than 1');
+            debugger;
         }
     });
     $select.on("select2:close", function (e) {
         var values = $select.select2('data');
-        console.log("close: " + values);
+        //console.log("close: " + values);
     });
 </script>
 </body>
