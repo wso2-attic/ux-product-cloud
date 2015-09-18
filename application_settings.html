@@ -335,7 +335,6 @@
             $image.one('built.cropper', function () {
               URL.revokeObjectURL(blobURL); // Revoke when load complete
             }).cropper('reset').cropper('replace', blobURL);
-            $inputImage.val('');
           } else {
             $body.tooltip('Please choose an image file.', 'warning');
           }
