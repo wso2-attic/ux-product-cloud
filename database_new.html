@@ -379,7 +379,7 @@
         }
     });
 
-    var data = [{id:0, text: "Admin"}, {id:1, text: "Root"}, {id:1, text: "User"}];
+    var data = [{id:0, text: "Admin"}, {id:1, text: "Root"}, {id:2, text: "User"}];
     var $select = $('#user-name-select.select2').select2({
         placeholder:"Enter username or select an existing",
         data: data,
@@ -397,7 +397,6 @@
             }
         },
         createTag: function (tag) {
-            console.log(tag);
             return {
                 id: tag.term,
                 text: tag.term,
@@ -414,16 +413,14 @@
             }
         }else{
             if(l.length > 1){
-                var selectedArray = $select.select2('val');
-                selectedArray.splice(selectedArray.indexOf(e.params.data.id),1);
-                $select.select2('val',selectedArray );
+                $('#user-name-select.select2 option[value="' + e.params.data.id + '"]:selected').removeAttr('selected');
                 $select.trigger('change');
             }
         }
     });
     $select.on("select2:close", function (e) {
         var values = $select.select2('data');
-        //console.log("close: " + values);
+        //todo use @values to fetch the selected value
     });
 </script>
 </body>
