@@ -406,14 +406,19 @@
         }
     });
     $select.on("select2:select", function (e) {
+        var l = $select.select2('data');
         if(e.params.data.isNew != undefined && e.params.data.isNew){
-            var l = $select.select2('data');
             if(l.length > 1){
                 $("#user-name-select.select2 [value='"+ e.params.data.id +"']").remove();
                 $('#user-name-select.select2').trigger('change');
             }
         }else{
-            debugger;
+            if(l.length > 1){
+                var selectedArray = $select.select2('val');
+                selectedArray.splice(selectedArray.indexOf(e.params.data.id),1);
+                $select.select2('val',selectedArray );
+                $select.trigger('change');
+            }
         }
     });
     $select.on("select2:close", function (e) {
