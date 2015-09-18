@@ -1242,6 +1242,11 @@ a.btn-action {
     text-shadow:none;
     opacity:1;
     padding:5px 10px;
+
+}
+.alert-pending .close{
+    margin-top: -15px;
+    margin-right: -15px;
 }
 .alert .alert-content-block{
     display:block;
