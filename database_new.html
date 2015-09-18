@@ -181,13 +181,7 @@
 
                     <div class="form-group col-md-6">
                         <label for="user-name-select">Default User Name: </label>
-                        <select id="user-name-select" class="form-control select2" placeholder="Enter username or select an existing">
-                            <option></option>
-                            <option value="admin">admin</option>
-                            <option value="root">root</option>
-                            <option value="name1">name1</option>
-                            <option value="name2">name2</option>
-                        </select>
+                        <select id="user-name-select" class="form-control select2"></select>
                     </div>
 
                     <div class="clearfix"></div>
@@ -385,9 +379,11 @@
         }
     });
 
+    var data = [{id:0, text: "Admin"}, {id:1, text: "Root"}, {id:1, text: "User"}];
     var $select = $('#user-name-select.select2').select2({
         placeholder:"Enter username or select an existing",
-        multiple: false,
+        data: data,
+        multiple: true,
         tags : true,
         selectOnBlur: true,
         createSearchChoice: function (term, data) {
@@ -403,7 +399,19 @@
     });
     $select.on("select2:select", function (e) {
         //todo: get the selected value here
-        //console.log($select.val());
+        var l = $select.select2('data');
+        if(l.length > 1){
+            var c =$('#user-name-select.select2').next().find('.select2-selection__choice').next().prop("class");
+            $select.select2('data', l[0]);
+            console.log('larger than 1: ' + l[0]);
+
+        }else{
+            console.log('smaller than 1');
+        }
+    });
+    $select.on("select2:close", function (e) {
+        var values = $select.select2('data');
+        console.log("close: " + values);
     });
 </script>
 </body>
