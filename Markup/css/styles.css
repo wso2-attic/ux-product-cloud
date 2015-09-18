@@ -352,6 +352,9 @@ a.btn-action {
     .modal-lg{
         width: 80%;
     }
+    .modal-md{
+        width: 60%;
+    }
 }
 /* use for landing page blocks*/
 
@@ -1700,6 +1703,9 @@ a.btn-action {
     .modal-lg{
         width: 95%;
     }
+    .modal-md{
+        width: 80%;
+    }
 }
 @media (max-width: 992px) {
  .version-url{
@@ -1751,6 +1757,9 @@ a.btn-action {
         margin-top:10%;
     }
     .modal-lg{
+        width: auto;
+    }
+    .modal-md{
         width: auto;
     }
 }
