@@ -610,6 +610,8 @@ a.btn-action {
     width: 140px;
     padding-top: 5px;
     float: left;
+    max-height: 100px;
+    overflow: hidden;
 }
 .app-preview .app-desc {
     float: left;
@@ -995,6 +997,7 @@ a.btn-action {
 .block-life-cycle,
 .block-repos,
 .block-issues,
+.block-runtime,
 .block-team,
 .block-database {
     margin-top: 1em;
@@ -1016,6 +1019,10 @@ a.btn-action {
 }
 .block-issues {
     background-color: #0aa699;
+    min-height: 24em;
+}
+.block-runtime{
+    background-color: #e67e22;
     min-height: 24em;
 }
 .block-action-button {
@@ -1067,6 +1074,10 @@ a.btn-action {
 
 .block-issues .block-action-button:hover {
     background-color: rgb(4, 97, 89);
+}
+
+.block-runtime .block-action-button:hover {
+    background-color: #d35400;
 }
 
 .block-description-multiline {
