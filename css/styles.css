@@ -2043,9 +2043,11 @@ a.btn-action {
 }
 .notification-glow {
     -webkit-animation: glow .5s infinite alternate;
+    -moz-animation: glow .5s infinite alternate;
+    animation: glow .5s infinite alternate;
 }
 
-@-webkit-keyframes glow {
+@keyframes glow {
     to {
         text-shadow: 0 0 10px red;
     }
