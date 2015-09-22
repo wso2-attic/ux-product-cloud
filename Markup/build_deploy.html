@@ -268,9 +268,19 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
+                        <div class="div-search">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="log-search" class="col-sm-1 control-label">Search: </label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="log-search" placeholder="Enter search text">
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
                         <div class="col-xs-12 col-md-12">
                             <div class="scroll-container">
-                            <textarea name="nowrap" cols="30" rows="3" wrap="soft">
                                 Started by user jenkins admin
                                 Building in workspace /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces
                                 Checkout:workspaces / /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces - hudson.remoting.LocalChannel@17c0eaaa
@@ -349,7 +359,6 @@
                                 [JENKINS] Archiving /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/test.war to org.wso2.appfactory/test/1.0.0/test-1.0.0.war
                                 channel stopped
                                 The build started by  for test - 1.0.0 in original is notified as SUCCESSsending message to deploy to stage DevelopmentSuccessfully finished wso2.com » test-1.0.0-default #1Artifact is not stored permanently. persistArtifact = falseFinished: SUCCESS
-                            </textarea>
                             </div>
                         </div>
                     </div>
@@ -372,6 +381,7 @@
 <script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
+<script src="js/custom/custom-logview.js"></script>
 
 <script>
     $('.side-pane-trigger').click(function(){
@@ -392,6 +402,20 @@
         $('.build-logs-modal').modal({
             show: true
         });
+    });
+
+    $('#log-search').bind('keyup change', function(ev) {
+        // pull in the new value
+        var searchTerm = $(this).val();
+
+        // remove any old highlighted terms
+        $('.scroll-container').removeHighlight();
+
+        // disable highlighting if empty
+        if ( searchTerm ) {
+            // highlight the new term
+            $('.scroll-container').highlight( searchTerm );
+        }
     });
 
 </script>
