@@ -138,9 +138,9 @@ table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.s
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#727272', endColorstr='#727272', GradientType=1 );
 }
 
-.dataTable .fa{
+.dataTable .fa,.dataTable .fw{
     color:#fff;
 }
-.dataTable .fa:hover{
+.dataTable .fa:hover,.dataTable .fw:hover{
     color:#999;
 }

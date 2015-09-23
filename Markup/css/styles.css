@@ -2445,4 +2445,10 @@ th.hide-column-data, td.hide-column-data {
 .modal-header button.close-override:focus {
     outline:none;
 }
-
+.table-inline-edit-input{
+    font-size:13px;
+    color:#666;
+    width:100%;
+    padding-left:6px;
+    margin:0px;
+}
