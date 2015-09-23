@@ -494,7 +494,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 
-<script src="js/jquery-cookie-1.5.1/js.cookie.js"></script>
+<script src="js/js.cookie-2.0.3/js.cookie.js"></script>
 
 <script src="js/jquery-observe-1.00/jquery-observe.js"></script>
 
@@ -556,20 +556,17 @@
       $('.version-url a span').text(urlText);
     }
 
-    //initialize the notification for each app
-    notificationHandler(1,0);
-
     /**
      * Notification handler for app wise notification display
      * @param  {Number} appId Application id
-     * @param  {[type]} count [description]
-     * @return {[type]}       [description]
+     * @param  {Number} count Notification Count
+     * @return {Undefined}       
      */
     function notificationHandler(appId, count){
       var appJSON = Cookies.getJSON('per-app-notifications');
 
       if(appJSON == undefined){
-        Cookies.set('per-app-notifications', [{ 'appId' : appId,'notificationCount' : 0 }], { expires: 7, path: '' });
+        Cookies.set('per-app-notifications', [{ 'appId' : appId,'notificationCount' : count }], { expires: 7, path: '' });
       }else{
         var objectIndex = -1;
 
