@@ -494,7 +494,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 
-<script src="js/jquery-cookie-1.5.1/jquery.cookie.js"></script>
+<script src="js/js.cookie-2.0.3/js.cookie.js"></script>
 
 <script src="js/jquery-observe-1.00/jquery-observe.js"></script>
 
@@ -504,7 +504,7 @@
 <script src="js/custom/custom.js"></script>
 
 <script>
-    if($.cookie('closed') == 'false'){
+    if(Cookies.get('closed') == 'false'){
         $('.notification-pane-trigger').find('i').removeClass('fw-notification').addClass('fw-right-arrow');
         $('.notification-pane').animate({"right":"0em"}, "slow").removeClass('visible');
     }else{
@@ -532,13 +532,13 @@
         var notiTrigger = $('.notification-pane-trigger');
         var newNotificationIcon = $('.new-notifications');
         if(notificationPane.hasClass('visible')){
-            $.cookie('closed', false, { expires: 7 });
+            Cookies.set('closed', false, { expires: 7 });
             notiTrigger.removeClass('notification-glow').find('i').removeClass('fw-notification').addClass('fw-right-arrow');
             notificationPane.animate({"right":"0em"}, "slow").removeClass('visible');
             newNotificationIcon.hide();
 
         }else{
-            $.cookie('closed', true, { expires: 7 });
+            Cookies.set('closed', true, { expires: 7 });
             notiTrigger.removeClass('notification-glow').find('i').removeClass('fw-right-arrow').addClass('fw-notification');
             notificationPane.animate({"right":"-24em"}, "slow").addClass('visible');
             newNotificationIcon.hide();
