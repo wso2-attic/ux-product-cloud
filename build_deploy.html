@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/fontwso2-1.2/css/font-wso2.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
+    <link href="css/CodeMirror-5.7.0/codemirror.css" rel="stylesheet">
+    <link href="css/CodeMirror-5.7.0/theme/icecoder.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -266,96 +268,104 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="div-search">
-                            <form class="form-horizontal" role="form">
+                            <div class="form-horizontal" role="form">
                                 <div class="form-group">
                                     <label for="log-search" class="col-sm-1 control-label">Search: </label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="log-search" placeholder="Enter search text">
-                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control log-search" id="log-search" placeholder="Enter search text">
+                                              <span class="input-group-btn">
+                                                  <button type="button" action="findPrev" class="prev btn btn-default"><i class="fa fa-backward"></i> </button>
+                                                    <button type="button" action="findNext" class="next btn btn-default"><i class="fa  fa-forward"></i> </button>
+                                              </span>
+                                        </div><!-- /input-group -->
+                                    </div><!-- /.col-lg-6 -->
                                 </div>
-                            </form>
+                            </div>
 
                         </div>
                         <div class="col-xs-12 col-md-12">
                             <div class="scroll-container">
-                                Started by user jenkins admin
-                                Building in workspace /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces
-                                Checkout:workspaces / /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces - hudson.remoting.LocalChannel@17c0eaaa
-                                Using strategy: Default
-                                Cloning the remote Git repository
-                                Cloning repository https://git.appfactory.private.wso2.com:8443/git/wso2.com/test.git
-                                git --version
-                                git version 1.7.9.5
-                                Fetching upstream changes from https://git.appfactory.private.wso2.com:8443/git/wso2.com/test.git
-                                Commencing build of Revision 0951f1d60b5fdbadf2b071292f5e750f390720a1 (origin/1.0.0)
-                                Checking out Revision 0951f1d60b5fdbadf2b071292f5e750f390720a1 (origin/1.0.0)
-                                No change to record in branch origin/1.0.0
-                                Parsing POMs
-                                Discovered a new module org.wso2.appfactory:test test
-                                Modules changed, recalculating dependency graph
-                                [workspaces] $ java -Xmx4048M -XX:MaxPermSize=4048M -cp /mnt/192.168.18.2/jenkins/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven3-agent-1.5.jar:/opt/apache-maven-3.0.5/boot/plexus-classworlds-2.4.jar org.jvnet.hudson.maven3.agent.Maven3Main /opt/apache-maven-3.0.5 /mnt/192.168.18.2/jenkins/jenkins_home/war/WEB-INF/lib/remoting-2.50.jar /mnt/192.168.18.2/jenkins/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-1.5.jar /mnt/192.168.18.2/jenkins/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.5.jar 56053
-                                &lt;===[JENKINS REMOTING CAPACITY]===&gt;channel started
-                                Executing Maven:  -B -f /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/pom.xml -Dmaven.repo.local=/mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/repository install
-                                [INFO] Scanning for projects...
-                                [INFO]
-                                [INFO] ------------------------------------------------------------------------
-                                [INFO] Building test 1.0.0
-                                [INFO] ------------------------------------------------------------------------
-                                [INFO]
-                                [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ test ---
-                                [debug] execute contextualize
-                                [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-                                [INFO] skip non existing resourceDirectory /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/src/main/resources
-                                [INFO]
-                                [INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ test ---
-                                [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
-                                [INFO] Compiling 1 source file to /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/classes
-                                [INFO]
-                                [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ test ---
-                                [debug] execute contextualize
-                                [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-                                [INFO] skip non existing resourceDirectory /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/src/test/resources
-                                [INFO]
-                                [INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ test ---
-                                [INFO] No sources to compile
-                                [INFO]
-                                [INFO] --- maven-surefire-plugin:2.10:test (default-test) @ test ---
-                                [INFO] No tests to run.
-                                [INFO] Surefire report directory: /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/surefire-reports
+                                <textarea id="build-logs" name="build-logs" style="display: none">
+Started by user jenkins admin
+Building in workspace /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces
+Checkout:workspaces / /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces - hudson.remoting.LocalChannel@1c4990cb
+Using strategy: Default
+Cloning the remote Git repository
+Cloning repository https://git.appfactory.private.wso2.com:8443/git/dak.com/javaapp.git
+git --version
+git version 1.9.1
+Fetching upstream changes from https://git.appfactory.private.wso2.com:8443/git/dak.com/javaapp.git
+Commencing build of Revision 198d74923173bf0d11365fdb319313ab20d10cae (origin/master)
+Checking out Revision 198d74923173bf0d11365fdb319313ab20d10cae (origin/master)
+No change to record in branch origin/master
+Parsing POMs
+Discovered a new module org.wso2.appfactory:javaapp javaapp
+Modules changed, recalculating dependency graph
+[workspaces] $ java -Xmx4048M -XX:MaxPermSize=4048M -cp /mnt/192.168.16.2/jenkins/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven3-agent-1.5.jar:/opt/mvn/boot/plexus-classworlds-2.4.jar org.jvnet.hudson.maven3.agent.Maven3Main /opt/mvn /mnt/192.168.16.2/jenkins/jenkins_home/war/WEB-INF/lib/remoting-2.50.jar /mnt/192.168.16.2/jenkins/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-1.5.jar /mnt/192.168.16.2/jenkins/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.5.jar 38672
+<===[JENKINS REMOTING CAPACITY]===>channel started
+Executing Maven:  -B -f /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/pom.xml -Dmaven.repo.local=/mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/repository install
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building javaapp default-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ javaapp ---
+[debug] execute contextualize
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ javaapp ---
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ javaapp ---
+[debug] execute contextualize
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ javaapp ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ javaapp ---
+[INFO] No tests to run.
+[INFO] Surefire report directory: /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/target/surefire-reports
 
-                                -------------------------------------------------------
-                                 T E S T S
-                                -------------------------------------------------------
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
 
-                                Results :
+Results :
 
-                                Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 
-                                [JENKINS] Recording test results
-                                [INFO]
-                                [INFO] --- maven-war-plugin:2.1.1:war (default-war) @ test ---
-                                [INFO] Packaging webapp
-                                [INFO] Assembling webapp [test] in [/mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/src/main/webapp]
-                                [INFO] Processing war project
-                                [INFO] Webapp assembled in [14 msecs]
-                                [INFO] Building war: /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/test.war
-                                [INFO] WEB-INF/web.xml already added, skipping
-                                [INFO]
-                                [INFO] --- maven-install-plugin:2.3.1:install (default-install) @ test ---
-                                [INFO] Installing /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/test.war to /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/repository/org/wso2/appfactory/test/1.0.0/test-1.0.0.war
-                                [INFO] Installing /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/pom.xml to /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/repository/org/wso2/appfactory/test/1.0.0/test-1.0.0.pom
-                                [INFO] ------------------------------------------------------------------------
-                                [INFO] BUILD SUCCESS
-                                [INFO] ------------------------------------------------------------------------
-                                [INFO] Total time: 2.365s
-                                [INFO] Finished at: Wed Sep 16 05:04:54 GMT 2015
-                                [INFO] Final Memory: 18M/481M
-                                [INFO] ------------------------------------------------------------------------
-                                Waiting for Jenkins to finish collecting data
-                                [JENKINS] Archiving /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/pom.xml to org.wso2.appfactory/test/1.0.0/test-1.0.0.pom
-                                [JENKINS] Archiving /mnt/192.168.18.2/jenkins/jenkins_home/jobs/wso2.com/jobs/test-1.0.0-default/workspaces/target/test.war to org.wso2.appfactory/test/1.0.0/test-1.0.0.war
-                                channel stopped
-                                The build started by  for test - 1.0.0 in original is notified as SUCCESSsending message to deploy to stage DevelopmentSuccessfully finished wso2.com » test-1.0.0-default #1Artifact is not stored permanently. persistArtifact = falseFinished: SUCCESS
+[JENKINS] Recording test results
+[INFO]
+[INFO] --- maven-war-plugin:2.1.1:war (default-war) @ javaapp ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [javaapp] in [/mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/src/main/webapp]
+[INFO] Processing war project
+[INFO] Webapp assembled in [16 msecs]
+[INFO] Building war: /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/target/javaapp.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO]
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ javaapp ---
+[INFO] Installing /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/target/javaapp.war to /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/repository/org/wso2/appfactory/javaapp/default-SNAPSHOT/javaapp-default-SNAPSHOT.war
+[INFO] Installing /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/pom.xml to /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/repository/org/wso2/appfactory/javaapp/default-SNAPSHOT/javaapp-default-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.655s
+[INFO] Finished at: Tue Sep 22 11:26:37 GMT 2015
+[INFO] Final Memory: 18M/481M
+[INFO] ------------------------------------------------------------------------
+Waiting for Jenkins to finish collecting data
+[JENKINS] Archiving /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/pom.xml to org.wso2.appfactory/javaapp/default-SNAPSHOT/javaapp-default-SNAPSHOT.pom
+[JENKINS] Archiving /mnt/192.168.16.2/jenkins/jenkins_home/jobs/dak.com/jobs/javaapp-trunk-default/workspaces/target/javaapp.war to org.wso2.appfactory/javaapp/default-SNAPSHOT/javaapp-default-SNAPSHOT.war
+channel stopped
+The build started by  for javaapp - trunk in original is notified as SUCCESSsending message to deploy to stage Development with tag  Successfully finished dak.com » javaapp-trunk-default #1Storing artifact permanently with the tag name  Finished: SUCCESS
+                            </textarea>
                             </div>
                         </div>
                     </div>
@@ -373,6 +383,11 @@
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
+<!-- include codemirror functions -->
+<script src="js/CodeMirror-5.7.0/lib/codemirror.js"></script>
+<script src="js/CodeMirror-5.7.0/addon/selection/active-line.js"></script>
+<script src="js/CodeMirror-5.7.0/addon/search/searchcursor.js"></script>
+<script src="js/CodeMirror-5.7.0/addon/search/searchonly.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -396,6 +411,27 @@
             show: true
         });
     });
+
+    var editor;
+    $('.modal').on('shown.bs.modal', function() {
+        $('.log-search').focus();
+        editor = CodeMirror.fromTextArea(document.getElementById("build-logs"), {
+            styleActiveLine: true,
+            lineNumbers: true,
+            readOnly: true,
+            searchonly: true,
+            lineWrapping: true,
+            theme:'icecoder'
+        });
+    });
+
+    $('.modal').on('hide.bs.modal', function() {
+        $('.ace_search').remove();
+        editor.toTextArea();
+        editor = null;
+        $('#build-logs').hide();
+    });
+
 
 </script>
 </body>

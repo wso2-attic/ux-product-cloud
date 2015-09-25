@@ -2386,14 +2386,7 @@ th.hide-column-data, td.hide-column-data {
 }
 
 /* build logs model body scroll */
-.build-logs-modal .modal-dialog{
-    overflow-y: initial !important
-}
 .build-logs-modal .modal-body .scroll-container{
-    min-height: 300px;
-    max-height:400px;
-    overflow-y: auto;
-    white-space: pre-line;
     margin-top: 20px;
 }
 #log-search{
@@ -2406,13 +2399,9 @@ th.hide-column-data, td.hide-column-data {
     margin: -15px;
 }
 
-.highlight {
-    background-color: #2C81DC;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* FF3.5+ */
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Saf3.0+, Chrome */
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Opera 10.5+, IE 9.0 */
-    padding:1px 4px;
-    margin:0 -4px;
+.no_result_found{
+    border: 1px solid #CC5F5F;
+    background-color: #E6C6C6;
 }
 
 .editroles > span.fw-stack{
