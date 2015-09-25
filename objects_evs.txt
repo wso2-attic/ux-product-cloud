@@ -1,0 +1,18 @@
+{
+  "data": [
+    {
+      "varname": "variable 1",
+      "description": "my first env. variable",
+      "dev": "im in development",
+      "test": "im in test",
+      "deploy": "im in deployment stage"
+    },
+    {
+      "varname": "variable 2",
+      "description": "my second env. variable",
+      "dev": "im in development",
+      "test": "im in test",
+      "deploy": "im in deployment stage"
+    }
+  ]
+}
