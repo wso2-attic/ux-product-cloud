@@ -13,6 +13,48 @@
       "dev": "im in development",
       "test": "im in test",
       "deploy": "im in deployment stage"
-    }
+    },
+    {
+          "varname": "variable 3",
+          "description": "my first env. variable",
+          "dev": "im in development",
+          "test": "im in test",
+          "deploy": "im in deployment stage"
+    },
+    {
+          "varname": "variable 4",
+          "description": "my second env. variable",
+          "dev": "im in development",
+          "test": "im in test",
+          "deploy": "im in deployment stage"
+    },
+    {
+          "varname": "variable 5",
+          "description": "my first env. variable",
+          "dev": "im in development",
+          "test": "im in test",
+          "deploy": "im in deployment stage"
+        },
+        {
+          "varname": "variable 6",
+          "description": "my second env. variable",
+          "dev": "im in development",
+          "test": "im in test",
+          "deploy": "im in deployment stage"
+        },
+        {
+              "varname": "variable 7",
+              "description": "my first env. variable",
+              "dev": "im in development",
+              "test": "im in test",
+              "deploy": "im in deployment stage"
+        },
+        {
+              "varname": "variable 8",
+              "description": "my second env. variable",
+              "dev": "im in development",
+              "test": "im in test",
+              "deploy": "im in deployment stage"
+        }
   ]
 }
