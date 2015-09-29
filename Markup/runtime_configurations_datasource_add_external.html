@@ -173,21 +173,23 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label for="ds-description">Description: </label>
-                    <textarea class="form-control" rows="3" id="ds-description" placeholder="Write a small description"></textarea>
+                    <textarea class="form-control" rows="3" id="ds-description"
+                              placeholder="Write a small description"></textarea>
                 </div>
                 <div class="form-group col-md-12">
                     <label class="radio-inline">
                         <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="ds-external-db"
-                               checked="checked"> Create from External database
+                               checked="checked" class="custom-radio"> Create from External database
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="ds-internal-db">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="ds-internal-db"
+                               class="custom-radio">
                         Create from Existing database
                     </label>
                 </div>
                 <!-- for external dataase -->
                 <div class="for-external-db">
-                    <div class="form-group  col-md-12">
+                    <div class="form-group  col-md-3">
                         <label for="ds-database-driver">Database Driver: </label>
                         <select id="ds-database-driver" class="form-control">
                             <option>Mysql</option>
@@ -200,11 +202,11 @@
                                placeholder="jdbc:mysql://<server>:<port>/<dbname>">
                     </div>
 
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-6">
                         <label for="ds-user-name">User Name: </label>
                         <input id="ds-user-name" class="form-control" type="text" placeholder="Username"></input>
                     </div>
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-6">
                         <label for="password">Password: </label>
                         <input type="password" class="form-control" id="password" placeholder="Password"
                                data-schemaformat="password" >
