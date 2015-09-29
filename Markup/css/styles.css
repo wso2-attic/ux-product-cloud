@@ -2308,6 +2308,36 @@ th.hide-column-data, td.hide-column-data {
     color: #0196D8;
 }
 
+.custom-radio {
+    margin: 0px !important;
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #cacece !important;
+    padding: 8px !important;
+    border-radius: 50px !important;
+    display: inline-block;
+    position: relative;
+    margin-left: -23px !important;
+}
+
+.custom-radio:checked:after {
+    content: ' ';
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    position: absolute;
+    top: 3px;
+    background: #0196D8;
+    text-shadow: 0px;
+    left: 3px;
+    font-size: 32px;
+}
+
+.custom-radio:checked {
+    color: #99a1a7;
+    border: 1px solid #0196D8 !important;
+}
+
 .modal-body label.data-select-all,.modal-body label.structure-select-all{
     margin-bottom:0px;
 }
@@ -2440,4 +2470,7 @@ th.hide-column-data, td.hide-column-data {
     width:100%;
     padding-left:6px;
     margin:0px;
+}
+.inline-edit form input{
+    color: #000;
 }
