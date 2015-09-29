@@ -179,7 +179,7 @@
                         <textarea class="form-control" rows="3" id="description" placeholder="Write a small description"></textarea>
                     </div>
 
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <label for="user-name-select">Default User Name: </label>
                         <select id="user-name-select" class="form-control select2"></select>
                     </div>
@@ -214,6 +214,25 @@
                     </div>
 
                     <div class="clearfix"></div>
+
+                    <div class="form-group col-md-12">
+                        <label for="create-datasource">Create datasource:
+                            <i class="fa fa-question-circle help-tips" data-toggle="tooltip" data-placement="left"
+                               title="need to add good help on datasource"></i>
+                        </label>
+                        <div class="checkbox col-md-12" >
+                            <label>
+                                <input type="checkbox" value="" class="custom-checkbox" id="datasource-check">
+                            </label>
+                            <label class="data-source-input" style="display: none;">
+                                <input type="text" class="form-control" id="datasource-name"
+                                       placeholder="Datasource name">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
                     <div class="form-group">
                         <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
                             <span class="fw-stack fw-lg btn-action-ico">
@@ -414,6 +433,19 @@
     $select.on("select2:close", function (e) {
         var values = $select.select2('data');
         //todo use @values to fetch the selected value
+    });
+
+
+    $('#datasource-check').click(function() {
+        var $this = $(this);
+        var dataSourceBlock = $('.data-source-input');
+        // $this will contain a reference to the checkbox
+        if ($this.is(':checked')) {
+            dataSourceBlock.show();
+
+        } else {
+            dataSourceBlock.hide();
+        }
     });
 </script>
 </body>
