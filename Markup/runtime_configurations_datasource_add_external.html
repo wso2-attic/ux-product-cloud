@@ -277,8 +277,6 @@
     $('.radio-inline input:radio').click(function() {
 
         var selection = $(this);
-
-        console.log(selection.val())
         if(selection.val() == 'ds-external-db'){
             $('.for-external-db').fadeIn();
             $('.for-internal-db').fadeOut();
