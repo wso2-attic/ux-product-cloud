@@ -107,7 +107,7 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Runtime Configurations / Environment Variables
+                <i class="fa fa-cubes"></i> <span class="hidden-xs">Application Cloud </span> / My Java App / Runtime Configurations / Datasources
             </div>
         </div>
     </div>
@@ -164,12 +164,6 @@
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
                 </span> Back to Runtime configs
         </a>
-        <a href="runtime_configs_environment_variables_add_new.html" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                <span class="fw-stack fw-lg btn-action-ico">
-                    <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-add fw-stack-1x"></i>
-                </span> <span class="hidden-xs">Add Environment Variable</span>
-        </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
@@ -190,7 +184,7 @@
                     <table id="evlist" class="display" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th rowspan="2">Variable Name</th>
+                            <th rowspan="2">Datasource Name</th>
                             <th rowspan="2">Description</th>
                             <th rowspan="2">Snippet</th>
                             <th colspan="2" class="dt-head-center">Stage</th>
@@ -249,14 +243,14 @@
     var table = $('#evlist').DataTable({
             responsive: true,
             "orderCellsTop": true,
-            "ajax": "objects_evs.txt",
+            "ajax": "objects_en_datasource.txt",
             "columns": [
-                { "data": "varname", "width": "10%"},
+                { "data": "id", "width": "10%"},
+                { "data": "ds_name", "width": "10%"},
                 { "data": "description" , "width": "20%"},
                 { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" },
-                { "data": "dev", "orderable": false, "width": "20%", "sClass" : "dt-head-center inline-edit" },
-                { "data": "test", "orderable": false, "width": "20%", "sClass" : "dt-head-center inline-edit" },
-                { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center"}
+                { "data": "dev_url", "orderable": false, "width": "20%", "sClass" : "dt-head-center inline-edit" },
+                { "data": "test_url", "orderable": false, "width": "20%", "sClass" : "dt-head-center inline-edit" },
             ],
             "columnDefs": [
                 { "targets": 2,"data": null,"defaultContent": "<a class='viewsnippet'><i class='fa fa-code'></i></a>" },
