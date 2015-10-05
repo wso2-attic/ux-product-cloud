@@ -20,7 +20,7 @@
      //   console.log(table.row(table.cell(target).index().row).data()['varname'])
      //   console.log(table.row().data())
 
-        if(target.hasClass('inline-edit')){
+        if(target.hasClass('inline-edit') && target.is('td')){
 
             var inlineText = target.text();
             //enable inline editing
