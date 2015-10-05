@@ -2545,3 +2545,13 @@ th.hide-column-data, td.hide-column-data {
     margin-top:0em;
     padding-top:0em;
 }
+
+td.details-control {
+    background: url('../images/datatables-1.10.7/show_more.png') no-repeat center center;
+    background-size:1em;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('../images/datatables-1.10.7/show_less.png') no-repeat center center;
+    background-size:1em;
+}
