@@ -2555,3 +2555,9 @@ tr.shown td.details-control {
     background: url('../images/datatables-1.10.7/show_less.png') no-repeat center center;
     background-size:1em;
 }
+.as-block{
+    display:block;
+}
+.marg-top-8{
+    margin-top:8px;
+}
