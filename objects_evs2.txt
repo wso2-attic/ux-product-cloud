@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+        "id": "0001",
+        "ds_name": "Datasource 01",
+        "description": "my first data source",
+        "dev-url": "URL:jdbc:mysql://mysql-dev-01.cloud.ws..",
+        "test-url": "URL:jdbc:mysql://mysql-dev-01.cloud.ws..",
+        "prod-url": "URL:jdbc:mysql://mysql-dev-01.cloud.ws.."
+    },
+    {
+        "id": "0002",
+        "ds_name": "Datasource 02",
+        "description": "my second data source",
+        "dev-url": "URL:jdbc:mysql://mysql-dev-01.cloud.ws..",
+        "test-url": "URL:jdbc:mysql://mysql-dev-01.cloud.ws..",
+        "prod-url": "URL:jdbc:mysql://mysql-dev-01.cloud.ws.."
+    }
+  ]
+}

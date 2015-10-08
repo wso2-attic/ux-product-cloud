@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "api-id": "02131231340432234",
+      "apiname": "API External 1",
+      "version": "1.0.0",
+      "description": "my first API description",
+      "provider": "External",
+      "endpoints": "https://wso2.com/t/dj/apiext/1.0.0",
+      "auth-details": "Basic Auth"
+    },
+    {
+      "api-id": "031938213450432200",
+      "apiname": "API External 2",
+      "version": "2.2.0",
+      "description": "my second API description",
+      "provider": "External",
+      "endpoints": "https://wso2.com/t/dj/apiext/2.2.0",
+      "auth-details": "Access Token"
+    },
+    {
+      "api-id": "0909082982782736277",
+      "apiname": "WSO2 API 2",
+      "version": "1.4.0",
+      "description": "-",
+      "provider": "WSO2 Cloud",
+      "endpoints": "https://wso2.com/t/dj/wso2api/1.4.0",
+      "auth-details": "OAuth"
+    }
+  ]
+}
