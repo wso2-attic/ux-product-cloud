@@ -184,16 +184,11 @@
                     <table id="evlist" class="display" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th rowspan="2"></th>
-                            <th rowspan="2">Datasource Name</th>
-                            <th rowspan="2">Description</th>
-                            <th rowspan="2">Snippet</th>
-                            <th colspan="2" class="dt-head-center">Stage</th>
-                            <th rowspan="2">Delete</th>
-                        </tr>
-                        <tr>
-                            <th>Development</th>
-                            <th>Test</th>
+                            <th>Datasource Name</th>
+                            <th>Description</th>
+                            <th>Stage - Development</th>
+                            <th>Snippet</th>
+                            <th>Delete</th>
                         </tr>
                         </thead>
                     </table>
@@ -243,29 +238,27 @@
 
     var table = $('#evlist').DataTable({
             responsive: true,
-            "orderCellsTop": true,
-            "ajax": "objects_evs.txt",
+            "ajax": "objects_evs2.txt",
             "columns": [
-                { "data": "varname", "width": "10%"},
+                { "data": "ds_name", "width": "10%"},
                 { "data": "description" , "width": "20%"},
+                { "data": "dev-url", "orderable": false, "width": "20%", "sClass" : "details-control" },
                 { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" },
-                { "data": "dev", "orderable": false, "width": "20%", "sClass" : "dt-head-center inline-edit" },
-                { "data": "test", "orderable": false, "width": "20%", "sClass" : "dt-head-center details-control" },
                 { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center"}
             ],
             "columnDefs": [
-                { "targets": 3,"data": null,"defaultContent": "<a class='viewsnippet'><i class='fa fa-code'></i></a>" },
                 {
-                    "targets": 4,
-                    "render": function ( data, type, row ) {
-                        return '<a href="#" class="as-block">'+ data +'</a>';
-                    },
+                    "targets": 2,
+                    "render": function ( data, type, full, meta ) {
+                      return '<a href="'+data+'" class="as-block">'+data+'</a>';
+                    }
                 },
-                { "targets": 6,"sClass" : "dt-body-center","data": null,"defaultContent": "<a class='delete'><i class='fw fw-delete'></i></a>" }
+                { "targets": 3,"data": null,"sClass" : "dt-body-center","defaultContent": "<a class='viewsnippet'><i class='fa fa-code'></i></a>" },
+                { "targets": 4,"data": null,"defaultContent": "<a class='delete'><i class='fw fw-delete'></i></a>" }
             ]
     });
 
-    table.column( 0 ).visible( false );
+    //table.column( 0 ).visible( false );
 
     $('#evlist tbody').on( 'click', 'td', function () {
         var cell = $(this);
@@ -280,15 +273,16 @@
     $('#evlist tbody').on('click', 'td.details-control', function () {
         var tr = $(this).closest('tr');
         var row = table.row( tr );
-        console.log(row.child);
+        //console.log(row.child);
         if ( row.child.isShown() ) {
             // This row is already open - close it
             row.child.hide();
             tr.removeClass('shown');
-        }
-        else {
+        }else {
             // Open this row
-            row.child( format(row.data()) ).show();
+            var fRowData = format(row.data());
+            console.log(fRowData);
+            row.child(fRowData).show();
             tr.addClass('shown');
         }
     });
@@ -308,7 +302,7 @@
           '</div>'+
           '<div class="form-group">'+
             '<div class="col-sm-offset-2 col-sm-10">'+
-              '<a href="" class="btn-action">'+
+              '<a href="" class="btn-action btn-action-xs">'+
                 '<span class="fw-stack fw-lg btn-action-ico">'+
                     '<i class="fw fw-ring fw-stack-2x"></i>'+
                     '<i class="fw fw-edit fw-stack-1x"></i>'+

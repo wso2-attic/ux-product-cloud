@@ -2547,12 +2547,12 @@ th.hide-column-data, td.hide-column-data {
 }
 
 td.details-control {
-    background: url('../images/datatables-1.10.7/show_more.png') no-repeat center center;
+    background: url('../images/datatables-1.10.7/show_more.png') no-repeat 95% center;
     background-size:1em;
     cursor: pointer;
 }
 tr.shown td.details-control {
-    background: url('../images/datatables-1.10.7/show_less.png') no-repeat center center;
+    background: url('../images/datatables-1.10.7/show_less.png') no-repeat 95% center;
     background-size:1em;
 }
 .as-block{
@@ -2560,4 +2560,32 @@ tr.shown td.details-control {
 }
 .marg-top-8{
     margin-top:8px;
+}
+.dataTable .form-group{
+    margin-bottom:0px;
+}
+.dataTable .btn-action-xs{
+    height:auto;
+}
+.dataTable .btn-action-xs span{
+    font-size:1em;
+}
+.subtable{
+    float:right;
+    margin-right:80px;
+}
+table.dataTable .subtable th, table.dataTable .subtable td{
+    padding:2px 10px;
+}
+.subtable table{
+    border:1px solid #555;
+}
+.subtable th,.subtable td{
+    border-right:1px solid #555;
+}
+.subtable th:last-child,.subtable td:last-child{
+    border-right:none;
+}
+.indent-xs{
+    text-indent:.5em;
 }
