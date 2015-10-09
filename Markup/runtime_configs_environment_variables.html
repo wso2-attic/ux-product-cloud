@@ -190,6 +190,7 @@
                     <table id="evlist" class="display" cellspacing="0" width="100%">
                         <thead>
                         <tr>
+                            <th rowspan="2">id</th>
                             <th rowspan="2">Variable Name</th>
                             <th rowspan="2">Description</th>
                             <th rowspan="2">Snippet</th>
@@ -251,31 +252,28 @@
             "orderCellsTop": true,
             "ajax": "objects_evs.txt",
             "columns": [
+                { "data": "id", "width": "10%", "sClass" : "hide"},
                 { "data": "varname", "width": "10%"},
-                { "data": "description" , "width": "20%"},
+                { "data": "description" , "width": "30%"},
                 { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" },
-                { "data": "dev", "orderable": false, "width": "20%", "sClass" : "dt-head-center inline-edit" },
-                { "data": "test", "orderable": false, "width": "20%", "sClass" : "dt-head-center inline-edit" },
+                { "data": "dev", "orderable": false, "width": "20%", "sClass" : "dt-head-center inline-edit development" },
+                { "data": "test", "orderable": false, "width": "20%", "sClass" : "dt-head-center inline-edit testing" },
                 { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center"}
             ],
             "columnDefs": [
-                { "targets": 2,"data": null,"defaultContent": "<a class='viewsnippet'><i class='fa fa-code'></i></a>" },
-                { "targets": 5,"data": null,"defaultContent": "<a class='delete'><i class='fw fw-delete'></i></a>" }
+                { "targets": 3,"data": null,"defaultContent": "<a class='viewsnippet'><i class='fa fa-code'></i></a>" },
+                { "targets": 6,"data": null,"defaultContent": "<a class='delete'><i class='fw fw-delete'></i></a>" }
             ]
     });
 
-    table.column( 0 ).visible( false );
 
-
-    $('#evlist tbody').on( 'click', 'td', function () {
+    $('#evlist tbody').on( 'click', '.inline-edit', function () {
         var cell = $(this);
         cell.inlineEdit(cell,table);
+
     });
 
-    $('.inline-edit').click(function(){
-        var cell = $(this);
-        cell.inlineEdit(cell,table);
-    });
+
 
 
 </script>
