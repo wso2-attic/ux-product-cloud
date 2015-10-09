@@ -2536,7 +2536,17 @@ th.hide-column-data, td.hide-column-data {
     margin:0px;
 }
 .inline-edit form input{
-    color: #000;
+    color: #333;
+    border:1px solid #666;
+    padding:2.5px 8px;
+}
+.inline-edit form input:focus{
+    border:1px solid #666;
+}
+.inline-edit form button{
+    color:#333;
+    border:1px solid #666;
+    background-color:#ccc;
 }
 
 .border-left-light{

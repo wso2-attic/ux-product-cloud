@@ -184,11 +184,14 @@
                     <table id="evlist" class="display" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th>Datasource Name</th>
-                            <th>Description</th>
-                            <th>Stage - Development</th>
-                            <th>Snippet</th>
-                            <th>Delete</th>
+                            <th rowspan="2">Datasource Name</th>
+                            <th rowspan="2">Description</th>
+                            <th colspan="1" class="dt-head-center">Stage</th>
+                            <th rowspan="2">Snippet</th>
+                            <th rowspan="2">Delete</th>
+                        </tr>
+                        <tr>
+                            <th class="dt-head-center">Development</th>
                         </tr>
                         </thead>
                     </table>
@@ -281,7 +284,7 @@
         }else {
             // Open this row
             var fRowData = format(row.data());
-            console.log(fRowData);
+            //console.log(row);
             row.child(fRowData).show();
             tr.addClass('shown');
         }
@@ -290,7 +293,7 @@
         return '<form class="form-horizontal">' +
           '<div class="form-group">'+
             '<label for="input-db" class="col-sm-2 control-label">Database Server</label>'+
-            '<div class="col-sm-10 marg-top-8">'+
+            '<div class="col-sm-10 marg-top-8 inline-edit">'+
               'Mysql'+
             '</div>'+
           '</div>'+
@@ -312,6 +315,12 @@
           '</div>'+
         '</form>';
     }
+
+    $('.inline-edit').click(function(){
+        var cell = $(this).parent().parent().parent();
+        console.log(cell);
+        //cell.inlineEdit(cell,table);
+    });
 
 </script>
 </body>

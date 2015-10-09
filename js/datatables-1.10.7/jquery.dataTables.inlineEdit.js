@@ -40,9 +40,23 @@
                             }
                         }
                   /* }*/
-                    console.log(this);
-                    console.log(value);
-                    console.log(settings);
+                    //var editedData = table.row(target.parents()).data();
+                    var editedData = table.cell(target).data();
+                    var cellId = table.row(target.parents()).data().id;
+                    var developmentCell = table.row(target.parents()).data().dev;
+                    var testingCell = table.row(target.parents()).data().test;
+                    //var deployCell = table.row(target.parents()).data().deploy;
+                    var edits = {};
+                    edits['id'] = cellId;
+                    if(target.hasClass('development')){
+                        edits['development'] = developmentCell;
+                    }else{
+                        edits['testing'] = testingCell;
+                    }
+                    console.log(edits);
+                    //console.log(cellId);
+                    //console.log(value);
+                    //console.log(settings);
                 },{
                     submit    : 'OK',
                     indicator : '<i class="fw fw-wso2-logo fw-pulse fw-2x"></i>',
