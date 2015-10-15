@@ -12,7 +12,6 @@
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
     <link href="css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="css/datatables-1.10.7/dataTables.responsive.css" rel="stylesheet">
     <link href="css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
@@ -221,7 +220,6 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <script src="js/datatables-1.10.7/jquery.dataTables.min.js"></script>
-<script src="js/datatables-1.10.7/dataTables.responsive.min.js"></script>
 <script src="js/Jeditable-1.7.3/jquery.jeditable.js"></script>
 <script src="js/datatables-1.10.7/jquery.dataTables.inlineEdit.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -248,7 +246,6 @@
     });
 
     var table = $('#evlist').DataTable({
-            responsive: true,
             "orderCellsTop": true,
             "ajax": "objects_evs.txt",
             "columns": [
