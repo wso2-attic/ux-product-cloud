@@ -252,7 +252,7 @@
                 { "data": "version", "width": "5%"},
                 { "data": "description" , "width": "20%"},
                 { "data": "provider" , "width": "20%"},
-                { "data": "endpoints" , "width": "20%"},
+                { "data": "endpoints" , "width": "20%", "sClass" : "details-control"},
                 { "data": "auth-details", "orderable": false, "width": "20%", "sClass" : "details-control" },
                 { "data": null, "orderable": false, "width": "20%", "sClass" : "dt-body-center"}
             ],
@@ -275,20 +275,19 @@
 
     //table.column( 0 ).visible( false );
 
-    $('#apilist tbody').on( 'click', 'td', function () {
+    //$('#apilist tbody').on( 'click', 'td', function () {
+    //    var cell = $(this);
+    //    cell.inlineEdit(cell,table);
+    //});
+
+    /*$('.inline-edit').click(function(){
         var cell = $(this);
         cell.inlineEdit(cell,table);
-    });
+    });*/
 
-    $('.inline-edit').click(function(){
-        var cell = $(this);
-        cell.inlineEdit(cell,table);
-    });
-
-    $('#apilist tbody').on('click', 'td.details-control', function () {
+    /*$('#apilist tbody').on('click', 'td.details-control', function () {
         var tr = $(this).closest('tr');
         var row = table.row( tr );
-        //console.log(row.child);
         if ( row.child.isShown() ) {
             // This row is already open - close it
             row.child.hide();
@@ -300,7 +299,48 @@
             row.child(fRowData).show();
             tr.addClass('shown');
         }
+    });*/
+
+    $('#apilist tbody').on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr'),
+            row = table.row( tr );
+            clickedCell = table.cell(this).index();
+            maxColumns = $('#apilist').DataTable().columns().nodes().length;
+
+        if ( row.child.isShown() ) {
+            //$(row.child()).slideUp()
+            $(row.child()).find('td').has('div').empty()
+            $(row.child()).find('td:nth-child('+ (clickedCell.column+1) +')').first().append(format());
+        }else {
+
+            $('td.details-control').parents('tr').each(function(){
+                var currentRow = table.row(this);
+                if(currentRow.child.isShown()){
+                    currentRow.child.hide();
+                    $(this).parents(tr).removeClass('shown');
+                }
+            })
+
+            var fRowData = format(row.data()),
+                childRow = row.child(fRowData);
+                childRowDOMObject = $(row.child())
+
+            childRowDOMObject.find('td:first').removeAttr('colspan');
+
+            for(var i= 0; i < (maxColumns-1); i++){
+                if(i < clickedCell.column){
+                    childRowDOMObject.prepend('<td></td>');
+                }else{
+                    childRowDOMObject.append('<td></td>');
+                }
+            }
+
+            childRow.show();
+            tr.addClass('shown');
+        }
     });
+
+
     function format ( d ) {
         return '<div class="subtable">'+
         '<table>'+
