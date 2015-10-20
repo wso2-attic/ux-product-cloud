@@ -209,29 +209,33 @@ a.btn-action {
 
 .cloud-menu .popover {
     border-radius: 0px;
-    width: 31em;
-    left: -27em !important;
-    max-width: 31em;
+    width: 24em;
+    left: -20em !important;
+    max-width: 32em;
     background-color: #006690
 }
-.cloud-menu .popover-title {
+.cloud-menu .popover-title,.navbar-header .popover-title {
     background-color: #006690;
     font-size: 16px;
     border-bottom: none;
 }
-.cloud-menu .popover.bottom>.arrow:after {
+.cloud-menu .popover.bottom>.arrow:after,.navbar-header .popover.bottom>.arrow:after{
     border-bottom-color: #006690;
 }
 .cloud-block {
     float: left;
-    width: 9em;
-    height: 9em;
+    width: 6em;
+    height: 6em;
     background-color: #fff;
     margin: 0.5em 0em 0.5em 0.5em;
-    padding: 2em;
+    padding: 0.5em;
     text-align: center;
 }
+.cloud-block i{
+    margin-top:5px;
+}
 .cloud-name {
+    font-size:12px;
     margin-top: .3em;
     font-weight: 300;
 }
@@ -255,8 +259,12 @@ a.btn-action {
 }
 .navbar-header .popover {
     border-radius: 0px;
-    width: 31em;
-    max-width: 13em;
+    width: 21em;
+    max-width:32em;
+    background-color: #006690;
+}
+.navbar-header .popover .popover-content{
+    padding:0px;
 }
 .cloud-menu .popover-content {
     padding: 0px;
@@ -277,13 +285,19 @@ a.btn-action {
 .cloud-block-invert {
     color: #fff;
     float: left;
-    width: 9em;
-    height: 8em;
+    width: 6em;
+    height: 6em;
     background-color: #1f1f1f;
     margin: 0.5em 0em 0.5em 0.5em;
-    padding: 2em;
+    padding: 0.5em;
     text-align: center;
     cursor: pointer;
+}
+.cloud-block-invert:last-child {
+    margin-right:0.5em;
+}
+.cloud-block-invert i{
+    margin-top:5px;
 }
 .cloud-actions a:hover {
     color: #d7d5d5;
@@ -1856,6 +1870,10 @@ a.btn-action {
     }
     .app-desc h2{
         margin-top:20px;
+    }
+    .navbar-header .popover {
+        width: 100%;
+        max-width:100%;
     }
 }
 .btn-launch-app,.btn-edit-code{
