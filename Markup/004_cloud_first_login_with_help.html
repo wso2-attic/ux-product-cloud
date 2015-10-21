@@ -149,6 +149,26 @@
     </div><!-- /.container -->
     <div id="push"></div>
 </div>
+<div class="help-pane visible">
+    <div class="help-trigger">
+            <i class="fw fw-1-5x fw-question-mark"></i>
+    </div>
+    <div class="help-content">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+        ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+        fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
+        justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper
+        nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+        Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius
+        laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
+        nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero,
+        sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
+        Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
+        Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales
+        sagittis magna.
+    </div>
+</div>
 <div id="footer">
     <div class="container-fluid">
         <div class="footer-text">WSO2 Cloud V: 1.2 . &copy; 2015 <i class="fw fw-wso2 fw-2x"></i> All Rights Reserved.</div>
@@ -160,5 +180,24 @@
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
+
+<script>
+    $(document).ready(function (e) {
+        $('.help-trigger').click(function(){
+            console.log('help-trigger')
+            var helpPane = $('.help-pane');
+            var helpTrigger = $('.help-trigger');
+            if(helpPane.hasClass('visible')){
+                helpTrigger.find('i').removeClass('fw-question-mark').addClass('fw-down');
+                helpPane.animate({"bottom":"2.5em"}, "slow").removeClass('visible');
+
+            }else{
+                helpTrigger.find('i').removeClass('fw-down').addClass('fw-question-mark');
+                helpPane.animate({"bottom":"-10.5em"}, "slow").addClass('visible');
+            }
+        });
+    });
+
+</script>
 </body>
 </html>

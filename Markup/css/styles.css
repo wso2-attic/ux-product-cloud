@@ -2599,3 +2599,27 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 .indent-xs{
     text-indent:.5em;
 }
+
+/*help pane related css */
+.help-pane {
+    position: fixed;
+    bottom: -10.5em;
+
+}
+.help-trigger {
+    padding: 1px 2px;
+    background-color: #3C3C3C;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    border-top: 2px solid #0288C0;
+}
+.help-content{
+    background-color: #3C3C3C;
+    padding: 10px;
+    min-height: 13em;
+    max-height: 13em;
+}
+.help-trigger>i{
+    padding: 5px;
+}
