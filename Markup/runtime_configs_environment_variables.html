@@ -263,15 +263,15 @@
             ]
     });
 
+    $('#evlist .inline-edit').hover(function () {
+        var cell = $(this);
+        //console.log(cell);
+    });
 
     $('#evlist tbody').on( 'click', '.inline-edit', function () {
         var cell = $(this);
         cell.inlineEdit(cell,table);
-
     });
-
-
-
 
 </script>
 </body>
