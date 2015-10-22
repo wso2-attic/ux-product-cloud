@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/fontwso2-1.2/css/font-wso2.css">
     <link href="css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="css/web-fonts/Roboto.css" rel="stylesheet">
+    <link href="css/web-fonts/Roboto.css" rel="stylesheet">
+    <!-- enjoy hint -->
+    <link href="css/enjoyhint-3.1.0/enjoyhint.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -178,6 +181,10 @@
 <script src="js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
+<!-- Enjoy Hint -->
+<script src="js/kinetic-v5.1.0/kinetic-v5.1.0.min.js"></script>
+<script src="js/enjoyhint-3.1.0/enjoyhint.js"></script>
+<!--<script src="js/enjoyhint-3.1.0/jquery.enjoyhint.js"></script>-->
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
@@ -198,6 +205,33 @@
         });
     });
 
+
+    //initialize instance
+    var enjoyhint_instance = new EnjoyHint({});
+
+    //simple config.
+    //Only one step - highlighting(with description) "New" button
+    //hide EnjoyHint after a click on the button.
+    var enjoyhint_script_steps = [
+        {
+            "next #cloud-menu-popover": 'Welcome to WSO2 Cloud.<br> Click the tile to see our cloud apps.'
+        },
+        {
+            "next .action-bar": "You can see any related actions within this bar"
+        },
+        {
+           "next .help-trigger": "If you want any help on each page click on this to open help pane. "
+        },
+        {
+            'click #app-create-button' : 'Click the "Create Your Frist Application" button to start creating your First Application'
+        }
+    ];
+
+    //set script config
+    enjoyhint_instance.set(enjoyhint_script_steps);
+
+    //run Enjoyhint script
+    enjoyhint_instance.run();
 </script>
 </body>
 </html>
