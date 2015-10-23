@@ -263,54 +263,59 @@
 <script>
 
     $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function () {
-
-        $('.cloud-block-invert').on('click',function(e){
-            var clickedElem = $(this);
-            $(clickedElem).find('.cloud-block-sub').show();
-            $('.cloud-block-invert').not(clickedElem).animate({
-                width: "0%"
-            },{
-                queue: true,
-                duration: 200,
-                complete: function() {
-                    clickedElem.siblings().hide();
-                    clickedElem.animate({
-                        width: "96%",
-                        height: "100%"
-                    }, 400 );
-                    $(clickedElem).find('.back-btn').show();
-                    $(clickedElem).find('i span').show();
-                    $(clickedElem).find('.cloud-name').hide();
-                    $(clickedElem).addClass('active');
-                    e.stopPropagation();
-                    $(clickedElem).finish();
-                    $('.cloud-block-invert').off( "click");
-                }
-          });
+        $('.cloud-block-invert,.back-btn').on('click',function(e){
+            animateMaterialMenu(this,e);
         });
+    });
 
 
-        $('.back-btn').on('click',function(ev){
-            var clickedChildElem = $(this).parent();
-            clickedChildElem.animate({
+    function animateMaterialMenu(clickedElem,event){
+        console.log();
+            if("cloud-block-invert" == $(clickedElem).prop("class")){
+                $(clickedElem).find('.cloud-block-sub').show();
+                $('.cloud-block-invert').not(clickedElem).animate({
+                    width: "0%"
+                },{
+                    queue: true,
+                    duration: 200,
+                    complete: function() {
+                        $(clickedElem).siblings().hide();
+                        $(clickedElem).animate({
+                            width: "96%",
+                            height: "100%"
+                        }, 400 );
+                        $(clickedElem).find('.back-btn').show();
+                        $(clickedElem).find('i span').show();
+                        $(clickedElem).find('.cloud-name').hide();
+                        $(clickedElem).addClass('active');
+                        //$('.cloud-block-invert').off( "click");
+                    }
+              });
+        }else{
+            clickedElem = $(clickedElem).parent();
+            $(clickedElem).animate({
                 width: "0%",
-                opacity: "0"
+                opacity: "1"
             },{
                 queue: false,
                 duration: 200,
                 complete: function() {
-                    clickedChildElem.siblings().not('h3').animate({
+                    $(clickedElem).siblings().not('h3').animate({
                         width: "6em",
                         height: "6em",
                         opacity: "1"
                     }, 400 );
-                    clickedChildElem.siblings().show();
+                    $(clickedElem).siblings().show();
+                    $(clickedElem).siblings().find('.back-btn').hide();
+                    $(clickedElem).siblings().find('i span').hide();
+                    $(clickedElem).siblings().find('.cloud-name').show();
+                    $(clickedElem).addClass('active');
 
                 }
             });
-        });
+        }
+    }
 
-    });
 
 </script>
 </body>
