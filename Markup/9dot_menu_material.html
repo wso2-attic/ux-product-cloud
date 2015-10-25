@@ -270,8 +270,10 @@
 
 
     function animateMaterialMenu(clickedElem,event){
-        console.log();
-            if("cloud-block-invert" == $(clickedElem).prop("class")){
+
+        var currentClass = $(clickedElem).prop("class");
+        //console.log(currentClass);
+            if("cloud-block-invert" == currentClass){
                 $(clickedElem).find('.cloud-block-sub').show();
                 $('.cloud-block-invert').not(clickedElem).animate({
                     width: "0%"
@@ -288,28 +290,33 @@
                         $(clickedElem).find('i span').show();
                         $(clickedElem).find('.cloud-name').hide();
                         $(clickedElem).addClass('active');
-                        //$('.cloud-block-invert').off( "click");
+
                     }
               });
-        }else{
+        }else if("back-btn" == currentClass){
             clickedElem = $(clickedElem).parent();
             $(clickedElem).animate({
                 width: "0%",
                 opacity: "1"
             },{
                 queue: false,
-                duration: 200,
+                duration: 400,
                 complete: function() {
+                    $(clickedElem).animate({
+                        width: "6em",
+                        height: "6em"
+                    });
                     $(clickedElem).siblings().not('h3').animate({
                         width: "6em",
                         height: "6em",
                         opacity: "1"
-                    }, 400 );
+                    });
+                    $(clickedElem).find('.cloud-block-sub').hide();
                     $(clickedElem).siblings().show();
-                    $(clickedElem).siblings().find('.back-btn').hide();
-                    $(clickedElem).siblings().find('i span').hide();
-                    $(clickedElem).siblings().find('.cloud-name').show();
-                    $(clickedElem).addClass('active');
+                    $(clickedElem).find('.back-btn').hide();
+                    $(clickedElem).find('i span').hide();
+                    $(clickedElem).find('.cloud-name').show();
+                    $(clickedElem).removeClass('active');
 
                 }
             });
