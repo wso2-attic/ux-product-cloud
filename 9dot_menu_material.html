@@ -81,7 +81,7 @@
                        <h3>Manage your cloud</h3>
                        <div class="cloud-block-invert">
                            <div class="back-btn">
-                               <i class="fa fa-2x fa-arrow-left"></i>
+                               <i class="fa fa-2x fa-angle-left"></i>
                            </div>
                            <div>
                                <div class="cloud-block-invert-icon">
@@ -99,7 +99,7 @@
                        </div>
                        <div class="cloud-block-invert">
                            <div class="back-btn">
-                               <i class="fa fa-2x fa-arrow-left"></i>
+                               <i class="fa fa-2x fa-angle-left"></i>
                            </div>
                            <div>
                                <div class="cloud-block-invert-icon">
@@ -115,12 +115,41 @@
                            </div>
                        </div>
                        <div class="cloud-block-invert">
-                           <i class="fa fa-2x  fa-envelope"></i>
-                           <div class="cloud-name">Support</div>
+                           <div class="back-btn">
+                               <i class="fa fa-2x fa-angle-left"></i>
+                           </div>
+                           <div>
+                               <div class="cloud-block-invert-icon">
+                                   <i class="fa fa-2x fa-envelope"><span>Support</span></i>
+                                   <div class="cloud-name">Support</div>
+                               </div>
+                               <ul class="cloud-block-sub">
+                                   <li><a href="#">List item 2.1</a></li>
+                                   <li><a href="#">List item 2.2</a></li>
+                                   <li><a href="#">List item 2.3</a></li>
+                                   <li><a href="#">List item 2.4</a></li>
+                               </ul>
+                           </div>
+
                        </div>
                        <div class="cloud-block-invert">
-                           <i class="fa fa-2x fa-money"></i>
-                           <div class="cloud-name">Monitization</div>
+
+                           <div class="back-btn">
+                               <i class="fa fa-2x fa-angle-left"></i>
+                           </div>
+                           <div>
+                               <div class="cloud-block-invert-icon">
+                                   <i class="fa fa-2x fa-money"><span>Monitization</span></i>
+                                   <div class="cloud-name">Monitization</div>
+                               </div>
+                               <ul class="cloud-block-sub">
+                                   <li><a href="#">List item 2.1</a></li>
+                                   <li><a href="#">List item 2.2</a></li>
+                                   <li><a href="#">List item 2.3</a></li>
+                                   <li><a href="#">List item 2.4</a></li>
+                               </ul>
+                           </div>
+
                        </div>
                    </div>
                 </div>
@@ -255,7 +284,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
-
+<script src="js/velocity-1.2.3/velocity.min.js"></script>
 
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
@@ -268,58 +297,20 @@
         });
     });
 
-
     function animateMaterialMenu(clickedElem,event){
-
         var currentClass = $(clickedElem).prop("class");
-        //console.log(currentClass);
-            if("cloud-block-invert" == currentClass){
-                $(clickedElem).find('.cloud-block-sub').show();
-                $('.cloud-block-invert').not(clickedElem).animate({
-                    width: "0%"
-                },{
-                    queue: true,
-                    duration: 200,
-                    complete: function() {
-                        $(clickedElem).siblings().hide();
-                        $(clickedElem).animate({
-                            width: "96%",
-                            height: "100%"
-                        }, 400 );
-                        $(clickedElem).find('.back-btn').show();
-                        $(clickedElem).find('i span').show();
-                        $(clickedElem).find('.cloud-name').hide();
-                        $(clickedElem).addClass('active');
-
-                    }
-              });
-        }else if("back-btn" == currentClass){
-            clickedElem = $(clickedElem).parent();
-            $(clickedElem).animate({
-                width: "0%",
-                opacity: "1"
-            },{
-                queue: false,
-                duration: 400,
-                complete: function() {
-                    $(clickedElem).animate({
-                        width: "6em",
-                        height: "6em"
-                    });
-                    $(clickedElem).siblings().not('h3').animate({
-                        width: "6em",
-                        height: "6em",
-                        opacity: "1"
-                    });
-                    $(clickedElem).find('.cloud-block-sub').hide();
-                    $(clickedElem).siblings().show();
-                    $(clickedElem).find('.back-btn').hide();
-                    $(clickedElem).find('i span').hide();
-                    $(clickedElem).find('.cloud-name').show();
-                    $(clickedElem).removeClass('active');
-
-                }
-            });
+        var currentClassActive = currentClass.split(" ");
+        console.log(currentClass +" - "+ currentClassActive);
+        if("cloud-block-invert" == currentClass){
+            var stretchXto = $(clickedElem).parent().width() - 14;
+            var stretchYto = $(clickedElem).parent().height();
+            $(clickedElem).siblings().not('h3').velocity({width: "0px"}, { display: "none" });
+            $(clickedElem).velocity({width: stretchXto, height:stretchYto}).addClass("active");
+            $(".popover .active").find('.cloud-block-sub,.back-btn').velocity({opacity: "1"}, { display: "block" });
+        }else if("active" == currentClassActive[1]){
+            $(".popover .active").find('.cloud-block-sub,.back-btn').velocity("reverse",{ display: "none" });
+            $(clickedElem).siblings().not('h3').velocity("reverse",{ display: "block" });
+            $(clickedElem).velocity("reverse").removeClass("active");
         }
     }
 
