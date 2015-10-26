@@ -275,6 +275,7 @@ a.btn-action {
     position: absolute;
     width: 100%;
     left: 0px;
+    overflow:hidden;
 }
 .cloud-actions h3 {
     font-size: 16px;
@@ -292,6 +293,7 @@ a.btn-action {
     padding: 0.5em;
     text-align: center;
     cursor: pointer;
+    position:relative;
 }
 .cloud-block-invert:last-child {
     margin-right:0.5em;
@@ -2680,6 +2682,7 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     color:#fff;
 }
 .cloud-block-sub a:hover{
+    text-decoration:none;
     background:#333;
     animation: fade-pulse 1s;
 }
@@ -2690,10 +2693,20 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 }
 .cloud-block-invert .back-btn{
     display:none;
-    height:140px;
+    float:left;
     background:#333;
     line-height:10;
+    width:10%;
+    height:100%;
+    vertical-align:middle;
 }
 .cloud-block-invert .back-btn:hover{
     animation: fade-pulse 1s;
+}
+.cloud-block-invert .back-btn i{
+    font-weight:200;
+}
+.cloud-block-invert .back-btn + div{
+    float:left;
+    width:90%;
 }
