@@ -286,14 +286,12 @@ a.btn-action {
 .cloud-block-invert {
     color: #fff;
     float: left;
-    width: 6em;
-    height: 6em;
+    width: 7.2em;
+    height: 7.2em;
     background-color: #1f1f1f;
     margin: 0.5em 0em 0.5em 0.5em;
-    padding: 0.5em;
     text-align: center;
     cursor: pointer;
-    position:relative;
 }
 .cloud-block-invert:last-child {
     margin-right:0.5em;
@@ -2658,17 +2656,30 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     position:relative;
     top:0px;
 }
-.cloud-block-invert-icon{
+.cloud-block-invert .cloud-block-invert-icon{
+    margin-top:20%;
     margin-bottom:10px;
+    float:left;
+    width:100%;
 }
-.cloud-block-invert-icon-abs{
-    /*position:absolute;
-    left:20px;
-    */
-    text-align:left;
+.cloud-block-invert-sub-true .cloud-block-invert-icon{
+    margin-top:20%;
+    margin-bottom:10px;
+    float:left;
+    width:85%;
+}
+.cloud-block-invert-icon.active{
+    margin-top:4px;
+    width:30%;
+}
+.forward-btn{
+    float:left;
+    width:15%;
+    height:7.2em;
+    background:#333;
+    animation: fade-pulse 1s;
 }
 .cloud-block-sub{
-    display:none;
     padding:0px;
     margin:0px;
     list-style:none;
@@ -2692,11 +2703,10 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     font-size:14px;
 }
 .cloud-block-invert .back-btn{
-    display:none;
     float:left;
     background:#333;
     line-height:10;
-    width:10%;
+    width:40px;
     height:100%;
     vertical-align:middle;
 }
@@ -2706,7 +2716,16 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 .cloud-block-invert .back-btn i{
     font-weight:200;
 }
-.cloud-block-invert .back-btn + div{
+.anim-container{
+    position:relative;
+    overflow:auto;
+}
+.cloud-block-invert .sub-actions .back_btn{
+    color:#333;
+    background:#fff;
+}
+.cloud-block-invert .sub-actions{
+    display:none;
     float:left;
-    width:90%;
+    width:100%;
 }
