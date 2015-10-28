@@ -79,77 +79,60 @@
                    </div>
                    <div class="cloud-actions">
                        <h3>Manage your cloud</h3>
-                       <div class="cloud-block-invert">
-                           <div class="back-btn">
-                               <i class="fa fa-2x fa-angle-left"></i>
-                           </div>
-                           <div>
+                       <div class="anim-container">
+                           <div class="cloud-block-invert cloud-block-invert-sub-true">
                                <div class="cloud-block-invert-icon">
-                                    <i class="fa fa-2x fa-institution"><span>Organizations</span></i>
-                                    <div class="cloud-name">Organizations</div>
+                                   <i class="fa fa-2x fa-institution"><span>Organizations</span></i>
+                                   <div class="cloud-name">Organizations</div>
                                </div>
-                               <ul class="cloud-block-sub">
-                                   <li><a href="#">List item 1.1</a></li>
-                                   <li><a href="#">List item 1.2</a></li>
-                                   <li><a href="#">List item 1.3</a></li>
-                                   <li><a href="#">List item 1.4</a></li>
-                               </ul>
+                               <div class="forward-btn">
+                                   <i class="fa fa-angle-right"></i>
+                               </div>
+                               <div class="sub-actions">
+                                   <div class="back-btn">
+                                       <i class="fa fa-2x fa-angle-left"></i>
+                                   </div>
+                                   <ul class="cloud-block-sub">
+                                       <li><a href="#">List item 2.1</a></li>
+                                       <li><a href="#">List item 2.2</a></li>
+                                       <li><a href="#">List item 2.3</a></li>
+                                       <li><a href="#">List item 2.4</a></li>
+                                   </ul>
+                               </div>
                            </div>
-
-                       </div>
-                       <div class="cloud-block-invert">
-                           <div class="back-btn">
-                               <i class="fa fa-2x fa-angle-left"></i>
-                           </div>
-                           <div>
+                           <div class="cloud-block-invert cloud-block-invert-sub-true">
                                <div class="cloud-block-invert-icon">
                                    <i class="fa fa-2x fa-users"><span>Members</span></i>
                                    <div class="cloud-name">Members</div>
                                </div>
-                               <ul class="cloud-block-sub">
-                                   <li><a href="#">List item 2.1</a></li>
-                                   <li><a href="#">List item 2.2</a></li>
-                                   <li><a href="#">List item 2.3</a></li>
-                                   <li><a href="#">List item 2.4</a></li>
-                               </ul>
+                               <div class="forward-btn">
+                                   <i class="fa fa-angle-right"></i>
+                               </div>
+                               <div class="sub-actions">
+                                   <div class="back-btn">
+                                       <i class="fa fa-2x fa-angle-left"></i>
+                                   </div>
+                                   <ul class="cloud-block-sub">
+                                       <li><a href="#">List item 2.1</a></li>
+                                       <li><a href="#">List item 2.2</a></li>
+                                       <li><a href="#">List item 2.3</a></li>
+                                       <li><a href="#">List item 2.4</a></li>
+                                   </ul>
+                               </div>
                            </div>
-                       </div>
-                       <div class="cloud-block-invert">
-                           <div class="back-btn">
-                               <i class="fa fa-2x fa-angle-left"></i>
-                           </div>
-                           <div>
+                           <div class="cloud-block-invert">
                                <div class="cloud-block-invert-icon">
                                    <i class="fa fa-2x fa-envelope"><span>Support</span></i>
                                    <div class="cloud-name">Support</div>
                                </div>
-                               <ul class="cloud-block-sub">
-                                   <li><a href="#">List item 2.1</a></li>
-                                   <li><a href="#">List item 2.2</a></li>
-                                   <li><a href="#">List item 2.3</a></li>
-                                   <li><a href="#">List item 2.4</a></li>
-                               </ul>
                            </div>
-
-                       </div>
-                       <div class="cloud-block-invert">
-
-                           <div class="back-btn">
-                               <i class="fa fa-2x fa-angle-left"></i>
-                           </div>
-                           <div>
+                           <div class="cloud-block-invert">
                                <div class="cloud-block-invert-icon">
                                    <i class="fa fa-2x fa-money"><span>Monitization</span></i>
                                    <div class="cloud-name">Monitization</div>
                                </div>
-                               <ul class="cloud-block-sub">
-                                   <li><a href="#">List item 2.1</a></li>
-                                   <li><a href="#">List item 2.2</a></li>
-                                   <li><a href="#">List item 2.3</a></li>
-                                   <li><a href="#">List item 2.4</a></li>
-                               </ul>
                            </div>
-
+                           <div class="clearfix"></div>
                        </div>
                    </div>
                 </div>
@@ -284,35 +267,82 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
 <script src="js/bootstrap-3.2.0/bootstrap.min.js"></script>
-<script src="js/velocity-1.2.3/velocity.min.js"></script>
 
 <!-- include custom js functions -->
 <script src="js/custom/custom.js"></script>
 
 <script>
 
-    $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function () {
-        $('.cloud-block-invert,.back-btn').on('click',function(e){
-            animateMaterialMenu(this,e);
+$('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function () {
+
+    $('.cloud-block-invert-sub-true').click(function(){
+
+        var itemPosition = $(this).position(),
+            containerWidth = ($('.anim-container').width()) - 14,
+            containerHeight = ($('.anim-container').height()) - 14,
+            clone = $(this).clone(false);
+
+        $(this).addClass('clickedParent');
+        $(clone).children('.forward-btn').hide();
+        $(clone).children('.cloud-block-invert-icon').addClass('active');
+        $(clone).css({
+            'position':'absolute',
+            'top': itemPosition.top,
+            'left': itemPosition.left
+        }).appendTo('.anim-container').animate({
+            width : containerWidth,
+            height: containerHeight,
+            'top': 0,
+            'left': 0
+            }, {
+                duration: 200,
+                complete: function() {
+                    var subA = $(this).children('.sub-actions');
+                    subA.show();
+                    if(subA.hasClass('sub-actions')){
+                        var h = 218;
+                        $(this).animate({
+                            height: h
+                        }, {
+                            duration: 200
+                        });
+                        $(this).parent().animate({
+                            height: h + 14
+                        }, {
+                            duration: 200
+                        });
+                    }
+                    $(this).on('click','.back-btn',clickBackBtn);
+            }
         });
     });
 
-    function animateMaterialMenu(clickedElem,event){
-        var currentClass = $(clickedElem).prop("class");
-        var currentClassActive = currentClass.split(" ");
-        console.log(currentClass +" - "+ currentClassActive);
-        if("cloud-block-invert" == currentClass){
-            var stretchXto = $(clickedElem).parent().width() - 14;
-            var stretchYto = $(clickedElem).parent().height();
-            $(clickedElem).siblings().not('h3').velocity({width: "0px"}, { display: "none" });
-            $(clickedElem).velocity({width: stretchXto, height:stretchYto}).addClass("active");
-            $(".popover .active").find('.cloud-block-sub,.back-btn').velocity({opacity: "1"}, { display: "block" });
-        }else if("active" == currentClassActive[1]){
-            $(".popover .active").find('.cloud-block-sub,.back-btn').velocity("reverse",{ display: "none" });
-            $(clickedElem).siblings().not('h3').velocity("reverse",{ display: "block" });
-            $(clickedElem).velocity("reverse").removeClass("active");
-        }
+    function clickBackBtn(){
+        var pa = $(this).parent(),
+            grandpa = $(pa).parent(),
+            greatGrandpa = $(grandpa).parent();
+
+        $(pa).hide();
+        $(grandpa).animate({
+            width : '50px',
+            height: '50px',
+            'top': $('.clickedParent').position().top,
+            'left': $('.clickedParent').position().left
+        }, {
+                duration: 200,
+                complete: function() {
+                $(greatGrandpa).css('height', 'auto');
+                $(grandpa).remove();
+                $(this).children('.forward-btn').show();
+                $('.clickedParent').removeClass('clickedParent');
+            }
+      });
+
     }
+
+});
+
+
 
 
 </script>
