@@ -81,6 +81,9 @@
                        <h3>Manage your cloud</h3>
                        <div class="anim-container">
                            <div class="cloud-block-invert cloud-block-invert-sub-true">
+                               <div class="back-btn">
+                                   <i class="fa fa-2x fa-angle-left"></i>
+                               </div>
                                <div class="cloud-block-invert-icon">
                                    <i class="fa fa-2x fa-institution"><span>Organizations</span></i>
                                    <div class="cloud-name">Organizations</div>
@@ -89,9 +92,6 @@
                                    <i class="fa fa-angle-right"></i>
                                </div>
                                <div class="sub-actions">
-                                   <div class="back-btn">
-                                       <i class="fa fa-2x fa-angle-left"></i>
-                                   </div>
                                    <ul class="cloud-block-sub">
                                        <li><a href="#">List item 2.1</a></li>
                                        <li><a href="#">List item 2.2</a></li>
@@ -101,6 +101,9 @@
                                </div>
                            </div>
                            <div class="cloud-block-invert cloud-block-invert-sub-true">
+                               <div class="back-btn">
+                                   <i class="fa fa-2x fa-angle-left"></i>
+                               </div>
                                <div class="cloud-block-invert-icon">
                                    <i class="fa fa-2x fa-users"><span>Members</span></i>
                                    <div class="cloud-name">Members</div>
@@ -109,14 +112,10 @@
                                    <i class="fa fa-angle-right"></i>
                                </div>
                                <div class="sub-actions">
-                                   <div class="back-btn">
-                                       <i class="fa fa-2x fa-angle-left"></i>
-                                   </div>
+
                                    <ul class="cloud-block-sub">
                                        <li><a href="#">List item 2.1</a></li>
                                        <li><a href="#">List item 2.2</a></li>
-                                       <li><a href="#">List item 2.3</a></li>
-                                       <li><a href="#">List item 2.4</a></li>
                                    </ul>
                                </div>
                            </div>
@@ -273,7 +272,7 @@
 
 <script>
 
-$('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function () {
+$('#cloud-menu-popover,#cloud-menu-popover-xs').on('shown.bs.popover', function () {
 
     $('.cloud-block-invert-sub-true').click(function(){
 
@@ -284,6 +283,7 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function
 
         $(this).addClass('clickedParent');
         $(clone).children('.forward-btn').hide();
+        $(clone).children('.back-btn').show();
         $(clone).children('.cloud-block-invert-icon').addClass('active');
         $(clone).css({
             'position':'absolute',
@@ -297,17 +297,18 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function
             }, {
                 duration: 200,
                 complete: function() {
-                    var subA = $(this).children('.sub-actions');
-                    subA.show();
-                    if(subA.hasClass('sub-actions')){
-                        var h = 218;
+                    var subActions = $(this).children('.sub-actions'),
+                        listHeight = 215;
+                    subActions.show();
+                    if(subActions.hasClass('sub-actions')){
+
                         $(this).animate({
-                            height: h
+                            height: listHeight
                         }, {
                             duration: 200
                         });
                         $(this).parent().animate({
-                            height: h + 14
+                            height: listHeight + 14
                         }, {
                             duration: 200
                         });
@@ -322,8 +323,8 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function
             grandpa = $(pa).parent(),
             greatGrandpa = $(grandpa).parent();
 
-        $(pa).hide();
-        $(grandpa).animate({
+        $(this).hide();
+        $(pa).animate({
             width : '50px',
             height: '50px',
             'top': $('.clickedParent').position().top,
@@ -331,8 +332,8 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function
         }, {
                 duration: 200,
                 complete: function() {
-                $(greatGrandpa).css('height', 'auto');
-                $(grandpa).remove();
+                $(grandpa).css('height', 'auto');
+                $(pa).remove();
                 $(this).children('.forward-btn').show();
                 $('.clickedParent').removeClass('clickedParent');
             }
@@ -342,7 +343,9 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function
 
 });
 
-
+$('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function () {
+    $('.anim-container').children('.clearfix').nextAll().remove();
+});
 
 
 </script>
