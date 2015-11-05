@@ -266,117 +266,194 @@
                 {
                     "targets": 5,
                     "render": function ( data, type, full, meta ) {
-                      return '<a href="#" class="as-block">'+data+'</a>';
+                      return '<a href="#" data-auth-type="'+ data.replace(' ','') +'" class="as-block">'+data+'</a>';
                     }
                 },
                 { "targets": 6,"data": null,"defaultContent": "<a class='delete'><i class='fw fw-delete'></i></a>" }
             ]
     });
 
-    //table.column( 0 ).visible( false );
-
-    //$('#apilist tbody').on( 'click', 'td', function () {
-    //    var cell = $(this);
-    //    cell.inlineEdit(cell,table);
-    //});
-
-    /*$('.inline-edit').click(function(){
-        var cell = $(this);
-        cell.inlineEdit(cell,table);
-    });*/
-
-    /*$('#apilist tbody').on('click', 'td.details-control', function () {
-        var tr = $(this).closest('tr');
-        var row = table.row( tr );
-        if ( row.child.isShown() ) {
-            // This row is already open - close it
-            row.child.hide();
-            tr.removeClass('shown');
-        }else {
-            // Open this row
-            var fRowData = format(row.data());
-            //console.log(fRowData);
-            row.child(fRowData).show();
-            tr.addClass('shown');
-        }
-    });*/
-
     $('#apilist tbody').on('click', 'td.details-control', function () {
+
         var tr = $(this).closest('tr'),
             row = table.row( tr );
             clickedCell = table.cell(this).index();
-            maxColumns = $('#apilist').DataTable().columns().nodes().length;
+            maxColumns = $('#apilist').DataTable().columns().nodes().length,
+            rowType = $(this).find('a').data('auth-type');
 
-        if ( row.child.isShown() ) {
-            //$(row.child()).slideUp()
-            $(row.child()).find('td').has('div').empty()
-            $(row.child()).find('td:nth-child('+ (clickedCell.column+1) +')').first().append(format());
-        }else {
+        $.getJSON('objects_runtime_configs_auth_details.txt',function(response){
 
-            $('td.details-control').parents('tr').each(function(){
-                var currentRow = table.row(this);
-                if(currentRow.child.isShown()){
-                    currentRow.child.hide();
-                    $(this).parents(tr).removeClass('shown');
+            $('#apilist tbody').find('td').css('background-color','');
+            $(this).css('background-color','#696969');
+            console.log(rowType);
+
+            if (row.child.isShown()) {
+                $(row.child()).find('td').has('div').css('background-color','');
+                $(row.child()).find('td').has('div').empty()
+                $(row.child()).find('td:nth-child('+ (clickedCell.column+1) +')')
+                              .first().css('background-color','#696969')
+                              .append(format(rowType,response,clickedCell));
+            }else {
+
+                $('td.details-control').parents('tr').each(function(){
+                    var currentRow = table.row(this);
+                    if(currentRow.child.isShown()){
+                        currentRow.child.hide();
+                        $(this).parents(tr).removeClass('shown');
+                    }
+                })
+
+                var fRowData = format(rowType,response,clickedCell),
+                        childRow = row.child(fRowData),
+                        childRowDOMObject = $(row.child());
+
+                childRowDOMObject.find('td:first').removeAttr('colspan').css('background-color','#696969');
+
+                for(var i= 0; i < (maxColumns-1); i++){
+                    if(i < clickedCell.column){
+                        childRowDOMObject.prepend('<td></td>');
+                    }else{
+                        childRowDOMObject.append('<td></td>');
+                    }
                 }
-            })
 
-            var fRowData = format(row.data()),
-                childRow = row.child(fRowData);
-                childRowDOMObject = $(row.child())
-
-            childRowDOMObject.find('td:first').removeAttr('colspan');
-
-            for(var i= 0; i < (maxColumns-1); i++){
-                if(i < clickedCell.column){
-                    childRowDOMObject.prepend('<td></td>');
-                }else{
-                    childRowDOMObject.append('<td></td>');
-                }
+                childRow.show();
+                tr.addClass('shown');
             }
+        })
 
-            childRow.show();
-            tr.addClass('shown');
-        }
     });
 
+    $(document).on( 'click', '.inline-edit', function () {
+        $(this).editable(function(value,settings){
+            if(value){
+                inlineText = value;
 
-    function format ( d ) {
-        return '<div class="subtable">'+
-        '<table>'+
-            '<tr>'+
-                '<th>Keys</th>'+
-                '<th>Development</th>'+
-                '<th>Testing</th>'+
-            '</tr>'+
-            '<tr>'+
-                '<td colspan="3">Production</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td class="indent-xs">Customer Key</td>'+
-                '<td>9a0554259914a86fb9e7eb014e4e5d52</td>'+
-                '<td>9a0554259914a86fb9e7eb014e4e5d52</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td class="indent-xs">Consumer Secret</td>'+
-                '<td>9a0554259914a86fb9e7eb014e4e5d52</td>'+
-                '<td>9a0554259914a86fb9e7eb014e4e5d52</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td colspan="3">Sandbox</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td class="indent-xs">Customer Key</td>'+
-                '<td>9a0554259914a86fb9e7eb014e4e5d52</td>'+
-                '<td>9a0554259914a86fb9e7eb014e4e5d52</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td class="indent-xs">Consumer Secret</td>'+
-                '<td>9a0554259914a86fb9e7eb014e4e5d52</td>'+
-                '<td>9a0554259914a86fb9e7eb014e4e5d52</td>'+
-            '</tr>'+
-        '</table>'+
-    '</div>';
+                if(inlineText){
+                    $(this).data(inlineText)
+                }
+
+                var editedCellHeader = $(this).closest('table').find('th').eq($(this).index()).text().replace(' ',''),
+                    editedCellRow    = $('td:first', $(this).parents('tr')).text().replace(' ',''),
+                    editedContent    = value,
+                    parentHeader     = table.column(parseInt($(this).closest('table').attr('data-clicked-column'))).header().innerText.trim(),
+                    parentRowObj     = table.row(parseInt($(this).closest('table').attr('data-clicked-row'))).data(),
+                    parentRowId      = parentRowObj['api-id'],
+                    editedContentObj = {},
+                    parentObj        = {};
+
+
+
+                editedContentObj['cellHeader'] = editedCellHeader;
+                editedContentObj[editedCellRow] = editedContent;
+
+                parentObj['id'] = parentRowId;
+                parentObj[parentHeader] = editedContentObj;
+
+                console.log(parentObj);
+
+                return value;
+            }
+        },{
+            submit      : 'OK',
+            indicator   : '<i class="fw fw-wso2-logo fw-pulse fw-2x"></i>',
+            tooltip     : 'Click to edit...'
+        })
+    });
+
+    function format (rowType,tableData,clickedCell) {
+
+        switch (rowType){
+            case 'BasicAuth':
+
+                    var table = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
+                    var usernameRow = '<tr><td>UserName</td>';
+                    var passwordRow = '<tr><td>Password</td>';
+                    tableData.forEach(function(obj){
+                        if(obj.authType == 'BASIC'){
+                            obj.phases.forEach(function(phaseObj){
+                                table += '<th>';
+                                table += phaseObj.type == "DEV" ? "Development" : "Testing"
+                                table += '</th>';
+
+                                usernameRow += '<td class="inline-edit">';
+                                usernameRow += phaseObj.username;
+                                usernameRow += '</td>'
+
+                                passwordRow += '<td class="inline-edit">';
+                                passwordRow += phaseObj.password;
+                                passwordRow += '</td>'
+                            })
+                        }
+                    })
+                    table += usernameRow += passwordRow += '</tr></table></div>'
+
+                    return table;
+
+                 break;
+            case 'OAuth':
+
+                    var table = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
+                    var consumerKey = '<tr><td>Consumer Key</td>';
+                    var customerKey = '<tr><td>Customer Key</td>';
+                    var urlRow = '<tr><td>URL</td>'
+                    tableData.forEach(function(obj){
+                        if(obj.authType == 'OAUTH'){
+                            obj.phases.forEach(function(phaseObj){
+                                table += '<th>';
+                                table += phaseObj.type == "DEV" ? "Development" : "Testing"
+                                table += '</th>';
+
+                                consumerKey += '<td class="inline-edit">';
+                                consumerKey += phaseObj.consumer_key;
+                                consumerKey += '</td>'
+
+                                customerKey += '<td class="inline-edit">';
+                                customerKey += phaseObj.customer_key;
+                                customerKey += '</td>'
+
+                                urlRow += '<td class="inline-edit">';
+                                urlRow += phaseObj.url;
+                                urlRow += '</td>'
+                            })
+                        }
+                    })
+                    table += consumerKey += customerKey += urlRow += '</tr></table></div>'
+
+                    return table;
+
+                break;
+            case 'AccessToken':
+
+                    var table = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
+                    var tokenRow = '<tr><td>Token</td>';
+                    var urlRow = '<tr><td>URL</td>';
+                    tableData.forEach(function(obj){
+                        if(obj.authType == 'TOKEN'){
+                            obj.phases.forEach(function(phaseObj){
+                                table += '<th>';
+                                table += phaseObj.type == "DEV" ? "Development" : "Testing"
+                                table += '</th>';
+
+                                tokenRow += '<td class="inline-edit">';
+                                tokenRow += phaseObj.token;
+                                tokenRow += '</td>'
+
+                                urlRow += '<td class="inline-edit">';
+                                urlRow += phaseObj.url;
+                                urlRow += '</td>'
+                            })
+                        }
+                    })
+                    table += tokenRow += urlRow += '</tr></table></div>'
+
+                    return table;
+
+                break;
+            default:
+                break;
+        }
+
     }
 
 </script>
