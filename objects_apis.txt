@@ -19,6 +19,15 @@
       "auth-details": "Access Token"
     },
     {
+      "api-id": "0249382134504324450",
+      "apiname": "API External 3",
+      "version": "3.2.0",
+      "description": "my third API description",
+      "provider": "External",
+      "endpoints": "https://wso2.com/t/dj/apiext/2.2.0",
+      "auth-details": "OAuth"
+    },
+    {
       "api-id": "0909082982782736277",
       "apiname": "WSO2 API 2",
       "version": "1.4.0",
@@ -29,3 +38,4 @@
     }
   ]
 }
+
