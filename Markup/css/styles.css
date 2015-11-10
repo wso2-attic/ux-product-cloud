@@ -210,7 +210,7 @@ a.btn-action {
 .cloud-menu .popover {
     border-radius: 0px;
     width: 24em;
-    left: -20em !important;
+    left: -20.5em !important;
     max-width: 32em;
     background-color: #006690
 }
@@ -218,6 +218,9 @@ a.btn-action {
     background-color: #006690;
     font-size: 16px;
     border-bottom: none;
+}
+.cloud-menu .popover.bottom>.arrow{
+    margin-left:-2px;
 }
 .cloud-menu .popover.bottom>.arrow:after,.navbar-header .popover.bottom>.arrow:after{
     border-bottom-color: #006690;
@@ -251,10 +254,14 @@ a.btn-action {
     cursor: pointer;
 }
 #cloud-menu-popover-xs {
-    margin-top: 9px;
+    margin-top: 7px;
     color: #fff;
-    padding: 6px;
-    border: 1px solid rgb(62, 62, 62);
+    padding: 6px 10px;
+    border: none;
+}
+.navbar-toggle{
+    border:none;
+    border-radius: 0px;
 }
 .navbar-header .popover {
     border-radius: 0px;
