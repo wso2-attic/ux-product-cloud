@@ -67,14 +67,24 @@
                 </div>
                 <div id="popover-content" class="hide">
                    <div class="cloud-apps">
-                       <a class="cloud-block">
-                           <i class="fa fa-2x fa-cubes"></i>
-                           <div class="cloud-name">Application Cloud</div>
-                       </a>
-                       <a class="cloud-block">
-                           <i class="fw fw-api fa-2x"></i>
-                           <div class="cloud-name">API Cloud</div>
-                       </a>
+                       <div class="cloud-block cloud-block-default">
+                           <div class="cloud-block-invert-icon">
+                               <i class="fa fa-2x fa-cubes"><span>Application Cloud</span></i>
+                               <div class="cloud-name">Application Cloud</div>
+                           </div>
+                       </div>
+                       <div class="cloud-block cloud-block-default">
+                           <div class="cloud-block-invert-icon">
+                               <i class="fw fw-2x fw-api"><span>API Cloud</span></i>
+                               <div class="cloud-name">API Cloud</div>
+                           </div>
+                       </div>
+                       <div class="cloud-block cloud-block-default">
+                           <div class="cloud-block-invert-icon">
+                               <i class="fw fw-2x fw-user"><span>User</span></i>
+                               <div class="cloud-name">User</div>
+                           </div>
+                       </div>
                        <div class="clearfix"></div> <!-- to make seperate -->
                    </div>
                    <div class="cloud-actions">
@@ -82,7 +92,7 @@
                        <div class="anim-container">
                            <div class="cloud-block-invert cloud-block-invert-sub-true">
                                <div class="back-btn">
-                                   <i class="fa fa-2x fa-angle-left"></i>
+                                   <i class="fw fw-2x fw-cancel"></i>
                                </div>
                                <div class="cloud-block-invert-icon">
                                    <i class="fa fa-2x fa-institution"><span>Organizations</span></i>
@@ -102,7 +112,7 @@
                            </div>
                            <div class="cloud-block-invert cloud-block-invert-sub-true">
                                <div class="back-btn">
-                                   <i class="fa fa-2x fa-angle-left"></i>
+                                   <i class="fw fw-2x fw-cancel"></i>
                                </div>
                                <div class="cloud-block-invert-icon">
                                    <i class="fa fa-2x fa-users"><span>Members</span></i>
@@ -119,6 +129,24 @@
                                    </ul>
                                </div>
                            </div>
+                           <div class="cloud-block-invert cloud-block-invert-sub-true">
+                               <div class="back-btn">
+                                   <i class="fw fw-2x fw-cancel"></i>
+                               </div>
+                               <div class="cloud-block-invert-icon">
+                                   <i class="fa fa-2x fa-users"><span>Members</span></i>
+                                   <div class="cloud-name">Members</div>
+                               </div>
+                               <div class="forward-btn">
+                                   <i class="fa fa-angle-right"></i>
+                               </div>
+                               <div class="sub-actions">
+                                   <ul class="cloud-block-sub">
+                                       <li><a href="#">List item 2.1</a></li>
+                                       <li><a href="#">List item 2.2</a></li>
+                                   </ul>
+                               </div>
+                           </div>
                            <div class="cloud-block-invert">
                                <div class="cloud-block-invert-icon">
                                    <i class="fa fa-2x fa-envelope"><span>Support</span></i>
@@ -129,6 +157,25 @@
                                <div class="cloud-block-invert-icon">
                                    <i class="fa fa-2x fa-money"><span>Monitization</span></i>
                                    <div class="cloud-name">Monitization</div>
+                               </div>
+                           </div>
+                           <div class="cloud-block-invert cloud-block-invert-sub-true">
+                               <div class="back-btn">
+                                   <i class="fw fw-2x fw-cancel"></i>
+                               </div>
+                               <div class="cloud-block-invert-icon">
+                                   <i class="fa fa-2x fa-users"><span>Members</span></i>
+                                   <div class="cloud-name">Members</div>
+                               </div>
+                               <div class="forward-btn">
+                                   <i class="fa fa-angle-right"></i>
+                               </div>
+                               <div class="sub-actions">
+
+                                   <ul class="cloud-block-sub">
+                                       <li><a href="#">List item 2.1</a></li>
+                                       <li><a href="#">List item 2.2</a></li>
+                                   </ul>
                                </div>
                            </div>
                            <div class="clearfix"></div>
@@ -282,8 +329,10 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('shown.bs.popover', function 
             clone = $(this).clone(false);
 
         $(this).addClass('clickedParent');
-        $(clone).children('.forward-btn').hide();
+        $(clone).children('.forward-btn').remove();
         $(clone).children('.back-btn').show();
+        $(clone).children('.back-btn, .cloud-block-invert-icon').wrapAll('<div class="temp-wrap">');
+        $(clone).children('.temp-wrap').append('<div class="clearfix"></div>');
         $(clone).children('.cloud-block-invert-icon').addClass('active');
         $(clone).css({
             'position':'absolute',
@@ -298,7 +347,7 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('shown.bs.popover', function 
                 duration: 200,
                 complete: function() {
                     var subActions = $(this).children('.sub-actions'),
-                        listHeight = 215;
+                        listHeight = 208;
                     subActions.show();
                     if(subActions.hasClass('sub-actions')){
 
@@ -316,6 +365,10 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('shown.bs.popover', function 
                     $(this).on('click','.back-btn',clickBackBtn);
             }
         });
+        $('.temp-wrap').children().children('.cloud-name').hide();
+        $('.temp-wrap').children('.cloud-block-invert-icon').children().animate({
+            'margin-left': '-=200px'
+        }).children('span').show();
     });
 
     function clickBackBtn(){
@@ -324,7 +377,7 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('shown.bs.popover', function 
             greatGrandpa = $(grandpa).parent();
 
         $(this).hide();
-        $(pa).animate({
+        $(grandpa).animate({
             width : '50px',
             height: '50px',
             'top': $('.clickedParent').position().top,
@@ -332,13 +385,12 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('shown.bs.popover', function 
         }, {
                 duration: 200,
                 complete: function() {
-                $(grandpa).css('height', 'auto');
-                $(pa).remove();
+                $(greatGrandpa).css('height', 'auto');
+                $(grandpa).remove();
                 $(this).children('.forward-btn').show();
                 $('.clickedParent').removeClass('clickedParent');
             }
       });
-
     }
 
 });

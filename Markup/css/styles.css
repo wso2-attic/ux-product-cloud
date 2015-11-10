@@ -228,7 +228,6 @@ a.btn-action {
     height: 7.2em;
     background-color: #fff;
     margin: 0.5em 0em 0.5em 0.5em;
-    padding: 0.5em;
     text-align: center;
 }
 .cloud-block i{
@@ -289,15 +288,17 @@ a.btn-action {
     width: 7.2em;
     height: 7.2em;
     background-color: #1f1f1f;
-    margin: 0.5em 0em 0.5em 0.5em;
+    margin: 0.5em 0em 0em 0.5em;
     text-align: center;
     cursor: pointer;
 }
-.cloud-block-invert:last-child {
-    margin-right:0.5em;
-}
+
 .cloud-block-invert i{
     margin-top:5px;
+}
+.cloud-block-default {
+    color: #006690;
+    background-color: #fff;
 }
 .cloud-actions a:hover {
     color: #d7d5d5;
@@ -2656,7 +2657,8 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     position:relative;
     top:0px;
 }
-.cloud-block-invert .cloud-block-invert-icon{
+.cloud-block-invert .cloud-block-invert-icon,
+.cloud-block-default .cloud-block-invert-icon{
     margin-top:20%;
     margin-bottom:10px;
     float:left;
@@ -2671,6 +2673,10 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 .cloud-block-invert-icon.active{
     margin-top:10px;
     width:30%;
+}
+.temp-wrap .cloud-block-invert-icon{
+    margin-top:-6%;
+    width:100%;
 }
 .forward-btn{
     float:left;
@@ -2692,7 +2698,7 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 }
 .cloud-block-sub a{
     display:block;
-    padding: 4px 8px;
+    padding: 10px;
     color:#fff;
 }
 .cloud-block-sub a:hover{
@@ -2700,32 +2706,35 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     background:#333;
     animation: fade-pulse 1s;
 }
-.cloud-block-invert i span{
+.cloud-block-invert i span,.cloud-block-default i span{
     display:none;
     font-weight:bold;
     font-size:14px;
+    text-transform:uppercase;
 }
 .cloud-block-invert .back-btn{
     display:none;
-    float:left;
-    background:#333;
-    line-height:15;
+    float:right;
     width:10%;
-    height:100%;
+    height:14%;
     vertical-align:middle;
-}
-.cloud-block-invert .back-btn:hover{
-    animation: fade-pulse 1s;
 }
 .cloud-block-invert .back-btn i{
     font-weight:200;
+    margin-top:0;
+    font-size:14px;
+    line-height:28px;
 }
 .anim-container{
     position:relative;
     overflow:auto;
+    padding-bottom:0.5em;
 }
 .cloud-block-invert .sub-actions{
     display:none;
     float:left;
-    width:90%;
+    width:100%;
+}
+.temp-wrap{
+    background:#000;
 }
