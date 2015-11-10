@@ -244,7 +244,7 @@
         }
     });
 
-    var table = $('#apilist').DataTable({
+    var apiListDataTable = $('#apilist').DataTable({
             responsive: true,
             "ajax": "objects_apis.txt",
             "columns": [
@@ -273,56 +273,73 @@
             ]
     });
 
-    $('#apilist tbody').on('click', 'td.details-control', function () {
+    var tableBody   = $('#apilist tbody'),
+        table       = $('#apilist');
 
-        var tr = $(this).closest('tr'),
-            row = table.row( tr );
-            clickedCell = table.cell(this).index();
-            maxColumns = $('#apilist').DataTable().columns().nodes().length,
-            rowType = $(this).find('a').data('auth-type');
+    tableBody.on('click','td.details-control',function(){
+        var tr              = $(this).closest('tr'),
+            row             = apiListDataTable.row(tr),
+            rowChild        = row.child,
+            clickedCell     = apiListDataTable.cell(this).index(),
+            rowType         = $(this).find('a').data('auth-type'),
+            maxColumns      = table.DataTable().columns().nodes().length;
 
-        $.getJSON('objects_runtime_configs_auth_details.txt',function(response){
+        $('.highlight-table').removeClass('highlight-table');
+        $(this).addClass('highlight-table');
 
-            $('#apilist tbody').find('td').css('background-color','');
-            $(this).css('background-color','#696969');
-            console.log(rowType);
+        getJsonData('objects_runtime_configs_auth_details.json',function(response){
 
-            if (row.child.isShown()) {
-                $(row.child()).find('td').has('div').css('background-color','');
-                $(row.child()).find('td').has('div').empty()
-                $(row.child()).find('td:nth-child('+ (clickedCell.column+1) +')')
-                              .first().css('background-color','#696969')
-                              .append(format(rowType,response,clickedCell));
-            }else {
-
-                $('td.details-control').parents('tr').each(function(){
-                    var currentRow = table.row(this);
-                    if(currentRow.child.isShown()){
-                        currentRow.child.hide();
-                        $(this).parents(tr).removeClass('shown');
-                    }
-                })
+            if(rowChild.isShown()){
+                var subTableCell = $(rowChild()).find('td').has('div').empty();
+                    subTableCell.first().addClass('highlight-table')
+                                .append(format(rowType,response,clickedCell));
+            }else{
+                hideShownSubRows(tr);
 
                 var fRowData = format(rowType,response,clickedCell),
-                        childRow = row.child(fRowData),
-                        childRowDOMObject = $(row.child());
+                    childRow = row.child(fRowData),
+                    childRowDOMObject = $(childRow.child());
 
-                childRowDOMObject.find('td:first').removeAttr('colspan').css('background-color','#696969');
-
-                for(var i= 0; i < (maxColumns-1); i++){
-                    if(i < clickedCell.column){
-                        childRowDOMObject.prepend('<td></td>');
-                    }else{
-                        childRowDOMObject.append('<td></td>');
-                    }
-                }
-
+                childRowDOMObject.find('td:first').removeAttr('colspan').addClass('highlight-table');
+                positionCell(childRowDOMObject,maxColumns,clickedCell);
                 childRow.show();
                 tr.addClass('shown');
             }
+
         })
 
-    });
+    })
+
+
+    function getJsonData(fileName,callback){
+        $.ajax({
+            url : fileName,
+            type: 'GET',
+            datatype: 'json',
+            success: callback
+        });
+    }
+
+    function hideShownSubRows(row){
+        $('td.details-control').parents('tr').each(function(){
+            var currentRow = apiListDataTable.row(this);
+            if(currentRow.child.isShown()){
+                currentRow.child.hide();
+                $(this).parent(row).find('.shown').removeClass('shown');
+            }
+        })
+    }
+
+    function positionCell(obj,maxCols,clickedCell){
+        for(var i= 0; i < (maxCols-1); i++){
+            if(i < clickedCell.column){
+                obj.prepend('<td></td>');
+            }else{
+                obj.append('<td></td>');
+            }
+        }
+    }
+
 
     $(document).on( 'click', '.inline-edit', function () {
         $(this).editable(function(value,settings){
@@ -336,13 +353,11 @@
                 var editedCellHeader = $(this).closest('table').find('th').eq($(this).index()).text().replace(' ',''),
                     editedCellRow    = $('td:first', $(this).parents('tr')).text().replace(' ',''),
                     editedContent    = value,
-                    parentHeader     = table.column(parseInt($(this).closest('table').attr('data-clicked-column'))).header().innerText.trim(),
-                    parentRowObj     = table.row(parseInt($(this).closest('table').attr('data-clicked-row'))).data(),
+                    parentHeader     = apiListDataTable.column(parseInt($(this).closest('table').attr('data-clicked-column'))).header().innerText.trim(),
+                    parentRowObj     = apiListDataTable.row(parseInt($(this).closest('table').attr('data-clicked-row'))).data(),
                     parentRowId      = parentRowObj['api-id'],
                     editedContentObj = {},
                     parentObj        = {};
-
-
 
                 editedContentObj['cellHeader'] = editedCellHeader;
                 editedContentObj[editedCellRow] = editedContent;
@@ -366,15 +381,18 @@
         switch (rowType){
             case 'BasicAuth':
 
-                    var table = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
+                    var subTable = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row
+                            +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
                     var usernameRow = '<tr><td>UserName</td>';
                     var passwordRow = '<tr><td>Password</td>';
                     tableData.forEach(function(obj){
                         if(obj.authType == 'BASIC'){
                             obj.phases.forEach(function(phaseObj){
-                                table += '<th>';
-                                table += phaseObj.type == "DEV" ? "Development" : "Testing"
-                                table += '</th>';
+                                subTable += '<th>';
+
+                                //The following condition should be changed according to the phases levels
+                                subTable += phaseObj.type == "DEV" ? "Development" : "Testing"
+                                subTable += '</th>';
 
                                 usernameRow += '<td class="inline-edit">';
                                 usernameRow += phaseObj.username;
@@ -386,23 +404,25 @@
                             })
                         }
                     })
-                    table += usernameRow += passwordRow += '</tr></table></div>'
-
-                    return table;
+                    subTable += usernameRow += passwordRow += '</tr></table></div>'
+                    return subTable;
 
                  break;
             case 'OAuth':
 
-                    var table = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
+                    var subTable = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row
+                            +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
                     var consumerKey = '<tr><td>Consumer Key</td>';
                     var customerKey = '<tr><td>Customer Key</td>';
                     var urlRow = '<tr><td>URL</td>'
                     tableData.forEach(function(obj){
                         if(obj.authType == 'OAUTH'){
                             obj.phases.forEach(function(phaseObj){
-                                table += '<th>';
-                                table += phaseObj.type == "DEV" ? "Development" : "Testing"
-                                table += '</th>';
+                                subTable += '<th>';
+
+                                //The following condition should be changed according to the phases levels
+                                subTable += phaseObj.type == "DEV" ? "Development" : "Testing"
+                                subTable += '</th>';
 
                                 consumerKey += '<td class="inline-edit">';
                                 consumerKey += phaseObj.consumer_key;
@@ -418,22 +438,24 @@
                             })
                         }
                     })
-                    table += consumerKey += customerKey += urlRow += '</tr></table></div>'
-
-                    return table;
+                    subTable += consumerKey += customerKey += urlRow += '</tr></table></div>'
+                    return subTable;
 
                 break;
             case 'AccessToken':
 
-                    var table = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
+                    var subTable = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row
+                            +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
                     var tokenRow = '<tr><td>Token</td>';
                     var urlRow = '<tr><td>URL</td>';
                     tableData.forEach(function(obj){
                         if(obj.authType == 'TOKEN'){
                             obj.phases.forEach(function(phaseObj){
-                                table += '<th>';
-                                table += phaseObj.type == "DEV" ? "Development" : "Testing"
-                                table += '</th>';
+                                subTable += '<th>';
+
+                                //The following condition should be changed according to the phases levels
+                                subTable += phaseObj.type == "DEV" ? "Development" : "Testing"
+                                subTable += '</th>';
 
                                 tokenRow += '<td class="inline-edit">';
                                 tokenRow += phaseObj.token;
@@ -445,9 +467,8 @@
                             })
                         }
                     })
-                    table += tokenRow += urlRow += '</tr></table></div>'
-
-                    return table;
+                    subTable += tokenRow += urlRow += '</tr></table></div>'
+                    return subTable;
 
                 break;
             default:

@@ -2609,15 +2609,15 @@ tr.shown td.details-control {
 .dataTable .btn-action-xs span{
     font-size:1em;
 }
-.subtable{
-    float:right;
-    margin-right:80px;
+.highlight-table{
+    background-color: #696969 !important;
 }
 table.dataTable .subtable th, table.dataTable .subtable td{
     padding:2px 10px;
 }
 .subtable table{
     border:1px solid #555;
+    width: 100%;
 }
 .subtable th,.subtable td{
     border-right:1px solid #555;
