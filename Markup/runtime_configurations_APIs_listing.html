@@ -252,7 +252,7 @@
                 { "data": "version", "width": "5%"},
                 { "data": "description" , "width": "20%"},
                 { "data": "provider" , "width": "20%"},
-                { "data": "endpoints" , "width": "20%", "sClass" : "details-control"},
+                { "data": "endpoints" , "width": "20%"},
                 { "data": "auth-details", "orderable": false, "width": "20%", "sClass" : "details-control" },
                 { "data": null, "orderable": false, "width": "20%", "sClass" : "dt-body-center"}
             ],
@@ -266,7 +266,9 @@
                 {
                     "targets": 5,
                     "render": function ( data, type, full, meta ) {
-                      return '<a href="#" data-auth-type="'+ data.replace(' ','') +'" class="as-block">'+data+'</a>';
+                        //data-auth-type attribute is required to identify the authentication type.
+                        //don't remove
+                        return '<a href="#" data-auth-type="'+ data.replace(' ','') +'" class="as-block">'+data+'</a>';
                     }
                 },
                 { "targets": 6,"data": null,"defaultContent": "<a class='delete'><i class='fw fw-delete'></i></a>" }
@@ -284,8 +286,8 @@
             rowType         = $(this).find('a').data('auth-type'),
             maxColumns      = table.DataTable().columns().nodes().length;
 
-        $('.highlight-table').removeClass('highlight-table');
-        $(this).addClass('highlight-table');
+        $('.highlight-parent-cell').removeClass('highlight-parent-cell');
+        $(this).addClass('highlight-parent-cell');
 
         getJsonData('objects_runtime_configs_auth_details.json',function(response){
 
@@ -300,7 +302,7 @@
                     childRow = row.child(fRowData),
                     childRowDOMObject = $(childRow.child());
 
-                childRowDOMObject.find('td:first').removeAttr('colspan').addClass('highlight-table');
+                childRowDOMObject.addClass('highlight-table').find('td:first').removeAttr('colspan');
                 positionCell(childRowDOMObject,maxColumns,clickedCell);
                 childRow.show();
                 tr.addClass('shown');
@@ -309,37 +311,6 @@
         })
 
     })
-
-
-    function getJsonData(fileName,callback){
-        $.ajax({
-            url : fileName,
-            type: 'GET',
-            datatype: 'json',
-            success: callback
-        });
-    }
-
-    function hideShownSubRows(row){
-        $('td.details-control').parents('tr').each(function(){
-            var currentRow = apiListDataTable.row(this);
-            if(currentRow.child.isShown()){
-                currentRow.child.hide();
-                $(this).parent(row).find('.shown').removeClass('shown');
-            }
-        })
-    }
-
-    function positionCell(obj,maxCols,clickedCell){
-        for(var i= 0; i < (maxCols-1); i++){
-            if(i < clickedCell.column){
-                obj.prepend('<td></td>');
-            }else{
-                obj.append('<td></td>');
-            }
-        }
-    }
-
 
     $(document).on( 'click', '.inline-edit', function () {
         $(this).editable(function(value,settings){
@@ -376,6 +347,67 @@
         })
     });
 
+    /**
+     *
+     * Ajax Wrapper function to load json data
+     *
+     * @param fileName - This is basically the ajax url
+     * @param callback - success callback when the ajax returns
+     */
+    function getJsonData(fileName,callback){
+        $.ajax({
+            url : fileName,
+            type: 'GET',
+            datatype: 'json',
+            success: callback
+        });
+    }
+
+    /**
+     *
+     * This function hides any other child rows that are showing
+     *
+     * @param row
+     */
+    function hideShownSubRows(row){
+        $('td.details-control').parents('tr').each(function(){
+            var currentRow = apiListDataTable.row(this);
+            if(currentRow.child.isShown()){
+                currentRow.child.hide();
+                $(this).parent(row).find('.shown').removeClass('shown');
+            }
+        })
+    }
+
+    /**
+     *
+     * This function adds additional cells to make the subrow cell appear right under
+     * the clicked parent cell
+     *
+     * @param obj - sub row that need cell appending
+     * @param maxCols - maximum colums in the data table object
+     * @param clickedCell - clicked cell in the data table
+     */
+    function positionCell(obj,maxCols,clickedCell){
+        for(var i= 0; i < (maxCols-1); i++){
+            if(i < clickedCell.column){
+                obj.prepend('<td></td>');
+            }else{
+                obj.append('<td></td>');
+            }
+        }
+    }
+
+    /**
+     *
+     * This function generates a sub table according to the provided json data from
+     * the tableData param
+     *
+     * @param rowType
+     * @param tableData
+     * @param clickedCell
+     * @returns {string}
+     */
     function format (rowType,tableData,clickedCell) {
 
         switch (rowType){
