@@ -210,7 +210,7 @@ a.btn-action {
 .cloud-menu .popover {
     border-radius: 0px;
     width: 24em;
-    left: -20em !important;
+    left: -20.5em !important;
     max-width: 32em;
     background-color: #006690
 }
@@ -218,6 +218,9 @@ a.btn-action {
     background-color: #006690;
     font-size: 16px;
     border-bottom: none;
+}
+.cloud-menu .popover.bottom>.arrow{
+    margin-left:-2px;
 }
 .cloud-menu .popover.bottom>.arrow:after,.navbar-header .popover.bottom>.arrow:after{
     border-bottom-color: #006690;
@@ -251,10 +254,14 @@ a.btn-action {
     cursor: pointer;
 }
 #cloud-menu-popover-xs {
-    margin-top: 9px;
+    margin-top: 7px;
     color: #fff;
-    padding: 6px;
-    border: 1px solid rgb(62, 62, 62);
+    padding: 6px 10px;
+    border: none;
+}
+.navbar-toggle{
+    border:none;
+    border-radius: 0px;
 }
 .navbar-header .popover {
     border-radius: 0px;
@@ -293,12 +300,10 @@ a.btn-action {
     cursor: pointer;
 }
 
-.cloud-block-invert i{
-    margin-top:5px;
-}
 .cloud-block-default {
     color: #006690;
     background-color: #fff;
+    cursor: pointer;
 }
 .cloud-actions a:hover {
     color: #d7d5d5;
@@ -2661,6 +2666,10 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     position:relative;
     top:0px;
 }
+.cloud-block-default:hover{
+    opacity: 0.8;
+    filter: alpha(opacity=0.8);
+}
 .cloud-block-invert .cloud-block-invert-icon,
 .cloud-block-default .cloud-block-invert-icon{
     margin-top:20%;
@@ -2679,16 +2688,18 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     width:30%;
 }
 .temp-wrap .cloud-block-invert-icon{
-    margin-top:-6%;
+    margin-top:-2%;
     width:100%;
+    margin-bottom:18px;
+    margin-left:20px;
+    text-align:left;
 }
 .forward-btn{
     float:left;
     width:15%;
     height:7.2em;
     line-height:7;
-    background:#333;
-    animation: fade-pulse 1s;
+    background:#2a2a2a;
 }
 .cloud-block-sub{
     float:left;
@@ -2696,24 +2707,28 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     margin:0px;
     list-style:none;
     font-weight:200;
-    font-size:12px;
     text-align:left;
     width:100%;
 }
 .cloud-block-sub a{
     display:block;
     padding: 10px;
+    padding-left:20px;
     color:#fff;
 }
 .cloud-block-sub a:hover{
     text-decoration:none;
-    background:#333;
-    animation: fade-pulse 1s;
+    background:#3a3a3a;
+}
+.cloud-block-sub a i:after{
+    content: '';
+    margin-left:10px;
 }
 .cloud-block-invert i span,.cloud-block-default i span{
     display:none;
-    font-weight:bold;
-    font-size:14px;
+    font-weight:200;
+    font-size:20px;
+    margin-left:10px;
     text-transform:uppercase;
 }
 .cloud-block-invert .back-btn{
@@ -2723,11 +2738,10 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     height:14%;
     vertical-align:middle;
 }
-.cloud-block-invert .back-btn i{
+.cloud-block-invert .back-btn span{
     font-weight:200;
-    margin-top:0;
-    font-size:14px;
-    line-height:28px;
+    margin-top:5px;
+    font-size:10px;
 }
 .anim-container{
     position:relative;
@@ -2738,7 +2752,8 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     display:none;
     float:left;
     width:100%;
+    background: #2a2a2a;
 }
 .temp-wrap{
-    background:#000;
+    background:#1f1f1f;
 }
