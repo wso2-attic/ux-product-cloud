@@ -252,7 +252,7 @@
                 { "data": "version", "width": "5%"},
                 { "data": "description" , "width": "20%"},
                 { "data": "provider" , "width": "20%"},
-                { "data": "endpoints" , "width": "20%"},
+                { "data": "endpoints" , "width": "20%" , "sClass" : "details-control" },
                 { "data": "auth-details", "orderable": false, "width": "20%", "sClass" : "details-control" },
                 { "data": null, "orderable": false, "width": "20%", "sClass" : "dt-body-center"}
             ],
@@ -260,15 +260,14 @@
                 {
                     "targets": 4,
                     "render": function ( data, type, full, meta ) {
-                      return '<a href="#" class="as-block">'+data+'</a>';
+                      return '<a href="#" data-type="endPoint" class="as-block">'+data+'</a>';
                     }
                 },
                 {
                     "targets": 5,
                     "render": function ( data, type, full, meta ) {
                         //data-auth-type attribute is required to identify the authentication type.
-                        //don't remove
-                        return '<a href="#" data-auth-type="'+ data.replace(' ','') +'" class="as-block">'+data+'</a>';
+                        return '<a href="#" data-type="'+ data.replace(' ','') +'" class="as-block">'+data+'</a>';
                     }
                 },
                 { "targets": 6,"data": null,"defaultContent": "<a class='delete'><i class='fw fw-delete'></i></a>" }
@@ -283,24 +282,29 @@
             row             = apiListDataTable.row(tr),
             rowChild        = row.child,
             clickedCell     = apiListDataTable.cell(this).index(),
-            rowType         = $(this).find('a').data('auth-type'),
+            cellType         = $(this).find('a').attr('data-type'),
             maxColumns      = table.DataTable().columns().nodes().length;
 
         $('.highlight-parent-cell').removeClass('highlight-parent-cell');
         $(this).addClass('highlight-parent-cell');
 
+        initializeAutheDetails(tr,row,rowChild,cellType,clickedCell,maxColumns)
+
+    })
+
+    function initializeAutheDetails(tr,row,rowChild,cellType,clickedCell,maxColumns){
         getJsonData('objects_runtime_configs_auth_details.json',function(response){
 
             if(rowChild.isShown()){
                 var subTableCell = $(rowChild()).find('td').has('div').empty();
-                    subTableCell.first().addClass('highlight-table')
-                                .append(format(rowType,response,clickedCell));
+                subTableCell.first().addClass('highlight-table')
+                        .append(format(cellType,response,clickedCell));
             }else{
                 hideShownSubRows(tr);
 
-                var fRowData = format(rowType,response,clickedCell),
-                    childRow = row.child(fRowData),
-                    childRowDOMObject = $(childRow.child());
+                var fRowData = format(cellType,response,clickedCell),
+                        childRow = row.child(fRowData),
+                        childRowDOMObject = $(childRow.child());
 
                 childRowDOMObject.addClass('highlight-table').find('td:first').removeAttr('colspan');
                 positionCell(childRowDOMObject,maxColumns,clickedCell);
@@ -309,8 +313,8 @@
             }
 
         })
+    }
 
-    })
 
     $(document).on( 'click', '.inline-edit', function () {
         $(this).editable(function(value,settings){
@@ -408,7 +412,7 @@
      * @param clickedCell
      * @returns {string}
      */
-    function format (rowType,tableData,clickedCell) {
+    function format(rowType,tableData,clickedCell) {
 
         switch (rowType){
             case 'BasicAuth':
@@ -502,6 +506,14 @@
                     subTable += tokenRow += urlRow += '</tr></table></div>'
                     return subTable;
 
+                break;
+            case 'endPoint':
+
+                    var subTable = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row
+                            +'" data-clicked-column="'+ clickedCell.column
+                            +'"><tr><td class="inline-edit">https://wso2.com/t/dj/apiurl/1.3.1</td></tr></table>';
+                    
+                    return subTable;
                 break;
             default:
                 break;
