@@ -274,8 +274,7 @@
             ]
     });
 
-    var tableBody   = $('#apilist tbody'),
-        table       = $('#apilist');
+    var tableBody   = $('#apilist tbody');
 
     tableBody.on('click','td.details-control',function(){
         var tr              = $(this).closest('tr'),
@@ -283,7 +282,7 @@
             rowChild        = row.child,
             clickedCell     = apiListDataTable.cell(this).index(),
             cellType         = $(this).find('a').attr('data-type'),
-            maxColumns      = table.DataTable().columns().nodes().length;
+            maxColumns      = apiListDataTable.columns().nodes().length;
 
         $('.highlight-parent-cell').removeClass('highlight-parent-cell');
         $(this).addClass('highlight-parent-cell');
@@ -325,11 +324,13 @@
                     $(this).data(inlineText)
                 }
 
-                var editedCellHeader = $(this).closest('table').find('th').eq($(this).index()).text().replace(' ',''),
+                var editedCellHeader = $(this).closest('th').find('th').eq($(this).index()).text().replace(' ',''),
                     editedCellRow    = $('td:first', $(this).parents('tr')).text().replace(' ',''),
                     editedContent    = value,
-                    parentHeader     = apiListDataTable.column(parseInt($(this).closest('table').attr('data-clicked-column'))).header().innerText.trim(),
-                    parentRowObj     = apiListDataTable.row(parseInt($(this).closest('table').attr('data-clicked-row'))).data(),
+                    parentHeader     = apiListDataTable.column(parseInt($(this).closest('table')
+                                                       .attr('data-clicked-column'))).header().innerText.trim(),
+                    parentRowObj     = apiListDataTable.row(parseInt($(this).closest('table')
+                                                       .attr('data-clicked-row'))).data(),
                     parentRowId      = parentRowObj['api-id'],
                     editedContentObj = {},
                     parentObj        = {};
@@ -340,7 +341,8 @@
                 parentObj['id'] = parentRowId;
                 parentObj[parentHeader] = editedContentObj;
 
-                console.log(parentObj);
+                //TODO : Use the return to get the data object
+                //console.log(parentObj);
 
                 return value;
             }
@@ -414,111 +416,44 @@
      */
     function format(rowType,tableData,clickedCell) {
 
-        switch (rowType){
-            case 'BasicAuth':
+        if('endPoint' == rowType) {
+            var subTable = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row
+                    +'" data-clicked-column="'+ clickedCell.column
+                    +'"><tr><td class="inline-edit">https://wso2.com/t/dj/apiurl/1.3.1</td></tr></table>';
 
-                    var subTable = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row
-                            +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
-                    var usernameRow = '<tr><td>UserName</td>';
-                    var passwordRow = '<tr><td>Password</td>';
-                    tableData.forEach(function(obj){
-                        if(obj.authType == 'BASIC'){
-                            obj.phases.forEach(function(phaseObj){
-                                subTable += '<th>';
-
-                                //The following condition should be changed according to the phases levels
-                                subTable += phaseObj.type == "DEV" ? "Development" : "Testing"
-                                subTable += '</th>';
-
-                                usernameRow += '<td class="inline-edit">';
-                                usernameRow += phaseObj.username;
-                                usernameRow += '</td>'
-
-                                passwordRow += '<td class="inline-edit">';
-                                passwordRow += phaseObj.password;
-                                passwordRow += '</td>'
-                            })
-                        }
-                    })
-                    subTable += usernameRow += passwordRow += '</tr></table></div>'
-                    return subTable;
-
-                 break;
-            case 'OAuth':
-
-                    var subTable = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row
-                            +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
-                    var consumerKey = '<tr><td>Consumer Key</td>';
-                    var customerKey = '<tr><td>Customer Key</td>';
-                    var urlRow = '<tr><td>URL</td>'
-                    tableData.forEach(function(obj){
-                        if(obj.authType == 'OAUTH'){
-                            obj.phases.forEach(function(phaseObj){
-                                subTable += '<th>';
-
-                                //The following condition should be changed according to the phases levels
-                                subTable += phaseObj.type == "DEV" ? "Development" : "Testing"
-                                subTable += '</th>';
-
-                                consumerKey += '<td class="inline-edit">';
-                                consumerKey += phaseObj.consumer_key;
-                                consumerKey += '</td>'
-
-                                customerKey += '<td class="inline-edit">';
-                                customerKey += phaseObj.customer_key;
-                                customerKey += '</td>'
-
-                                urlRow += '<td class="inline-edit">';
-                                urlRow += phaseObj.url;
-                                urlRow += '</td>'
-                            })
-                        }
-                    })
-                    subTable += consumerKey += customerKey += urlRow += '</tr></table></div>'
-                    return subTable;
-
-                break;
-            case 'AccessToken':
-
-                    var subTable = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row
-                            +'" data-clicked-column="'+ clickedCell.column +'"><tr><th>Keys</th>';
-                    var tokenRow = '<tr><td>Token</td>';
-                    var urlRow = '<tr><td>URL</td>';
-                    tableData.forEach(function(obj){
-                        if(obj.authType == 'TOKEN'){
-                            obj.phases.forEach(function(phaseObj){
-                                subTable += '<th>';
-
-                                //The following condition should be changed according to the phases levels
-                                subTable += phaseObj.type == "DEV" ? "Development" : "Testing"
-                                subTable += '</th>';
-
-                                tokenRow += '<td class="inline-edit">';
-                                tokenRow += phaseObj.token;
-                                tokenRow += '</td>'
-
-                                urlRow += '<td class="inline-edit">';
-                                urlRow += phaseObj.url;
-                                urlRow += '</td>'
-                            })
-                        }
-                    })
-                    subTable += tokenRow += urlRow += '</tr></table></div>'
-                    return subTable;
-
-                break;
-            case 'endPoint':
-
-                    var subTable = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row
-                            +'" data-clicked-column="'+ clickedCell.column
-                            +'"><tr><td class="inline-edit">https://wso2.com/t/dj/apiurl/1.3.1</td></tr></table>';
-                    
-                    return subTable;
-                break;
-            default:
-                break;
+            return subTable;
         }
 
+        var subTable = '<div class="subtable"><table data-clicked-parent-row="'+ clickedCell.row
+                +'" data-clicked-column="'+ clickedCell.column +'">';
+        tableData.forEach(function (rowObj) {
+            if (rowObj.authType != rowType) {
+                return;
+            }
+            var numOfPhases = rowObj.phases.length;
+            rowObj.phases.forEach(function (phases) {
+                var section = '';
+                section += '<tr><th colspan="'+ numOfPhases+'">';
+                section += phases.type;
+                section += '</th></tr>'
+                subTable += section;
+
+                phases.keys.forEach(function (keys) {
+                    var tableRow = '<tr>';
+                    for (key in keys) {
+                        tableRow += '<td>';
+                        tableRow += key;
+                        tableRow += '</td>';
+                        tableRow += '<td class="inline-edit">';
+                        tableRow += keys[key];
+                        tableRow += '</td>';
+                    }
+                    tableRow += '</tr>';
+                    subTable += tableRow;
+                })
+            })
+        })
+        return subTable += '</table></div>';
     }
 
 </script>
