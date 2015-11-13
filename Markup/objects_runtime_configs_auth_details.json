@@ -1,48 +1,68 @@
 [
   {
-    "authType": "BASIC",
+    "authType": "BasicAuth",
     "phases": [
       {
-        "type": "DEV",
-        "username": "developer",
-        "password": "password123"
+        "type": "Development",
+        "keys":[{
+          "username": "developer"
+        },{
+          "password": "password123"
+        }]
       },
       {
-        "type": "QA",
-        "username": "tester",
-        "password": "password123"
+        "type": "Testing",
+        "keys":[{
+          "username": "tester"
+        },{
+          "password": "password123"
+        }]
       }
     ]
   },
   {
-    "authType": "TOKEN",
+    "authType": "AccessToken",
     "phases": [
       {
-        "type": "DEV",
-        "token": "9a0554259914a86fb9e7eb014e4e5d52",
-        "url": "/demo/developer"
+        "type": "Development",
+        "keys":[{
+          "token": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "url": "/demo/developer"
+        }]
       },
       {
-        "type": "QA",
-        "token": "9a0554259914a86fb9e7eb014e4e5d52",
-        "url": "/demo/testing"
+        "type": "Testing",
+        "keys":[{
+          "token": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "url": "/demo/testing"
+        }]
       }
     ]
   },
   {
-    "authType": "OAUTH",
+    "authType": "OAuth",
     "phases": [
       {
-        "type": "DEV",
-        "consumer_key": "9a0554259914a86fb9e7eb014e4e5d52",
-        "customer_key": "9a0554259914a86fb9e7eb014e4e5d52",
-        "url": "/demo/development"
+        "type": "Development",
+        "keys":[{
+          "consumer_key": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "customer_key": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "url": "/demo/development"
+        }]
       },
       {
-        "type": "QA",
-        "consumer_key": "9a0554259914a86fb9e7eb014e4e5d52",
-        "customer_key": "9a0554259914a86fb9e7eb014e4e5d52",
-        "url": "/demo/testing"
+        "type": "Testing",
+        "keys":[{
+          "consumer_key": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "customer_key": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "url": "/demo/testing"
+        }]
       }
     ]
   }
