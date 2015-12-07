@@ -175,7 +175,7 @@
                                     <th>Throttling Limit</th>
                                     <th>Monthly Limit</th>
                                     <th>Price ($)</th>
-                                    <th>Overage Charges</th>
+                                    <th>Overage Charges ($)</th>
                                     <th>Active</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
@@ -208,7 +208,7 @@
 <script src="../js/bootstrap-3.2.0/bootstrap.min.js"></script>
 
 <!-- include custom js functions -->
-<script src="js/custom/custom.js"></script>
+<script src="../js/custom/custom.js"></script>
 
 <script>
     $('.side-pane-trigger').click(function(){
@@ -232,10 +232,10 @@
         "columns": [
             { "data": "plan-name", "width": "10%"},
             { "data": "display-name", "width": "5%"},
-            { "data": "throttling-limit" , "width": "20%"},
-            { "data": "monthly-limit" , "width": "20%"},
-            { "data": "price" , "width": "20%" },
-            { "data": "overage", "orderable": false, "width": "20%"},
+            { "data": "throttling-limit" , "width": "20%", "sClass" : "dt-body-right"},
+            { "data": "monthly-limit" , "width": "20%", "sClass" : "dt-body-right"},
+            { "data": "price" , "width": "20%", "sClass" : "dt-body-right"},
+            { "data": "overage", "orderable": false, "width": "20%", "sClass" : "dt-body-right"},
             { "data": "is-active", "orderable": false, "width": "20%"},
             { "data": null, "orderable": false, "width": "20%", "sClass" : "dt-body-center"},
             { "data": null, "orderable": false, "width": "20%", "sClass" : "dt-body-center"}
