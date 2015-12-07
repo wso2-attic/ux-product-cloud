@@ -1,0 +1,35 @@
+{
+  "data": [{
+    "plan-name": "gold",
+    "display-name": "Gold",
+    "throttling-limit": "100000000",
+    "monthly-limit": "100000",
+    "price": "100",
+    "overage": "20",
+    "is-active": "<label class='switch'> <input id='chkbox0' type='checkbox' checked><span class='toggle-button'></span></label>"
+  }, {
+    "plan-name": "bronze",
+    "display-name": "Bronze",
+    "throttling-limit": "10000000",
+    "monthly-limit": "10000",
+    "price": "75",
+    "overage": "10",
+    "is-active": "<label class='switch'> <input id='chkbox1' type='checkbox' checked><span class='toggle-button'></span></label>"
+  }, {
+    "plan-name": "silver",
+    "display-name": "Silver",
+    "throttling-limit": "1000000",
+    "monthly-limit": "1000",
+    "price": "50",
+    "overage": "5",
+    "is-active": "<label class='switch'> <input id='chkbox2' type='checkbox'><span class='toggle-button'></span></label>"
+  }, {
+    "plan-name": "free",
+    "display-name": "Free",
+    "throttling-limit": "10000",
+    "monthly-limit": "100",
+    "price": "-",
+    "overage": "-",
+    "is-active": "<label class='switch'> <input id='chkbox3' type='checkbox' checked><span class='toggle-button'></span></label>"
+  }]
+}

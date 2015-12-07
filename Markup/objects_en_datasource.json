@@ -2,7 +2,7 @@
   "data": [
     {
       "id": "0001",
-      "ds_name": "Datasource 01"
+      "ds_name": "Datasource 01",
       "description": "Datasource description",
       "dev_url": "im in development",
       "test_url": "im in test",
