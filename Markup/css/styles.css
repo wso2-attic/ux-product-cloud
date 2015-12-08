@@ -907,11 +907,10 @@ a.btn-action {
     padding-right: 10px;
     font-size: 1.5em;
 }
-.left-pane ul li > ul li:hover{
+.left-pane ul li:hover > a{
     background-color: #101010;
 }
 .left-pane ul li:hover {
-    background-color: #101010;
 }
 .left-pane ul li ul{
     margin-top:0px;
