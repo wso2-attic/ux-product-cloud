@@ -2764,6 +2764,19 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     margin: 10px;
     border: 1px solid #676767;
 }
+.margin-top-1x{
+    margin-top: 10px;
+}
+.margin-top-2x{
+    margin-top: 20px;
+}
+.margin-top-3x{
+    margin-top: 30px;
+}
+.margin-top-4x{
+    margin-top: 40px;
+}
+
 .block-user-color{
     color:#333;
 }
@@ -2794,7 +2807,6 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     min-height: 250px;
     width: 100%;
     margin-top: 1em;
-    padding: 18px;
     background-color: #696969;
 }
 .dashboard-table-container .datatable{

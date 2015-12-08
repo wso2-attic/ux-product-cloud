@@ -199,7 +199,7 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <span class="hidden-xs">Monetization </span> / API Cloud / Subscriptions
+                <span class="hidden-xs">Monetization </span> / API Cloud / Plans / Gold
             </div>
         </div>
     </div>
@@ -234,23 +234,74 @@
 
         <!-- BOF App factory menu actionbar -->
         <div class="action-bar">
-            <a href="009_cloud_app_details_initial.html" class="btn-action">
+            <a href="" class="btn-action">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Back to Dashboard
+                </span> Back to Plans
+            </a>
+            <a href="" class="btn-action">
+                <span class="fw-stack fw-lg btn-action-ico">
+                    <i class="fw fw-ring fw-stack-2x"></i>
+                    <i class="fw fw-copy fw-stack-1x"></i>
+                </span> <span class="hidden-xs">Copy and Change</span>
+            </a>
+            <a href="" class="btn-action">
+                <span class="fw-stack fw-lg btn-action-ico">
+                    <i class="fw fw-ring fw-stack-2x"></i>
+                    <i class="fw fw-send fw-stack-1x"></i>
+                </span> <span class="hidden-xs">Migrate Plan</span>
+            </a>
+            <a href="" class="btn-action">
+                <span class="fw-stack fw-lg btn-action-ico">
+                    <i class="fw fw-ring fw-stack-2x"></i>
+                    <i class="fw fw-view fw-stack-1x"></i>
+                </span> <span class="hidden-xs">View Plan Preview</span>
             </a>
         </div><!-- EOF App factory menu actionbar-->
 
 
-        <div class="container-fluid app-content-section">
+        <div class="container-fluid cloud-container">
             <div class="row">
-                <div class="col-md-6">
-                    <div id="push"></div>
-                    <div class="alert alert-warning" role="alert">
-                        <span class="alert-content">
-                            No subscribers found.
-                        </span>
+                <div class="col-md-5 col-lg-5 forms">
+
+                    <div class="form-group col-md-12">
+                        <label for="plan-name">Plan Name: </label>
+                        <input type="text" class="form-control" id="plan-name" value="gold-1" disabled>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="display-name">Display Name: </label>
+                        <input type="text" class="form-control" id="display-name" value="Gold" placeholder="Please enter a display name for the plan">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="plan-description">Description: </label>
+                        <textarea class="form-control" rows="3" id="plan-description" placeholder="Write a small description"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="throttle-limit">Throttling Limit(Per Second): </label>
+                        <input class="form-control" type="number" id="throttle-limit" placeholder="00">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="monthly-limit">Monthly Limit: </label>
+                        <input class="form-control" type="number" id="monthly-limit" placeholder="00">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="pricing">Pricing <span>($)</span>: </label>
+                        <input type="text" class="form-control" id="pricing" value="1000" >
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="overage-charge">Overage Charge <span>($)</span>: </label>
+                        <input type="text" class="form-control" id="overage-charge" value="200">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-12">
+                        <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                            <span class="fw-stack fw-lg btn-action-ico">
+                                <i class="fw fw-ring fw-stack-2x"></i>
+                                <i class="fw fw-save fw-stack-1x"></i>
+                            </span>
+                            Save
+                        </button>
                     </div>
                 </div>
             </div>
@@ -370,6 +421,19 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function
         }
     });
 
+    function formatState (state) {
+        if (!state.id) { return state.text; }
+        var $state = $(
+                '<span><i class="fa fa-'+ state.element.value.toLowerCase() +'"></i>&nbsp;&nbsp;' + state.text + '</span>'
+        );
+        return $state;
+
+    };
+
+    $('.select2').select2({
+        templateResult: formatState,
+        templateSelection :formatState
+    });
 </script>
 </body>
 </html>
