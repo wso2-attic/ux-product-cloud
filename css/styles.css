@@ -2781,7 +2781,7 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 }
 .box-header{
     background-color: #5D5D5D;
-    padding: 10px 15px;
+    padding: 10px 25px;
     cursor: pointer;
 }
 .box-content{
@@ -2827,4 +2827,9 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 }
 .dashboard-container >.dataTables_wrapper .dataTables_filter label, .dataTables_wrapper .dataTables_length label, .dataTables_wrapper .dataTables_info{
     color:#fff;
+}
+.paying-customer-container{
+    background-color: #27AE60;
+    padding: 15px;
+    margin: 5px 15px 25px;
 }

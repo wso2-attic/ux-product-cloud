@@ -14,7 +14,7 @@
     <link href="../css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
     <link href="../css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
     <link href="../css/select2-4.0.0/select2.min.css" rel="stylesheet">
-    <link href="../css/select2-4.0.0/select2.override.css" rel="stylesheet">
+    <link href="../css/select2-4.0.0/select2.override.css" rel="stylesheet">s
     <link href="../css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -267,10 +267,6 @@
                         <div class="box-header">
                             <div class="row">
                                 <div class="col-lg-3 col-md-3">
-                                    <select id="ds-user-name" class="form-control">
-                                    </select>
-                                </div>
-                                <div class="col-lg-3 col-md-3">
                                     <select id="ds-api-list" class="form-control">
                                     </select>
                                 </div>
@@ -350,8 +346,7 @@
                                 <div class="row">
                                     <div class="col-md-5 col-md-offset-1">
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <span>Account name:</span>
+                                            <div class="col-md-6">  <span>Account name:</span>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>my_acc</p>
@@ -566,6 +561,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
 <script src="../js/bootstrap-3.2.0/bootstrap.min.js"></script>
+
 <script src="../js/select2-4.0.0/select2.min.js"></script>
 
 <!-- include custom js functions -->
@@ -649,116 +645,88 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('shown.bs.popover', function 
 
 });
 
-var data = [{id:0, text: "sharon@wso2.com"}, {id:1, text: "thusithaya@wso2.com"},
-            {id:2, text: "dakshika@wso2.com"}, {id:2, text: "imeshc@wso2.com"}];
-/**
- * Initialization of the first select2
- **/
-var userNameSelect = $('#ds-user-name').select2({
-    placeholder:"Search or Select Subscriber",
+var data = [{id:0, text: "API 1"}, {id:1, text: "API 2"}, {id:2, text: "API 3"}, {id:2, text: "API 4"}];
+$('#ds-api-list').select2({
+    placeholder:"Search of Select Subscriber",
     data: data,
-    maximumInputLength: 5,
-    selectOnBlur: true,
-    allowClear: true
 });
-
-/**
- * Initialization of the second select2
- **/
-var apiSelect = $('#ds-api-list').select2({
-    placeholder:"Search or Select API",
-    maximumInputLength: 5,
-    selectOnBlur: true,
-});
-
-/**
- * The following data should be the data which
- * is based on the first selection of select2
- **/
-var data2 = [{id:0, text: "API - 1"}, {id:1, text: "API - 2"},
-             {id:2, text: "API - 3"}, {id:2, text: "API - 4"}];
-userNameSelect.on("change", function(e){
-    apiSelect.select2({data : data2});
-})
-
-
 
 $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function () {
     $('.anim-container').children('.clearfix').nextAll().remove();
 });
 
-$('.side-pane-trigger').click(function(){
-    var rightPane = $('.right-pane');
-    var leftPane = $('.left-pane');
-    if (rightPane.hasClass('visible')){
-        rightPane.animate({"left":"0em"}, "slow").removeClass('visible');
-        leftPane.animate({"left":"-18em"}, "slow");
-        $(this).find('i').removeClass('fa-arrow-left').addClass('fa-reorder');
-    } else {
-        rightPane.animate({"left":"18em"}, "slow").addClass('visible');
-        leftPane.animate({"left":"0em"}, "slow");
-        $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
-    }
-});
+    $('.side-pane-trigger').click(function(){
+        var rightPane = $('.right-pane');
+        var leftPane = $('.left-pane');
+        if (rightPane.hasClass('visible')){
+            rightPane.animate({"left":"0em"}, "slow").removeClass('visible');
+            leftPane.animate({"left":"-18em"}, "slow");
+            $(this).find('i').removeClass('fa-arrow-left').addClass('fa-reorder');
+        } else {
+            rightPane.animate({"left":"18em"}, "slow").addClass('visible');
+            leftPane.animate({"left":"0em"}, "slow");
+            $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
+        }
+    });
 
-$('#sub-info').DataTable({
-    responsive: true,
-    "ajax": "../objects_monetization_subscriber_information.json",
-    "columns": [
-        { "data": "service-name", "width": "10%"},
-        { "data": "start-date", "width": "5%"},
-        { "data": "end-date" , "width": "20%"},
-        { "data": "status" , "width": "20%"},
-        { "data": "temp-block" , "width": "20%","sClass" : "dt-body-center"}
-    ]
-});
+    $('#sub-info').DataTable({
+        responsive: true,
+        "ajax": "../objects_monetization_subscriber_information.json",
+        "columns": [
+            { "data": "service-name", "width": "10%"},
+            { "data": "start-date", "width": "5%"},
+            { "data": "end-date" , "width": "20%"},
+            { "data": "status" , "width": "20%"},
+            { "data": "temp-block" , "width": "20%","sClass" : "dt-body-center"}
+        ]
+    });
 
-$('#invoice-info').DataTable({
-    responsive: true,
-    "ajax": "../objects_monetization_subscriber_invoices.json",
-    "columns": [
-        { "data": "date", "width": "10%"},
-        { "data": "invoice-num", "width": "5%"},
-        { "data": "target-date" , "width": "20%"},
-        { "data": "amount" , "width": "20%","sClass" : "dt-body-right"},
-        { "data": "balance" , "width": "20%","sClass" : "dt-body-right"},
-        { "data": "status" , "width": "20%"}
-    ]
-});
+    $('#invoice-info').DataTable({
+        responsive: true,
+        "ajax": "../objects_monetization_subscriber_invoices.json",
+        "columns": [
+            { "data": "date", "width": "10%"},
+            { "data": "invoice-num", "width": "5%"},
+            { "data": "target-date" , "width": "20%"},
+            { "data": "amount" , "width": "20%","sClass" : "dt-body-right"},
+            { "data": "balance" , "width": "20%","sClass" : "dt-body-right"},
+            { "data": "status" , "width": "20%"}
+        ]
+    });
 
-$('#payments-info').DataTable({
-    responsive: true,
-    "ajax": "../objects_monetization_subscriber_payments.json",
-    "columns": [
-        { "data": "type", "width": "10%"},
-        { "data": "effective-date", "width": "5%"},
-        { "data": "payment-num" , "width": "20%"},
-        { "data": "paid-invoices" , "width": "20%"},
-        { "data": "status" , "width": "20%"}
-    ]
-});
+    $('#payments-info').DataTable({
+        responsive: true,
+        "ajax": "../objects_monetization_subscriber_payments.json",
+        "columns": [
+            { "data": "type", "width": "10%"},
+            { "data": "effective-date", "width": "5%"},
+            { "data": "payment-num" , "width": "20%"},
+            { "data": "paid-invoices" , "width": "20%"},
+            { "data": "status" , "width": "20%"}
+        ]
+    });
 
-/**
- *
- * Ths code segment will hide all the accordion content
- * and bind a click event to fire when clicked on accordion
- * header to show content
- *
- * @type {*|jQuery}
- */
-var allPanels = $('.accordion .box-content').hide();
-$('.accordion .box-header').click(function() {
-    $this = $(this);
-    $target =  $this.next();
+    /**
+     *
+     * Ths code segment will hide all the accordion content
+     * and bind a click event to fire when clicked on accordion
+     * header to show content
+     *
+     * @type {*|jQuery}
+     */
+    var allPanels = $('.accordion .box-content').hide();
+    $('.accordion .box-header').click(function() {
+        $this = $(this);
+        $target =  $this.next();
 
-    if(!$target.hasClass('active')){
-        $target.addClass('active').slideDown();
-    }else{
-        $target.removeClass('active').slideUp();
-    }
+        if(!$target.hasClass('active')){
+            $target.addClass('active').slideDown();
+        }else{
+            $target.removeClass('active').slideUp();
+        }
 
-    return false;
-});
+        return false;
+    });
 
 </script>
 </body>
