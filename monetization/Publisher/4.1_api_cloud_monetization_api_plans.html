@@ -7,13 +7,11 @@
     <title>WSO2 Cloud</title>
 
     <!-- Bootstrap -->
-    <link href="../css/bootstrap-3.2.0/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/fontwso2-1.2/css/font-wso2.css">
-    <link href="../css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
-    <link href="../css/web-fonts/Roboto.css" rel="stylesheet">
-    <link href="../css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="../css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
-    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../../css/bootstrap-3.2.0/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/fontwso2-1.2/css/font-wso2.css">
+    <link href="../../css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/web-fonts/Roboto.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +35,7 @@
                class="hidden-md hidden-sm hidden-lg cloud-menu-popover">
                 <i class="fw fw-tiles"></i>
             </a>
-            <a class="navbar-brand" href="#"><img src="../images/logo.png" alt="wso2-logo" > Cloud</a>
+            <a class="navbar-brand" href="#"><img src="../../images/logo.png" alt="wso2-logo" > Cloud</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav menu-right">
@@ -46,7 +44,7 @@
                 <li class="dropdown user-name">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">jack sparrow
                         <i class="fa fa-chevron-circle-down"></i>
-                        <img src="../images/user.png" alt="user" class="user-image"></a>
+                        <img src="../../images/user.png" alt="user" class="user-image"></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Logout</a></li>
@@ -201,7 +199,7 @@
                 <i class="fa fa-reorder"></i>
             </div>
             <div class="breadcrumb-secondary">
-                <span class="hidden-xs">Monetization </span> / API Cloud / Plans
+                <span class="hidden-xs">Monetization </span> / API Cloud / Plans / Gold
             </div>
         </div>
     </div>
@@ -236,17 +234,23 @@
 
         <!-- BOF App factory menu actionbar -->
         <div class="action-bar">
-            <a href="009_cloud_app_details_initial.html" class="btn-action">
+            <a href="" class="btn-action">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Back to Dashboard
+                </span> Back to Plans
             </a>
             <a href="" class="btn-action">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-add fw-stack-1x"></i>
-                </span> <span class="hidden-xs">Add New</span>
+                    <i class="fw fw-copy fw-stack-1x"></i>
+                </span> <span class="hidden-xs">Copy and Change</span>
+            </a>
+            <a href="" class="btn-action">
+                <span class="fw-stack fw-lg btn-action-ico">
+                    <i class="fw fw-ring fw-stack-2x"></i>
+                    <i class="fw fw-send fw-stack-1x"></i>
+                </span> <span class="hidden-xs">Migrate Plan</span>
             </a>
             <a href="" class="btn-action">
                 <span class="fw-stack fw-lg btn-action-ico">
@@ -257,26 +261,47 @@
         </div><!-- EOF App factory menu actionbar-->
 
 
-        <div class="container-fluid app-content-section">
+        <div class="container-fluid cloud-container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="margin-top-xs"></div>
-                    <div class="datatable">
-                        <table id="plan-listing" class="display" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Plan Name</th>
-                                    <th>Display Name</th>
-                                    <th>Throttling Limit</th>
-                                    <th>Monthly Limit</th>
-                                    <th>Price ($)</th>
-                                    <th>Overage Charges ($)</th>
-                                    <th>Active</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                        </table>
+                <div class="col-md-5 col-lg-5 forms">
+
+                    <div class="form-group col-md-12">
+                        <label for="plan-name">Plan Name: </label>
+                        <input type="text" class="form-control" id="plan-name" value="gold-1" disabled>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="display-name">Display Name: </label>
+                        <input type="text" class="form-control" id="display-name" value="Gold" placeholder="Please enter a display name for the plan">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="plan-description">Description: </label>
+                        <textarea class="form-control" rows="3" id="plan-description" placeholder="Write a small description"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="throttle-limit">Throttling Limit(Per Second): </label>
+                        <input class="form-control" type="number" id="throttle-limit" placeholder="00">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="monthly-limit">Monthly Limit: </label>
+                        <input class="form-control" type="number" id="monthly-limit" placeholder="00">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="pricing">Pricing <span>($)</span>: </label>
+                        <input type="text" class="form-control" id="pricing" value="1000" >
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="overage-charge">Overage Charge <span>($)</span>: </label>
+                        <input type="text" class="form-control" id="overage-charge" value="200">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-12">
+                        <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
+                            <span class="fw-stack fw-lg btn-action-ico">
+                                <i class="fw fw-ring fw-stack-2x"></i>
+                                <i class="fw fw-save fw-stack-1x"></i>
+                            </span>
+                            Save
+                        </button>
                     </div>
                 </div>
             </div>
@@ -292,18 +317,13 @@
         <div class="footer-text">WSO2 Cloud V: 1.2 . &copy; 2015 <i class="fw fw-wso2 fw-2x"></i> All Rights Reserved.</div>
     </div>
 </div>
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../js/jquery-1.11.1/jquery.min.js"></script>
-<script src="../js/datatables-1.10.7/jquery.dataTables.min.js"></script>
-<script src="../js/Jeditable-1.7.3/jquery.jeditable.js"></script>
-<script src="../js/datatables-1.10.7/jquery.dataTables.inlineEdit.js"></script>
+<script src="../../js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
-<script src="../js/bootstrap-3.2.0/bootstrap.min.js"></script>
-
+<script src="../../js/bootstrap-3.2.0/bootstrap.min.js"></script>
+<script src="../../js/select2-4.0.0/select2.min.js"></script>
 <!-- include custom js functions -->
-<script src="../js/custom/custom.js"></script>
+<script src="../../js/custom/custom.js"></script>
 
 <script>
 
@@ -401,28 +421,19 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function
         }
     });
 
+    function formatState (state) {
+        if (!state.id) { return state.text; }
+        var $state = $(
+                '<span><i class="fa fa-'+ state.element.value.toLowerCase() +'"></i>&nbsp;&nbsp;' + state.text + '</span>'
+        );
+        return $state;
 
-    $('#plan-listing').DataTable({
-        responsive: true,
-        "ajax": "../objects_monetization_plans.json",
-        "columns": [
-            { "data": "plan-name", "width": "10%"},
-            { "data": "display-name", "width": "5%"},
-            { "data": "throttling-limit" , "width": "20%", "sClass" : "dt-body-right"},
-            { "data": "monthly-limit" , "width": "20%", "sClass" : "dt-body-right"},
-            { "data": "price" , "width": "20%", "sClass" : "dt-body-right"},
-            { "data": "overage", "orderable": false, "width": "20%", "sClass" : "dt-body-right"},
-            { "data": "is-active", "orderable": false, "width": "20%"},
-            { "data": null, "orderable": false, "width": "20%", "sClass" : "dt-body-center"},
-            { "data": null, "orderable": false, "width": "20%", "sClass" : "dt-body-center"}
-        ],
-        "order": [[ 2, "desc" ]],
-        "columnDefs": [
-            { "targets": 7,"data": null,"defaultContent": "<a class='delete'><i class='fw fw-edit'></i></a>" },
-            { "targets": 8,"data": null,"defaultContent": "<a class='delete'><i class='fw fw-delete'></i></a>" }
-        ]
+    };
+
+    $('.select2').select2({
+        templateResult: formatState,
+        templateSelection :formatState
     });
-
 </script>
 </body>
 </html>
