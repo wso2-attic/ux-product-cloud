@@ -341,14 +341,15 @@
                         <div class="box">
                             <div class="box-header">
                                 <h4 class="pull-left">Account Summery</h4>
-                                <i class="fw fw-down pull-right"></i>
+                                <i class="fw fw-right pull-right"></i>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="box-content">
                                 <div class="row">
                                     <div class="col-md-5 col-md-offset-1">
                                         <div class="row">
-                                            <div class="col-md-6">  <span>Account name:</span>
+                                            <div class="col-md-6">
+                                                <span>Account name:</span>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>my_acc</p>
@@ -397,7 +398,7 @@
                         <div class="box">
                             <div class="box-header">
                                 <h4 class="pull-left">Subscription Information</h4>
-                                <i class="fw fw-down pull-right"></i>
+                                <i class="fw fw-right pull-right"></i>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="box-content">
@@ -421,7 +422,7 @@
                         <div class="box">
                             <div class="box-header">
                                 <h4 class="pull-left">Contact Information</h4>
-                                <i class="fw fw-down pull-right"></i>
+                                <i class="fw fw-right pull-right"></i>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="box-content">
@@ -502,7 +503,7 @@
                         <div class="box">
                             <div class="box-header">
                                 <h4 class="pull-left">Invoices</h4>
-                                <i class="fw fw-down pull-right"></i>
+                                <i class="fw fw-right pull-right"></i>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="box-content">
@@ -527,7 +528,7 @@
                         <div class="box">
                             <div class="box-header">
                                 <h4 class="pull-left">Payments</h4>
-                                <i class="fw fw-down pull-right"></i>
+                                <i class="fw fw-right pull-right"></i>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="box-content">
@@ -571,7 +572,6 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../../js/datatables-1.10.7/jquery.dataTables.columnFilter.js"></script>
 <script src="../../js/bootstrap-3.2.0/bootstrap.min.js"></script>
-
 <script src="../../js/select2-4.0.0/select2.min.js"></script>
 
 <!-- include custom js functions -->
@@ -731,10 +731,10 @@ $('.accordion .box-header').click(function() {
 
     if(!$target.hasClass('active')){
         $target.addClass('active').slideDown();
-        $this.find('i').removeClass('fw-down').addClass('fw-up');
+        $this.find('i').removeClass('fw-right').addClass('fw-down');
     }else{
         $target.removeClass('active').slideUp();
-        $this.find('i').removeClass('fw-up').addClass('fw-down')
+        $this.find('i').removeClass('fw-down').addClass('fw-right')
     }
 
     return false;
