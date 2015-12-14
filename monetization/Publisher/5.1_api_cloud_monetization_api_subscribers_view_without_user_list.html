@@ -340,7 +340,9 @@
                     <div class="accordion">
                         <div class="box">
                             <div class="box-header">
-                                <h4>Account Summery</h4>
+                                <h4 class="pull-left">Account Summery</h4>
+                                <i class="fw fw-down pull-right"></i>
+                                <div class="clearfix"></div>
                             </div>
                             <div class="box-content">
                                 <div class="row">
@@ -394,7 +396,9 @@
 
                         <div class="box">
                             <div class="box-header">
-                                <h4>Subscription Information</h4>
+                                <h4 class="pull-left">Subscription Information</h4>
+                                <i class="fw fw-down pull-right"></i>
+                                <div class="clearfix"></div>
                             </div>
                             <div class="box-content">
                                 <div class="datatable">
@@ -416,7 +420,9 @@
 
                         <div class="box">
                             <div class="box-header">
-                                <h4>Contact Information</h4>
+                                <h4 class="pull-left">Contact Information</h4>
+                                <i class="fw fw-down pull-right"></i>
+                                <div class="clearfix"></div>
                             </div>
                             <div class="box-content">
                                 <div class="row">
@@ -495,7 +501,9 @@
 
                         <div class="box">
                             <div class="box-header">
-                                <h4>Invoices</h4>
+                                <h4 class="pull-left">Invoices</h4>
+                                <i class="fw fw-down pull-right"></i>
+                                <div class="clearfix"></div>
                             </div>
                             <div class="box-content">
                                 <div class="datatable">
@@ -518,7 +526,9 @@
 
                         <div class="box">
                             <div class="box-header">
-                                <h4>Payments</h4>
+                                <h4 class="pull-left">Payments</h4>
+                                <i class="fw fw-down pull-right"></i>
+                                <div class="clearfix"></div>
                             </div>
                             <div class="box-content">
                                 <div class="datatable">
@@ -706,27 +716,29 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function
         ]
     });
 
-    /**
-     *
-     * Ths code segment will hide all the accordion content
-     * and bind a click event to fire when clicked on accordion
-     * header to show content
-     *
-     * @type {*|jQuery}
-     */
-    var allPanels = $('.accordion .box-content').hide();
-    $('.accordion .box-header').click(function() {
-        $this = $(this);
-        $target =  $this.next();
+/**
+ *
+ * Ths code segment will hide all the accordion content
+ * and bind a click event to fire when clicked on accordion
+ * header to show content
+ *
+ * @type {*|jQuery}
+ */
+var allPanels = $('.accordion .box-content').hide();
+$('.accordion .box-header').click(function() {
+    $this = $(this);
+    $target =  $this.next();
 
-        if(!$target.hasClass('active')){
-            $target.addClass('active').slideDown();
-        }else{
-            $target.removeClass('active').slideUp();
-        }
+    if(!$target.hasClass('active')){
+        $target.addClass('active').slideDown();
+        $this.find('i').removeClass('fw-down').addClass('fw-up');
+    }else{
+        $target.removeClass('active').slideUp();
+        $this.find('i').removeClass('fw-up').addClass('fw-down')
+    }
 
-        return false;
-    });
+    return false;
+});
 
 </script>
 </body>
