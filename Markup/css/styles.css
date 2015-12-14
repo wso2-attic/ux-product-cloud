@@ -2784,6 +2784,9 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     padding: 10px 25px;
     cursor: pointer;
 }
+.box-header i {
+    padding: 12px 0px;
+}
 .box-content{
     padding: 15px 10px;
 }
