@@ -2788,7 +2788,7 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     padding: 12px 0px;
 }
 .box-content{
-    padding: 15px 10px;
+    padding: 0px 0px;
 }
 .box-content span{
     font-weight: bold;
