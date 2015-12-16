@@ -1,0 +1,90 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    padding-top: 50px;
+    background-color: #fff;
+}
+
+.box{
+    border:1px solid #ddd;
+}
+.box-header{
+    background-color: #f3f3f3;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-bottom:1px solid #ddd;
+}
+.accordion .box-header{
+    border-bottom:none;
+}
+.box-content.active{
+    border-top:1px solid #ddd;
+}
+.box-header h4{
+    color:#333;
+}
+.box-header i {
+    padding: 12px 0px;
+}
+.box-content{
+    background:#fff;
+}
+
+.box-content > .row{
+    padding: 20px 0px;
+}
+.box-content span{
+    font-weight: bold;
+}
+.accordion{
+    margin-bottom: 80px;
+}
+.accordion .box{
+    margin: 5px 10px;
+}
+.payee-info{
+    padding-top: 34px;
+}
+.payee-info span{
+    color: #3AD841;
+}
+.dashboard-block{
+    min-height: 250px;
+    width: 100%;
+    margin-top: 1em;
+    background-color: #696969;
+}
+.dashboard-table-container .datatable{
+    background-color: #696969;
+    padding: 0px;
+}
+.dashboard-table-container-block{
+    background-color: inherit;
+}
+.dashboard-container td a {
+    color: #428bca;
+    cursor: pointer;
+}
+.dashboard-container h4{
+    margin-bottom: 25px;
+}
+.dashboard-container > .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate{
+    color:#333;
+}
+.dashboard-container >.dataTables_wrapper .dataTables_filter label, .dataTables_wrapper .dataTables_length label, .dataTables_wrapper .dataTables_info{
+    color:#333;
+}
+.datatable td a,.datatable td a:hover{
+    color:#333;
+}
+.paying-customer-container{
+    background-color: #27AE60;
+    padding: 15px;
+    margin: 5px 15px 25px;
+}
+.monetization-subscriber-content .step-desc{
+    width: 78%;
+}
