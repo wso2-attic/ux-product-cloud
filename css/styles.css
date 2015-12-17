@@ -1706,6 +1706,9 @@ a.btn-action {
 .padding-top-xs{
     padding-top:.5em;
 }
+.padding-all-xs{
+    padding:.5em;
+}
 .padding-top-sm{
     padding-top:1em;
 }
@@ -2797,7 +2800,11 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     padding: 4px;
 }
 .box-content{
-    padding: 0px 0px;
+    background:#464646;
+}
+
+.box-content > .row{
+    padding: 20px 0px;
 }
 .box-content-padding{
     padding:15px;
