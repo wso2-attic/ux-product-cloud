@@ -12,8 +12,9 @@
     <link href="../../css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
     <link href="../../css/web-fonts/Roboto.css" rel="stylesheet">
     <link href="../../css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="../../css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
+    <link href="../../css/datatables-1.10.7/jquery.dataTables.storeoverride.css" rel="stylesheet">
     <link href="../../css/styles.css" rel="stylesheet">
+    <link href="../../css/match-store-styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -315,6 +316,22 @@
                                             <div class="clearfix"></div>
                                         </div>
                                         <div class="box-content active">
+                                            <div class="text-right padding-all-xs">
+                                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="view-payment-methods">
+                                                    <span class="fw-stack fw-lg btn-action-ico">
+                                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                                        <i class="fw fw-view fw-stack-1x"></i>
+                                                    </span>
+                                                    Payment Methods
+                                                </button>
+                                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-new-payment-method">
+                                                    <span class="fw-stack fw-lg btn-action-ico">
+                                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                                        <i class="fw fw-add fw-stack-1x"></i>
+                                                    </span>
+                                                    New Payment Method
+                                                </button>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-md-5 col-md-offset-1">
                                                     <div class="row">
@@ -364,6 +381,15 @@
                                             <div class="clearfix"></div>
                                         </div>
                                         <div class="box-content active">
+                                            <div class="text-right padding-all-xs">
+                                                <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="update-contact-info">
+                                                    <span class="fw-stack fw-lg btn-action-ico">
+                                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                                        <i class="fw fw-edit fw-stack-1x"></i>
+                                                    </span>
+                                                    Update
+                                                </button>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-md-5 col-md-offset-1">
                                                     <div class="row">
@@ -534,7 +560,12 @@ $('#invoice-info').DataTable({
     "ajax": "../../objects_monetization_subscriber_invoices.json",
     "columns": [
         { "data": "date", "width": "10%"},
-        { "data": "invoice-num", "width": "5%"},
+        {
+            "data": "invoice-num", "width": "5%",
+            "render": function ( data, type, full, meta ) {
+                return '<a>' +data+ '</a>';
+            }
+        },
         { "data": "target-date" , "width": "20%"},
         { "data": "amount" , "width": "20%","sClass" : "dt-body-right"},
         { "data": "balance" , "width": "20%","sClass" : "dt-body-right"},
