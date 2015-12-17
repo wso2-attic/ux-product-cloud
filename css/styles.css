@@ -82,6 +82,9 @@ body {
     width: 100%;
     z-index: 100;
 }
+.action-bar-top-positioned{
+    top:50px;
+}
 .app-type-listing {
     position: relative;
     top: 73px;
@@ -2784,11 +2787,20 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     padding: 10px 25px;
     cursor: pointer;
 }
-.box-header i {
-    padding: 12px 0px;
+.chart-controller .btn {
+    padding: 6px 6px 3px 6px;
+    background-color: #282828;
+    margin: 0px 4px;
+}
+.chart-controller .btn p{
+    margin: 0px;
+    padding: 4px;
 }
 .box-content{
     padding: 0px 0px;
+}
+.box-content-padding{
+    padding:15px;
 }
 .box-content span{
     font-weight: bold;
@@ -2838,4 +2850,7 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 }
 .monetization-subscriber-content .step-desc{
     width: 78%;
+}
+.chart-container{
+    background-color: #fff;
 }
