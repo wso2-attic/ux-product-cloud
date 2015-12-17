@@ -120,3 +120,6 @@ table.dataTable thead .sorting_desc_disabled{background-image:url("../../images/
 .dataTable .fa:hover,.dataTable .fw:hover{
     color:#999;
 }
+table.dataTable.no-footer,table.dataTable thead th, table.dataTable thead td{
+    border-bottom:1px solid #999;
+}
