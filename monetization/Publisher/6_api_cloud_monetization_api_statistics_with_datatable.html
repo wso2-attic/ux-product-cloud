@@ -269,6 +269,7 @@
                                 <div class="pull-right chart-controller">
                                     <div class="btn-toolbar" role="toolbar" aria-label="...">
                                         <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-data-table"><i class="fa fa-table fa-2x"></i></button>
                                             <button type="button" class="btn btn-bar-chart"><i class="fa fa-bar-chart fa-2x"></i></button>
                                             <button type="button" class="btn btn-pie-chart"><i class="fa fa-pie-chart fa-2x"></i></button>
                                         </div>
@@ -287,6 +288,21 @@
                             <p class="time-period">12/12/2015 - 12/12/2015</p>
                             <div class="chart-container" id="profit-comparison">
 
+                            </div>
+                            <div class="data-table-container">
+                                <div class="datatable">
+                                    <table id="profit-info" class="display" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Service Name</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Status</th>
+                                            <th>Temporary Block</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -308,6 +324,7 @@
                                 <div class="pull-right chart-controller">
                                     <div class="btn-toolbar" role="toolbar" aria-label="...">
                                         <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-data-table"><i class="fa fa-table fa-2x"></i></button>
                                             <button type="button" class="btn btn-bar-chart"><i class="fa fa-bar-chart fa-2x"></i></button>
                                             <button type="button" class="btn btn-pie-chart"><i class="fa fa-pie-chart fa-2x"></i></button>
                                         </div>
@@ -326,6 +343,11 @@
                             <p class="time-period">12/12/2015 - 12/12/2015</p>
                             <div class="chart-container" id="api-usage">
 
+                            </div>
+                            <div class="data-table-container">
+                                <div class="datatable">
+                                    <table id="api-usage-info" class="display" cellspacing="0" width="100%"></table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -469,6 +491,19 @@
         ]
     });
 
+    var profitDataForWeek = [[
+        'x',1,2,3,4,5,6,7],[
+        'APIs', 30, 200, 100, 400, 150, 250,300
+    ]];
+    var profitDataForMonth = [[
+        'x',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],[
+        'APIs',444, 377, 490, 374, 480, 138, 405, 187, 184, 383, 275, 121, 362, 179, 333, 364,227, 261, 346, 457, 167, 132, 243, 346, 455, 324, 469, 352, 105, 152
+    ]];
+    var profitDataForYear = [[
+        'x',1,2,3,4,5,6,7,8,9,10,11,12],[
+        'APIs', 30, 200, 100, 400, 150, 250,300,220,430,500,530,470
+    ]];
+
     var userData = [{
         id:0,
         text:"sharon@wso2.com"
@@ -599,7 +634,7 @@
         bindto: '#profit-comparison',
         data: {
             x: 'x',
-            columns: [],
+            columns: profitDataForMonth,
             type: 'bar'
         },
         tooltip: {
@@ -753,10 +788,50 @@
         $('.btn-calander').data('daterangepicker').toggle();
     })
 
-    loadDateToChartObjectForGivenTime(undefined,'month',apiUsageChart,'bar');
-    loadDateToChartObjectForGivenTime(undefined,'month',profitChart,'bar');
+    loadDateToChartObjectForGivenTime(undefined,'month',apiUsageChart);
 
-    function loadDateToChartObjectForGivenTime(date,numOfDays,chartObj,chartType){
+    function loadTableForData(date,numOfDays){
+        getJsonData('../../objects_monetization_statistics.json',function(response){
+            var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+            var startDate = new Date(Object.keys(response)[0]);
+            if(date != undefined){
+                startDate = date;
+            }
+
+            var headers     = [];
+            var values      = [];
+
+            switch(numOfDays) {
+                case 'week':
+                    var endDate     = startDate.addDays(7);
+
+                    for(var responseDate in response){
+                        if(new Date(responseDate) < endDate){
+                            headers.push({ "title" : days[new Date(responseDate).getDay()] });
+                            values.push(response[responseDate]);
+                        }
+                    };
+
+                    break;
+                case 'month':
+                    break;
+                case 'year':
+                    break;
+                default:
+                    return;
+            }
+
+            $('#api-usage-info').DataTable( {
+                data: [values],
+                columns: headers
+            });
+
+        });
+    }
+
+    function loadDateToChartObjectForGivenTime(date,numOfDays,chartObj){
         getJsonData('../../objects_monetization_statistics.json',function(response){
             var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
             var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -833,7 +908,6 @@
                 columns: [dates,value],
                 unload: chartObj.columns,
             });
-            chartObj.transform(chartType);
         })
     }
 
