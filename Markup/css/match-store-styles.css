@@ -29,6 +29,12 @@ body {
 .box-header i {
     padding: 12px 0px;
 }
+.chart-controller i {
+    padding: 0px;
+}
+.chart-controller .btn{
+    background-color:#ccc;
+}
 .box-content{
     background:#fff;
 }
