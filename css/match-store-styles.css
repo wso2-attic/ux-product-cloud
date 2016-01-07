@@ -94,6 +94,155 @@ body {
 .monetization-subscriber-content .step-desc{
     width: 78%;
 }
-.width-100{
-    width:100px;
+.width-135{
+    width:135px;
+}
+
+
+ .tiny {
+    float: left;
+    margin:20px 0;
+	border:1px solid #e3e3e3;
+}
+.tiny-features {
+	float: left;
+    margin:20px 0;
+	border:none;
+}
+.tiny.selected{
+	border: 1px solid #0395d0;
+}
+.tiny.previous{
+	border: 1px solid #f4f4f4;
+}
+.pricing-table strong { font-weight: 700; color: #3d3d3d; }
+.pricing-table-header-tiny {
+	text-align: center;
+    padding: 0px;
+    background: #fff;
+}
+.pricing-table-header-tiny .price{
+	background: #282828;
+	padding: 10px 0px;
+	margin: 0px;
+	min-width: 180px;
+}
+.selected .price{
+	background: #0395d0;
+}
+.previous .price{
+	background: #ccc;
+}
+.pricing-table-header-tiny.features .price{
+	background: #fff;
+}
+.pricing-table-header-tiny .price h2{
+	font-size: 3.5em;
+	font-weight: 400;
+	color:#fff;
+	background: #282828;
+	margin: 0px;
+	padding-left: 0px;
+}
+.selected .price h2{
+	background: #0395d0;
+}
+.previous .price h2{
+	background: #ccc;
+}
+.pricing-table-header-tiny.features .price h2{
+	background: #fff;
+}
+.pricing-table-header-tiny .price span{
+	text-align: right;
+	font-size: 1em;
+	color:#fff;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 10px;
+}
+.pricing-table-header-tiny .price p{
+	text-align: left;
+	font-weight: 200;
+	font-size: .8em;
+	color:#fff;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 10px;
+}
+.pricing-table-header-tiny h3{
+	font-weight: 500;
+	color:#282828;
+}
+
+
+.pricing-table-text {
+    margin: 15px 30px 0 30px;
+    padding: 0 10px 15px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    line-height: 30px;
+    font-size: 16px;
+    color: #888;
+}
+
+.pricing-table-features {
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+.pricing-table-features p{
+    padding: 10px 10px;
+    margin: 0px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.tiny-features .pricing-table-features p{
+	color: #282828;
+	text-align: right;
+    border: none;
+}
+.pricing-table-signup-tiny {
+    padding:20px 10px 10px 10px;
+    text-align: center;
+}
+.pricing-table-signup-tiny p{
+    margin:0px;
+}
+
+.pricing-table-signup-tiny a {
+    display: inline-block;
+    width:100%;
+    background: #282828;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+.selected .pricing-table-signup-tiny a{
+	background: #0395d0;
+}
+.previous .pricing-table-signup-tiny a{
+	background: #ccc;
+}
+.pricing-table-signup-tiny a:hover {
+    text-decoration: none;
+    background: #484848;
+	color: #fff;
+}
+.selected .pricing-table-signup-tiny a:hover{
+	background: #00a1e2;
+}
+.previous .pricing-table-signup-tiny a:hover{
+	background: #ccc;
+}
+.pricing-table-signup-tiny a:active {
+    background: #0395d0;
+	color: #fff;
+}
+.selected .pricing-table-signup-tiny a:active{
+	background: #00a1e2;
+}
+.previous .pricing-table-signup-tiny a:active{
+	background: #ccc;
 }
