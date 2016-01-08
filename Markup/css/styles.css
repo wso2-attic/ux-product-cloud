@@ -2909,3 +2909,6 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 .terms-wrapper .nano-content{
     padding: 10px 10px;
 }
+.gateway-container{
+    border: 1px solid #6A6A6A;
+}
