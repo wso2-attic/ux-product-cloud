@@ -132,7 +132,9 @@ button[disabled]{
     padding: 10px 22px;
     line-height: 1.3em;
 }
-.cu-btn-lg {}
+.cu-btn-lg {
+    padding: 10px 18px;
+}
 .cu-btn-sm {
     padding: 3px 11px;
 }
@@ -2861,4 +2863,43 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 .chart-container{
     background-color: #fff;
     margin: 20px 0px;
+}
+.purchase-summary-container h3{
+    margin-top: 0px;
+}
+.purchase-summary-container .selected-plan-header{
+    font-size: 24px;
+}
+.selected-plan{
+    font-weight: 500;
+    font-size: 19px;
+    margin-bottom: 0px;
+}
+.selected-plan-features p{
+    margin: 0px;
+}
+.subscription-details{
+    padding: 20px 0px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.subscription-details .remark{
+    color: #c9302c;
+}
+.total-payable{
+    padding: 20px 0px;
+    font-weight: 500;
+}
+.payment-email{
+    color: #ccc;
+    padding: 10px 0px;
+}
+.terms-wrapper{
+    padding: 10px 10px;
+    background-color: #333;
+    height: 200px;
+}
+.terms-wrapper .nano-content{
+    padding: 10px 10px;
 }

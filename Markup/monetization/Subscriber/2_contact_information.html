@@ -13,6 +13,7 @@
     <link href="../../css/web-fonts/Roboto.css" rel="stylesheet">
     <link href="../../css/datatables-1.10.7/jquery.dataTables.min.css" rel="stylesheet">
     <link href="../../css/datatables-1.10.7/jquery.dataTables.override.css" rel="stylesheet">
+    <link href="../../css/nanoscroller-0.8.7/nanoscroller.css" rel="stylesheet">
     <link href="../../css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -220,16 +221,6 @@
     <!-- left pane wrapper -->
     <div class="right-pane">
 
-        <!-- BOF App factory menu actionbar -->
-        <div class="action-bar">
-            <a href="009_cloud_app_details_initial.html" class="btn-action">
-                <span class="fw-stack fw-lg btn-action-ico">
-                    <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Home
-            </a>
-        </div><!-- EOF App factory menu actionbar-->
-
         <div class="container-fluid cloud-container monetization-subscriber-content">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 forms">
@@ -237,9 +228,9 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs nav-tabs-wizard" role="tablist">
                             <li role="presentation" class="col-md-4 col-lg-4 no-pad-both disabled-tab">
-                                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                                <a href="#" aria-controls="profile" role="tab" data-toggle="tab">
                                     <div class="step-number">
-                                        <span>02</span>
+                                        <span>01</span>
                                     </div>
                                     <div class="step-desc">
                                         <h2>Billing Information</h2>
@@ -248,9 +239,9 @@
                                 </a>
                             </li>
                             <li role="presentation" class="col-md-4 col-lg-4 no-pad-right active">
-                                <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                                <a href="#contact" aria-controls="messages" role="tab" data-toggle="tab">
                                     <div class="step-number">
-                                        <span>03</span>
+                                        <span>02</span>
                                     </div>
                                     <div class="step-desc">
                                         <h2>Contact Information</h2>
@@ -259,7 +250,7 @@
                                 </a>
                             </li>
                             <li role="presentation" class="col-md-4 col-lg-4 no-pad-right disabled-tab">
-                                <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                                <a href="#" aria-controls="messages" role="tab" data-toggle="tab">
                                     <div class="step-number">
                                         <span>03</span>
                                     </div>
@@ -273,67 +264,140 @@
 
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="home">
+                            <div role="tabpanel" class="tab-pane active" id="contact">
+                                <div class="margin-top-3x"></div>
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="payment-confirmation-container text-center">
-                                            <h2>Thank you for your payment & Congratulations!</h2>
-                                            <div class="margin-top-xs"></div>
-                                            <h3>You are now subscribed to <span><strong>Gold Plan</strong></span></h3>
-                                            <div class="margin-top-1x"></div>
-                                            <p>Unlimited Accounts</p>
-                                            <p>100,000,000 calls/day</p>
-                                            <p>$2/1K calles above plan</p>
-                                            <div class="margin-top-3x"></div>
-                                            <div class="row">
-                                                <div class="col-md-2 col-centered">
-                                                    <div class="row">
-                                                        <div class="col-md-8">
-                                                            <p class="text-left">Date purchased</p>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <p class="text-right">03/12/2015</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-8">
-                                                            <p class="text-left">Auto renewal date</p>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <p class="text-right">03/12/2015</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-8">
-                                                            <p class="text-left">Subscription fee</p>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <p class="text-right">$200</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-8">
-                                                            <p class="text-left">Discount from coupon</p>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <p class="text-right">$50</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        <div class="col-md-8">
-                                                            <p class="text-left"><strong>Amount paid</strong></p>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <p class="text-right"><strong>$150</strong></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="margin-top-4x"></div>
-                                                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue" id="add-application">
-                                                        Take me to main page
-                                                    </button>
+                                    <div class="col-md-8 forms">
+                                        <div class="form-group col-md-6">
+                                            <label for="ds-org-name">Organization Name: </label>
+                                            <input type="text" class="form-control" id="ds-org-name" placeholder="Enter organization name">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group col-md-6">
+                                            <label for="ds-first-name">First Name: </label>
+                                            <input type="text" class="form-control" id="ds-first-name" placeholder="Enter first name">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="ds-last-name">Last Name: </label>
+                                            <input type="text" class="form-control" id="ds-last-name" placeholder="Enter last name">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="ds-address-line1">Address Line 1: </label>
+                                            <input type="text" class="form-control" id="ds-address-line1" placeholder="Enter address line 1">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="ds-address-line2">Address Line 2: </label>
+                                            <input type="text" class="form-control" id="ds-address-line2" placeholder="Enter address line 2">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group col-md-6">
+                                            <label for="ds-city">City: </label>
+                                            <input type="text" class="form-control" id="ds-city" placeholder="Enter city">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="ds-state">State / Province / Region: </label>
+                                            <input type="text" class="form-control" id="ds-state" placeholder="Enter state / province / region">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group col-md-6">
+                                            <label for="ds-country">Country : </label>
+                                            <input type="text" class="form-control" id="ds-country" placeholder="Enter country">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="ds-postal">Postal Code / Zip: </label>
+                                            <input type="text" class="form-control" id="ds-postal" placeholder="Enter postal code / zip">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="ds-email">Email :</label>
+                                            <input type="text" class="form-control" id="ds-email" placeholder="Enter email">
+                                            <p class="payment-email">This email address will be used to send invoices and payment information</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group col-md-12">
+                                            <h3>Terms and Confitions</h3>
+                                            <div id="about" class="nano terms-wrapper">
+                                                <div class="nano-content">
+                                                    <p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using
+                                                        the http://www.mywebsite.com (change this) website and the My Mobile App (change this) mobile
+                                                        application (the "Service") operated by My Company (change this) ("us", "we", or "our").
+                                                        Your access to and use of the Service is conditioned on your acceptance of and compliance with
+                                                        these Terms. These Terms apply to all visitors, users and others who access or use the Service.
+                                                        By accessing or using the Service you agree to be bound by these Terms. If you disagree
+                                                        with any part of the terms then you may not access the Service.</p>
+                                                    <p>If you wish to purchase any product or service made available through the Service ("Purchase"),
+                                                        you may be asked to supply certain information relevant to your Purchase including, without</p>
+                                                    <p>
+                                                        Our Service allows you to post, link, store, share and otherwise make available certain information,
+                                                        text, graphics, videos, or other material ("Content"). You are responsible for the …
+                                                        The Content section is for businesses that allow users to create, edit, share, make content on
+                                                        their websites or apps. For the full disclosure section, create your own Terms and Conditions.
+                                                        Links To Other Web Sites
+                                                    </p>
+                                                    <p>My Company (change this) has no control over, and assumes no responsibility for, the content,
+                                                        privacy policies, or practices of any third party web sites or services. You further acknowledge and
+                                                        agree that My Company (change this) shall not be responsible or liable, directly or indirectly, for any
+                                                        damage or loss caused or alleged to be caused by or in connection with use of or reliance on any
+                                                        such content, goods or services available on or through any such web sites or services.</p>
+                                                    <p>
+                                                        We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a
+                                                        revision is material we will try to provide at least 30 (change this) days' notice prior to any new terms
+                                                        taking effect. What constitutes a material change will be determined at our sole discretion.
+                                                    </p>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input id="license-agreement" type="checkbox" value="">I've read and accepted the terms in the license agreement above
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4 purchase-summary-container">
+                                        <h3>Purchase Summary</h3>
+                                        <div class="margin-top-4x"></div>
+                                        <p class="selected-plan-header">Currently Selected Plan</p>
+                                        <p class="selected-plan">GOLD</p>
+                                        <div class="selected-plan-features">
+                                            <p>Unlimited Accounts</p>
+                                            <p>100,000,000 calls/day</p>
+                                            <p>$2/1K calls above plan</p>
+                                        </div>
+                                        <div class="margin-top-1x subscription-details">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p>Subscription fee</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p class="pull-right">$100/mo</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p>Discount from coupon</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p class="pull-right">$50<span class="remark">*</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row total-payable">
+                                            <div class="col-md-8">
+                                                <p>Discount from coupon</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <p class="pull-right">$150</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group pull-right">
+                                            <button type="button" class="cu-btn cu-btn-lg cu-btn-blue" id="checkout-back">
+                                                Back
+                                            </button>
+                                            <button type="button" class="cu-btn cu-btn-lg cu-btn-blue" id="checkout-proceed">
+                                                Proceed
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -364,6 +428,8 @@
 
 <!-- include custom js functions -->
 <script src="../../js/custom/custom.js"></script>
+
+<script src="../../js/nanoscroller-0.8.7/jquery.nanoscroller.min.js"></script>
 
 <script>
 
@@ -442,6 +508,8 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('shown.bs.popover', function 
     }
 
 });
+
+$(".nano").nanoScroller();
 
 $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function () {
     $('.anim-container').children('.clearfix').nextAll().remove();
