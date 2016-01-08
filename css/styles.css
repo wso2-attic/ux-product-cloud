@@ -2887,6 +2887,9 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
+.subscription-plan{
+
+}
 .subscription-details .remark{
     color: #c9302c;
 }
