@@ -915,13 +915,16 @@ a.btn-action {
 .left-pane ul li:hover > a{
     background-color: #101010;
 }
-.left-pane ul li:hover {
-}
+
 .left-pane ul li ul{
     margin-top:0px;
 }
 .left-pane ul li ul li a{
-    margin-left:30px;
+    background-color: #222;
+    padding-left:46px;
+}
+.left-pane ul li ul li a:hover {
+    background-color: #1b1b1b;
 }
 .left-pane a{
     color: #fff;
@@ -2793,9 +2796,9 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     cursor: pointer;
 }
 .chart-controller .btn {
-    padding: 6px 6px 3px 6px;
+    padding: 6px;
     background-color: #282828;
-    margin: 0px 4px;
+    margin: 0px 1px;
 }
 .chart-controller .btn p{
     margin: 0px;
