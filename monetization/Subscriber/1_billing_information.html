@@ -220,16 +220,6 @@
     <!-- left pane wrapper -->
     <div class="right-pane">
 
-        <!-- BOF App factory menu actionbar -->
-        <div class="action-bar action-bar-top-positioned">
-            <a href="009_cloud_app_details_initial.html" class="btn-action">
-                <span class="fw-stack fw-lg btn-action-ico">
-                    <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Home
-            </a>
-        </div><!-- EOF App factory menu actionbar-->
-
         <div class="container-fluid cloud-container monetization-subscriber-content">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 forms">
@@ -274,12 +264,55 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="billing">
+                                <div class="margin-top-3x"></div>
                                 <div class="row">
-                                    <div class="8">
-
+                                    <div class="col-md-8">
+                                        <iframe width="100%" height="800px"></iframe>
                                     </div>
-                                    <div class="4">
-
+                                    <div class="col-md-4 purchase-summary-container">
+                                        <h3>Purchase Summary</h3>
+                                        <div class="margin-top-4x"></div>
+                                        <p class="selected-plan-header">Currently Selected Plan</p>
+                                        <p class="selected-plan">GOLD</p>
+                                        <div class="selected-plan-features">
+                                            <p>Unlimited Accounts</p>
+                                            <p>100,000,000 calls/day</p>
+                                            <p>$2/1K calls above plan</p>
+                                        </div>
+                                        <div class="margin-top-1x subscription-details">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p>Subscription fee</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p class="pull-right">$100/mo</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p>Discount from coupon</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p class="pull-right">$50<span class="remark">*</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row total-payable">
+                                            <div class="col-md-8">
+                                                <p>Discount from coupon</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <p class="pull-right">$150</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group pull-right">
+                                            <button type="button" class="cu-btn cu-btn-lg cu-btn-blue" id="checkout-back">
+                                                Back
+                                            </button>
+                                            <button type="button" class="cu-btn cu-btn-lg cu-btn-blue" id="checkout-proceed">
+                                                Proceed
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
