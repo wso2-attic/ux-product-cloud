@@ -926,6 +926,9 @@ a.btn-action {
 .left-pane ul li ul li a:hover {
     background-color: #1b1b1b;
 }
+.left-pane ul li.active a{
+    color: #0498d5;
+}
 .left-pane a{
     color: #fff;
     display: block;
