@@ -157,6 +157,7 @@ span.wr-validation-summary p {
  	text-align: center;
  	border-radius: 0px;
  	border: none;
+ 	text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
 
 .btn-default:hover,a.btn-default:hover {
