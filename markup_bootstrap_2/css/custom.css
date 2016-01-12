@@ -419,3 +419,7 @@ h4 {
 .discount{
 	color: #2A982A !important;
 }
+
+.myaffix.affix {
+	width: inherit;
+}
