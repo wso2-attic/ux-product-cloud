@@ -45,7 +45,7 @@
 			<br class="c-both" />
 		</div>
 		<div class="span4">
-			<div class="itm-wiz"><div class="wiz-no">3</div><div class="wiz-lbl hidden-xs"><span>Payment Confirmation</span></div></div>
+			<div class="itm-wiz"><div class="wiz-no">3</div><div class="wiz-lbl hidden-xs"><span>Order Summary</span></div></div>
 			<br class="c-both" />
 		</div>		
 	</div>
@@ -57,49 +57,48 @@
 	<div class="row-fluid">
 		<div class="container span8 wr-text-gray">
 			<p>Please Enter your card information</p>
-			<div style="height:200px;">Space for Iframe</div>
+			<div style="height:1300px;">Space for Iframe</div>
 		</div>
 		<div class="container span4">
-			<div class="wr-text">
-				<div id="product-container">
-					<p class="product-summery">SUMMARY</p>
-					<p>
-						<span class="selected-plan-txt">SELECTED PLAN  </span>
-						<span class="product-planname">GOLD</span>
-					</p>
-					<ul>
-						<li>Unlimited Accounts</li>
-						<li>100,000,000 Calls/Day</li>
-						<li>$2/1K Calls Above Plan</li>
-					</ul>
-				</div>
-				<hr class="wr-separate"/>
-				<div id="pricing-container">
-					<div class="row-fluid">
-						<p class="span8 nopad">&nbsp;</p><p class="span4 nopad tright"><strong>USD</strong></p>
+			<!--<div style="position: relative; display: block;">-->
+				<div class="wr-text myaffix">
+					<div id="product-container">
+						<p class="product-summery">SUMMARY</p>
+						<p>
+							<span class="selected-plan-txt">SELECTED PLAN  </span>
+							<span class="product-planname">GOLD</span>
+						</p>
+						<ul>
+							<li>Unlimited Accounts</li>
+							<li>100,000,000 Calls/Day</li>
+							<li>$2/1K Calls Above Plan</li>
+						</ul>
 					</div>
-					<div class="row-fluid">
-						<p class="span8 nopad">Subscription Fee (per/m)</p><p class="span4 nopad tright">100.00</p>
-					</div>
-					<div class="row-fluid">
-						<p class="span8 nopad">Discount from coupon</p><p class="span4 nopad tright discount">- 50.00</p>
-					</div>
-					<br class="clearfix"/>
-					<div class="row-fluid">
-						<div class="span8 nopad blue">&nbsp;</div>
-						<div class="span4 nopad tright ">
-							<p class="span12 nopad nomargin blue-line-right pull-right">Total USD</p>
-							<p class="span12 nopad nomargin blue-line-right pull-right"><span id="payable-ammount">50.00</span></p>
+					<hr class="wr-separate"/>
+					<div id="pricing-container">
+						<div class="row-fluid">
+							<p class="span8 nopad">&nbsp;</p><p class="span4 nopad tright"><strong>USD</strong></p>
 						</div>
+						<div class="row-fluid">
+							<p class="span8 nopad">Subscription Fee (per/m)</p><p class="span4 nopad tright">100.00</p>
+						</div>
+						<br class="clearfix"/>
+						<div class="row-fluid">
+							<div class="span8 nopad blue">&nbsp;</div>
+							<div class="span4 nopad tright ">
+								<p class="span12 nopad nomargin blue-line-right pull-right">Total USD</p>
+								<p class="span12 nopad nomargin blue-line-right pull-right"><span id="payable-ammount">100.00</span></p>
+							</div>
+						</div>
+						<br class="clearfix" />
 					</div>
-					<br class="clearfix" />
+					<div id="action-container">
+						<button type="button" class="btn btn-default btn-back span5 span12">Back</button>
+						<button type="button" class="btn btn-default btn-redeem span6 span12 pull-right">Proceed</button>
+						<br class="c-both" />
+					</div>
 				</div>
-				<div id="action-container">
-					<button type="button" class="btn btn-default btn-back span5 span12">Back</button>
-					<button type="button" class="btn btn-default btn-redeem span6 span12 pull-right">Proceed</button>
-					<br class="c-both" />
-				</div>
-			</div>
+			<!--</div>-->
 		</div>
 	</div>
 	<div class="row-fluid pad-bot-50">
@@ -116,10 +115,6 @@
 <!-- /content/body -->
 
 </div>
-    
-
-
-
 
 <footer class="footer">
         <p>&copy; 2015 WSO2 Inc. All Rights Reserved</p>
@@ -131,6 +126,40 @@
 
 <!-- include custom js functions -->
 <script src="../js/custom/custom.js"></script>
+
+<script>
+
+	//A Custom function is needed
+	(function(){
+		// Your base, I'm in it!
+		var originalAddClassMethod = jQuery.fn.addClass;
+
+		jQuery.fn.addClass = function(){
+			// Execute the original method.
+			var result = originalAddClassMethod.apply( this, arguments );
+
+			// trigger a custom event
+			jQuery(this).trigger('elementClassChanged');
+
+			// return the original result
+			return result;
+		}
+	})();
+
+
+	$('.myaffix').affix();
+
+	var previousWidth = $('.myaffix').css('width');
+
+	$('.myaffix').bind('elementClassChanged', function(e){
+		if(e.currentTarget.classList.contains('affix')){
+			$('.myaffix').css('width', parseInt(previousWidth));
+		}else if(e.currentTarget.classList.contains('affix-top')){
+			$('.myaffix').removeAttr('style');
+		}
+	});
+
+</script>
 
 </body>
 </html>
