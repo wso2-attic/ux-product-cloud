@@ -254,6 +254,7 @@
                     <div class="box profit-comparison">
                         <div class="box-header">
                             <div class="row">
+                                <h4 class="margin-left-xs">Profit comparison</h4>
                                 <div class="col-lg-2 col-md-2">
                                     <select id="profit-comparison-ds-user-name" class="form-control">
                                     </select>
@@ -269,62 +270,17 @@
                                 <div class="pull-right chart-controller">
                                     <div class="btn-toolbar" role="toolbar" aria-label="...">
                                         <div class="btn-group" role="group" aria-label="...">
-                                            <button type="button" class="btn btn-bar-chart"><i class="fa fa-bar-chart fa-2x"></i></button>
-                                            <button type="button" class="btn btn-pie-chart"><i class="fa fa-pie-chart fa-2x"></i></button>
-                                        </div>
-                                        <div class="btn-group" role="group" aria-label="...">
-                                            <button type="button" class="btn btn-week"><p>1w</p></button>
-                                            <button type="button" class="btn btn-month"><p>1m</p></button>
-                                            <button type="button" class="btn btn-year"><p>1y</p></button>
-                                            <button type="button" class="btn btn-calander"><i class="fa fa-calendar fa-2x"></i></button>
+                                            <button type="button" class="btn btn-week"><p>1 Week</p></button>
+                                            <button type="button" class="btn btn-month chart-controller-btn-selected"><p>1 Month</p></button>
+                                            <button type="button" class="btn btn-year"><p>1 Year</p></button>
+                                            <button type="button" class="btn btn-calender"><span></span><i class="fa fa-calendar fa-2x"></i></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="box-content box-content-padding">
-                            <p>Profit comparison - <span class="selected-user"></span> : <span class="selected-api"></span></p>
-                            <p class="time-period">12/12/2015 - 12/12/2015</p>
                             <div class="chart-container" id="profit-comparison">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box api-usage">
-                        <div class="box-header">
-                            <div class="row">
-                                <div class="col-lg-2 col-md-3">
-                                    <select id="api-usage-ds-user-name" class="form-control">
-                                    </select>
-                                </div>
-                                <div class="col-lg-2 col-md-3">
-                                    <select id="api-usage-ds-api-list" class="form-control">
-                                    </select>
-                                </div>
-                                <div class="col-lg-2 col-md-3">
-                                    <select id="api-usage-ds-application" class="form-control">
-                                    </select>
-                                </div>
-                                <div class="pull-right chart-controller">
-                                    <div class="btn-toolbar" role="toolbar" aria-label="...">
-                                        <div class="btn-group" role="group" aria-label="...">
-                                            <button type="button" class="btn btn-bar-chart"><i class="fa fa-bar-chart fa-2x"></i></button>
-                                            <button type="button" class="btn btn-pie-chart"><i class="fa fa-pie-chart fa-2x"></i></button>
-                                        </div>
-                                        <div class="btn-group" role="group" aria-label="...">
-                                            <button type="button" class="btn btn-week"><p>1w</p></button>
-                                            <button type="button" class="btn btn-month"><p>1m</p></button>
-                                            <button type="button" class="btn btn-year"><p>1y</p></button>
-                                            <button type="button" class="btn btn-calander"><i class="fa fa-calendar fa-2x"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-content box-content-padding">
-                            <p>Profit comparison - <span class="selected-user"></span> : <span class="selected-api"></span></p>
-                            <p class="time-period">12/12/2015 - 12/12/2015</p>
-                            <div class="chart-container" id="api-usage">
 
                             </div>
                         </div>
@@ -360,88 +316,6 @@
 <script src="../../js/custom/custom.js"></script>
 
 <script>
-
-
-    $('#cloud-menu-popover,#cloud-menu-popover-xs').on('shown.bs.popover', function () {
-
-        $('.cloud-block-invert-sub-true').click(function(){
-
-            var itemPosition = $(this).position(),
-                    containerWidth = ($('.anim-container').width()) - 14,
-                    containerHeight = ($('.anim-container').height()) - 14,
-                    clone = $(this).clone(false);
-
-            $(this).addClass('clickedParent');
-            $(clone).children('.forward-btn').remove();
-            $(clone).children('.back-btn').show();
-            $(clone).children('.back-btn, .cloud-block-invert-icon').wrapAll('<div class="temp-wrap">');
-            $(clone).children('.temp-wrap').append('<div class="clearfix"></div>');
-            $(clone).children('.cloud-block-invert-icon').addClass('active');
-            $(clone).css({
-                'position':'absolute',
-                'top': itemPosition.top,
-                'left': itemPosition.left
-            }).appendTo('.anim-container').animate({
-                width : containerWidth,
-                height: containerHeight,
-                'top': 0,
-                'left': 0
-            }, {
-                duration: 200,
-                complete: function() {
-                    var subActions = $(this).children('.sub-actions'),
-                            listHeight = 224;
-                    subActions.show();
-                    if(subActions.hasClass('sub-actions')){
-
-                        $(this).animate({
-                            height: listHeight
-                        }, {
-                            duration: 200
-                        });
-                        $(this).parent().animate({
-                            height: listHeight + 14
-                        }, {
-                            duration: 200
-                        });
-                    }
-                    $(this).on('click','.back-btn',clickBackBtn);
-                }
-            });
-            $('.temp-wrap').children().children('.cloud-name').hide();
-            $('.temp-wrap').children('.cloud-block-invert-icon').children().children('span').show();
-        });
-
-        function clickBackBtn(){
-            var pa = $(this).parent(),
-                    grandpa = $(pa).parent(),
-                    greatGrandpa = $(grandpa).parent();
-
-            $(this).hide();
-
-            $(grandpa).animate({
-                width : '50px',
-                height: '50px',
-                'top': $('.clickedParent').position().top,
-                'left': $('.clickedParent').position().left
-            }, {
-                duration: 200,
-                complete: function() {
-                    $(greatGrandpa).css('height', 'auto');
-                    $(grandpa).remove();
-                    $(this).children('.forward-btn').show();
-                    $('.clickedParent').removeClass('clickedParent');
-                }
-            });
-        }
-
-    });
-
-
-
-    $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function () {
-        $('.anim-container').children('.clearfix').nextAll().remove();
-    });
 
     $('.side-pane-trigger').click(function(){
         var rightPane = $('.right-pane');
@@ -668,54 +542,6 @@
         }
     });
 
-    $('.profit-comparison .btn-pie-chart').click(function(e){
-        profitChart.load({
-            unload: profitChart.columns
-        });
-        profitChart.load({
-            columns: [
-                ["Jan", 30],["Feb", 200],["Mar", 100],["Apr", 400],["May", 150],
-                ["Jun", 250],["Jul", 300],["Aug", 220],["Sep", 220],["Oct", 430],
-                ["Nov", 500],["Dec", 530]
-            ]
-        });
-        profitChart.transform('pie')
-    });
-
-    $('.profit-comparison .btn-bar-chart').click(function(e){
-        profitChart.load({
-            unload: profitChart.columns
-        });
-        profitChart.load({
-            columns: profitDataForWeek
-        });
-        profitChart.transform('bar','APIs');
-    })
-
-    $('.api-usage .btn-pie-chart').click(function(e){
-        apiUsageChart.load({
-            unload: profitChart.columns
-        });
-        apiUsageChart.load({
-            columns: [
-                ["Jan", 30],["Feb", 200],["Mar", 100],["Apr", 400],["May", 150],
-                ["Jun", 250],["Jul", 300],["Aug", 220],["Sep", 220],["Oct", 430],
-                ["Nov", 500],["Dec", 530]
-            ]
-        });
-        apiUsageChart.transform('pie')
-    });
-
-    $('.api-usage .btn-bar-chart').click(function(e){
-        apiUsageChart.load({
-            unload: profitChart.columns
-        });
-        apiUsageChart.load({
-            columns:profitDataForWeek
-        });
-        apiUsageChart.transform('bar','APIs');
-    })
-
 
     $('.profit-comparison .btn-week').click(function(e){
         loadDateToChartObjectForGivenTime(undefined,'week',profitChart);
@@ -740,7 +566,8 @@
         loadDateToChartObjectForGivenTime(undefined,'year',apiUsageChart);
     });
 
-    $('.btn-calander').daterangepicker({
+/*
+    $('.btn-calender').daterangepicker({
         "singleDatePicker": false,
         "opens" : "right",
         "startDate": "08/19/2015",
@@ -748,9 +575,22 @@
     }, function(start, end, label) {
 
     });
+*/
+
+    function cb(start, end) {
+        $('.btn-calender span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    }
+    cb(moment().subtract(29, 'days'), moment());
+
+    $('.btn-calender').daterangepicker({
+        "singleDatePicker": false,
+        "opens" : "left",
+        "startDate": "08/19/2015",
+        "endDate": "08/21/2015"
+    }, cb);
 
     $('.datepicker-container .fw-calendar').click(function(){
-        $('.btn-calander').data('daterangepicker').toggle();
+        $('.btn-calender').data('daterangepicker').toggle();
     })
 
     loadDateToChartObjectForGivenTime(undefined,'month',apiUsageChart,'bar');

@@ -1,21 +1,21 @@
 {
   "data": [{
-    "user-name": "<a href=''>dakshika@wso2.com</a>",
-    "total": "200"
+    "user-name": "dakshika@wso2.com",
+    "total": "200.00"
   }, {
-    "user-name": "<a href=''>thusitha@wso2.com</a>",
-    "total": "200"
+    "user-name": "thusitha@wso2.com",
+    "total": "100.00"
   }, {
-    "user-name": "<a href=''>imeshc@wso2.com</a>",
-    "total": "200"
+    "user-name": "imeshc@wso2.com",
+    "total": "900.00"
   }, {
-    "user-name": "<a href=''>sharon@wso2.com</a>",
-    "total": "200"
+    "user-name": "sharon@wso2.com",
+    "total": "120.00"
   }, {
-    "user-name": "<a href=''>jerad@wso2.com</a>",
-    "total": "200"
+    "user-name": "jerad@wso2.com",
+    "total": "450.00"
   }, {
-    "user-name": "<a href=''>visitor@wso2.com</a>",
-    "total": "200"
+    "user-name": "visitor@wso2.com",
+    "total": "340.00"
   }]
 }
