@@ -210,7 +210,7 @@
     <!-- left pane wrapper -->
     <div class="left-pane">
         <ul>
-            <li>
+            <li class="active">
                 <a href="009_cloud_app_details_initial.html" target="_blank"><i class="fa fa-laptop"></i> Dashboard</a>
             </li>
             <li>
@@ -243,12 +243,12 @@
             </a>
         </div><!-- EOF App factory menu actionbar-->
 
-        <div class="container-fluid cloud-container">
+        <div class="container-fluid cloud-container padding-bottom-xlg">
             <div class="row">
                 <div class="col-xs-12 col-md-3 col-lg-3">
                     <div class="block-color-1 block-database dashboard-block pull-left">
                         <h3><a class="block-anch">Plans</a></h3>
-                        <div class="block-icon pull-left">
+                        <div class="pull-left">
                             <i class="fa fa-bars fa-5x"></i>
                         </div>
                         <div class="block-number pull-right">
@@ -266,9 +266,9 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-3 col-lg-3">
-                    <div class="block-color-2 block-database dashboard-block pull-left">
+                    <div class="block-color-3 block-database dashboard-block pull-left">
                         <h3><a class="block-anch">Subscribers</a></h3>
-                        <div class="block-icon pull-left">
+                        <div class="pull-left">
                             <i class="fa fa-users fa-5x"></i>
                         </div>
                         <div class="block-number pull-right">
@@ -283,17 +283,16 @@
                           </span> View
                             </div>
                         </a>
-
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6 col-lg-6">
-                    <div class="block-color-3 block-database dashboard-block pull-left">
+                    <div class="block-color-4 block-database dashboard-block pull-left">
                         <h3><a class="block-anch">Revenue</a></h3>
-                        <div class="block-icon pull-left">
-                            <i class="fa fa-usd fa-5x"></i>
+                        <div class="pull-left">
+                            <i class="fa fa-money fa-5x"></i>
                         </div>
                         <div class="block-number pull-right">
-                            2889.00
+                            2889.00<span class="block-number-xs"> (USD)</span>
                         </div>
                         <div class="clearfix"></div>
                         <div class="block-date pull-right">
@@ -305,7 +304,7 @@
                         <span class="fw-stack fw-lg btn-action-ico">
                             <i class="fw fw-ring fw-stack-2x"></i>
                             <i class="fw fw-view fw-stack-1x"></i>
-                          </span> Revenue Details
+                          </span> Details
                             </div>
                         </a>
 
@@ -315,44 +314,43 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block-general dashboard-table-container dashboard-block">
-                        <div class="col-md-8">
-                            <h3><a class="block-anch">Pending Payments</a></h3>
+                        <div class="col-md-6">
+                            <h3><a class="block-anch">Pending Payments</a><span class="text-muted-10">- 10 highest values not payed</span></h3>
                             <div class="datatable">
                                 <table id="dashboard-info" class="display" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
                                             <th>User Name</th>
-                                            <th>Amount ($)</th>
+                                            <th>Amount (USD)</th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <h3><a class="block-anch">This Month</a></h3>
-                            <div class="block-database dashboard-table-container-block pull-left">
-                                <div class="block-icon pull-left">
-                                    <i class="fa fa-usd fa-5x"></i>
+                        <div class="col-md-6">
+                            <div class="block-database dashboard-table-container-block pull-left margin-top-md no-pad-right">
+                                <div class="pull-left">
+                                    <i class="fa fa-caret-down fa-5x"></i>
                                 </div>
                                 <div class="block-number pull-right">
-                                    2889.00
+                                    1200.00<span class="block-number-xs"> (USD)</span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="block-date pull-right">
-                                    June 2015
+                                    Total for June 2015
                                 </div>
                                 <div class="clearfix"></div>
-                                <a href="">
-                                    <div class="block-action-button">
+                            </div>
+
+                        </div>
+                        <a href="">
+                            <div class="block-action-button">
                                     <span class="fw-stack fw-lg btn-action-ico">
                                         <i class="fw fw-ring fw-stack-2x"></i>
                                         <i class="fw fw-view fw-stack-1x"></i>
                                       </span> View
-                                    </div>
-                                </a>
-
                             </div>
-                        </div>
+                        </a>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -382,86 +380,6 @@
 
 <script>
 
-
-$('#cloud-menu-popover,#cloud-menu-popover-xs').on('shown.bs.popover', function () {
-
-    $('.cloud-block-invert-sub-true').click(function(){
-
-        var itemPosition = $(this).position(),
-            containerWidth = ($('.anim-container').width()) - 14,
-            containerHeight = ($('.anim-container').height()) - 14,
-            clone = $(this).clone(false);
-
-        $(this).addClass('clickedParent');
-        $(clone).children('.forward-btn').remove();
-        $(clone).children('.back-btn').show();
-        $(clone).children('.back-btn, .cloud-block-invert-icon').wrapAll('<div class="temp-wrap">');
-        $(clone).children('.temp-wrap').append('<div class="clearfix"></div>');
-        $(clone).children('.cloud-block-invert-icon').addClass('active');
-        $(clone).css({
-            'position':'absolute',
-            'top': itemPosition.top,
-            'left': itemPosition.left
-        }).appendTo('.anim-container').animate({
-            width : containerWidth,
-            height: containerHeight,
-            'top': 0,
-            'left': 0
-            }, {
-                duration: 200,
-                complete: function() {
-                    var subActions = $(this).children('.sub-actions'),
-                        listHeight = 224;
-                    subActions.show();
-                    if(subActions.hasClass('sub-actions')){
-
-                        $(this).animate({
-                            height: listHeight
-                        }, {
-                            duration: 200
-                        });
-                        $(this).parent().animate({
-                            height: listHeight + 14
-                        }, {
-                            duration: 200
-                        });
-                    }
-                    $(this).on('click','.back-btn',clickBackBtn);
-            }
-        });
-        $('.temp-wrap').children().children('.cloud-name').hide();
-        $('.temp-wrap').children('.cloud-block-invert-icon').children().children('span').show();
-    });
-
-    function clickBackBtn(){
-        var pa = $(this).parent(),
-            grandpa = $(pa).parent(),
-            greatGrandpa = $(grandpa).parent();
-
-        $(this).hide();
-
-        $(grandpa).animate({
-            width : '50px',
-            height: '50px',
-            'top': $('.clickedParent').position().top,
-            'left': $('.clickedParent').position().left
-        }, {
-                duration: 200,
-                complete: function() {
-                $(greatGrandpa).css('height', 'auto');
-                $(grandpa).remove();
-                $(this).children('.forward-btn').show();
-                $('.clickedParent').removeClass('clickedParent');
-            }
-      });
-    }
-
-});
-
-$('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function () {
-    $('.anim-container').children('.clearfix').nextAll().remove();
-});
-
     $('.side-pane-trigger').click(function(){
         var rightPane = $('.right-pane');
         var leftPane = $('.left-pane');
@@ -482,9 +400,14 @@ $('#cloud-menu-popover,#cloud-menu-popover-xs').on('hidden.bs.popover', function
         "sScrollY" : "135",
         "bFilter" : false,
         "bPaginate" :false,
+        "order": [[ 1, "desc" ]],
         "columns": [
-            { "data": "user-name", "width": "10%"},
-            { "data": "total", "width": "5%"}
+            { "data": "user-name", "width": "10%",
+                "render": function ( data, type, full, meta ) {
+                        return '<a>' +data+ '</a>';
+                }
+            },
+            { "data": "total", "width": "5%", "className": "dt-body-right"}
         ]
     });
 
