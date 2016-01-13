@@ -957,6 +957,11 @@ a.btn-action {
 .block-general a, .block-team a, .block-database a, .block-default a,.block-apis a{
     color:#fff;
 }
+.block-general > a, .block-team > a, .block-database > a, .block-default > a,.block-apis > a{
+    position:absolute;
+    bottom:0px;
+    right:15px;
+}
 .block-default h3,.block-apis h3{
     text-align:center;
 }
@@ -1063,6 +1068,9 @@ a.btn-action {
 .block-color-3{
     background-color: #34495E !important;
 }
+.block-color-4{
+    background-color: #7e3878 !important;
+}
 .block-apis{
     min-height: 20em;
     margin-top: 1em;
@@ -1130,6 +1138,9 @@ a.btn-action {
     font-weight: 300;
     margin-top: 8px;
 }
+.block-number-xs {
+    font-size: .25em;
+}
 .block-default .block-action-button,
 .block-apis .block-action-button{
     text-align:center;
@@ -1145,8 +1156,8 @@ a.btn-action {
     background-color: rgb(111, 121, 122);
 }
 
-.block-database .block-action-button:hover {
-    background-color: rgb(0, 95, 143)
+.block-database .block-action-button:hover,.dashboard-table-container .block-action-button:hover{
+    background-color: rgba(0, 0, 0, 0.3)
 }
 .block-team .block-icon,
 .block-database .block-icon {
@@ -1935,6 +1946,12 @@ a.btn-action {
 }
 .margin-top-xs{
     margin-top:1em;
+}
+.margin-left-xs{
+    margin-left:1em;
+}
+.margin-top-md{
+    margin-top:3em;
 }
 .margin-bottom-xs{
     margin-bottom:1em;
@@ -2798,14 +2815,33 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     padding: 10px 25px;
     cursor: pointer;
 }
+.chart-controller .btn-group{
+    border:1px solid #757575;
+}
 .chart-controller .btn {
-    padding: 6px;
+    padding: 3px;
+    color:#999;
     background-color: #282828;
     margin: 0px 1px;
 }
+.chart-controller .btn:hover p {
+    color:#e4e4e4;
+}
 .chart-controller .btn p{
     margin: 0px;
-    padding: 4px;
+    padding: 5px;
+    padding-bottom:3px;
+}
+.chart-controller .btn span{
+    padding:0px 4px;
+}
+.chart-controller .btn i{
+    font-size:1.3em;
+    padding:5px;
+}
+.chart-controller .chart-controller-btn-selected{
+    background:#444;
+    color:#e4e4e4;
 }
 .box-content{
     background:#464646;
@@ -2915,3 +2951,36 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 .gateway-container{
     border: 1px solid #6A6A6A;
 }
+.text-muted-10{
+    color:#ccc;
+}
+
+/* daterangepicker style overrides*/
+.daterangepicker_input input,.daterangepicker td.start-date,.daterangepicker td.end-date{
+    -webkit-border-radius: 0px!important;
+    -moz-border-radius: 0px!important;
+    border-radius: 0px!important;
+}
+.daterangepicker.opensleft:after{
+    border-bottom:6px solid #3C3B3B!important;
+}
+.daterangepicker .calendar-table{
+    border: none!important;
+}
+.daterangepicker .applyBtn{
+    background-color:#0498d5;
+    border:none;
+}
+.daterangepicker .cancelBtn{
+    border:none;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover{
+
+}
+.daterangepicker td.in-range{
+    background:#4995D6!important;
+}
+.daterangepicker td.available:hover, .daterangepicker th.available:hover{
+    background:#316898!important;
+}
+
