@@ -545,26 +545,26 @@
 
     $('.profit-comparison .btn-week').click(function(e){
         loadDateToChartObjectForGivenTime([new Date()],'week',profitChart);
+        highlightSelected(this);
+        $('.btn-calender').data('daterangepicker').setStartDate('2014-02-28');
+        $('.btn-calender').data('daterangepicker').setEndDate('2014-02-29');
     });
 
     $('.profit-comparison .btn-month').click(function(e){
         loadDateToChartObjectForGivenTime([new Date()],'month',profitChart);
+        highlightSelected(this);
     });
 
     $('.profit-comparison .btn-year').click(function(e){
         loadDateToChartObjectForGivenTime([new Date()],'year',profitChart);
+        highlightSelected(this);
     });
 
-/*
-    $('.btn-calender').daterangepicker({
-        "singleDatePicker": false,
-        "opens" : "right",
-        "startDate": "08/19/2015",
-        "endDate": "08/21/2015"
-    }, function(start, end, label) {
-
-    });
-*/
+    function highlightSelected(t){
+        var hClass = "chart-controller-btn-selected";
+        $(t).addClass(hClass);
+        $(t).siblings().removeClass(hClass);
+    }
 
     function cb(start, end) {
         $('.btn-calender span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
@@ -574,8 +574,8 @@
     $('.btn-calender').daterangepicker({
         "singleDatePicker": false,
         "opens" : "left",
-        "startDate": "08/19/2015",
-        "endDate": "08/21/2015"
+        "startDate": moment().subtract(29, 'days'),
+        "endDate": moment()
     }, cb);
 
     $('.datepicker-container .fw-calendar').click(function(){
