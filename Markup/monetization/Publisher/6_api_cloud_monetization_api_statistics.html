@@ -554,17 +554,6 @@
     $('.profit-comparison .btn-year').click(function(e){
         loadDateToChartObjectForGivenTime(undefined,'year',profitChart);
     });
-    $('.api-usage .btn-week').click(function(e){
-        loadDateToChartObjectForGivenTime(undefined,'week',apiUsageChart);
-    });
-
-    $('.api-usage .btn-month').click(function(e){
-        loadDateToChartObjectForGivenTime(undefined,'month',apiUsageChart);
-    });
-
-    $('.api-usage .btn-year').click(function(e){
-        loadDateToChartObjectForGivenTime(undefined,'year',apiUsageChart);
-    });
 
 /*
     $('.btn-calender').daterangepicker({
@@ -593,61 +582,69 @@
         $('.btn-calender').data('daterangepicker').toggle();
     })
 
-    loadDateToChartObjectForGivenTime(undefined,'month',apiUsageChart,'bar');
-    loadDateToChartObjectForGivenTime(undefined,'month',profitChart,'bar');
+    $('.btn-calender').on('apply.daterangepicker', function(ev, picker) {
+        var sDate = new Date(picker.startDate.format('YYYY-MM-DD')),
+            eDate = new Date(picker.endDate.format('YYYY-MM-DD'));
 
-    function loadDateToChartObjectForGivenTime(date,numOfDays,chartObj,chartType){
+        loadDateToChartObjectForGivenTime([sDate,eDate],'',profitChart);
+    });
+
+    loadDateToChartObjectForGivenTime([new Date()],'month',profitChart);
+
+    function loadDateToChartObjectForGivenTime(startDate,numOfDays,chartObj){
         getJsonData('../../objects_monetization_statistics.json',function(response){
             var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
             var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
-            var startDate = new Date(Object.keys(response)[0]);
-            if(date != undefined){
-                startDate = date;
+            var sDate = new Date(Object.keys(response)[0]),
+                eDate = new Date(Object.keys(response)[0])
+            if(startDate != undefined){
+                sDate = startDate[0];
+                eDate = startDate[1];
             }
 
             switch(numOfDays) {
                 case 'week':
-                    var endDate = startDate.addDays(7);
+                    var endDate = sDate.addDays(7);
                     var dates   = ['x'];
                     var value   = ['API'];
 
                     for(var responseDate in response){
-                        if(new Date(responseDate) < endDate){
+                        if(new Date(responseDate) > sDate && new Date(responseDate) < endDate){
                             dates.push(days[new Date(responseDate).getDay()]);
                             value.push(response[responseDate]);
                         }
                     };
 
-                    $('.time-period').text( startDate.getDate() + "/" + startDate.getMonth() + "/"
-                            + startDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
+                    $('.time-period').text( sDate.getDate() + "/" + sDate.getMonth() + "/"
+                            + sDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
                             + endDate.getUTCFullYear());
 
                     break;
                 case 'month':
-                    var endDate = startDate.addDays(30);
+                    var endDate = sDate.addDays(30);
                     var dates   = ['x'];
                     var value   = ['API'];
 
                     for(var responseDate in response){
-                        if(new Date(responseDate) < endDate){
+                        if(new Date(responseDate) > sDate && new Date(responseDate) < endDate){
                             dates.push(new Date(responseDate).getDate());
                             value.push(response[responseDate]);
                         }
                     }
 
-                    $('.time-period').text( startDate.getDate() + "/" + startDate.getMonth() + "/"
-                            + startDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
+                    $('.time-period').text( sDate.getDate() + "/" + sDate.getMonth() + "/"
+                            + sDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
                             + endDate.getUTCFullYear());
                     break;
                 case 'year':
-                    var endDate = startDate.addDays(365);
+                    var endDate = sDate.addDays(365);
                     var dates   = ['x'];
                     var value   = ['API'];
                     var totalMonthlyAmount = 0;
 
                     for(var responseDate in response){
-                        if(new Date(responseDate) < endDate){
+                        if(new Date(responseDate) > sDate && new Date(responseDate) < endDate){
                             if(isLastDayOfMonth(new Date(responseDate))){
                                 dates.push(months[new Date(responseDate).getMonth()]);
                                 value.push(totalMonthlyAmount);
@@ -661,19 +658,32 @@
                         }
                     }
 
-                    $('.time-period').text( startDate.getDate() + "/" + startDate.getMonth() + "/"
-                            + startDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
+                    $('.time-period').text( sDate.getDate() + "/" + sDate.getMonth() + "/"
+                            + sDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
                             + endDate.getUTCFullYear());
                     break;
                 default:
-                    return;
+                    var dates   = ['x'];
+                    var value   = ['API'];
+
+                    for(var responseDate in response){
+                        if(new Date(responseDate) > sDate && new Date(responseDate) < eDate){
+                            dates.push(new Date(responseDate).getDate());
+                            value.push(response[responseDate]);
+                        }
+                    }
+
+                    $('.time-period').text( sDate.getDate() + "/" + sDate.getMonth() + "/"
+                            + sDate.getUTCFullYear() + " - " + (eDate.getDate() - 1) + "/" + eDate.getMonth() + "/"
+                            + eDate.getUTCFullYear());
+                    break;
             }
 
             chartObj.load({
                 columns: [dates,value],
-                unload: chartObj.columns,
+                //unload: chartObj.columns,
             });
-            chartObj.transform(chartType);
+            chartObj.transform("bar");
         })
     }
 
