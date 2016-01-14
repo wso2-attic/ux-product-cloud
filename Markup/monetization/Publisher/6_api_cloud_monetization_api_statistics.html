@@ -544,15 +544,15 @@
 
 
     $('.profit-comparison .btn-week').click(function(e){
-        loadDateToChartObjectForGivenTime(undefined,'week',profitChart);
+        loadDateToChartObjectForGivenTime([new Date()],'week',profitChart);
     });
 
     $('.profit-comparison .btn-month').click(function(e){
-        loadDateToChartObjectForGivenTime(undefined,'month',profitChart);
+        loadDateToChartObjectForGivenTime([new Date()],'month',profitChart);
     });
 
     $('.profit-comparison .btn-year').click(function(e){
-        loadDateToChartObjectForGivenTime(undefined,'year',profitChart);
+        loadDateToChartObjectForGivenTime([new Date()],'year',profitChart);
     });
 
 /*
