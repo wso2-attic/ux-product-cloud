@@ -546,18 +546,22 @@
     $('.profit-comparison .btn-week').click(function(e){
         loadDateToChartObjectForGivenTime([new Date()],'week',profitChart);
         highlightSelected(this);
-        $('.btn-calender').data('daterangepicker').setStartDate('2014-02-28');
-        $('.btn-calender').data('daterangepicker').setEndDate('2014-02-29');
+
+        addDatesToCurrentAndSet(7,'days')
     });
 
     $('.profit-comparison .btn-month').click(function(e){
         loadDateToChartObjectForGivenTime([new Date()],'month',profitChart);
         highlightSelected(this);
+
+        addDatesToCurrentAndSet(1,'months')
     });
 
     $('.profit-comparison .btn-year').click(function(e){
         loadDateToChartObjectForGivenTime([new Date()],'year',profitChart);
         highlightSelected(this);
+
+        addDatesToCurrentAndSet(1,'years')
     });
 
     function highlightSelected(t){
@@ -566,8 +570,16 @@
         $(t).siblings().removeClass(hClass);
     }
 
+    function addDatesToCurrentAndSet(amount,type){
+
+        $('.btn-calender span').html(moment().format('DD-MM-YYYY') + ' - ' + moment().add(amount,type).format('DD-MM-YYYY'));
+
+        $('.btn-calender').data('daterangepicker').setStartDate(moment());
+        $('.btn-calender').data('daterangepicker').setEndDate(moment().add(amount,type));
+    }
+
     function cb(start, end) {
-        $('.btn-calender span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        $('.btn-calender span').html(start.format('DD-MM-YYYY') + ' - ' + end.format('DD-MM-YYYY'));
     }
     cb(moment().subtract(29, 'days'), moment());
 
@@ -605,12 +617,12 @@
 
             switch(numOfDays) {
                 case 'week':
-                    var endDate = sDate.addDays(7);
+                    var endDate = sDate.substractDays(7);
                     var dates   = ['x'];
                     var value   = ['API'];
 
                     for(var responseDate in response){
-                        if(new Date(responseDate) > sDate && new Date(responseDate) < endDate){
+                        if(new Date(responseDate) < sDate && new Date(responseDate) > endDate){
                             dates.push(days[new Date(responseDate).getDay()]);
                             value.push(response[responseDate]);
                         }
@@ -620,14 +632,16 @@
                             + sDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
                             + endDate.getUTCFullYear());
 
+                    //cb(endDate.getMonth(), sDate);
+
                     break;
                 case 'month':
-                    var endDate = sDate.addDays(30);
+                    var endDate = sDate.substractDays(30);
                     var dates   = ['x'];
                     var value   = ['API'];
 
                     for(var responseDate in response){
-                        if(new Date(responseDate) > sDate && new Date(responseDate) < endDate){
+                        if(new Date(responseDate) < sDate && new Date(responseDate) > endDate){
                             dates.push(new Date(responseDate).getDate());
                             value.push(response[responseDate]);
                         }
@@ -636,15 +650,18 @@
                     $('.time-period').text( sDate.getDate() + "/" + sDate.getMonth() + "/"
                             + sDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
                             + endDate.getUTCFullYear());
+
+                    //cb(endDate, sDate);
+
                     break;
                 case 'year':
-                    var endDate = sDate.addDays(365);
+                    var endDate = sDate.substractDays(365);
                     var dates   = ['x'];
                     var value   = ['API'];
                     var totalMonthlyAmount = 0;
 
                     for(var responseDate in response){
-                        if(new Date(responseDate) > sDate && new Date(responseDate) < endDate){
+                        if(new Date(responseDate) < sDate && new Date(responseDate) > endDate){
                             if(isLastDayOfMonth(new Date(responseDate))){
                                 dates.push(months[new Date(responseDate).getMonth()]);
                                 value.push(totalMonthlyAmount);
@@ -661,6 +678,9 @@
                     $('.time-period').text( sDate.getDate() + "/" + sDate.getMonth() + "/"
                             + sDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
                             + endDate.getUTCFullYear());
+
+                    //cb(endDate.getMonth(), sDate);
+
                     break;
                 default:
                     var dates   = ['x'];
@@ -676,6 +696,9 @@
                     $('.time-period').text( sDate.getDate() + "/" + sDate.getMonth() + "/"
                             + sDate.getUTCFullYear() + " - " + (eDate.getDate() - 1) + "/" + eDate.getMonth() + "/"
                             + eDate.getUTCFullYear());
+
+                    //cb(endDate.getMonth(), sDate);
+
                     break;
             }
 
@@ -694,10 +717,10 @@
      * @param days - number of days
      * @returns {Date} - changed date
      */
-    Date.prototype.addDays = function(days)
+    Date.prototype.substractDays = function(days)
     {
         var dat = new Date(this.valueOf());
-        dat.setDate(dat.getDate() + days);
+        dat.setDate(dat.getDate() - days);
         return dat;
     }
 
