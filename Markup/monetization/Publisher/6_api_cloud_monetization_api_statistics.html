@@ -572,10 +572,11 @@
 
     function addDatesToCurrentAndSet(amount,type){
 
-        $('.btn-calender span').html(moment().format('DD-MM-YYYY') + ' - ' + moment().add(amount,type).format('DD-MM-YYYY'));
+        $('.btn-calender span').html(moment().subtract(amount,type).format('DD-MM-YYYY')
+                                                + ' - ' + moment().format('DD-MM-YYYY'));
 
-        $('.btn-calender').data('daterangepicker').setStartDate(moment());
-        $('.btn-calender').data('daterangepicker').setEndDate(moment().add(amount,type));
+        $('.btn-calender').data('daterangepicker').setStartDate(moment().subtract(amount,type));
+        $('.btn-calender').data('daterangepicker').setEndDate(moment());
     }
 
     function cb(start, end) {
@@ -599,6 +600,8 @@
             eDate = new Date(picker.endDate.format('YYYY-MM-DD'));
 
         loadDateToChartObjectForGivenTime([sDate,eDate],'',profitChart);
+
+        highlightSelected(this);
     });
 
     loadDateToChartObjectForGivenTime([new Date()],'month',profitChart);
@@ -606,62 +609,54 @@
     function loadDateToChartObjectForGivenTime(startDate,numOfDays,chartObj){
         getJsonData('../../objects_monetization_statistics.json',function(response){
             var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-            var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+            var months = ['January','February','March','April','May','June'
+                            ,'July','August','September','October','November','December'];
 
             var sDate = new Date(Object.keys(response)[0]),
-                eDate = new Date(Object.keys(response)[0])
-            if(startDate != undefined){
+                eDate = new Date(Object.keys(response)[0]);
+
+            if(startDate[0] != undefined){
                 sDate = startDate[0];
                 eDate = startDate[1];
             }
 
             switch(numOfDays) {
                 case 'week':
-                    var endDate = sDate.substractDays(7);
+                    var endDate = eDate == undefined ? moment(new Date(sDate)).subtract(7, 'days') : eDate;
                     var dates   = ['x'];
                     var value   = ['API'];
 
                     for(var responseDate in response){
-                        if(new Date(responseDate) < sDate && new Date(responseDate) > endDate){
+                        if(moment(new Date(responseDate)).isBetween(endDate, sDate)){
                             dates.push(days[new Date(responseDate).getDay()]);
                             value.push(response[responseDate]);
                         }
                     };
 
-                    $('.time-period').text( sDate.getDate() + "/" + sDate.getMonth() + "/"
-                            + sDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
-                            + endDate.getUTCFullYear());
-
-                    //cb(endDate.getMonth(), sDate);
-
                     break;
                 case 'month':
-                    var endDate = sDate.substractDays(30);
+                    var endDate = eDate == undefined ? moment(new Date(sDate)).subtract(1, 'months') : eDate;
                     var dates   = ['x'];
                     var value   = ['API'];
 
                     for(var responseDate in response){
-                        if(new Date(responseDate) < sDate && new Date(responseDate) > endDate){
+                        if(moment(new Date(responseDate)).isBetween(endDate, sDate)){
                             dates.push(new Date(responseDate).getDate());
                             value.push(response[responseDate]);
                         }
                     }
 
-                    $('.time-period').text( sDate.getDate() + "/" + sDate.getMonth() + "/"
-                            + sDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
-                            + endDate.getUTCFullYear());
-
                     //cb(endDate, sDate);
 
                     break;
                 case 'year':
-                    var endDate = sDate.substractDays(365);
+                    var endDate = eDate == undefined ? moment(new Date(sDate)).subtract(1, 'years') : eDate;
                     var dates   = ['x'];
                     var value   = ['API'];
                     var totalMonthlyAmount = 0;
 
                     for(var responseDate in response){
-                        if(new Date(responseDate) < sDate && new Date(responseDate) > endDate){
+                        if(moment(new Date(responseDate)).isBetween(endDate, sDate)){
                             if(isLastDayOfMonth(new Date(responseDate))){
                                 dates.push(months[new Date(responseDate).getMonth()]);
                                 value.push(totalMonthlyAmount);
@@ -675,10 +670,6 @@
                         }
                     }
 
-                    $('.time-period').text( sDate.getDate() + "/" + sDate.getMonth() + "/"
-                            + sDate.getUTCFullYear() + " - " + (endDate.getDate() - 1) + "/" + endDate.getMonth() + "/"
-                            + endDate.getUTCFullYear());
-
                     //cb(endDate.getMonth(), sDate);
 
                     break;
@@ -687,7 +678,7 @@
                     var value   = ['API'];
 
                     for(var responseDate in response){
-                        if(new Date(responseDate) > sDate && new Date(responseDate) < eDate){
+                        if(moment(new Date(responseDate)).isBetween(sDate , eDate )){
                             dates.push(new Date(responseDate).getDate());
                             value.push(response[responseDate]);
                         }
