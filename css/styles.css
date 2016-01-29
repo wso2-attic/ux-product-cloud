@@ -926,6 +926,9 @@ a.btn-action {
 .left-pane ul li ul li a:hover {
     background-color: #1b1b1b;
 }
+.left-pane ul li.active a{
+    color: #0498d5;
+}
 .left-pane a{
     color: #fff;
     display: block;
@@ -2887,6 +2890,9 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
+.subscription-plan{
+    font-weight: 100;
+}
 .subscription-details .remark{
     color: #c9302c;
 }
@@ -2905,4 +2911,7 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 }
 .terms-wrapper .nano-content{
     padding: 10px 10px;
+}
+.gateway-container{
+    border: 1px solid #6A6A6A;
 }

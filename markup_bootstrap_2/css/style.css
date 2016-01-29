@@ -1,0 +1,47 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    background-color: #fff;
+}
+.nav-element {
+    padding: 15px;
+}
+.nav-step{
+    background-color: #3B98DA;
+    border-radius: 123px;
+}
+.nav-step p {
+    margin: 0px;
+    padding: 7px 20px;
+    font-size: 28px;
+    color: #fff;
+    font-weight: 300;
+}
+.nav-title {
+    margin-left: 15px;
+    font-size: 21px;
+    font-weight: 300;
+    padding: 10px 0px;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
