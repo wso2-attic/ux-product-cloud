@@ -719,7 +719,7 @@ a.btn-action {
     margin-bottom: 2em;
     cursor: pointer;
 }
-.cloud-app-listing i {
+.cloud-app-listing i.app-type-icon {
     position: absolute;
     z-index: 98;
     right: 16px;
@@ -776,21 +776,38 @@ a.btn-action {
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-.app-name {
+.app-name, .app-extra{
     position: absolute;
     color:#fff;
     bottom: 0;
     padding: 9px 5px 2px;
-    width: 100%;
+    width: 98%;
     min-height: 3em;
     font-size: 17px;
     background-color: #383d44;
     font-weight: 300;
 }
-
 .app-name i{
     position: relative;
 }
+.app-extra{
+    right: 0;
+    width: 2%;
+    padding: 14px 12px 2px;
+    background-color: #434548;
+}
+.app-extra-menu{
+    right: 0px;
+    left: inherit;
+    border: none;
+    border-radius: 0px;
+    margin-top: 0px;
+    background-color: #434548;
+}
+.app-extra-menu li a{
+    color: #fff;
+}
+
 /* cloud app details */
 
 .side-pane-trigger {
