@@ -149,51 +149,107 @@
             <div class="col-md-5 forms">
                 <div class="form-group">
                     <label for="application-name">Application Name: </label>
-                    <input type="appname" class="form-control" id="application-name" placeholder="Enter Application name">
+                    <input name="applicationName" type="text" class="form-control" placeholder="Enter Application name" />
                 </div>
 
                 <div class="form-group">
-                    <label for="application-description">Description: </label>
-                    <textarea class="form-control" rows="3"></textarea>
+                    <label for="application-revision">Application Revision: </label>
+                    <input name="applicationRevision" type="text" class="form-control" placeholder="Enter Application revision" />
                 </div>
+
                 <div class="form-group">
-                    <label for="application-icon">Icon: </label>
+                    <label for="application-description" >Description: </label>
+                    <textarea name="applicationDescription" class="form-control" rows="3" ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="runtime">Runtime: </label>
+                    <select name="runtime" id="runtime" class="form-control" ><option value="None" selected="Selected">Select runtime</option></select>
+                </div>
+
+                <div class="form-group">
+                    <label>No Of Replicas: </label>
+                    <select name="replicas" id="replicas" class="form-control" >
+                        <option value="None" selected="Selected">Select replicas</option>
+                        <option value="1" >1</option>
+                        <option value="2" >2</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Artifact: </label>
                     <div class="input-group">
-                        <input type="text" class="form-control" readonly>
-                    <span class="input-group-btn">
-                        <span class="btn btn-primary btn-file">
-                            Upload&hellip; <input type="file" multiple>
+                        <input id="uploadedFileName" type="text" class="form-control" readonly>
+                        <span class="input-group-btn">
+                           <span class="btn btn-primary btn-file">
+                               Upload&hellip; <input id="fileupload" type="file" name="fileUpload" multiple>
+                           </span>
                         </span>
-                    </span>
-
                     </div>
+
                 </div>
+
+
+
+
+
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    Env Variables
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="key">Key</label>
+                                        <input type="text" class="form-control" id="key" placeholder="Key">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="value">Value</label>
+                                        <input type="text" class="form-control" id="value" placeholder="Value">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn primary">Add</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    Tags
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
 
                 <div class="form-group">
-                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="add-application">
-                        <span class="fw-stack fw-lg btn-action-ico">
-                            <i class="fw fw-ring fw-stack-2x"></i>
-                            <i class="fw fw-add fw-stack-1x"></i>
-                        </span>
+                    <button class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" >
+                    <span class="fw-stack fw-lg btn-action-ico">
+                        <i class="fw fw-ring fw-stack-2x"></i>
+                        <i class="fw fw-add fw-stack-1x"></i>
+                    </span>
                         Create
-                    </button>
-
-                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="add-application-disable" disabled>
-                        <span class="fw-stack fw-lg btn-action-ico">
-                            <i class="fw fw-ring fw-stack-2x"></i>
-                            <i class="fw fw-add fw-stack-1x"></i>
-                        </span>
-                        Create
-                    </button>
-
-                    <button type="button" class="cu-btn cu-btn-sm cu-btn-blue cu-btn-position" id="add-application-loading" disabled >
-                        <span class="fw-stack fw-lg btn-action-ico">
-                            <i class="fw fw-ring fw-stack-2x"></i>
-                            <i class="fw fw-add fw-stack-1x"></i>
-                        </span>
-                        Creating
                     </button>
                 </div>
+
 
             </div>
 
