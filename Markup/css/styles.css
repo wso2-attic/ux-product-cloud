@@ -3004,3 +3004,6 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 .property-accordion .panel{
     border-radius: 0px;
 }
+.property-accordion .panel-default>.panel-heading{
+    border-radius: 0px;
+}
