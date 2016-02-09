@@ -121,13 +121,13 @@
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Back to app type selection
+                </span> <span class="hidden-xs">Back to app type selection</span>
         </a>
         <a href="001_cloud_first_login.html" class="btn-action">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
                     <i class="fa fa-mail-reply-all fa-stack-1x"></i>
-                </span> Cancel
+                </span> <span class="hidden-xs">Cancel</span>
         </a>
     </div><!-- EOF App factory menu actionbar-->
 
@@ -193,7 +193,7 @@
 
 
 
-                <div class="panel-group" id="accordion">
+                <div class="panel-group property-accordion" id="property-accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -204,7 +204,50 @@
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <div class="form-inline">
+                                <div class="form-inline  property-seperator">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="key">Key</label>
+                                        <input type="text" class="form-control" id="key" placeholder="Key" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="value">Value</label>
+                                        <input type="text" class="form-control" id="value" placeholder="Value" readonly>
+                                    </div>
+                                    <div class="form-group edit-key-values">
+                                        <span class="fw-stack fw-lg">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw  fw-edit fw-stack-1x"></i>
+                                        </span>
+                                        <span class="fw-stack fw-lg">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-cancel fw-stack-1x"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-inline  property-seperator">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="key">Key</label>
+                                        <input type="text" class="form-control" id="key" placeholder="Key" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="value">Value</label>
+                                        <input type="text" class="form-control" id="value" placeholder="Value" readonly>
+                                    </div>
+                                    <div class="form-group edit-key-values">
+                                        <span class="fw-stack fw-lg">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw  fw-edit fw-stack-1x"></i>
+                                        </span>
+                                        <span class="fw-stack fw-lg">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-cancel fw-stack-1x"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-inline property-seperator">
                                     <div class="form-group">
                                         <label class="sr-only" for="key">Key</label>
                                         <input type="text" class="form-control" id="key" placeholder="Key">
@@ -214,7 +257,7 @@
                                         <input type="text" class="form-control" id="value" placeholder="Value">
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn primary">Add</button>
+                                        <button class="btn btn-primary" disabled="disabled">Add</button>
                                     </div>
                                 </div>
 
@@ -231,7 +274,39 @@
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse">
                             <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <div class="form-inline  property-seperator">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="key">Key</label>
+                                        <input type="text" class="form-control" id="key" placeholder="Key" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="value">Value</label>
+                                        <input type="text" class="form-control" id="value" placeholder="Value" readonly>
+                                    </div>
+                                    <div class="form-group edit-key-values">
+                                        <span class="fw-stack fw-lg">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw  fw-edit fw-stack-1x"></i>
+                                        </span>
+                                        <span class="fw-stack fw-lg">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-cancel fw-stack-1x"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-inline property-seperator">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="key">Key</label>
+                                        <input type="text" class="form-control" id="key" placeholder="Key">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="value">Value</label>
+                                        <input type="text" class="form-control" id="value" placeholder="Value">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary" disabled="disabled">Add</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

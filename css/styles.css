@@ -2987,3 +2987,20 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 .gateway-container{
     border: 1px solid #6A6A6A;
 }
+.edit-key-values{
+    color: #000;
+}
+.property-seperator .form-group{
+    margin-bottom:1em;
+    margin-top: 1em;
+}
+.property-seperator{
+    border-bottom: 1px solid #DCDADA;
+}
+.property-seperator:last-child{
+    border-bottom: none;
+}
+
+.property-accordion .panel{
+    border-radius: 0px;
+}
