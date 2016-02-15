@@ -1109,50 +1109,101 @@ a.btn-action {
     padding: 1em;
 }
 .block-replicas{
-    min-height: 20em;
+    min-height: 16em;
+    max-height: 16em;
     margin-top: 1em;
     padding: 1em;
     border-right: 1px dashed rgba(255, 255, 255, 0.21);
+    width: 230px;
+    float: left;
+}
+.block-replicas:last-child{
+    border:none;
+}
+.view-log{
+    font-size: 11px;
+    background-color: #343434;
+    padding: .5em;
+}
+.node-cicle:hover{
+    color: white;
+}
+.node-cicle span{
+    cursor: pointer;
 }
 
-.replica-status .circle {
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 6px solid #2ecc71;
-    color: #52b700;
-    display: block;
-    font-size: 30px;
-    height: 100px;
-    line-height: 50px;
-    margin: 0 auto;
-    width: 100px;
-    -webkit-perspective: 300;
-    -moz-perspective: 300;
-    -ms-perspective: 300;
-    perspective: 300;
-    -webkit-transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-    -moz-transform: rotateY(0deg);
-    -moz-transform-style: preserve-3d;
-    -ms-transform: rotateY(0deg);
-    -ms-transform-style: preserve-3d;
-    transform: rotateY(0deg);
-    transform-style: preserve-3d;
-}
-.replica-status .icon{
+.node-cicle {
     position: relative;
+    display: inline-block;
+    color: #999;
+    font-size: 20px;
+    text-align: center;
 }
+
+.node-cicle figcaption {
+    padding: 50px 25px;
+    width: 190px;
+    height:190px;
+    border: 20px solid rgba(240, 240, 240, 0.2);
+    border-radius: 100px;
+    line-height: 50px;
+}
+
+
+svg .outer {
+    stroke: #2ecc71;
+}
+
+.node-cicle svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.outer {
+    fill: transparent;
+    stroke: #333;
+    stroke-width: 20;
+    stroke-dasharray: 534;
+    transition: stroke-dashoffset 1s;
+    -webkit-animation-play-state: running;
+    /* firefox bug fix - won't rotate at 90deg angles */
+    -moz-transform: rotate(-89deg) translateX(-190px);
+}
+
+.node-cicle[data-percent='100'] .outer {
+    stroke-dashoffset: 0;
+    -webkit-animation: show100 2s;
+    animation: show100 2s;
+}
+
+@-webkit-keyframes show100 {
+    from {
+        stroke-dashoffset: 537;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes show100 {
+    from {
+        stroke-dashoffset: 537;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
 
 
 .block-life-cycle,
 .block-repos,
 .block-issues,
 .block-runtime,
+.block-monitoring,
 .block-team,
+.block-replica,
 .block-database {
     margin-top: 1em;
     padding: 18px;
@@ -1172,12 +1223,16 @@ a.btn-action {
     background-color: #735f87;
     min-height: 24em;
 }
-.block-issues {
+.block-issues, .block-monitoring {
     background-color: #0aa699;
     min-height: 24em;
 }
 .block-runtime{
     background-color: #e67e22;
+    min-height: 24em;
+}
+.block-replica {
+    background-color: #464646;
     min-height: 24em;
 }
 .block-action-button {
@@ -3006,4 +3061,7 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 }
 .property-accordion .panel-default>.panel-heading{
     border-radius: 0px;
+}
+.demo-dashboard-block{
+    font-size: 13em;
 }
