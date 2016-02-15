@@ -3065,3 +3065,14 @@ table.dataTable .subtable th, table.dataTable .subtable td{
 .demo-dashboard-block{
     font-size: 13em;
 }
+.top-notification{
+    position: absolute;
+    background: rgba(254, 223, 45, 0.74);
+    height: 32px;
+    z-index: 1039;
+    border: 1px solid #FEE62D;
+    padding: 5px;
+    top: 0px;
+    left: 45%;
+    border-top: none;
+}
