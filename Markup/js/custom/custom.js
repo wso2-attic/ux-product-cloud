@@ -77,7 +77,7 @@ $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
      * ======================================================================== */
     $.fn.loadingButton = function(options) {
 
-        var settings = $.extend({
+        var settings = $.extend({}, {
                     // defaults.
                     action: "show",
                     width: "3em",
@@ -126,6 +126,7 @@ $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
                     </div></span>';
 
         return $(this).each(function(){
+            console.log(settings.action)
             if (settings.action === 'show') {
                 $(this).prop( "disabled", true );
                 $(this).find('span').css('display','none');
@@ -148,8 +149,8 @@ $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
                 $(this).find('.button-loader').css({
                     'margin-right':loaderMargin
                 });
-            }
-            if (settings.action === 'hide') {
+            }else if (settings.action === 'hide') {
+                console.log('sdfd')
                 $(this).prop( "disabled", false );
                 $(this).find('.button-loader').remove();
                 $(this).find('span').css('display','inline-block');
