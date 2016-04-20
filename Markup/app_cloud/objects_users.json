@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "username": "<a>dakshika</a>",
+      "attachuser": "<label class='switch'> <input id='chkbox0' type='checkbox' checked><span class='toggle-button'></span></label>",
+      "priviledges": "SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES,LOCK TABLES, CREATE VIEW, CREATE ROUTINE, ALTER ROUTINE"
+    },
+    {
+      "username": "<a>Dhanuka</a>",
+      "attachuser": "<label class='switch'> <input id='chkbox1' type='checkbox' ><span class='toggle-button'></span></label>",
+      "priviledges": "SELECT, INSERT, UPDATE,CREATE"
+    },
+    {
+      "username": "<a>UserOne</a>",
+      "attachuser": "<label class='switch'> <input id='chkbox2' type='checkbox'><span class='toggle-button'></span></label>",
+      "priviledges": "SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES,LOCK TABLES, CREATE VIEW, CREATE ROUTINE, ALTER ROUTINE"
+    },
+    {
+      "username": "<a>User2</a>",
+      "attachuser": "<label class='switch'> <input id='chkbox3' type='checkbox' ><span class='toggle-button'></span></label>",
+      "priviledges": "SELECT, INSERT, UPDATE,CREATE, ALTER, CREATE TEMPORARY TABLES,LOCK TABLES, CREATE VIEW"
+    }
+    ]
+}

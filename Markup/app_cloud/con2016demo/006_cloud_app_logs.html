@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WSO2 Cloud</title>
+
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap-3.2.0/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/fontwso2-1.2/css/font-wso2.css">
+    <link href="../../css/font-awesome-4.2.0/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/web-fonts/Roboto.css" rel="stylesheet">
+    <link href="../../css/nanoscroller-0.8.7/nanoscroller.css" rel="stylesheet">
+    <link href="../../css/CodeMirror-5.7.0/codemirror.css" rel="stylesheet">
+    <link href="../../css/CodeMirror-5.7.0/theme/icecoder.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- BOF cloud menu -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" id="cloud-menu-popover-xs" data-toggle="popover" data-placement="bottom"
+               class="hidden-md hidden-sm hidden-lg cloud-menu-popover">
+                <i class="fw fw-tiles"></i>
+            </a>
+            <a class="navbar-brand" href=""><img src="../../images/logo.png" alt="wso2-logo" > Cloud</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav menu-right">
+                <li><a href="#"><i class="fa fa-book"></i> Documentation</a></li>
+                <li><a href="#about"><i class="fa fa-envelope"></i> Support</a></li>
+                <li class="dropdown user-name">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">jack sparrow
+                        <i class="fa fa-chevron-circle-down"></i>
+                        <img src="../../images/user.png" alt="user" class="user-image"></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
+                <li class="cloud-menu hidden-xs">
+                    <a href="#" id="cloud-menu-popover" data-toggle="popover" data-placement="bottom"
+                            class="cloud-menu-popover">
+                        <i class="fw fw-tiles"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- BOF cloud menu content -->
+            <div class="cloud-menu-content hide">
+                <div id="popover-head" class="hide">
+                    Navigate to Cloud
+                </div>
+                <div id="popover-content" class="hide">
+                   <div class="cloud-apps">
+                       <a class="cloud-block">
+                           <i class="fa fa-3x fa-cubes"></i>
+                           <div class="cloud-name">Application Cloud</div>
+                       </a>
+                       <a class="cloud-block">
+                           <i class="fw fw-api fa-3x"></i>
+                           <div class="cloud-name">API Cloud</div>
+                       </a>
+                       <div class="clearfix"></div> <!-- to make seperate -->
+                   </div>
+                   <div class="cloud-actions">
+                       <h3>Manage your cloud</h3>
+                       <a class="cloud-block-invert">
+                           <i class="fa fa-3x  fa-institution"></i>
+                           <div class="cloud-name">Organizations</div>
+                       </a>
+                       <a class="cloud-block-invert">
+                           <i class="fa fa-3x  fa-users"></i>
+                           <div class="cloud-name">Members</div>
+                       </a>
+                       <a class="cloud-block-invert">
+                           <i class="fa fa-3x  fa-envelope"></i>
+                           <div class="cloud-name">Support</div>
+                       </a>
+                   </div>
+                </div>
+            </div>
+            <!-- EOF cloud menu content -->
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+<!-- EOF cloud menu -->
+<!-- BOF App factory menu -->
+<div class="navbar navbar-secondary">
+    <div class="container-fliud">
+        <div class="row">
+            <div class="side-pane-trigger">
+                <i class="fa fa-reorder"></i>
+            </div>
+            <div class="breadcrumb-secondary">
+                <i class="fa fa-cubes"></i> <a><span class="hidden-xs">Application Cloud</span> /My Java App / Logs</a>
+            </div>
+        </div>
+    </div>
+</div><!-- EOF App factory menu -->
+<div class="inner-wrapper">
+    <!-- left pane wrapper -->
+    <div class="left-pane ">
+        <ul>
+            <li >
+                <a href="005_cloud_app_details_initial.html" target="_blank"><i class="fa fa-laptop"></i> Overview</a>
+            </li>
+            <li>
+                <a  href=""><i class="fa fa-wrench"></i> Env Variables</a>
+            </li>
+            <li>
+                <a><i class="fa fa-tag"></i> Tags</a>
+            </li>
+            <li class="selected">
+                <a href="006_cloud_app_logs.html"><i class="fa fa-hdd-o"></i>Runtime Logs</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- left pane wrapper -->
+    <div class="right-pane">
+
+
+    <!-- BOF App factory menu actionbar -->
+    <div class="action-bar">
+        <a href="004_cloud_listing.html" class="btn-action">
+                <span class="fw-stack fw-lg btn-action-ico">
+                    <i class="fw fw-ring fw-stack-2x"></i>
+                    <i class="fw fw-left-arrow fw-stack-1x"></i>
+                </span> Back to Overview
+        </a>
+    </div><!-- EOF App factory menu actionbar-->
+
+
+    <div class="container-fluid app-content-section">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 msg-issues">
+                Orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+            </div>
+        </div>
+        <div class="row">
+            <div class="div-search">
+                <div class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="log-search" class="col-sm-1 control-label">Revision: </label>
+                        <div class="col-sm-4">
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <label for="log-search" class="col-sm-1 control-label">Replica: </label>
+                        <div class="col-sm-4">
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="log-search" class="col-sm-1 control-label">Search: </label>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control log-search" id="log-search" placeholder="Enter search text">
+                                              <span class="input-group-btn">
+                                                  <button type="button" action="findPrev" class="prev btn btn-default"><i class="fa fa-backward"></i> </button>
+                                                    <button type="button" action="findNext" class="next btn btn-default"><i class="fa  fa-forward"></i> </button>
+                                              </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <div class="scroll-container" style="margin-top: 1.2em;">
+                                <textarea id="build-logs" name="build-logs" style="display: none">2016-02-15 14:17:40 INFO  MicroservicesRegistry:76 - Added microservice: org.wso2.carbon.mss.sample.BuzzWordManager@30946e09
+2016-02-15 14:17:40 INFO  NettyListener:56 - Starting Netty Http Transport Listener
+2016-02-15 14:17:40 INFO  NettyListener:80 - Netty Listener starting on port 8080
+2016-02-15 14:17:40 INFO  MicroservicesRunner:122 - Microservices server started in 236ms
+2016-02-15 14:18:17 ERROR DBUtil:41 - The url cannot be null
+java.sql.SQLException: The url cannot be null
+	at java.sql.DriverManager.getConnection(DriverManager.java:649)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.wso2.carbon.mss.sample.DBUtil.getDBConnection(DBUtil.java:39)
+	at org.wso2.carbon.mss.sample.BuzzWordManager.getBuzzWords(BuzzWordManager.java:87)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.wso2.msf4j.internal.router.HttpMethodInfo.invoke(HttpMethodInfo.java:95)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:53)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:31)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:83)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:44)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-15 14:18:17 ERROR ChannelChunkResponder:103 - Resource method threw an exception
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.wso2.msf4j.internal.router.HttpMethodInfo.invoke(HttpMethodInfo.java:95)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:53)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:31)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:83)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:44)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at org.wso2.carbon.mss.sample.BuzzWordManager.getBuzzWords(BuzzWordManager.java:90)
+	... 37 more
+2016-02-15 14:24:41 ERROR DBUtil:41 - The url cannot be null
+java.sql.SQLException: The url cannot be null
+	at java.sql.DriverManager.getConnection(DriverManager.java:649)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.wso2.carbon.mss.sample.DBUtil.getDBConnection(DBUtil.java:39)
+	at org.wso2.carbon.mss.sample.BuzzWordManager.getMostPopularBuzzWords(BuzzWordManager.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.wso2.msf4j.internal.router.HttpMethodInfo.invoke(HttpMethodInfo.java:95)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:53)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:31)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:83)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:44)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-15 14:24:41 ERROR ChannelChunkResponder:103 - Resource method threw an exception
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.wso2.msf4j.internal.router.HttpMethodInfo.invoke(HttpMethodInfo.java:95)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:53)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:31)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:83)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:44)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at org.wso2.carbon.mss.sample.BuzzWordManager.getMostPopularBuzzWords(BuzzWordManager.java:154)
+	... 37 more
+2016-02-15 14:25:26 ERROR DBUtil:41 - The url cannot be null
+java.sql.SQLException: The url cannot be null
+	at java.sql.DriverManager.getConnection(DriverManager.java:649)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.wso2.carbon.mss.sample.DBUtil.getDBConnection(DBUtil.java:39)
+	at org.wso2.carbon.mss.sample.BuzzWordManager.getBuzzWords(BuzzWordManager.java:87)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.wso2.msf4j.internal.router.HttpMethodInfo.invoke(HttpMethodInfo.java:95)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:53)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:31)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:83)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:44)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-15 14:25:26 ERROR ChannelChunkResponder:103 - Resource method threw an exception
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.wso2.msf4j.internal.router.HttpMethodInfo.invoke(HttpMethodInfo.java:95)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:53)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:31)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:83)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:44)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at org.wso2.carbon.mss.sample.BuzzWordManager.getBuzzWords(BuzzWordManager.java:90)
+	... 37 more
+2016-02-15 14:25:52 ERROR DBUtil:41 - The url cannot be null
+java.sql.SQLException: The url cannot be null
+	at java.sql.DriverManager.getConnection(DriverManager.java:649)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.wso2.carbon.mss.sample.DBUtil.getDBConnection(DBUtil.java:39)
+	at org.wso2.carbon.mss.sample.BuzzWordManager.getMostPopularBuzzWords(BuzzWordManager.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.wso2.msf4j.internal.router.HttpMethodInfo.invoke(HttpMethodInfo.java:95)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:53)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:31)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:83)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:44)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-15 14:25:52 ERROR ChannelChunkResponder:103 - Resource method threw an exception
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.wso2.msf4j.internal.router.HttpMethodInfo.invoke(HttpMethodInfo.java:95)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:53)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:31)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:83)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:44)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at org.wso2.carbon.mss.sample.BuzzWordManager.getMostPopularBuzzWords(BuzzWordManager.java:154)
+	... 37 more
+2016-02-15 14:26:08 ERROR DBUtil:41 - The url cannot be null
+java.sql.SQLException: The url cannot be null
+	at java.sql.DriverManager.getConnection(DriverManager.java:649)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.wso2.carbon.mss.sample.DBUtil.getDBConnection(DBUtil.java:39)
+	at org.wso2.carbon.mss.sample.BuzzWordManager.getAllBuzzWords(BuzzWordManager.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.wso2.msf4j.internal.router.HttpMethodInfo.invoke(HttpMethodInfo.java:95)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:53)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:31)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:83)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:44)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-15 14:26:08 ERROR ChannelChunkResponder:103 - Resource method threw an exception
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.wso2.msf4j.internal.router.HttpMethodInfo.invoke(HttpMethodInfo.java:95)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:53)
+	at org.wso2.msf4j.internal.router.HttpDispatcher.channelRead0(HttpDispatcher.java:31)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:83)
+	at org.wso2.msf4j.internal.router.RequestRouter.channelRead0(RequestRouter.java:44)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at org.wso2.carbon.mss.sample.BuzzWordManager.getAllBuzzWords(BuzzWordManager.java:121)
+	... 37 more</textarea>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container -->
+    </div>
+
+    <div class="clearfix"></div>
+    <div id="push"></div>
+</div>
+<div id="footer">
+    <div class="container-fluid">
+        <div class="footer-text">WSO2 Cloud V: 1.2 . &copy; 2016
+            <a href="http://www.wso2.com" target="_blank"><i class="fw fw-wso2 fw-2x"></i></a> All Rights Reserved.</div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../js/jquery-1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../js/bootstrap-3.2.0/bootstrap.min.js"></script>
+<!-- include codemirror functions -->
+<script src="../../js/CodeMirror-5.7.0/lib/codemirror.js"></script>
+<script src="../../js/CodeMirror-5.7.0/addon/selection/active-line.js"></script>
+<script src="../../js/CodeMirror-5.7.0/addon/search/searchcursor.js"></script>
+<script src="../../js/CodeMirror-5.7.0/addon/search/searchonly.js"></script>
+<!-- include custom js functions -->
+<script src="../../js/custom/custom.js"></script>
+
+<script>
+
+    $('.side-pane-trigger').click(function(){
+        var rightPane = $('.right-pane');
+        var leftPane = $('.left-pane');
+        if (rightPane.hasClass('visible')){
+            rightPane.animate({"left":"0em"}, "slow").removeClass('visible');
+            leftPane.animate({"left":"-18em"}, "slow");
+            $(this).find('i').removeClass('fa-arrow-left').addClass('fa-reorder');
+        } else {
+            rightPane.animate({"left":"18em"}, "slow").addClass('visible');
+            leftPane.animate({"left":"0em"}, "slow");
+            $(this).find('i').removeClass('fa-reorder').addClass('fa-arrow-left');
+        }
+    });
+
+
+    //Url text loaded from the span element
+    var urlText = $('.version-url a span').text();
+
+    //Maximum character limit is 90. further than that the text would not show and the title would! 
+    if(urlText.length > 90){
+      $('.version-url a').prop('title',urlText).find('span').text(urlText);
+    }else{
+      $('.version-url a span').text(urlText);
+    }
+
+    $('.log-search').focus();
+    editor = CodeMirror.fromTextArea(document.getElementById("build-logs"), {
+        styleActiveLine: true,
+        lineNumbers: true,
+        readOnly: true,
+        searchonly: true,
+        lineWrapping: true,
+        theme:'icecoder'
+    });
+    
+</script>
+</body>
+</html>

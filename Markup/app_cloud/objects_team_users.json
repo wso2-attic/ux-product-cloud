@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+        "email": "<a>dakshika@wso2.com</a>",
+        "name": "Dakshika Jayathilake",
+        "roles": [
+            { "orgType" : "AF","roleDisplayName" : "Admin" },
+            { "orgType" : "AF","roleDisplayName" : "Creator" }
+        ]
+    },
+    {
+        "email": "<a>dhanukad@wso2.com</a>",
+        "name": "Dhanuka De Silva",
+        "roles": [
+            { "orgType" : "AF","roleDisplayName" : "Admin" },
+            { "orgType" : "AF","roleDisplayName" : "App Owner" }
+        ]
+    },
+    {
+        "email": "<a>jerad@wso2.com</a>",
+        "name": "Jerad Ruthnam",
+        "roles": [
+            { "orgType" : "AF","roleDisplayName" : "QA" },
+            { "orgType" : "AF","roleDisplayName" : "DevOps" },
+            { "orgType" : "AF","roleDisplayName" : "CXO" }
+        ]
+    },
+    {
+        "email": "<a>thusitha@wso2.com</a>",
+        "name": "Thusitha Kalugamage",
+        "roles": [
+            { "orgType" : "AF","roleDisplayName" : "App Owner" },
+            { "orgType" : "AF","roleDisplayName" : "QA" }
+        ]
+    }
+]}
+
+
