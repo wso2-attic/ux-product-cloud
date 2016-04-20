@@ -469,6 +469,51 @@ a.btn-action {
     color: #fff;
     cursor: pointer;
 }
+
+.thumbnail {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.thumbnail.icon {
+    border: none;
+    margin: 0;
+    background: none;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.thumbnail.icon:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 93%;
+}
+.thumbnail.icon > .square-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.thumbnail.icon .square-element img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.thumbnail.icon img {
+    width: 100%;
+}
+
+.fw-custom-x{
+    font-size: 5.6em;
+}
 .cloud-app-type i {
     margin: .4em
 }
