@@ -1,0 +1,69 @@
+[
+  {
+    "authType": "BasicAuth",
+    "phases": [
+      {
+        "type": "Development",
+        "keys":[{
+          "username": "developer"
+        },{
+          "password": "password123"
+        }]
+      },
+      {
+        "type": "Testing",
+        "keys":[{
+          "username": "tester"
+        },{
+          "password": "password123"
+        }]
+      }
+    ]
+  },
+  {
+    "authType": "AccessToken",
+    "phases": [
+      {
+        "type": "Development",
+        "keys":[{
+          "token": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "url": "/demo/developer"
+        }]
+      },
+      {
+        "type": "Testing",
+        "keys":[{
+          "token": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "url": "/demo/testing"
+        }]
+      }
+    ]
+  },
+  {
+    "authType": "OAuth",
+    "phases": [
+      {
+        "type": "Development",
+        "keys":[{
+          "consumer_key": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "customer_key": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "url": "/demo/development"
+        }]
+      },
+      {
+        "type": "Testing",
+        "keys":[{
+          "consumer_key": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "customer_key": "9a0554259914a86fb9e7eb014e4e5d52"
+        },{
+          "url": "/demo/testing"
+        }]
+      }
+    ]
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "id": "0001",
+      "varname": "variable 1",
+      "description": "my first env. variable",
+      "dev": "im in development",
+      "test": "im in test",
+      "deploy": "im in deployment stage"
+    },
+    {
+      "id": "0002",
+      "varname": "variable 2",
+      "description": "my second env. variable",
+      "dev": "im in development",
+      "test": "im in test",
+      "deploy": "im in deployment stage"
+    },
+    {
+      "id": "0003",
+      "varname": "variable 3",
+      "description": "my first env. variable",
+      "dev": "im in development",
+      "test": "im in test",
+      "deploy": "im in deployment stage"
+    },
+    {
+      "id": "0004",
+      "varname": "variable 4",
+      "description": "my second env. variable",
+      "dev": "im in development",
+      "test": "im in test",
+      "deploy": "im in deployment stage"
+    },
+    {
+      "id": "0005",
+      "varname": "variable 5",
+      "description": "my first env. variable",
+      "dev": "im in development",
+      "test": "im in test",
+      "deploy": "im in deployment stage"
+    },
+    {
+      "id": "0006",
+      "varname": "variable 6",
+      "description": "my second env. variable",
+      "dev": "im in development",
+      "test": "im in test",
+      "deploy": "im in deployment stage"
+    },
+    {
+      "id": "0007",
+      "varname": "variable 7",
+      "description": "my first env. variable",
+      "dev": "im in development",
+      "test": "im in test",
+      "deploy": "im in deployment stage"
+    },
+    {
+      "id": "0008",
+      "varname": "variable 8",
+      "description": "my second env. variable",
+      "dev": "im in development",
+      "test": "im in test",
+      "deploy": "im in deployment stage"
+    }
+  ]
+}
