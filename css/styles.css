@@ -142,7 +142,7 @@ button[disabled]{
     background-color: #0288c0
 }
 .cu-btn-orange {
-    background-color: #F0AD4E
+    background-color: #e67e22
 }
 .cu-btn-red {
     background-color: #ea6153;
@@ -246,7 +246,7 @@ a.btn-action {
 }
 .cloud-name {
     font-size:12px;
-    margin-top: .3em;
+    margin-top: .5em;
     font-weight: 300;
 }
 .cloud-menu-popover {
@@ -397,7 +397,7 @@ a.btn-action {
     position: relative;
 }
 .cloud-intro {
-    margin-top: 12em;
+    margin-top: 1em;
     color: #fff;
 }
 .cloud-intro .description {
@@ -406,13 +406,33 @@ a.btn-action {
 .cloud-intro h1 {
     font-weight: 300;
 }
+
 .cloud-app-select .heading {
     margin: -14px -15px 0px;
     padding: 20px;
     text-align: center;
-    background-color: rgb(100, 100, 100);
+    background-color: #2980b9;
     color: #fff;
     font-size: 22px;
+}
+.cloud-app-select .footer-msg{
+    position: absolute;
+    color: #fff;
+    font-size: 1.4em;
+    top: .5em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+.cloud-app-select .trial-color{
+    background-color: #F9BF3B !important;
+}
+
+.cloud-app-select .cloud-name {
+    font-size: 22px;
+    margin-top: 0.7em;
+    font-weight: 300;
 }
 .row-full-height {
     height: 100%;
@@ -441,7 +461,10 @@ a.btn-action {
     height: 8em;
 }
 .cloud-app-select .btn-footer button {
-    margin-top: 3em;
+    margin-top: 2em;
+    width: 80%;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 .cloud-new-content {
     margin-top: 17em;
