@@ -415,6 +415,49 @@ a.btn-action {
     color: #fff;
     font-size: 22px;
 }
+
+.cloud-app-select .heading .ribbon-wrapper-beta {
+    width: 85px;
+    height: 88px;
+    overflow: hidden;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
+.cloud-app-select .heading .ribbon {
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    font: bold 15px Sans-Serif;
+    text-align: center;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#DCAF7A), to(#F59419));
+    background-image: -webkit-linear-gradient(top, #DCAF7A, #F59419);
+    background-image: -moz-linear-gradient(top, #DCAF7A, #F59419);
+    background-image: -ms-linear-gradient(top, #DCAF7A, #F59419);
+    background-image: -o-linear-gradient(top, #DCAF7A, #F59419);
+    color: #404040;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+}
+.cloud-app-select .heading .ribbon:before,.cloud-app-select .heading .ribbon:after {
+    content: "";
+    border-top:   3px solid #774506;
+    border-left:  3px solid transparent;
+    border-right: 3px solid transparent;
+    position:absolute;
+    bottom: -3px;
+}
+.cloud-app-select .heading .ribbon:before {
+    left: 0;
+}
+.cloud-app-select .heading .ribbon:after {
+    right: 0;
+}
 .cloud-app-select .footer-msg{
     position: absolute;
     color: #fff;
