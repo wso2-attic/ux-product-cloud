@@ -1,5 +1,7 @@
-$('.cloud-menu-popover').popover({
-    html : true,
+$('.cloud-menu-popover i.fw-tiles').popover({
+    html: true,
+    trigger:'click',
+    placement:'bottom',
     title: function() {
         return $("#popover-head").html();
     },
