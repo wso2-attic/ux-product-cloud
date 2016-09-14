@@ -3206,8 +3206,8 @@ table.dataTable .subtable th, table.dataTable .subtable td{
     line-height: 36px;
 }
 
-.header a.cloud-menu-popover {
-    padding: 0;
+.cloud-menu-popover {
+    padding: 0 !important;
 }
 
 #cloud-menu-popover i.fw-tiles {
