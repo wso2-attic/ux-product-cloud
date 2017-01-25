@@ -862,6 +862,7 @@ a.btn-action {
     height: 40px;
     font-size: 18px;
     font-weight: 300;
+    padding-right: 37px;
 }
 .search > .input-group > .input-group-btn > .btn {
     padding: 7px 12px;
