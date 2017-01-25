@@ -83,7 +83,7 @@ body {
 .action-bar .fw-inverse:before {
     color: #303030;
 }
-.fw-stroke:before {
+.action-bar .fw-stroke:before {
     text-shadow: -2px -2px 0 #303030, 2px -2px 0 #303030, -2px 2px 0 #303030, 2px 2px 0 #303030;
 }
 .action-bar-top-positioned{
