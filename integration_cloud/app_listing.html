@@ -137,148 +137,199 @@
         </a>
     </div><!-- EOF App factory menu actionbar-->
 
-
     <div class="container-fluid app-type-listing padding-bottom-xlg">
-        
         <div class="row row-centered app-sort-bar">
             <div class="col-centered col-md-5 search">
-                <input type="text" class="form-control" id="search-apps" placeholder="Search applications">
-                <i class="fa fa-2x fa-search" ></i>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search-apps" placeholder="Search applications">
+                    <div class="input-group-btn">
+                        <i class="icon fa fa-2x fa-search" ></i>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          <li class="active"><a href="#">All</a></li>
+                          <li><a href="#">Integration</a></li>
+                          <li><a href="#">Services</a></li>
+                          <li><a href="#">Custom</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                </div><!-- /input-group -->
             </div>
         </div>
         <div class="row row-centered app-listing">
-            <!-- BOF listing block -->
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="009_cloud_app_details_initial.html">
-                    <div class="cloud-app-listing app-color-one">
-                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
-                        <div class="app-icon">
-                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
-                        </div>
-                        <div class="app-name" >JAVA Web Application</div>
+           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="Trading">
+              <div class="cloud-app-listing app-color-one">
+                 <a href="/appmgt/site/pages/home.jag?applicationKey=4752914405028326173">
+                    <i class="fw fw-java fw-2x app-type-icon" data-toggle="tooltip" data-placement="right" title="Java Web Application"></i>
+                    <div class="app-icon" style="background:#e74c3c;">
+                       <div class="square-element">
+                          <div class="app-name-icon">T</div>
+                       </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="009_cloud_app_details_initial.html">
-                    <div class="cloud-app-listing app-color-one">
-                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
-                        <div class="app-icon">
-                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
-                        </div>
-                        <div class="app-name" >JAVA Web Application</div>
+                    <div class="app-name ellipsis">Trading</div>
+                 </a>
+                 <a class="dropdown-toggle app-extra" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i><span class="sr-only">Toggle Dropdown</span></a>
+                 <ul class="dropdown-menu app-extra-menu" role="menu">
+                    <li><a onclick="deleteApplicationPopUp('Trading','4752914405028326173')">Delete</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="HackME">
+              <div class="cloud-app-listing app-color-one">
+                 <a href="/appmgt/site/pages/home.jag?applicationKey=6725625239717178306">
+                    <i class="fw fw-java fw-2x app-type-icon" data-toggle="tooltip" data-placement="right" title="Java Web Application"></i>
+                    <div class="app-icon" style="background:#2ecc71;">
+                       <div class="square-element">
+                          <div class="app-name-icon">H</div>
+                       </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="009_cloud_app_details_initial.html">
-                    <div class="cloud-app-listing app-color-one">
-                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
-                        <div class="app-icon">
-                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
-                        </div>
-                        <div class="app-name" >JAVA Web Application</div>
+                    <div class="app-name ellipsis">HackME</div>
+                 </a>
+                 <a class="dropdown-toggle app-extra" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i><span class="sr-only">Toggle Dropdown</span></a>
+                 <ul class="dropdown-menu app-extra-menu" role="menu">
+                    <li><a onclick="deleteApplicationPopUp('HackME','6725625239717178306')">Delete</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="Support-DNS">
+              <div class="cloud-app-listing app-color-one">
+                 <a href="/appmgt/site/pages/home.jag?applicationKey=7618936115764189226">
+                    <i class="fw fw-micro-services fw-2x app-type-icon" data-toggle="tooltip" data-placement="right" title="Java Microservice"></i>
+                    <div class="app-icon" style="background:#9b59b6;">
+                       <div class="square-element">
+                          <div class="app-name-icon">S</div>
+                       </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="009_cloud_app_details_initial.html">
-                    <div class="cloud-app-listing app-color-one">
-                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
-                        <div class="app-icon">
-                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
-                        </div>
-                        <div class="app-name" >JAVA Web Application</div>
+                    <div class="app-name ellipsis">Support-DNS</div>
+                 </a>
+                 <a class="dropdown-toggle app-extra" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i><span class="sr-only">Toggle Dropdown</span></a>
+                 <ul class="dropdown-menu app-extra-menu" role="menu">
+                    <li><a onclick="deleteApplicationPopUp('Support-DNS','7618936115764189226')">Delete</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="MyDSA">
+              <div class="cloud-app-listing app-color-one">
+                 <a href="/appmgt/site/pages/home.jag?applicationKey=4187878439904442046">
+                    <i class="fw fw-micro-services fw-2x app-type-icon" data-toggle="tooltip" data-placement="right" title="Java Microservice"></i>
+                    <div class="app-icon" style="background:#1abc9c;">
+                       <div class="square-element">
+                          <div class="app-name-icon">M</div>
+                       </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="009_cloud_app_details_initial.html">
-                    <div class="cloud-app-listing app-color-one">
-                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
-                        <div class="app-icon">
-                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
-                        </div>
-                        <div class="app-name" >JAVA Web Application</div>
+                    <div class="app-name ellipsis">MyDSA</div>
+                 </a>
+                 <a class="dropdown-toggle app-extra" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i><span class="sr-only">Toggle Dropdown</span></a>
+                 <ul class="dropdown-menu app-extra-menu" role="menu">
+                    <li><a onclick="deleteApplicationPopUp('MyDSA','4187878439904442046')">Delete</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="HealthCheckMonitor">
+              <div class="cloud-app-listing app-color-one">
+                 <a href="/appmgt/site/pages/home.jag?applicationKey=4028349463746758175">
+                    <i class="fw fw-php fw-2x app-type-icon" data-toggle="tooltip" data-placement="right" title="PHP Web Application"></i>
+                    <div class="app-icon" style="background:#1abc9c;">
+                       <div class="square-element">
+                          <div class="app-name-icon">H</div>
+                       </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="009_cloud_app_details_initial.html">
-                    <div class="cloud-app-listing app-color-one">
-                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
-                        <div class="app-icon">
-                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
-                        </div>
-                        <div class="app-name" >JAVA Web Application</div>
+                    <div class="app-name ellipsis">HealthCheckMonitor</div>
+                 </a>
+                 <a class="dropdown-toggle app-extra" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i><span class="sr-only">Toggle Dropdown</span></a>
+                 <ul class="dropdown-menu app-extra-menu" role="menu">
+                    <li><a onclick="deleteApplicationPopUp('HealthCheckMonitor','4028349463746758175')">Delete</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="JagMe">
+              <div class="cloud-app-listing app-color-one">
+                 <a href="/appmgt/site/pages/home.jag?applicationKey=3728852315076730520">
+                    <i class="fw fw-jaggery fw-2x app-type-icon" data-toggle="tooltip" data-placement="right" title="WSO2 Jaggery Application"></i>
+                    <div class="app-icon" style="background:#27ae60;">
+                       <div class="square-element">
+                          <div class="app-name-icon">J</div>
+                       </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="009_cloud_app_details_initial.html">
-                    <div class="cloud-app-listing app-color-one">
-                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
-                        <div class="app-icon">
-                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
-                        </div>
-                        <div class="app-name" >JAVA Web Application</div>
+                    <div class="app-name ellipsis">JagMe</div>
+                 </a>
+                 <a class="dropdown-toggle app-extra" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i><span class="sr-only">Toggle Dropdown</span></a>
+                 <ul class="dropdown-menu app-extra-menu" role="menu">
+                    <li><a onclick="deleteApplicationPopUp('JagMe','3728852315076730520')">Delete</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="Hello">
+              <div class="cloud-app-listing app-color-one">
+                 <a href="/appmgt/site/pages/home.jag?applicationKey=1890117980011682921">
+                    <i class="fw fw-jaggery fw-2x app-type-icon" data-toggle="tooltip" data-placement="right" title="WSO2 Jaggery Application"></i>
+                    <div class="app-icon" style="background:#16a085;">
+                       <div class="square-element">
+                          <div class="app-name-icon">H</div>
+                       </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="009_cloud_app_details_initial.html">
-                    <div class="cloud-app-listing app-color-one">
-                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
-                        <div class="app-icon">
-                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
-                        </div>
-                        <div class="app-name" >JAVA Web Application</div>
+                    <div class="app-name ellipsis">Hello</div>
+                 </a>
+                 <a class="dropdown-toggle app-extra" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i><span class="sr-only">Toggle Dropdown</span></a>
+                 <ul class="dropdown-menu app-extra-menu" role="menu">
+                    <li><a onclick="deleteApplicationPopUp('Hello','1890117980011682921')">Delete</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="MyDSS">
+              <div class="cloud-app-listing app-color-one">
+                 <a href="/appmgt/site/pages/home.jag?applicationKey=6943211213637256681">
+                    <i class="fw fw-dss fw-2x app-type-icon" data-toggle="tooltip" data-placement="right" title="WSO2 Data Service"></i>
+                    <div class="app-icon" style="background:#27ae60;">
+                       <div class="square-element">
+                          <div class="app-name-icon">M</div>
+                       </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="009_cloud_app_details_initial.html">
-                    <div class="cloud-app-listing app-color-one">
-                        <i class="fw fw-jaggery fw-2x" data-toggle="tooltip" data-placement="right" title="Jaggery Application"></i>
-                        <div class="app-icon">
-                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
-                        </div>
-                        <div class="app-name" >Jaggery Web Application</div>
+                    <div class="app-name ellipsis">MyDSS</div>
+                 </a>
+                 <a class="dropdown-toggle app-extra" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i><span class="sr-only">Toggle Dropdown</span></a>
+                 <ul class="dropdown-menu app-extra-menu" role="menu">
+                    <li><a onclick="deleteApplicationPopUp('MyDSS','6943211213637256681')">Delete</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="DSS">
+              <div class="cloud-app-listing app-color-one">
+                 <a href="/appmgt/site/pages/home.jag?applicationKey=5550839909142001405">
+                    <i class="fw fw-dss fw-2x app-type-icon" data-toggle="tooltip" data-placement="right" title="WSO2 Data Service"></i>
+                    <div class="app-icon" style="background:#f1c40f;">
+                       <div class="square-element">
+                          <div class="app-name-icon">D</div>
+                       </div>
                     </div>
-                </a>
-            </div>
-
-    </div><!-- /.container -->
-    <!-- BOF template block appear on each click -->
-    <div class="app-type-info-template" style="display: none">
-        <div class="longme" style="display: none">
-            <div class="clearfix"></div>
-            <div class="col-md-12 long">
-                <div class="row">
-                    <div class="col-sm-8 col-md-8 col-lg-7">
-                        <h2 class="app-type-name">JAVA Appication</h2>
-                        <div class="app-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ultricies nec,
-                            pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-                            vel, aliquet nec, vulputate eget, arcu.
-                        </div>
-                        <div class="button-bar">
-                            <a href="#" class="cu-btn cu-btn-md cu-btn-gray"><i class="fa fa-book"></i> Documentation</a>
-                            <a href="#" class="cu-btn cu-btn-md cu-btn-gray"><i class="fa fa-video-camera"></i> Video Guide</a>
-                        </div>
+                    <div class="app-name ellipsis">DSS</div>
+                 </a>
+                 <a class="dropdown-toggle app-extra" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i><span class="sr-only">Toggle Dropdown</span></a>
+                 <ul class="dropdown-menu app-extra-menu" role="menu">
+                    <li><a onclick="deleteApplicationPopUp('DSS','5550839909142001405')">Delete</a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" id="MyESB">
+              <div class="cloud-app-listing app-color-one">
+                 <a href="/appmgt/site/pages/home.jag?applicationKey=6695162170238639186">
+                    <i class="fw fw-carbon fw-2x app-type-icon" data-toggle="tooltip" data-placement="right" title="WSO2 ESB Composite Application"></i>
+                    <div class="app-icon" style="background:#2ecc71;">
+                       <div class="square-element">
+                          <div class="app-name-icon">M</div>
+                       </div>
                     </div>
-                    <div class="col-sm-4 col-md-4 col-lg-5 description-action">
-                        <a href="008_cloud_add_new_app.html" class="cu-btn cu-btn-md cu-btn-blue">
-                           <span class="fw-stack fw-lg btn-action-ico">
-                           <i class="fw fw-ring fw-stack-2x"></i>
-                           <i class="fw fw-add fw-stack-1x"></i>
-                           </span> Create Application</a>
-                    </div>
-                </div>
-            </div>
+                    <div class="app-name ellipsis">MyESB</div>
+                 </a>
+                 <a class="dropdown-toggle app-extra" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i><span class="sr-only">Toggle Dropdown</span></a>
+                 <ul class="dropdown-menu app-extra-menu" role="menu">
+                    <li><a onclick="deleteApplicationPopUp('MyESB','6695162170238639186')">Delete</a></li>
+                 </ul>
+              </div>
+           </div>
         </div>
-    </div>
-    <!-- EOF template block appear on each click -->
-    <div id="push"></div>
+        
+    </div><!-- /.container -->
 </div>
 
 <div id="footer">

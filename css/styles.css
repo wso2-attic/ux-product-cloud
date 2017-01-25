@@ -856,18 +856,26 @@ a.btn-action {
 .app-listing-loader{
     margin-top: 10%;
 }
-#search-apps {
+.search > .input-group > input {
     border-radius: 0px;
     height: 40px;
     font-size: 18px;
     font-weight: 300;
 }
-.app-sort-bar .search i {
+.search > .input-group > .input-group-btn > .btn {
+    padding: 9px 12px;
+}
+.search > .input-group > .input-group-btn > .icon {
     color: #303030;
     position: absolute;
     top: 6px;
-    right: 22px;
+    right: 65px;
     cursor: pointer;
+    font-size: 25px;
+    z-index: 10;
+}
+.dropdown-menu {
+    border-radius: 0;
 }
 .app-sort-bar .sort i {
     color: #fff;
@@ -886,6 +894,16 @@ a.btn-action {
     background-color: #383d44;
     top: 0;
     color:#fff;
+    text-decoration: none;
+}
+.app-name-icon {
+    color: #fff;
+    font-size: 10em;
+    font-weight: 300;
+    text-transform: capitalize;
+    position: absolute;
+    left: 10%;
+    top: 5%;
 }
 .app-thumb span {
     padding: 7px;
