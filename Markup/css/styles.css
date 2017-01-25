@@ -567,7 +567,6 @@ a.btn-action {
 }
 
 .cloud-app-type > .description {
-    background-color: #0498d5;
     color: #fff;
     text-decoration: none;
     position: absolute;
@@ -579,6 +578,15 @@ a.btn-action {
     display: block;
     transform: translateY(100%);
     transition: all 0.35s ease;
+}
+
+.cloud-app-type > .description > i {
+    opacity: 0.9;
+    bottom: 0;
+    left: 0;
+    font-size: 25px;
+    position: absolute;
+    display: block;
 }
 
 .thumbnail {
@@ -653,45 +661,79 @@ a.btn-action {
     text-align: center;
     width: 85%;
 }
+
 .app-color-one {
     background-color: #676767;
     border-color: #676767;
 }
+.app-color-one-dark {
+    background-color: #414141;
+    border-color: #414141;
+}
+
 .app-color-two {
     background-color: #37678d;
     border-color: #37678d;
 }
+.app-color-two-dark {
+    background-color: #223f56;
+    border-color: #223f56;
+}
+
 .app-color-three {
     background-color: #e5a02b;
     border-color: #e5a02b;
 }
-.app-color-four {
-    background-color: #e5a02b;
-    border-color: #e5a02b;
+.app-color-three-dark {
+    background-color: #ae7515;
+    border-color: #ae7515;
 }
+
+.app-color-four {
+    background-color: #ea6ae6;
+    border-color: #ea6ae6;
+}
+.app-color-four-dark {
+    background-color: #e127db;
+    border-color: #e127db;
+}
+
 .app-color-five {
     background-color: #6a7fb4;
     border-color: #6a7fb4;
 }
+.app-color-five-dark {
+    background-color: #465a8b;
+    border-color: #465a8b;
+}
+
 .app-color-six {
     background-color: #449ab6;
     border-color: #449ab6;
 }
+.app-color-six-dark {
+    background-color: #2f6b7e;
+    border-color: #2f6b7e;
+}
+
 .app-color-seven {
     background-color: #40d47e;
     border-color: #40d47e;
 }
-.app-color-eight{
+.app-color-seven-dark {
+    background-color: #25a35a;
+    border-color: #25a35a;
+}
+
+.app-color-eight {
     background-color: #F57B20;
     border-color: #F57B20;
 }
-.longme h2 {
-    font-weight: 300;
+.app-color-eight-dark {
+    background-color: #c05709;
+    border-color: #c05709;
 }
-.app-description {
-    font-weight: 300;
-    margin-bottom: 0.5em;
-}
+
 .button-bar a {
     margin-right: 1em;
 }
