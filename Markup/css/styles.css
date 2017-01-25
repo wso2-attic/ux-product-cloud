@@ -856,6 +856,7 @@ a.btn-action {
 .app-listing-loader{
     margin-top: 10%;
 }
+
 .search > .input-group > input {
     border-radius: 0px;
     height: 40px;
@@ -863,7 +864,11 @@ a.btn-action {
     font-weight: 300;
 }
 .search > .input-group > .input-group-btn > .btn {
-    padding: 9px 12px;
+    padding: 7px 12px;
+    font-size: 18px;
+    height: 40px;
+    background-color: #0498d5;
+    border-color: #0498d5;
 }
 .search > .input-group > .input-group-btn > .icon {
     color: #303030;
@@ -874,9 +879,25 @@ a.btn-action {
     font-size: 25px;
     z-index: 10;
 }
-.dropdown-menu {
+.search > .input-group > .input-group-btn > .dropdown-menu {
     border-radius: 0;
+    font-size: 16px;
+    background: #383d44;
 }
+.search > .input-group > .input-group-btn > .dropdown-menu > li > a {
+    color: #fff;
+}
+.search > .input-group > .input-group-btn > .dropdown-menu > .active > a,
+.search > .input-group > .input-group-btn > .dropdown-menu > .active > a:hover,
+.search > .input-group > .input-group-btn > .dropdown-menu > .active > a:focus {
+    background-color: #0498d5;
+}
+
+.search > .input-group > .input-group-btn > .dropdown-menu > li > a:hover,
+.search > .input-group > .input-group-btn > .dropdown-menu > li > a:focus {
+    background-color: #555c66;
+}
+
 .app-sort-bar .sort i {
     color: #fff;
 }
