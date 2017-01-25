@@ -105,8 +105,7 @@
             <div class="row">
                 <div class="col-md-12 breadcrumb-secondary">
                     <i class="fw fw-service"></i>
-                    <span class="hidden-xs">Integration Cloud /</span>
-                    <span class="">Select App Type</span>
+                    <span class="hidden-xs">Integration Cloud</span>
                 </div>
             </div>
         </div>
@@ -114,100 +113,140 @@
 
     <!-- BOF App factory menu actionbar -->
     <div class="action-bar">
-        <a href="app_listing.html" class="btn-action">
-            <span class="fw-stack fw-lg btn-action-ico">
-                <i class="fw fw-circle-outline fw-stack-2x"></i>
-                <i class="fw fw-left-arrow fw-stack-1x"></i>
-            </span> <span class="hidden-xs">Back to Application listing</span>
+        <a href="#" class="btn-action">
+            <span class="fw-stack fw-lg">
+               <i class="fw fw-circle-outline fw-stack-2x"></i>
+               <i class="fw fw-application fw-stack-1x"></i>
+               <span class="fw-stack fw-move-right fw-move-bottom">
+                  <i class="fw fw-circle fw-stack-2x fw-stroke"></i>
+                  <i class="fw fw-add fw-stack-1x fw-inverse"></i>
+               </span>
+            </span>
+            <span class="hidden-xs">Create Application</span>
         </a>
         <a href="#" class="btn-action">
-            <span class="fw-stack fw-lg btn-action-ico">
-                <i class="fw fw-circle-outline fw-stack-2x"></i>
-                <i class="fw fw-mail fw-stack-1x"></i>
-            </span> <span class="hidden-xs">Request new Application Type</span>
+            <span class="fw-stack fw-lg">
+               <i class="fw fw-circle-outline fw-stack-2x"></i>
+               <i class="fw fw-database fw-stack-1x"></i>
+               <span class="fw-stack fw-move-right fw-move-bottom">
+                  <i class="fw fw-circle fw-stack-2x fw-stroke"></i>
+                  <i class="fw fw-add fw-stack-1x fw-inverse"></i>
+               </span>
+            </span>
+            <span class="hidden-xs">Create Database</span>
         </a>
     </div><!-- EOF App factory menu actionbar-->
 
 
-    <div class="container-fluid app-type-listing padding-bottom-xlg padding-top-xlg">
+    <div class="container-fluid app-type-listing padding-bottom-xlg">
         
-        <h1 class="page-header">Integration</h1>
-        
-        <div class="row listing">
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 ">
-                <div class="cloud-app-type app-color-three cloud-app-type-max">
-                    <div class="app-thumbnail">
-                        <i class="fw fw-carbon fw-5x"></i>
-                        <div class="type-name" >WSO2 ESB Composite Application</div>
-                    </div>
-                    <div class="description">Allows you to deploy an ESB configuration that is supported by WSO2 Enterprise Service Bus.</div>
-                </div>
+        <div class="row row-centered app-sort-bar">
+            <div class="col-centered col-md-5 search">
+                <input type="text" class="form-control" id="search-apps" placeholder="Search applications">
+                <i class="fa fa-2x fa-search" ></i>
             </div>
         </div>
-        
-        <h1 class="page-header">Services</h1>
-        
-        <div class="row listing">
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 ">
-                <div class="cloud-app-type app-color-one cloud-app-type-max">
-                    <div class="app-thumbnail">
-                        <i class="fw fw-java fw-5x"></i>
-                        <div class="type-name">JAVA Web Application</div>
+        <div class="row row-centered app-listing">
+            <!-- BOF listing block -->
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <a href="009_cloud_app_details_initial.html">
+                    <div class="cloud-app-listing app-color-one">
+                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
+                        <div class="app-icon">
+                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
+                        </div>
+                        <div class="app-name" >JAVA Web Application</div>
                     </div>
-                    <div class="description">Allows you to create dynamic websites using Servlets and JSPs and deploy web services.</div>
-                </div>
+                </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="cloud-app-type app-color-two">
-                    <div class="app-thumbnail">
-                        <i class="fw fw-micro-services fw-5x"></i>
-                        <div class="type-name">Java Microservice</div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <a href="009_cloud_app_details_initial.html">
+                    <div class="cloud-app-listing app-color-one">
+                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
+                        <div class="app-icon">
+                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
+                        </div>
+                        <div class="app-name" >JAVA Web Application</div>
                     </div>
-                    <div class="description">Allows you to create microservices in Java, using an annotation-based programming model. MSF4J stands for Microservices Framework for Java.</div>
-                </div>
+                </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 ">
-                <div class="cloud-app-type app-color-three">
-                    <div class="app-thumbnail">
-                        <i class="fw fw-php fw-5x"></i>
-                        <div class="type-name">PHP Web Application</div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <a href="009_cloud_app_details_initial.html">
+                    <div class="cloud-app-listing app-color-one">
+                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
+                        <div class="app-icon">
+                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
+                        </div>
+                        <div class="app-name" >JAVA Web Application</div>
                     </div>
-                    <div class="description">Allows you to create dynamic web pages and complete server applications using PHP web applications.</div>
-                </div>
+                </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="cloud-app-type app-color-five">
-                    <div class="app-thumbnail">
-                        <i class="fw fw-java fw-5x"></i>
-                        <div class="type-name">Jaggery Application</div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <a href="009_cloud_app_details_initial.html">
+                    <div class="cloud-app-listing app-color-one">
+                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
+                        <div class="app-icon">
+                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
+                        </div>
+                        <div class="app-name" >JAVA Web Application</div>
                     </div>
-                    <div class="description">Allows you to write all parts of web applications, services and APIs in a completely JavaScript way.</div>
-                </div>
+                </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 ">
-                <div class="cloud-app-type app-color-six">
-                    <div class="app-thumbnail">
-                        <i class="fw fw-java fw-5x"></i>
-                        <div class="type-name">WSO2 Data Service</div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <a href="009_cloud_app_details_initial.html">
+                    <div class="cloud-app-listing app-color-one">
+                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
+                        <div class="app-icon">
+                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
+                        </div>
+                        <div class="app-name" >JAVA Web Application</div>
                     </div>
-                    <div class="description">Allows you to deploy a data service that is supported in WSO2 Data Services Server.</div>
-                </div>
+                </a>
             </div>
-        </div>
-        
-        <h1 class="page-header">Custom</h1>
-        
-        <div class="row listing">
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 ">
-                <div class="cloud-app-type app-color-one cloud-app-type-max">
-                    <div class="app-thumbnail">
-                        <i class="fw fw-build fw-5x"></i>
-                        <div class="type-name">Docker</div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <a href="009_cloud_app_details_initial.html">
+                    <div class="cloud-app-listing app-color-one">
+                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
+                        <div class="app-icon">
+                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
+                        </div>
+                        <div class="app-name" >JAVA Web Application</div>
                     </div>
-                    <div class="description">Custom Docker Image Application.</div>
-                </div>
+                </a>
             </div>
-        </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <a href="009_cloud_app_details_initial.html">
+                    <div class="cloud-app-listing app-color-one">
+                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
+                        <div class="app-icon">
+                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
+                        </div>
+                        <div class="app-name" >JAVA Web Application</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <a href="009_cloud_app_details_initial.html">
+                    <div class="cloud-app-listing app-color-one">
+                        <i class="fw fw-java fw-2x" data-toggle="tooltip" data-placement="right" title="Java Application"></i>
+                        <div class="app-icon">
+                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
+                        </div>
+                        <div class="app-name" >JAVA Web Application</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <a href="009_cloud_app_details_initial.html">
+                    <div class="cloud-app-listing app-color-one">
+                        <i class="fw fw-jaggery fw-2x" data-toggle="tooltip" data-placement="right" title="Jaggery Application"></i>
+                        <div class="app-icon">
+                            <img src="../images/dark-app-iconx256.jpg" class="square-element">
+                        </div>
+                        <div class="app-name" >Jaggery Web Application</div>
+                    </div>
+                </a>
+            </div>
 
     </div><!-- /.container -->
     <!-- BOF template block appear on each click -->
@@ -252,6 +291,9 @@
 <script src="../js/jquery-1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../js/bootstrap-3.2.0/bootstrap.min.js"></script>
+<script>
+
+</script>
 <!-- include custom js functions -->
 <script src="../js/custom/custom.js"></script>
 </body>

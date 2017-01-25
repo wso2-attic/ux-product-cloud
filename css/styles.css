@@ -80,6 +80,12 @@ body {
     width: 100%;
     z-index: 100;
 }
+.action-bar .fw-inverse:before {
+    color: #303030;
+}
+.fw-stroke:before {
+    text-shadow: -2px -2px 0 #303030, 2px -2px 0 #303030, -2px 2px 0 #303030, 2px 2px 0 #303030;
+}
 .action-bar-top-positioned{
     top:50px;
 }
