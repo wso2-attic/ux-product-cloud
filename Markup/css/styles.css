@@ -917,7 +917,7 @@ a.btn-action {
     color: #303030;
     position: absolute;
     top: 6px;
-    right: 65px;
+    left: -35px;
     cursor: pointer;
     font-size: 25px;
     z-index: 10;
@@ -962,7 +962,7 @@ a.btn-action {
 }
 .app-name-icon {
     color: #fff;
-    font-size: 10em;
+    font-size: 9em;
     font-weight: 300;
     text-transform: capitalize;
     position: absolute;
