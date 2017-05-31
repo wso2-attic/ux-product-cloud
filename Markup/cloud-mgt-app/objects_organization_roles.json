@@ -1,0 +1,42 @@
+{
+  "data": [
+    {
+        "role_name": "Admin",
+        "role_permission": [
+            { "orgType" : "Identity","perissionDisplayName" : "custom permission 01" }
+        ]
+    },
+    {
+        "role_name": "API Subscriber",
+        "role_permission": [
+            { "orgType" : "Identity","perissionDisplayName" : "custom permission 01" },
+            { "orgType" : "Identity","perissionDisplayName" : "custom permission 02" }
+        ]
+    },
+    {
+        "role_name": "Custom Role 01",
+        "role_permission": [
+            { "orgType" : "Identity","perissionDisplayName" : "custom permission 01" },
+            { "orgType" : "Identity","perissionDisplayName" : "custom permission 02" },
+            { "orgType" : "APIM","perissionDisplayName" : "Create" }
+        ]
+    },
+    {
+        "role_name": "Custom Role 02",
+        "role_permission": [
+            { "orgType" : "APIM","perissionDisplayName" : "Create" },
+            { "orgType" : "APIM","perissionDisplayName" : "Publish" },
+            { "orgType" : "APIM","perissionDisplayName" : "Subscribe" },
+            { "orgType" : "Identity","perissionDisplayName" : "custom permission 01" }
+        ]
+    },
+    {
+        "role_name": "Custom Role 03",
+        "role_permission": [
+            { "orgType" : "APIM","perissionDisplayName" : "App Owner" },
+            { "orgType" : "APIM","perissionDisplayName" : "QA" }
+        ]
+    }
+]}
+
+
