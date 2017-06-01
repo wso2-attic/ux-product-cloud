@@ -116,12 +116,6 @@
 
     <!-- BOF App factory menu actionbar -->
     <div class="action-bar">
-        <a href="#" class="btn-action">
-                <span class="fw-stack fw-lg btn-action-ico">
-                    <i class="fw fw-ring fw-stack-2x"></i>
-                    <i class="fw fw-left-arrow fw-stack-1x"></i>
-                </span> Cancel
-        </a>
         <a href="#" class="btn-action" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                 <span class="fw-stack fw-lg btn-action-ico">
                     <i class="fw fw-ring fw-stack-2x"></i>
@@ -145,7 +139,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div id="push"></div>
+                <div class="push"></div>
                 <div class="alert alert-info alert-pending" role="alert">
                     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <span class="alert-content">
@@ -161,7 +155,6 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div id="push"></div>
                 <div class="datatable">
                     <table id="memberslist" class="display" cellspacing="0" width="100%">
                         <thead>
@@ -177,8 +170,6 @@
 
                 </div>
                 <div class="clearfix"></div>
-                <div id="push"></div>
-                <div id="push"></div>
             </div>
         </div>
     </div><!-- /.container -->
@@ -216,8 +207,8 @@
         "ajax": "objects_organization_users.json",
         "columns": [
             { "data": "email", "width": "15%"},
-            { "data": "name" , "width": "25%"},
-            { "data": "roles" , "width": "50%"},
+            { "data": "name" , "width": "15%"},
+            { "data": "roles" , "width": "60%"},
             { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" },
             { "data": null, "orderable": false, "width": "5%", "sClass" : "dt-body-center" }
         ],
